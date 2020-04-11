@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+bundle exec heroku local -f Procfile.local -e .env-local
+

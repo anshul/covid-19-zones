@@ -1,0 +1,103 @@
+# See https://github.com/rubocop-hq/rubocop/blob/master/manual/configuration.md
+# This is the general config for all projects - project specific overrides are in .rubocop.yml
+require:
+  - rubocop-rails
+
+AllCops:
+  TargetRubyVersion: 2.7
+  Exclude:
+    - "bin/**/*"
+    - "tmp/**/*"
+    - ".bundle/**/*"
+    - "vendor/**/*"
+    - "log/**/*"
+    - "node_modules/**/*"
+    - "db/schema.rb"
+
+# Generous size limits
+Metrics/MethodLength:
+  Max: 18
+  Exclude:
+    - "db/migrate/*"
+    - "test/**/*"
+
+Metrics/BlockLength:
+  Max: 18
+  Exclude:
+    - "db/migrate/*"
+    - "config/initializers/*"
+    - "config/routes.rb"
+    - "config/environments/development.rb"
+    - "config/environments/production.rb"
+    - "lib/tasks/**/*"
+    - "test/**/*"
+
+Metrics/ClassLength:
+  Max: 120
+  Exclude:
+    - "db/migrate/*"
+    - "test/**/*"
+    - "lib/tasks/**/*"
+
+Metrics/ParameterLists:
+  Max: 4
+  CountKeywordArgs: false
+
+# Allow reasonably complex code
+Metrics/AbcSize:
+  Max: 24
+  Exclude:
+    - "db/migrate/*"
+
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+Metrics/PerceivedComplexity:
+  Max: 10
+
+Layout/HashAlignment:
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table
+
+Layout/LineLength:
+  Max: 250
+  Exclude:
+    - "db/migrate/*"
+    - "test/**/*"
+
+# Minimally override style
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/FormatStringToken:
+  Enabled: true
+  EnforcedStyle: unannotated
+
+Style/Documentation:
+  Enabled: false
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
+Naming/MethodParameterName:
+  AllowedNames:
+    - "in"
+    - "as"
+    - "if"
+    - "op"
+    - "h"
+    - "t"
+
+# lints with no defaults
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
+
