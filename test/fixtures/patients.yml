@@ -2,7 +2,7 @@ first_mumbai_patient:
   slug: patient-mum-000001
   code: MUM-48-01
   external_code: MU-MH-P1
-  status: confirmed
+  status: confirmeds
   source: https://twitter.com/vijayanpinarayi/status/1222819465143832577
   zone_code: mum
   district_code: MU 

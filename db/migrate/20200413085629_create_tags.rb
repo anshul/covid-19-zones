@@ -11,6 +11,7 @@ class CreateTags < ActiveRecord::Migration[6.0]
       t.timestamps
 
       t.index :slug, unique: true
+      t.index :code, unique: true
       t.index :tag_md
     end
   end

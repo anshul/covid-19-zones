@@ -5,7 +5,7 @@ class Patient < ApplicationRecord
 
   STATUSES = %w[confirmed recovered deceased].freeze
 
-  validates :status, inclusion: { in: STATUSES, message: "'%{value}' is not one of valid status: #{STATUSES.to_sentence}" }, presence: true
+  validates :status, inclusion: { in: STATUSES, message: "`%{value}` is not one of valid status: #{STATUSES.to_sentence}" }, presence: true
 
   has_many :taggings, as: :taggable, dependent: :destroy
 end
