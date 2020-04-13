@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Tag < ApplicationRecord
-  has_many :patients, dependent: :destroy
-  has_many :zones, dependent: :destroy
+  validates :slug, :code, presence: true
+
+  has_many :taggings, as: :taggable, dependent: :destroy
 end

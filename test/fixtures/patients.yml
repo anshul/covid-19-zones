@@ -1,7 +1,18 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  name: MyString
-
-two:
-  name: MyString
+first_mumbai_patient:
+  slug: patient-mum-000001
+  code: MUM-48-01
+  external_code: MU-MH-P1
+  status: confirmed
+  source: https://twitter.com/vijayanpinarayi/status/1222819465143832577
+  zone_code: mum
+  district_code: MU 
+  city_code: MUM
+  state_code: MH
+  country_code: IN
+  name: John Doe
+  gender: Male
+  age: 29
+  nationality: Indian
+  transmission_type: imported
+  announced_on: 30/01/2020
+  status_changed_on: nil

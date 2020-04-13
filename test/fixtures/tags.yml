@@ -1,7 +1,5 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  slug: MyString
-
-two:
-  slug: MyString
+mum_tag:
+  slug: mumbai
+  code: mumbai
+  name: Mumbai
+  tag_md: nil

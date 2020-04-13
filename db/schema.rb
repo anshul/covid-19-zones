@@ -10,48 +10,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_13_092853) do
+ActiveRecord::Schema.define(version: 2020_04_13_112153) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "patients", force: :cascade do |t|
-    t.string "patient_number", null: false
+    t.string "slug", null: false
+    t.string "code", null: false
+    t.string "external_code", null: false
     t.string "status", null: false
+    t.string "source", null: false
+    t.string "zone_code", null: false
+    t.string "district_code", null: false
+    t.string "city_code", null: false
+    t.string "state_code", null: false
+    t.string "country_code", null: false
     t.string "name"
-    t.string "tagged_district"
-    t.string "tagged_city"
-    t.string "tagged_state"
-    t.string "tagged_country"
     t.string "gender"
     t.string "age"
     t.string "nationality"
-    t.jsonb "sources"
-    t.date "date_announced", null: false
-    t.date "date_status_changed"
-    t.date "type_of_transmission"
+    t.string "transmission_type"
+    t.date "announced_on", null: false
+    t.date "status_changed_on"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["patient_number"], name: "index_patients_on_patient_number", unique: true
+    t.index ["city_code"], name: "index_patients_on_city_code"
+    t.index ["code"], name: "index_patients_on_code", unique: true
+    t.index ["country_code"], name: "index_patients_on_country_code"
+    t.index ["district_code"], name: "index_patients_on_district_code"
+    t.index ["external_code", "source"], name: "index_patients_on_external_code_and_source", unique: true
+    t.index ["state_code"], name: "index_patients_on_state_code"
     t.index ["status"], name: "index_patients_on_status"
-    t.index ["tagged_city"], name: "index_patients_on_tagged_city"
-    t.index ["tagged_country"], name: "index_patients_on_tagged_country"
-    t.index ["tagged_district"], name: "index_patients_on_tagged_district"
-    t.index ["tagged_state"], name: "index_patients_on_tagged_state"
+    t.index ["zone_code"], name: "index_patients_on_zone_code"
   end
 
-  create_table "tagged_patients", force: :cascade do |t|
+  create_table "taggings", force: :cascade do |t|
+    t.string "taggable_tag"
+    t.string "taggable_type"
+    t.bigint "taggable_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "tagged_zones", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.index ["taggable_type", "taggable_id"], name: "index_taggings_on_taggable_type_and_taggable_id"
   end
 
   create_table "tags", force: :cascade do |t|
     t.string "slug", null: false
+    t.string "code", null: false
     t.string "name"
     t.string "tag_md"
     t.datetime "created_at", precision: 6, null: false
@@ -87,14 +92,14 @@ ActiveRecord::Schema.define(version: 2020_04_13_092853) do
   end
 
   create_table "zones", force: :cascade do |t|
+    t.string "type", null: false
     t.string "slug", null: false
+    t.string "code", null: false
     t.string "name"
     t.string "zone_md"
-    t.string "tag_slug"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["slug"], name: "index_zones_on_slug", unique: true
-    t.index ["tag_slug"], name: "index_zones_on_tag_slug"
     t.index ["zone_md"], name: "index_zones_on_zone_md"
   end
 
