@@ -1,0 +1,6 @@
+mumbai_city:
+  slug: mumbai-city
+  code: mumbai-city
+  parent_zone: mumbai-dist
+  type: City
+  name: Mumbai

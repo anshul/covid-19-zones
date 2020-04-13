@@ -8,11 +8,13 @@ class CreateZones < ActiveRecord::Migration[6.0]
       t.string :type, null: false
 
       t.string :name
+      t.string :parent_zone
       t.string :zone_md
 
       t.timestamps
 
       t.index :slug, unique: true
+      t.index :code, unique: true
       t.index :zone_md
     end
   end

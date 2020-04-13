@@ -4,11 +4,7 @@ first_mumbai_patient:
   external_code: MU-MH-P1
   status: confirmed
   source: https://twitter.com/vijayanpinarayi/status/1222819465143832577
-  zone_code: mum
-  district_code: MU 
-  city_code: MUM
-  state_code: MH
-  country_code: IN
+  zone_code: in/mh/mumbai/mumbai
   name: John Doe
   gender: Male
   age: 29

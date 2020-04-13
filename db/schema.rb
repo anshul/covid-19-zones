@@ -22,10 +22,6 @@ ActiveRecord::Schema.define(version: 2020_04_13_112153) do
     t.string "status", null: false
     t.string "source", null: false
     t.string "zone_code", null: false
-    t.string "district_code", null: false
-    t.string "city_code", null: false
-    t.string "state_code", null: false
-    t.string "country_code", null: false
     t.string "name"
     t.string "gender"
     t.string "age"
@@ -35,12 +31,9 @@ ActiveRecord::Schema.define(version: 2020_04_13_112153) do
     t.date "status_changed_on"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["city_code"], name: "index_patients_on_city_code"
     t.index ["code"], name: "index_patients_on_code", unique: true
-    t.index ["country_code"], name: "index_patients_on_country_code"
-    t.index ["district_code"], name: "index_patients_on_district_code"
     t.index ["external_code", "source"], name: "index_patients_on_external_code_and_source", unique: true
-    t.index ["state_code"], name: "index_patients_on_state_code"
+    t.index ["slug"], name: "index_patients_on_slug", unique: true
     t.index ["status"], name: "index_patients_on_status"
     t.index ["zone_code"], name: "index_patients_on_zone_code"
   end
@@ -61,6 +54,7 @@ ActiveRecord::Schema.define(version: 2020_04_13_112153) do
     t.string "tag_md"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["code"], name: "index_tags_on_code", unique: true
     t.index ["slug"], name: "index_tags_on_slug", unique: true
     t.index ["tag_md"], name: "index_tags_on_tag_md"
   end
@@ -92,13 +86,15 @@ ActiveRecord::Schema.define(version: 2020_04_13_112153) do
   end
 
   create_table "zones", force: :cascade do |t|
-    t.string "type", null: false
     t.string "slug", null: false
     t.string "code", null: false
+    t.string "type", null: false
     t.string "name"
+    t.string "parent_zone"
     t.string "zone_md"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["code"], name: "index_zones_on_code", unique: true
     t.index ["slug"], name: "index_zones_on_slug", unique: true
     t.index ["zone_md"], name: "index_zones_on_zone_md"
   end

@@ -9,10 +9,6 @@ class CreatePatients < ActiveRecord::Migration[6.0]
       t.string :status, null: false
       t.string :source, null: false
       t.string :zone_code, null: false
-      t.string :district_code, null: false
-      t.string :city_code, null: false
-      t.string :state_code, null: false
-      t.string :country_code, null: false
 
       t.string :name
       t.string :gender
@@ -25,13 +21,10 @@ class CreatePatients < ActiveRecord::Migration[6.0]
 
       t.timestamps
 
+      t.index :slug, unique: true
       t.index :code, unique: true
       t.index %i[external_code source], unique: true
       t.index :zone_code
-      t.index :city_code
-      t.index :country_code
-      t.index :district_code
-      t.index :state_code
       t.index :status
     end
   end
