@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_13_112153) do
+ActiveRecord::Schema.define(version: 2020_04_13_151911) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,17 @@ ActiveRecord::Schema.define(version: 2020_04_13_112153) do
     t.index ["slug"], name: "index_patients_on_slug", unique: true
     t.index ["status"], name: "index_patients_on_status"
     t.index ["zone_code"], name: "index_patients_on_zone_code"
+  end
+
+  create_table "sources", force: :cascade do |t|
+    t.string "slug", null: false
+    t.string "code", null: false
+    t.string "name", null: false
+    t.jsonb "details", default: {}, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["code"], name: "index_sources_on_code", unique: true
+    t.index ["slug"], name: "index_sources_on_slug", unique: true
   end
 
   create_table "taggings", force: :cascade do |t|

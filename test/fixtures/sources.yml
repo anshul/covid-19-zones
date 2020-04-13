@@ -1,0 +1,7 @@
+covid19india:
+  slug: covid19india
+  code: covid19india
+  name: INDIA COVID-19 TRACKER
+  details: {
+    uri: "https://www.covid19india.org/"
+  }
