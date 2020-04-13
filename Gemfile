@@ -27,8 +27,8 @@ gem "devise", "~> 4.7", ">= 4.7.1"
 gem "devise-jwt", "~> 0.6.0"
 gem "excon", "~> 0.73.0"
 gem "jwt", "~> 2.2", ">= 2.2.1"
-gem 'slim-rails', '~> 3.2'
-gem 'omniauth-google-oauth2', '~> 0.8.0'
+gem "omniauth-google-oauth2", "~> 0.8.0"
+gem "slim-rails", "~> 3.2"
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]

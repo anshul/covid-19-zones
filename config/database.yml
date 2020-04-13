@@ -8,11 +8,17 @@ development:
   database: covid_19_zones_development
   username: covid_19_zones
   password: covid_19_zones
+  host: localhost
+  port: 5432
 
 
 test:
   <<: *default
   database: covid_19_zones_test
+  username: covid_19_zones
+  password: covid_19_zones
+  host: localhost
+  port: 5432
 
 production:
   <<: *default
