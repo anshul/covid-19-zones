@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 2020_04_13_151911) do
     t.string "code", null: false
     t.string "external_code", null: false
     t.string "status", null: false
-    t.string "source", null: false
     t.string "zone_code", null: false
+    t.string "source", null: false
     t.string "name"
     t.string "gender"
     t.string "age"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2020_04_13_151911) do
   create_table "sources", force: :cascade do |t|
     t.string "slug", null: false
     t.string "code", null: false
-    t.string "name", null: false
+    t.string "name"
     t.jsonb "details", default: {}, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

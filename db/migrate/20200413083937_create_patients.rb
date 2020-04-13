@@ -7,8 +7,8 @@ class CreatePatients < ActiveRecord::Migration[6.0]
       t.string :code, null: false
       t.string :external_code, null: false
       t.string :status, null: false
-      t.string :source, null: false
       t.string :zone_code, null: false
+      t.string :source, null: false
 
       t.string :name
       t.string :gender
