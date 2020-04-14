@@ -1,0 +1,6 @@
+dadar:
+  slug: dadar
+  code: dadar
+  parent_zone: mumbai-city
+  type: Locality
+  name: Dadar
