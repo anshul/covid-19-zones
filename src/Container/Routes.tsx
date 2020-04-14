@@ -8,7 +8,7 @@ const Routes: React.FC = () => {
   return (
     <Switch>
       <Route exact path='/' component={Container} />
-      <Route path='/zone/:slug' component={ZonePage} />
+      <Route path='/zone/:slug*' component={ZonePage} />
     </Switch>
   )
 }

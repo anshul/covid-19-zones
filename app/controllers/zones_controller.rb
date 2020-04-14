@@ -7,7 +7,8 @@ class ZonesController < ApplicationController
   end
 
   def show
-    per_day_counts = Patient.where("zone_code like ?", "#{params[:code]}/%").group(:announced_on).count
+    zone_code = params[:slug].split("/").reject { |part| part == "unknown" }.join("/")
+    per_day_counts = Patient.where("zone_code like ?", "#{zone_code}/%").group(:announced_on).count
 
     render status: :ok, json: {
       perDayCounts: per_day_counts.sort_by { |announced_on, _| announced_on }.map { |announced_on, count| { x: announced_on.strftime("%b %d"), y: count } }
@@ -21,6 +22,6 @@ class ZonesController < ApplicationController
   end
 
   def show_params
-    params.permit(:code)
+    params.permit(:slug)
   end
 end

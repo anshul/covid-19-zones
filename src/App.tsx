@@ -11,7 +11,7 @@ const App = () => {
   return (
     <SWRConfig
       value={{
-        fetcher: (url, ...args) => fetch(url, ...args).then(res => res.json())
+        fetcher: (url, ...args) => fetch(url, ...args).then((res) => res.json()),
       }}
     >
       <ThemeProvider theme={baseTheme}>
