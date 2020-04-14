@@ -1,12 +1,14 @@
 import React from 'react'
 
-import { Route, Switch } from 'react-router-dom'
-import Container from './Container'
+import { Route, Switch, Redirect } from 'react-router-dom'
+import Home from '../containers/Home'
 
 const Routes: React.FC = () => {
   return (
     <Switch>
-      <Route exact path='/' component={Container} />
+      <Route path='/home' component={Home} />
+      <Route exact path='/' component={Home} />
+      <Redirect exact from='/' to='/home' />
     </Switch>
   )
 }

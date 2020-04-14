@@ -2,15 +2,15 @@ import React from 'react'
 import './App.scss'
 import { ThemeProvider } from '@material-ui/core'
 import { baseTheme } from './theme'
-import Routes from './Container/Routes'
 import { Router } from 'react-router-dom'
 import { history } from './history'
+import Container from './Container/Container'
 
 const App = () => {
   return (
     <ThemeProvider theme={baseTheme}>
       <Router history={history}>
-        <Routes />
+        <Container />
       </Router>
     </ThemeProvider>
   )

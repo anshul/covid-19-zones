@@ -1,8 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { BottomNavigation, BottomNavigationAction, makeStyles, createStyles, Theme } from '@material-ui/core'
 import { LocationOnTwoTone, LocalOfferTwoTone, HelpTwoTone, BugReport, HomeTwoTone } from '@material-ui/icons'
 import clsx from 'clsx'
 import { useScreen } from '../hooks/useScreen'
+import { history } from '../history'
+
+interface Props {
+  path: string
+}
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -39,11 +44,15 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 )
 
-const Navbar: React.FC = () => {
+const Navbar: React.FC<Props> = ({ path }) => {
   const classes = useStyles()
-  const [current, setCurrent] = useState('home')
+  const [current, setCurrent] = useState(path)
 
   const { isSmallScreen } = useScreen()
+
+  useEffect(() => {
+    setCurrent(path)
+  }, [path, setCurrent])
 
   return (
     <div>
@@ -54,7 +63,10 @@ const Navbar: React.FC = () => {
       )}
       <BottomNavigation
         value={current}
-        onChange={(_, newValue: string) => setCurrent(newValue)}
+        onChange={(_, newValue: string) => {
+          setCurrent(newValue)
+          history.push(`/${newValue}`)
+        }}
         className={clsx(isSmallScreen ? classes.rootSmallScreen : classes.root)}
       >
         <BottomNavigationAction
