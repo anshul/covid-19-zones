@@ -7,4 +7,8 @@ class City < Zone
 
   belongs_to :district, foreign_key: "parent_zone", primary_key: "code", inverse_of: :cities
   has_many :localities, -> { order(code: :asc) }, foreign_key: "parent_zone", primary_key: "code", dependent: :delete_all, inverse_of: :city
+
+  def self.parent_klass
+    ::District
+  end
 end

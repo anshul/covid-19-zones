@@ -8,4 +8,8 @@ class District < Zone
 
   belongs_to :state, foreign_key: "parent_zone", primary_key: "code", inverse_of: :districts
   has_many :cities, -> { order(code: :asc) }, foreign_key: "parent_zone", primary_key: "code", dependent: :delete_all, inverse_of: :district
+
+  def self.parent_klass
+    ::State
+  end
 end

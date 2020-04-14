@@ -1,6 +1,7 @@
 dadar:
-  slug: dadar
-  code: dadar
-  parent_zone: mumbai-city
+  slug: in/maharashtra/mumbai/mumbai/dadar
+  code: in/mh/mumbai/mumbai/dadar
+  parent_zone: in/mh/mumbai/mumbai
   type: Locality
   name: Dadar
+  search_name: dadar

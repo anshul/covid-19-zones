@@ -1823,7 +1823,23 @@
 | 1 || CH || [[Chandigarh district|Chandigarh]]|| [[Chandigarh]]|| align=right | {{formatnum:1055450}}|| align=right | {{formatnum:114}}|| align=right | {{formatnum:9258}}
 |}
 
-=== Dadra and Nagar Haveli and Daman and Diu (DD) ===
+=== Dadra and Nagar Haveli (DN) ===
+{{See also|Districts of Dadra and Nagar Haveli and Daman and Diu}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 || DN || [[Dadra and Nagar Haveli]]|| [[Silvassa]]|| align=right | {{formatnum:343709}} || align=right | {{formatnum:491}} || align=right | {{formatnum:700}}
+|-
+|}
+
+=== Daman and Diu (DD) ===
 {{See also|Districts of Dadra and Nagar Haveli and Daman and Diu}}
 {| class="wikitable sortable"
 |-
@@ -1839,9 +1855,8 @@
 |-
 | 2 || DI || [[Diu district|Diu]]|| [[Diu, India|Diu]]|| align=right | {{formatnum:52074}}{{sfn|''Diu''|2011|p=45}} || align=right | {{formatnum:39}}{{sfn|''Diu''|2011|p=20}} || align=right | {{formatnum:2058}}
 |-
-| 3 || DN || [[Dadra and Nagar Haveli]]|| [[Silvassa]]|| align=right | {{formatnum:343709}} || align=right | {{formatnum:491}} || align=right | {{formatnum:700}}
-|-
 |}
+
 
 === Jammu and Kashmir (JK) ===
 {{See also|Districts of Jammu and Kashmir}}
@@ -1931,7 +1946,7 @@
 |-
 |}
 
-=== National Capital Territory of Delhi (DL) ===
+=== Delhi (DL) ===
 {{See also|Districts of Delhi}}
 {| class="wikitable sortable"
 |-

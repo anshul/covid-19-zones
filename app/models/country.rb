@@ -10,4 +10,8 @@ class Country < Zone
     nil
   end
   alias_attribute :children, :states
+
+  def self.parent_klass
+    nil
+  end
 end

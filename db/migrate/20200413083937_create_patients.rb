@@ -5,19 +5,23 @@ class CreatePatients < ActiveRecord::Migration[6.0]
     create_table :patients do |t|
       t.string :slug, null: false
       t.string :code, null: false
-      t.string :external_code, null: false
-      t.string :status, null: false
-      t.string :zone_code, null: false
       t.string :source, null: false
+      t.string :external_code, null: false
+
+      t.string :zone_code, null: false
+      t.string :external_signature, null: false
+      t.jsonb :external_details, default: {}, null: false
+
+      t.date :announced_on, null: false
+      t.string :status, null: false
+      t.date :status_changed_on
 
       t.string :name
       t.string :gender
       t.string :age
-      t.string :nationality
-      t.string :transmission_type
 
-      t.date :announced_on, null: false
-      t.date :status_changed_on
+      t.datetime :first_imported_at
+      t.datetime :last_imported_at
 
       t.timestamps
 

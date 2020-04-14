@@ -10,25 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_13_151911) do
+ActiveRecord::Schema.define(version: 2020_04_14_142047) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "jobs", force: :cascade do |t|
+    t.string "code", null: false
+    t.string "slug", null: false
+    t.string "source", null: false
+    t.datetime "started_at"
+    t.datetime "finished_at"
+    t.datetime "crashed_at"
+    t.jsonb "logs", default: [], null: false, array: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["code"], name: "index_jobs_on_code", unique: true
+    t.index ["slug"], name: "index_jobs_on_slug", unique: true
+    t.index ["source"], name: "index_jobs_on_source"
+  end
+
   create_table "patients", force: :cascade do |t|
     t.string "slug", null: false
     t.string "code", null: false
-    t.string "external_code", null: false
-    t.string "status", null: false
-    t.string "zone_code", null: false
     t.string "source", null: false
+    t.string "external_code", null: false
+    t.string "zone_code", null: false
+    t.string "external_signature", null: false
+    t.jsonb "external_details", default: {}, null: false
+    t.date "announced_on", null: false
+    t.string "status", null: false
+    t.date "status_changed_on"
     t.string "name"
     t.string "gender"
     t.string "age"
-    t.string "nationality"
-    t.string "transmission_type"
-    t.date "announced_on", null: false
-    t.date "status_changed_on"
+    t.datetime "first_imported_at"
+    t.datetime "last_imported_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["code"], name: "index_patients_on_code", unique: true
@@ -101,6 +118,7 @@ ActiveRecord::Schema.define(version: 2020_04_13_151911) do
     t.string "slug", null: false
     t.string "code", null: false
     t.string "name", null: false
+    t.string "search_name", null: false
     t.string "parent_zone"
     t.string "zone_md", default: "", null: false
     t.jsonb "details", default: "{}", null: false

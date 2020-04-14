@@ -7,4 +7,8 @@ class State < ::Zone
 
   belongs_to :country, foreign_key: "parent_zone", primary_key: "code", inverse_of: :states
   has_many :districts, -> { order(code: :asc) }, foreign_key: "parent_zone", primary_key: "code", dependent: :delete_all, inverse_of: :state
+
+  def self.parent_klass
+    ::Country
+  end
 end

@@ -10,4 +10,8 @@ class Locality < Zone
   def children
     []
   end
+
+  def self.parent_klass
+    ::City
+  end
 end

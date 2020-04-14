@@ -1,6 +1,7 @@
 mumbai_district:
-  slug: mumbai-dist
-  code: mumbai-dist
-  parent_zone: mh
+  slug: in/mh/mumbai
+  code: in/mh/mumbai
+  parent_zone: in/mh
   type: District
   name: Mumbai
+  search_name: mumbai

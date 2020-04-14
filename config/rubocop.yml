@@ -13,10 +13,11 @@ AllCops:
     - "log/**/*"
     - "node_modules/**/*"
     - "db/schema.rb"
+    - "Guardfile"
 
 # Generous size limits
 Metrics/MethodLength:
-  Max: 18
+  Max: 24
   Exclude:
     - "db/migrate/*"
     - "test/**/*"
@@ -45,7 +46,7 @@ Metrics/ParameterLists:
 
 # Allow reasonably complex code
 Metrics/AbcSize:
-  Max: 24
+  Max: 32
   Exclude:
     - "db/migrate/*"
 
@@ -84,6 +85,10 @@ Style/HashTransformKeys:
 
 Style/HashTransformValues:
   Enabled: true
+
+Style/FormatStringToken:
+  Enabled: false
+
 
 Naming/MethodParameterName:
   AllowedNames:
