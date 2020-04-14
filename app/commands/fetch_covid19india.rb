@@ -16,6 +16,7 @@ class FetchCovid19india < BaseCommand
              parse &&
              errors.empty?
     mark_job(result)
+    log(:yellow, "Finished job #{run_id}:  we have #{Patient.where(source: source.code).count} #{source.code} patient(s).")
     log(:yellow, "Done!", return_value: result)
   rescue StandardError => e
     line = e.backtrace.select { |l| l =~ %r{app/} }.first.sub(Rails.root.to_s, "")
