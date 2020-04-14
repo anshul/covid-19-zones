@@ -1,15 +1,18 @@
 import React from 'react'
-import logo from './logo.svg'
-import './App.css'
+import './App.scss'
+import { ThemeProvider } from '@material-ui/core'
+import { baseTheme } from './theme'
+import Routes from './Container/Routes'
+import { Router } from 'react-router-dom'
+import { history } from './history'
 
-function App() {
+const App = () => {
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>covid19zones.com goes here!</p>
-      </header>
-    </div>
+    <ThemeProvider theme={baseTheme}>
+      <Router history={history}>
+        <Routes />
+      </Router>
+    </ThemeProvider>
   )
 }
 
