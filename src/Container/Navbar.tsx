@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import { BottomNavigation, BottomNavigationAction, makeStyles, createStyles, Theme } from '@material-ui/core'
-import { Home, LocationOn, LocalOffer, Help, BugReport } from '@material-ui/icons'
+import { LocationOnTwoTone, LocalOfferTwoTone, HelpTwoTone, BugReport, HomeTwoTone } from '@material-ui/icons'
 import clsx from 'clsx'
 import { useScreen } from '../hooks/useScreen'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
+      position: 'sticky',
+      top: 0,
       display: 'block',
       width: '100px',
       height: 'calc(100vh - 72px)',
@@ -55,20 +57,30 @@ const Navbar: React.FC = () => {
         onChange={(_, newValue: string) => setCurrent(newValue)}
         className={clsx(isSmallScreen ? classes.rootSmallScreen : classes.root)}
       >
-        <BottomNavigationAction classes={{ root: classes.action, selected: classes.selected }} label='Home' value='home' icon={<Home />} />
+        <BottomNavigationAction
+          classes={{ root: classes.action, selected: classes.selected }}
+          label='Home'
+          value='home'
+          icon={<HomeTwoTone />}
+        />
         <BottomNavigationAction
           classes={{ root: classes.action, selected: classes.selected }}
           label='Zones'
           value='zones'
-          icon={<LocationOn />}
+          icon={<LocationOnTwoTone />}
         />
         <BottomNavigationAction
           classes={{ root: classes.action, selected: classes.selected }}
           label='Tags'
           value='tags'
-          icon={<LocalOffer />}
+          icon={<LocalOfferTwoTone />}
         />
-        <BottomNavigationAction classes={{ root: classes.action, selected: classes.selected }} label='Help' value='help' icon={<Help />} />
+        <BottomNavigationAction
+          classes={{ root: classes.action, selected: classes.selected }}
+          label='Help'
+          value='help'
+          icon={<HelpTwoTone />}
+        />
       </BottomNavigation>
     </div>
   )

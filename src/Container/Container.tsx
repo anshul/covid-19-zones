@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     content: {
       height: '100vh',
+      overflow: 'auto',
       borderRadius: '12px',
       paddingBottom: '60px',
     },
