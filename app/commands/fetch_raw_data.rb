@@ -37,21 +37,22 @@ class FetchRawData
       patient_number = row["patientnumber"]
       slug = "covid19-india-#{patient_number}"
       code = "c19-in-#{patient_number}"
+      zone_code = nil
 
       state = State.find_by(name: row["detectedstate"])
-      state_code = state.present? ? state.code : "unknown-state"
+      zone_code = formatted_code(state.code) if state.present?
 
       district = District.find_by(name: row["detecteddistrict"])
-      district_code = district.present? ? district.code : "unknown-district"
+      zone_code = formatted_code(district.code) if district.present?
 
       city = City.find_by(name: row["detectedcity"])
-      city_code = city.present? ? city.code : "unknonw-city"
+      zone_code = formatted_code(city.code) if city.present?
 
       patient = Patient.new(
         slug:      slug,
         code:      code,
         status:    row["currentstatus"].parameterize,
-        zone_code: "in/#{state_code}/#{district_code}/#{city_code}",
+        zone_code: zone_code.nil? ? formatted_code("in") : zone_code,
         **PATIENT_ATTRS.transform_values { |key| row[key.to_s] }
       )
 
@@ -72,6 +73,12 @@ class FetchRawData
 
       puts_red "Error: ##{row['patientnumber']} => #{patient.errors.full_messages.to_sentence}"
     end
+  end
+
+  def formatted_code(code)
+    code_parts = code.split("/")
+    unknowns = ["unknown"] * (4 - code_parts.count)
+    (code_parts + unknowns).join("/")
   end
 
   def puts_red(str)
