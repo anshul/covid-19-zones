@@ -1,26 +1,26 @@
 import React from 'react'
-import { Typography, Container as MuiContainer, makeStyles, Theme, createStyles, Grid, Card, CardContent } from '@material-ui/core'
+import { Typography, makeStyles, Theme, createStyles, Grid, Card, CardContent } from '@material-ui/core'
 import BarChart from '../components/Charts/BarChart'
 import Navbar from './Navbar'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
+      width: '100% !important',
       display: 'flex',
       backgroundColor: theme.palette.background.default,
       color: theme.palette.text.primary,
     },
     appbar: {
+      width: '100%',
+      height: '72px',
       backgroundColor: theme.palette.background.default,
-      borderBottomWidth: '1px',
-      borderBottomStyle: 'solid',
-      borderBottomColor: theme.palette.divider,
+      display: 'flex',
+      alignItems: 'center',
     },
     content: {
       height: '100vh',
       borderRadius: '12px',
-      backgroundColor: theme.palette.background.paper,
-      marginTop: '72px',
     },
     sidebar: {
       paddingRight: theme.spacing(1),
@@ -40,22 +40,75 @@ const Container: React.FC = () => {
   return (
     <div className={classes.root}>
       <Navbar />
-      <MuiContainer className={classes.content} maxWidth='xl'>
-        <Grid container>
-          <Grid item xs={12}>
-            <Card variant='outlined'>
-              <CardContent>
-                <Typography variant='h6'>Some stuff</Typography>
-                <Typography variant='body1'>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque et numquam porro dolores obcaecati iusto minima, ipsam commodi
-                  aut officiis suscipit consectetur accusamus eius temporibus nisi! Ut temporibus aspernatur suscipit!
-                </Typography>
-              </CardContent>
-              <BarChart />
-            </Card>
+      <div>
+        <div className={classes.appbar}>
+          <Typography variant='h6'>COVID19ZONES</Typography>
+        </div>
+        <Grid container spacing={1}>
+          <Grid container item xs={9} spacing={1}>
+            <Grid item xs={3}>
+              <Card>
+                <CardContent>
+                  <Typography variant='subtitle1'>Total Cases</Typography>
+                  <Typography variant='h5'>241,152,102</Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={3}>
+              <Card>
+                <CardContent>
+                  <Typography variant='subtitle1'>Recovered</Typography>
+                  <Typography variant='h5'>241,152,102</Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={3}>
+              <Card>
+                <CardContent>
+                  <Typography variant='subtitle1'>Active Cases</Typography>
+                  <Typography variant='h5'>241,152,102</Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={3}>
+              <Card>
+                <CardContent>
+                  <Typography variant='subtitle1'>Total Death</Typography>
+                  <Typography variant='h5'>241,152,102</Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={12}>
+              <Card>
+                <BarChart />
+              </Card>
+            </Grid>
+          </Grid>
+          <Grid container item xs={3}>
+            <Grid item xs={12}>
+              <Card>
+                <CardContent>
+                  <Typography variant='h6'>Alert</Typography>
+                  <Typography variant='body1'>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae tenetur provident tempore eius necessitatibus unde
+                    repellendus itaque, magni reiciendis porro! Qui eum magnam doloribus maxime nostrum necessitatibus doloremque non dolorum.
+                  </Typography>
+                </CardContent>
+              </Card>
+              <br />
+              <Card>
+                <CardContent>
+                  <Typography variant='h6'>Alert</Typography>
+                  <Typography variant='body1'>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae tenetur provident tempore eius necessitatibus unde
+                    repellendus itaque, magni reiciendis porro! Qui eum magnam doloribus maxime nostrum necessitatibus doloremque non dolorum.
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
           </Grid>
         </Grid>
-      </MuiContainer>
+      </div>
     </div>
   )
 }

@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
   return (
     <div>
       <div className={classes.logo}>
-        <BugReport />
+        <BugReport fontSize='large' />
       </div>
       <BottomNavigation
         value={current}
