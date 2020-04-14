@@ -10,7 +10,7 @@ const Routes: React.FC = () => {
       <Route path='/home' component={Home} />
       <Route exact path='/' component={Home} />
       <Redirect exact from='/' to='/home' />
-      <Route path='/zones/:slug*' component={ZonePage} />
+      <Route path='/zone/:slug*' component={ZonePage} />
     </Switch>
   )
 }

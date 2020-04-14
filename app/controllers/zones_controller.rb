@@ -8,8 +8,8 @@ class ZonesController < ApplicationController
 
   def show
     zone_slug = params[:slug].split("/").reject { |part| part == "unknown" }.join("/")
-    zone_code = Zone.find_by(slug: zone_slug).code
-    per_day_counts = Patient.where("zone_code like ?", "#{zone_code}/%").group(:announced_on).count
+    zone = Zone.find_by(slug: zone_slug)
+    per_day_counts = Patient.where("zone_code like ?", "#{zone.code}/%").group(:announced_on).count
 
     per_day_data = per_day_counts.sort_by { |announced_on, _| announced_on }.map { |announced_on, count| { date: announced_on.strftime("%b %d"), count: count } }
 
@@ -20,6 +20,7 @@ class ZonesController < ApplicationController
 
     point_formatter = ->(point) { { x: point[:date], y: point[:count] } }
     render status: :ok, json: {
+      siblingZones:          zone.parent&.children&.as_json(only: Zone.view_attrs) || [zone.as_json(only: Zone.view_attrs)],
       perDayCounts:          per_day_data.map { |point| point_formatter.call(point) },
       threeDayMovingAverage: three_day_moving_average.map { |point| point_formatter.call(point) }
     }
