@@ -2,6 +2,8 @@
 
 class Locality < Zone
   validates :slug, :code, :type, :name, :parent_zone, presence: true
+  validates :parent_zone, format: %r{\A[a-z\-]+/[a-z\-]+/[a-z\-]+/[a-z0-9\-]+\z}
+  validates :code, format: %r{\A[a-z\-]+/[a-z\-]+/[a-z\-]+/[a-z0-9\-]+/[a-z0-9\-]+\z}
 
   alias_attribute :parent, :city
 

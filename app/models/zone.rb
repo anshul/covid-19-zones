@@ -14,7 +14,7 @@ class Zone < ApplicationRecord
 
   def self.named(parent_zone:, name:)
     @named ||= {}
-    return other(parent_zone: parent_zone) if name.blank? || name.strip.parameterize == "other"
+    return other(parent_zone: parent_zone) unless valid_name?(name)
 
     name = name.to_s.strip
     key = "#{parent_zone}>#{name}"
@@ -24,6 +24,7 @@ class Zone < ApplicationRecord
   def self.named_or_new(parent_zone:, name:)
     model = named(parent_zone: parent_zone, name: name)
     return model if model
+    return other(parent_zone: parent_zone) unless valid_name?(name)
 
     parent_model = parent_klass.find_by(code: parent_zone)
     key = "#{parent_zone}>#{name}"
@@ -42,5 +43,9 @@ class Zone < ApplicationRecord
     model = new(parent_zone: parent_zone, code: "#{parent_model.code}/other", slug: "#{parent_model.slug}/other", name: "Other", search_name: "other")
     model.save!
     model
+  end
+
+  def self.valid_name?(name)
+    name.to_s.downcase =~ /[a-z]/ && name.to_s.strip.parameterize != "other"
   end
 end
