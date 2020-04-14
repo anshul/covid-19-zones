@@ -67,7 +67,6 @@ class FetchRawData
       )
 
       patient.source = source.code if source.save
-      binding.pry
 
       next if patient.save
 
