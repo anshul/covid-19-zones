@@ -1,15 +1,25 @@
 import React, { useState } from 'react'
 import { BottomNavigation, BottomNavigationAction, makeStyles, createStyles, Theme } from '@material-ui/core'
-import { Home, LocationOn, LocalOffer, Help, BugReport } from '@material-ui/icons'
+import { LocationOnTwoTone, LocalOfferTwoTone, HelpTwoTone, BugReport, HomeTwoTone } from '@material-ui/icons'
+import clsx from 'clsx'
+import { useScreen } from '../hooks/useScreen'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
+      position: 'sticky',
+      top: 0,
       display: 'block',
       width: '100px',
       height: 'calc(100vh - 72px)',
       backgroundColor: theme.palette.background.default,
       textAlign: 'center',
+    },
+    rootSmallScreen: {
+      position: 'fixed',
+      bottom: 0,
+      width: '100%',
+      backgroundColor: theme.palette.background.default,
     },
     logo: {
       width: '100px',
@@ -33,30 +43,44 @@ const Navbar: React.FC = () => {
   const classes = useStyles()
   const [current, setCurrent] = useState('home')
 
+  const { isSmallScreen } = useScreen()
+
   return (
     <div>
-      <div className={classes.logo}>
-        <BugReport fontSize='large' />
-      </div>
+      {!isSmallScreen && (
+        <div className={classes.logo}>
+          <BugReport fontSize='large' />
+        </div>
+      )}
       <BottomNavigation
         value={current}
-        onChange={(event: React.ChangeEvent<{}>, newValue: string) => setCurrent(newValue)}
-        className={classes.root}
+        onChange={(_, newValue: string) => setCurrent(newValue)}
+        className={clsx(isSmallScreen ? classes.rootSmallScreen : classes.root)}
       >
-        <BottomNavigationAction classes={{ root: classes.action, selected: classes.selected }} label='Home' value='home' icon={<Home />} />
+        <BottomNavigationAction
+          classes={{ root: classes.action, selected: classes.selected }}
+          label='Home'
+          value='home'
+          icon={<HomeTwoTone />}
+        />
         <BottomNavigationAction
           classes={{ root: classes.action, selected: classes.selected }}
           label='Zones'
           value='zones'
-          icon={<LocationOn />}
+          icon={<LocationOnTwoTone />}
         />
         <BottomNavigationAction
           classes={{ root: classes.action, selected: classes.selected }}
           label='Tags'
           value='tags'
-          icon={<LocalOffer />}
+          icon={<LocalOfferTwoTone />}
         />
-        <BottomNavigationAction classes={{ root: classes.action, selected: classes.selected }} label='Help' value='help' icon={<Help />} />
+        <BottomNavigationAction
+          classes={{ root: classes.action, selected: classes.selected }}
+          label='Help'
+          value='help'
+          icon={<HelpTwoTone />}
+        />
       </BottomNavigation>
     </div>
   )
