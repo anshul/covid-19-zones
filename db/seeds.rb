@@ -24,7 +24,7 @@ wiki = File.read(Rails.root.join("data/india-districts.wiki"))
 wiki.split(/^===/).reject { |section| section.length < 10 }.map(&:each_line).map(&:to_a).each do |lines|
   st_name, st = lines.first.strip.scan(/(.*)\(([A-Z]+)\)/).first
   st = st.downcase
-  state = State["#{cn}/#{st}"] || State.new(slug: country.slug + "/" + st_name.parameterize, code: "#{cn}/#{st}", name: st_name, parent_zone: country.code)
+  state = State["#{cn}/#{st}"] || State.new(slug: country.slug + "/" + st_name.strip.parameterize, code: "#{cn}/#{st}", name: st_name.strip, parent_zone: country.code)
   say "    - #{state.code} #{state.type.downcase} added (#{state.slug})" unless state.id
   state.save! unless state.id
 
