@@ -15,6 +15,15 @@ class FetchRawData
     parse_response(body: response.body) if response.status == 200
   end
 
+  PATIENT_ATTRS = {
+    external_code:     "patientnumber",
+    gender:            "gender",
+    age:               "agebracket",
+    nationality:       "nationality",
+    transmission_type: "typeoftransmission",
+    announced_on:      "dateannounced",
+    status_changed_on: "statuschangedate"
+  }.freeze
   def parse_response(body:)
     # TODO: make this idempotent
     puts_yellow "Parsing reponse"
@@ -22,48 +31,47 @@ class FetchRawData
     json_data = JSON.parse(body)
 
     # TODO: Refactor this
-    json_data["raw_data"].each do |data|
-      puts_yellow "Parsing data for patient number ##{data['patientnumber']}"
+    json_data["raw_data"].each do |row|
+      puts_yellow "Parsing row for patient number ##{row['patientnumber']}"
 
-      current_patient_count = Patient.count + 1
+      patient_number = row["patientnumber"]
+      slug = "covid19-india-#{patient_number}"
+      code = "c19-in-#{patient_number}"
 
-      patient = Patient.new
-      detected_state = data["detectedstate"].parameterize
-      state = State.find_by(slug: detected_state)
-      state_code = detected_state.presence ? state.blank? ? detected_state : state.code : "unknonw-state"
+      state = State.find_by(code: row["statecode"])
+      state_code = state.present? ? state.code : "unknown-state"
 
-      detected_district = data["detecteddistrict"].parameterize
-      district = District.find_by(slug: detected_district)
-      district_code = detected_district.presence ? district.blank? ? detected_district : district.code : "unknonw-district"
+      district = District.find_by(name: row["detecteddistrict"])
+      district_code = district.present? ? district.code : "unknown-district"
 
-      city = data["detectedcity"].parameterize.presence || "unknonw-city"
-      patient.slug = "in--#{state_code}--#{district_code}--#{city}--#{current_patient_count}"
-      patient.code = "in--#{state_code}--#{district_code}--#{city}--#{current_patient_count}"
-      patient.external_code = data["patientnumber"]
-      patient.status = data["currentstatus"].parameterize.presence ? data["currentstatus"].parameterize : "unknown"
-      patient.zone_code = "in/#{state_code}/#{district_code}/#{city}"
-      patient.gender = data["gender"]
-      patient.age = data["agebracket"]
-      patient.nationality = data["nationality"]
-      patient.transmission_type = data["typeoftransmission"]
-      patient.announced_on = data["dateannounced"]
-      patient.status_changed_on = data["statuschangedate"]
+      city = City.find_by(name: row["detectedcity"])
+      city_code = city.present? ? city.code : "unknonw-city"
 
-      source = Source.new
-      source.slug = "covid2019-india-#{current_patient_count}"
-      source.code = "covid2019-india-#{current_patient_count}"
-      source.name = "INDIA COVID-19 TRACKER"
-      source.details = {
-        source_1: data["source1"],
-        source_2: data["source2"],
-        source_3: data["source3"]
-      }.to_json
+      patient = Patient.new(
+        slug:      slug,
+        code:      code,
+        status:    row["currentstatus"].parameterize,
+        zone_code: "in/#{state_code}/#{district_code}/#{city_code}",
+        **PATIENT_ATTRS.transform_values { |key| row[key.to_s] }
+      )
+
+      source = Source.new(
+        slug:    "covid19-india-#{patient_number}",
+        code:    "c19-in-#{patient_number}",
+        name:    "INDIA COVID-19 TRACKER",
+        details: {
+          source_1: row["source1"],
+          source_2: row["source2"],
+          source_3: row["source3"]
+        }
+      )
 
       patient.source = source.code if source.save
+      binding.pry
 
       next if patient.save
 
-      puts_red "Parsing data for patient number ##{data['patientnumber']}, error: #{patient.errors.full_messages.to_sentence}"
+      puts_red "Error: ##{row['patientnumber']} => #{patient.errors.full_messages.to_sentence}"
     end
   end
 
