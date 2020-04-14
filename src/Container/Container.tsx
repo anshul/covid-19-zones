@@ -1,21 +1,12 @@
 import React from 'react'
-import {
-  Typography,
-  AppBar,
-  Toolbar,
-  Container as MuiContainer,
-  makeStyles,
-  Theme,
-  createStyles,
-  Grid,
-  Card,
-  CardContent,
-} from '@material-ui/core'
+import { Typography, Container as MuiContainer, makeStyles, Theme, createStyles, Grid, Card, CardContent } from '@material-ui/core'
 import BarChart from '../components/Charts/BarChart'
+import Navbar from './Navbar'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
+      display: 'flex',
       backgroundColor: theme.palette.background.default,
       color: theme.palette.text.primary,
     },
@@ -26,13 +17,19 @@ const useStyles = makeStyles((theme: Theme) =>
       borderBottomColor: theme.palette.divider,
     },
     content: {
-      height: 'calc(100vh - 65px)',
-      marginTop: '65px',
-      '& > div': {
-        paddingTop: theme.spacing(2),
-        paddingLeft: theme.spacing(3),
-        paddingRight: theme.spacing(3),
-      },
+      height: '100vh',
+      borderRadius: '12px',
+      backgroundColor: theme.palette.background.paper,
+      marginTop: '72px',
+    },
+    sidebar: {
+      paddingRight: theme.spacing(1),
+    },
+    sidebarItem: {
+      borderRadius: theme.spacing(1),
+    },
+    sidebarNestedItem: {
+      paddingLeft: theme.spacing(4),
     },
   })
 )
@@ -42,14 +39,8 @@ const Container: React.FC = () => {
 
   return (
     <div className={classes.root}>
-      <AppBar position='fixed' className={classes.appbar} elevation={0}>
-        <MuiContainer>
-          <Toolbar>
-            <Typography variant='h6'>COVID19ZONES</Typography>
-          </Toolbar>
-        </MuiContainer>
-      </AppBar>
-      <MuiContainer className={classes.content}>
+      <Navbar />
+      <MuiContainer className={classes.content} maxWidth='xl'>
         <Grid container>
           <Grid item xs={12}>
             <Card variant='outlined'>
