@@ -1,4 +1,6 @@
-require 'test_helper'
+# frozen_string_literal: true
+
+require "test_helper"
 
 class UserTest < ActiveSupport::TestCase
   %i[admin].each do |user|
@@ -8,4 +10,3 @@ class UserTest < ActiveSupport::TestCase
     end
   end
 end
-

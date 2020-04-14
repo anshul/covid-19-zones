@@ -1,4 +1,4 @@
 # frozen_string_literal: true
 
-module SinglePageAppHelper
+class Source < ApplicationRecord
 end

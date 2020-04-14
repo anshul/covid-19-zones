@@ -1,0 +1,6 @@
+maharashtra:
+  slug: maharashtra
+  code: mh
+  type: State
+  parent_zone: in
+  name: Maharashtra

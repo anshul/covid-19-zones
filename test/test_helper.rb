@@ -19,7 +19,7 @@ Minitest::Reporters.use!(
 
 module ActiveSupport
   class TestCase
-    parallelize(workers: 2)
+    # parallelize(workers: 2)
 
     fixtures :all
 

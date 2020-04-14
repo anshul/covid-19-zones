@@ -10,10 +10,65 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_11_084040) do
+ActiveRecord::Schema.define(version: 2020_04_13_151911) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "patients", force: :cascade do |t|
+    t.string "slug", null: false
+    t.string "code", null: false
+    t.string "external_code", null: false
+    t.string "status", null: false
+    t.string "zone_code", null: false
+    t.string "source", null: false
+    t.string "name"
+    t.string "gender"
+    t.string "age"
+    t.string "nationality"
+    t.string "transmission_type"
+    t.date "announced_on", null: false
+    t.date "status_changed_on"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["code"], name: "index_patients_on_code", unique: true
+    t.index ["external_code", "source"], name: "index_patients_on_external_code_and_source", unique: true
+    t.index ["slug"], name: "index_patients_on_slug", unique: true
+    t.index ["status"], name: "index_patients_on_status"
+    t.index ["zone_code"], name: "index_patients_on_zone_code"
+  end
+
+  create_table "sources", force: :cascade do |t|
+    t.string "slug", null: false
+    t.string "code", null: false
+    t.string "name"
+    t.jsonb "details", default: {}, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["code"], name: "index_sources_on_code", unique: true
+    t.index ["slug"], name: "index_sources_on_slug", unique: true
+  end
+
+  create_table "taggings", force: :cascade do |t|
+    t.string "taggable_tag"
+    t.string "taggable_type"
+    t.bigint "taggable_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["taggable_type", "taggable_id"], name: "index_taggings_on_taggable_type_and_taggable_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "slug", null: false
+    t.string "code", null: false
+    t.string "name"
+    t.string "tag_md"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["code"], name: "index_tags_on_code", unique: true
+    t.index ["slug"], name: "index_tags_on_slug", unique: true
+    t.index ["tag_md"], name: "index_tags_on_tag_md"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -39,6 +94,20 @@ ActiveRecord::Schema.define(version: 2020_04_11_084040) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
+  end
+
+  create_table "zones", force: :cascade do |t|
+    t.string "slug", null: false
+    t.string "code", null: false
+    t.string "type", null: false
+    t.string "name"
+    t.string "parent_zone"
+    t.string "zone_md"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["code"], name: "index_zones_on_code", unique: true
+    t.index ["slug"], name: "index_zones_on_slug", unique: true
+    t.index ["zone_md"], name: "index_zones_on_zone_md"
   end
 
 end
