@@ -11,4 +11,8 @@ class ApplicationRecord < ActiveRecord::Base
   def self.reset_cache
     @cached = {}
   end
+
+  def self.view_attrs
+    @view_attrs ||= attribute_names.map(&:to_s) - %w[id created_at updated_at]
+  end
 end
