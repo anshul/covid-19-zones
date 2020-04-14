@@ -97,17 +97,19 @@ ActiveRecord::Schema.define(version: 2020_04_13_151911) do
   end
 
   create_table "zones", force: :cascade do |t|
+    t.string "type", null: false
     t.string "slug", null: false
     t.string "code", null: false
-    t.string "type", null: false
-    t.string "name"
+    t.string "name", null: false
     t.string "parent_zone"
-    t.string "zone_md"
+    t.string "zone_md", default: "", null: false
+    t.jsonb "details", default: "{}", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["code"], name: "index_zones_on_code", unique: true
+    t.index ["name"], name: "index_zones_on_name"
     t.index ["slug"], name: "index_zones_on_slug", unique: true
-    t.index ["zone_md"], name: "index_zones_on_zone_md"
+    t.index ["type"], name: "index_zones_on_type"
   end
 
 end
