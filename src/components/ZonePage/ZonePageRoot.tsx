@@ -15,7 +15,7 @@ import {
 } from '@material-ui/core'
 import useSWR from 'swr'
 import { history } from '../../history'
-import { ArrowBack } from '@material-ui/icons'
+import { ArrowBack, ArrowForward } from '@material-ui/icons'
 import clsx from 'clsx'
 
 interface Props {

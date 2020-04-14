@@ -9,8 +9,8 @@ const Routes: React.FC = () => {
     <Switch>
       {/* <Route path='/home' component={Home} /> */}
       {/* <Route exact path='/' component={Home} /> */}
-      <Route path='/zone/:slug*' component={ZonePage} />
-      <Redirect from='/' to='/zone/india/maharashtra/mumbai' />
+      <Route path='/zones/:slug*' component={ZonePage} />
+      <Redirect from='/' to='/zones/india/maharashtra/mumbai' />
     </Switch>
   )
 }
