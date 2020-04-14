@@ -16,14 +16,16 @@ country.code = "in"
 country.name = "India"
 country.save
 
+puts "1 country imported"
+
 file = File.open("data/districts.json", "r")
 json_data = JSON.parse(file.read)
 
 state_data = json_data.map { |data| { state_code: data["properties"]["ID_1"], state_name: data["properties"]["NAME_1"] } }.uniq
 state_data.each do |data|
   state = State.new
-  state.slug = data[:state_name].parameterize
-  state.code = data[:state_code].parameterize
+  state.slug = "india/#{data[:state_name].parameterize}"
+  state.code = "in/#{data[:state_code].parameterize}"
   state.name = data[:state_name]
   state.parent_zone = "in"
   state.save
@@ -31,13 +33,13 @@ end
 
 puts "#{state_data.count} states imported"
 
-district_data = json_data.map { |data| { district_name: data["properties"]["NAME_2"], state_code: data["properties"]["ID_1"] } }.uniq
+district_data = json_data.map { |data| { district_name: data["properties"]["NAME_2"], state_code: data["properties"]["ID_1"], district_code: data["properties"]["HASC_2"] } }.uniq
 district_data.each do |data|
   district = District.new
-  district.slug = "#{data[:district_name].parameterize}-#{data[:state_code].parameterize}"
-  district.code = "#{data[:district_name].parameterize}-#{data[:state_code].parameterize}"
+  district.slug = "india/#{data[:state_code].parameterize}/#{data[:district_name].parameterize}"
+  district.code = data[:district_code].split(".").join("/").downcase
   district.name = data[:district_name]
-  district.parent_zone = data[:state_code]
+  district.parent_zone = "in/#{data[:state_code].downcase}"
   district.save
 end
 

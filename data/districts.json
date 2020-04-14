@@ -4226,7 +4226,7 @@
       "ID_1": "DD",
       "NAME_2": "Junagadh",
       "VARNAME_2": "",
-      "HASC_2": "IN.GJ.JU",
+      "HASC_2": "IN.DD.JU",
       "TYPE_2": "District",
       "ENGTYPE_2": "District"
     }
@@ -7566,7 +7566,7 @@
       "ID_1": "MP",
       "NAME_2": "Anuppur",
       "VARNAME_2": "",
-      "HASC_2": "IN.MP.SH",
+      "HASC_2": "IN.MP.AP",
       "TYPE_2": "District",
       "ENGTYPE_2": "District"
     }
@@ -9693,7 +9693,7 @@
       "ID_1": "OD",
       "NAME_2": "Jajpur",
       "VARNAME_2": "",
-      "HASC_2": "IN.RJ.JP",
+      "HASC_2": "IN.OD.JP",
       "TYPE_2": "District",
       "ENGTYPE_2": "District"
     }
@@ -14532,7 +14532,7 @@
       "ID_1": "WB",
       "NAME_2": "West Midnapore",
       "VARNAME_2": "Paschim Medinipur",
-      "HASC_2": "IN.WB.ME",
+      "HASC_2": "IN.WB.MW",
       "TYPE_2": "District",
       "ENGTYPE_2": "District"
     }
