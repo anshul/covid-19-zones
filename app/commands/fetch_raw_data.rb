@@ -38,7 +38,7 @@ class FetchRawData
       slug = "covid19-india-#{patient_number}"
       code = "c19-in-#{patient_number}"
 
-      state = State.find_by(code: row["statecode"])
+      state = State.find_by(name: row["detectedstate"])
       state_code = state.present? ? state.code : "unknown-state"
 
       district = District.find_by(name: row["detecteddistrict"])
