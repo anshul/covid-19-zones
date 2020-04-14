@@ -107,7 +107,7 @@ class FetchCovid19india < BaseCommand
 
     city = City.named_or_new(parent_zone: district.code, name: row["detectedcity"])
 
-    "in/#{state.code}/#{district.code}/#{city.code}/other"
+    "#{city.code}/other"
   end
 
   def signature(row)

@@ -2,6 +2,7 @@
 
 class Patient < ApplicationRecord
   validates :code, :external_code, :source, :zone_code, :announced_on, presence: true
+  validates :zone_code, format: %r{\A[a-z\-]+/[a-z\-]+/[a-z\-]+/[a-z0-9\-]+/[a-z0-9\-]+\z}
 
   STATUSES = %w[unknown confirmed hospitalized recovered migrated deceased].freeze
 
