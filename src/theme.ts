@@ -18,7 +18,7 @@ export const baseTheme = createMuiTheme(
         paper: '#1b1c21',
         default: '#141419',
       },
-      divider: '#27292e'
+      divider: '#27292e',
     },
 
     typography: {

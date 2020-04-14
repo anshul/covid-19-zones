@@ -1,5 +1,17 @@
 import React from 'react'
-import { Typography, AppBar, Toolbar, Container as MuiContainer, makeStyles, Theme, createStyles, useTheme, Grid, Paper, Card, CardHeader, CardContent } from '@material-ui/core'
+import {
+  Typography,
+  AppBar,
+  Toolbar,
+  Container as MuiContainer,
+  makeStyles,
+  Theme,
+  createStyles,
+  Grid,
+  Card,
+  CardContent,
+} from '@material-ui/core'
+import BarChart from '../components/Charts/BarChart'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -27,7 +39,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const Container: React.FC = () => {
   const classes = useStyles()
-  console.log(useTheme())
+
   return (
     <div className={classes.root}>
       <AppBar position='fixed' className={classes.appbar} elevation={0}>
@@ -40,19 +52,20 @@ const Container: React.FC = () => {
       <MuiContainer className={classes.content}>
         <Grid container>
           <Grid item xs={12}>
-            <Card variant="outlined">
+            <Card variant='outlined'>
               <CardContent>
                 <Typography variant='h6'>Some stuff</Typography>
                 <Typography variant='body1'>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque et numquam porro dolores obcaecati iusto minima, ipsam commodi aut
-                  officiis suscipit consectetur accusamus eius temporibus nisi! Ut temporibus aspernatur suscipit!
-            </Typography>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque et numquam porro dolores obcaecati iusto minima, ipsam commodi
+                  aut officiis suscipit consectetur accusamus eius temporibus nisi! Ut temporibus aspernatur suscipit!
+                </Typography>
               </CardContent>
+              <BarChart />
             </Card>
           </Grid>
         </Grid>
       </MuiContainer>
-    </div >
+    </div>
   )
 }
 
