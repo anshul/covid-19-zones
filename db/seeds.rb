@@ -33,10 +33,10 @@ wiki.split(/^===/).reject { |section| section.length < 10 }.map(&:each_line).map
 
     _, dist, fname, hqname, pop2001, farea, fdensity = l.split("||").map(&:strip)
 
-    dist = dist =~ /dash/ ? namify.call(fname).parameterize[0, 8] : dist.downcase
+    dist = dist =~ /dash/ ? namify.call(fname).parameterize[0, 20] : dist.downcase
     name = namify.call(fname)
     hq = namify.call(hqname)
-    details = { name: name, pop2001: numerify.call(pop2001), area: [numerify.call(farea), ""], density: [numerify.call(fdensity), ""] }
+    details = { name: name, pop2001: numerify.call(pop2001), area: [numerify.call(farea), "km²"], density: [numerify.call(fdensity), "/km²"] }
     district = District["#{cn}/#{st}/#{dist}"] || District.new(slug: state.slug + "/" + name.parameterize, code: "#{cn}/#{st}/#{dist}", name: name, parent_zone: state.code, details: details)
     say "      - #{district.code} #{district.type.downcase} added (#{district.slug})" unless district.id
     district.save! unless district.id
