@@ -12,6 +12,6 @@ class ZonesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should show stats for india" do
-    get zone_show_url, params: { slug: "in" }
+    get zone_show_url, params: { slug: "india" }
   end
 end

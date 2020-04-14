@@ -23,7 +23,10 @@ const ZonePageRoot: React.FC<Props> = ({ slug }) => {
     <>
       <Paper className={classes.lineChartContainer}>
         <ResponsiveLine
-          data={[{ id: 'Confirmed Cases', data: data?.perDayCounts ?? [] }]}
+          data={[
+            { id: 'Confirmed Cases (Daily)', data: data?.perDayCounts ?? [] },
+            { id: 'Confirmed Cases (3 Day Moving Average)', data: data?.threeDayMovingAverage ?? [] },
+          ]}
           margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
           xScale={{ type: 'point' }}
           yScale={{ type: 'linear', min: 'auto', max: 'auto', reverse: false }}
