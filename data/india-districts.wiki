@@ -213,7 +213,7 @@
 |-
 | 1 ||	AR|| [[Araria district|Araria]]|| [[Araria]]|| align=right | 2,806,200|| align=right | 2,829|| align=right | 992
 |-
-| 2 ||  AR|| [[Arwal district|Arwal]]|| [[Arwal]]|| align=right | 700,843|| align=right | 638|| align=right | 1,098
+| 2 ||  ARW|| [[Arwal district|Arwal]]|| [[Arwal]]|| align=right | 700,843|| align=right | 638|| align=right | 1,098
 |-
 | 3 ||	AU|| [[Aurangabad district, Bihar|Aurangabad]]|| [[Aurangabad, Bihar|Aurangabad]]|| align=right | 2,511,243|| align=right | 3,303|| align=right | 760
 |-
@@ -355,7 +355,7 @@
 |-
 | 27 || SJ|| [[Surajpur district|Surajpur]]|| [[Surajpur]] || align=right | 6,60,280|| align=right | 6,787|| align=right | 150
 |-
-| 28 || SJ|| [[Surguja district|Surguja]]|| [[Ambikapur, Chhattisgarh|Ambikapur]] || align=right | 4,20,661|| align=right | 3,265|| align=right | 150
+| 28 || SG|| [[Surguja district|Surguja]]|| [[Ambikapur, Chhattisgarh|Ambikapur]] || align=right | 4,20,661|| align=right | 3,265|| align=right | 150
 |-
 |}
 
@@ -641,7 +641,7 @@
 |-
 | 7 || CJ|| [[Chamarajanagar district|Chamarajnagar]]|| [[Chamarajanagar]]|| align=right | 1,020,962|| align=right | 5,102|| align=right | 200
 |-
-| 8 || CK|| [[Chikkaballapur district|Chikkaballapur]] || [[Chikkaballapur]] || align=right | 1,254,377 || align=right | 4,208 || align=right | 298
+| 8 || CKB|| [[Chikkaballapur district|Chikkaballapur]] || [[Chikkaballapur]] || align=right | 1,254,377 || align=right | 4,208 || align=right | 298
 |-
 | 9 || CK|| [[Chikkamagaluru district|Chikkamagaluru]]|| [[Chikmagalur]]|| align=right | 1,137,753 || align=right | 7,201|| align=right | 158
 |-
@@ -1015,7 +1015,7 @@
 |-
 | 8 || {{dash}}||[[South West Khasi Hills]]|| [[Mawkyrwat]]|| align=right | 110,152 || align=right | 1,341 || align=right |82
 |-
-| 9 || WG|| [[West Jaintia Hills]]|| [[Jowai]]|| align=right | 270,352 || align=right | 1,693 || align=right | 160
+| 9 || WJH|| [[West Jaintia Hills]]|| [[Jowai]]|| align=right | 270,352 || align=right | 1,693 || align=right | 160
 |-
 | 10 || WG|| [[West Garo Hills]]|| [[Tura, India|Tura]]|| align=right | 642,923 || align=right | 3,714 || align=right | 173
 |-
@@ -1207,7 +1207,7 @@
 |-
 | 15 || MU|| [[Sri Muktsar Sahib district|Sri Muktsar Sahib]]|| [[Sri Muktsar Sahib]]|| align=right | 902,702 || align=right | 2,596|| align=right | 348
 |-
-| 16 || PA|| [[Pathankot district|Pathankot]]|| [[Pathankot]]|| align=right | 626,154|| align="right" | 929|| align="right" | 674
+| 16 || PAT|| [[Pathankot district|Pathankot]]|| [[Pathankot]]|| align=right | 626,154|| align="right" | 929|| align="right" | 674
 |-
 | 17 || PA|| [[Patiala district|Patiala]]|| [[Patiala]]|| align=right | 2,892,282 || align=right | 3,175 || align=right | 596
 |-
@@ -1399,7 +1399,7 @@
 |-
 | 31 || TK|| [[Thoothukudi district|Thoothukudi]]|| [[Thoothukudi]] || align="right" | 1,738,376 || align="right" | 4,594 || align=right | 378
 |-
-| 32 || TP|| [[Tirupattur district|Tirupattur]]|| [[Tirupattur]] || align="right" | 1,111,812|| align="right" |1,792|| align="right" |620
+| 32 || TPT|| [[Tirupattur district|Tirupattur]]|| [[Tirupattur]] || align="right" | 1,111,812|| align="right" |1,792|| align="right" |620
 |-
 | 33 || TL|| [[Tiruvallur district|Tiruvallur]]|| [[Tiruvallur]]|| align=right | 3,725,697 || align="right" | 3,424 || align=right | 1,049
 |-
@@ -1569,7 +1569,7 @@
 |-
 | 16 || BS|| [[Basti district|Basti]]|| [[Basti, Uttar Pradesh|Basti]]|| align=right | 2,461,056 || align=right | 2,687 || align=right | 916
 |-
-| 17 || BH||[[Bhadohi district|Bhadohi]]||[[Gyanpur]]|| align="right" | 1,554,203 || align="right" | 960 || align="right" | 1,531
+| 17 || BHA||[[Bhadohi district|Bhadohi]]||[[Gyanpur]]|| align="right" | 1,554,203 || align="right" | 960 || align="right" | 1,531
 |-
 | 18 || BI|| [[Bijnor district|Bijnor]]|| [[Bijnor]]|| align=right | 3,683,896 || align=right | 4,561 || align=right | 808
 |-
@@ -1745,7 +1745,7 @@
 |-
 | 2 || BN|| [[Bankura district|Bankura]]|| [[Bankura]]|| align=right | 3,596,292 || align=right | 6,882 || align=right | 523
 |-
-| 3 || BR|| [[Paschim Bardhaman district|Paschim Bardhaman]]|| [[Asansol]]|| align=right | 2,882,031|| align=right | 1,603 || align=right | 1,100
+| 3 || PBR|| [[Paschim Bardhaman district|Paschim Bardhaman]]|| [[Asansol]]|| align=right | 2,882,031|| align=right | 1,603 || align=right | 1,100
 |-
 | 4 || BR|| [[Purba Bardhaman district|Purba Bardhaman]]|| [[Bardhaman]]|| align=right | 4,835,532 || align=right |	5,433 || align=right | 890
 |-
