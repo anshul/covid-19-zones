@@ -1,9 +1,22 @@
 import React from 'react'
 import { ResponsiveLine } from '@nivo/line'
-import { Paper, makeStyles, createStyles, Theme, List, ListItem, Grid, ListItemText, ListSubheader, ListItemIcon, Typography } from '@material-ui/core'
+import {
+  Paper,
+  makeStyles,
+  createStyles,
+  Theme,
+  List,
+  ListItem,
+  Grid,
+  ListItemText,
+  ListSubheader,
+  ListItemIcon,
+  Typography,
+} from '@material-ui/core'
 import useSWR from 'swr'
 import { history } from '../../history'
 import { ArrowBack } from '@material-ui/icons'
+import clsx from 'clsx'
 
 interface Props {
   slug: string
@@ -24,9 +37,16 @@ const useStyles = makeStyles((theme: Theme) =>
       padding: theme.spacing(1),
       cursor: 'pointer',
       '&:hover': {
-        backgroundColor: "#eaeaea"
-      }
-    }
+        backgroundColor: '#eaeaea',
+      },
+    },
+    zoneListParentItem: {
+      display: 'flex',
+      alignItems: 'center',
+    },
+    zoneListParentItemText: {
+      marginLeft: theme.spacing(2),
+    },
   })
 )
 
@@ -38,27 +58,20 @@ const ZonePageRoot: React.FC<Props> = ({ slug, gotoZone, gotoParentZone }) => {
     <Grid container spacing={1}>
       <Grid item xs={12} md={4}>
         <Paper>
-          {/* <List className={classes.zoneList}>
-            {
-              data?.parentZone && (
-              <ListItem button onClick={() => gotoParentZone()}>
-                <ListItemIcon>
-                  <ArrowBack />
-                </ListItemIcon>
-                <ListItemText primary={data?.parentZone.name} />
-              </ListItem>
-              )
-            }
-            {data?.siblingZones.map((zone: any) => (
-              <ListItem key={zone.slug} selected={zone.slug === slug} button onClick={() => gotoZone(zone.slug)}>
-                <ListItemText primary={zone.name} />
-              </ListItem>
-            ))}
-          </List> */}
+          {data?.parentZone && (
+            <div onClick={() => gotoParentZone()} className={clsx(classes.zoneListItem, classes.zoneListParentItem)}>
+              <ArrowBack />
+              <Typography variant='body1' color='textSecondary' className={classes.zoneListParentItemText}>
+                {data?.parentZone.name}
+              </Typography>
+            </div>
+          )}
           {data?.siblingZones.map((zone: any) => (
-              <div key={zone.slug} onClick={() => gotoZone(zone.slug)} className={classes.zoneListItem}>
-                <Typography variant="body1">{zone.name} ({zone.totalCases})</Typography>
-              </div>
+            <div key={zone.slug} onClick={() => gotoZone(zone.slug)} className={classes.zoneListItem}>
+              <Typography variant='body1'>
+                {zone.name} ({zone.totalCases})
+              </Typography>
+            </div>
           ))}
         </Paper>
       </Grid>
