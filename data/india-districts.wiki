@@ -899,7 +899,7 @@
 |-
 | 16 || LA|| [[Latur district|Latur]]|| [[Latur]]|| align=right | 2,455,543 || align=right | 7,157|| align=right | 343
 |-
-| 17 || MC||[[Mumbai City district|Mumbai City]]||[[Mumbai]]|| align="right" | 3,145,966 || align=right | 69 || align=right | 20,038
+| 17 || MC||[[Mumbai City district|Mumbai]]||[[Mumbai]]|| align="right" | 3,145,966 || align=right | 69 || align=right | 20,038
 |-
 | 18 || MU|| [[Mumbai Suburban district|Mumbai suburban]]|| [[Bandra]] (East)|| align=right | 9,332,481 || align=right | 369 || align=right | 20,925
 |-
