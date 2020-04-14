@@ -6,6 +6,7 @@ ENV["PROJECT_ENV"] = "test"
 require_relative "../config/environment"
 require "rails/test_help"
 require "minitest/reporters"
+require "minitest/focus"
 
 require_relative "./test_helpers/assert_subset"
 require_relative "./test_helpers/hash_diff_helper"
