@@ -13,7 +13,7 @@ class FetchCovid19indiaTest < ::ActiveSupport::TestCase
     record_options = { record: record? ? :all : :none, match_requests_on: %i[uri] }
     ::ImportWiki.perform_task
     VCR.use_cassette("covid19india", record_options) do
-      assert_difference "::Job.count" => 1 do
+      assert_difference "::Job.count" => 1, "::Patient.count" => 10_983 do
         cmd = ::FetchCovid19india.new
         assert cmd.call, "Command Failed: #{cmd.error_message}"
       end

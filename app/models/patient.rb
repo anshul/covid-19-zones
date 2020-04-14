@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Patient < ApplicationRecord
-  validates :code, :external_code, :source, :zone_code, presence: true
+  validates :code, :external_code, :source, :zone_code, :announced_on, presence: true
 
   STATUSES = %w[unknown confirmed hospitalized recovered migrated deceased].freeze
 

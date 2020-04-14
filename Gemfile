@@ -61,3 +61,5 @@ end
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 
 gem "minitest-focus", "~> 1.1"
+
+gem "activerecord-import", "~> 1.0"

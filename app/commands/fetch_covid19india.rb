@@ -45,7 +45,8 @@ class FetchCovid19india < BaseCommand
   def parse
     @raw_patients = JSON.parse(response.body)["raw_data"]
     log(:green, "Found #{new_patients.size} new or updated patients")
-    add_error("TODO: bulk import")
+
+    Patient.import!(new_patients, on_duplicate_key_update: { conflict_target: %i[code], columns: (Patient.attribute_names - %w[id first_imported_at]).map(&:to_sym) }, batch_size: 500)
   end
 
   def new_patients
@@ -59,19 +60,19 @@ class FetchCovid19india < BaseCommand
   def patients
     return @patients if @patients
 
-    @patients = raw_patients.map { |h| parse_row(h) }
+    @patients = raw_patients.map { |h| parse_row(h) }.compact
   end
 
   def parse_row(row)
     patient_number = as_str(row["patientnumber"])
-    return nil unless patient_number
+    return nil unless patient_number && row["dateannounced"].present?
 
     Patient.new(
       slug:               Patient.slug_for(patient_number),
       code:               Patient.code_for(patient_number),
       source:             source.code,
       external_code:      patient_number.parameterize,
-      status:             row["currentstatus"].parameterize,
+      status:             row["currentstatus"].parameterize.presence || "unknown",
       status_changed_on:  as_date(row["statuschangedate"]),
       zone_code:          zone_code_for(row),
       external_signature: signature(row),
