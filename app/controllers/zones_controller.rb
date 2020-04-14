@@ -7,13 +7,10 @@ class ZonesController < ApplicationController
   end
 
   def show
-    confirmed_cases_counts = Patient.where("zone_code like ?", "#{params[:code]}/%").group(:announced_on).count
+    per_day_counts = Patient.where("zone_code like ?", "#{params[:code]}/%").group(:announced_on).count
 
     render status: :ok, json: {
-      perDayCounts: {
-        id:   "Confirmed Cases",
-        data: confirmed_cases_counts.sort_by { |announced_on, _| announced_on }.map { |announced_on, count| { x: announced_on.strftime("%b %d"), y: count } }
-      }
+      perDayCounts: per_day_counts.sort_by { |announced_on, _| announced_on }.map { |announced_on, count| { x: announced_on.strftime("%b %d"), y: count } }
     }
   end
 
