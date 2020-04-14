@@ -1,6 +1,18 @@
 import React from 'react'
 import { ResponsiveLine } from '@nivo/line'
-import { Paper, makeStyles, createStyles, Theme, List, ListItem, Grid, ListItemText, ListSubheader, ListItemIcon, Typography } from '@material-ui/core'
+import {
+  Paper,
+  makeStyles,
+  createStyles,
+  Theme,
+  List,
+  ListItem,
+  Grid,
+  ListItemText,
+  ListSubheader,
+  ListItemIcon,
+  Typography,
+} from '@material-ui/core'
 import useSWR from 'swr'
 import { history } from '../../history'
 import { ArrowBack } from '@material-ui/icons'
@@ -25,16 +37,16 @@ const useStyles = makeStyles((theme: Theme) =>
       padding: theme.spacing(1),
       cursor: 'pointer',
       '&:hover': {
-        backgroundColor: "#eaeaea"
-      }
+        backgroundColor: '#eaeaea',
+      },
     },
     zoneListParentItem: {
       display: 'flex',
-      alignItems: 'center'
+      alignItems: 'center',
     },
     zoneListParentItemText: {
-      marginLeft: theme.spacing(2)
-    }
+      marginLeft: theme.spacing(2),
+    },
   })
 )
 
@@ -46,18 +58,20 @@ const ZonePageRoot: React.FC<Props> = ({ slug, gotoZone, gotoParentZone }) => {
     <Grid container spacing={1}>
       <Grid item xs={12} md={4}>
         <Paper>
-          {
-            data?.parentZone && (
-              <div onClick={() => gotoParentZone()} className={clsx(classes.zoneListItem, classes.zoneListParentItem)}>
-                <ArrowBack />
-                <Typography variant="body1" color="textSecondary" className={classes.zoneListParentItemText}>{data?.parentZone.name}</Typography>
-              </div>
-            )
-          }
+          {data?.parentZone && (
+            <div onClick={() => gotoParentZone()} className={clsx(classes.zoneListItem, classes.zoneListParentItem)}>
+              <ArrowBack />
+              <Typography variant='body1' color='textSecondary' className={classes.zoneListParentItemText}>
+                {data?.parentZone.name}
+              </Typography>
+            </div>
+          )}
           {data?.siblingZones.map((zone: any) => (
-              <div key={zone.slug} onClick={() => gotoZone(zone.slug)} className={classes.zoneListItem}>
-                <Typography variant="body1">{zone.name} ({zone.totalCases})</Typography>
-              </div>
+            <div key={zone.slug} onClick={() => gotoZone(zone.slug)} className={classes.zoneListItem}>
+              <Typography variant='body1'>
+                {zone.name} ({zone.totalCases})
+              </Typography>
+            </div>
           ))}
         </Paper>
       </Grid>

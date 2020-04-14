@@ -7,10 +7,10 @@ import ZonePage from '../components/ZonePage'
 const Routes: React.FC = () => {
   return (
     <Switch>
-      <Route path='/home' component={Home} />
-      <Route exact path='/' component={Home} />
-      <Redirect exact from='/' to='/home' />
+      {/* <Route path='/home' component={Home} /> */}
+      {/* <Route exact path='/' component={Home} /> */}
       <Route path='/zone/:slug*' component={ZonePage} />
+      <Redirect from='/' to='/zone/india/maharashtra/mumbai' />
     </Switch>
   )
 }
