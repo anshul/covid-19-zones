@@ -1,6 +1,6 @@
 import React from 'react'
 import { ResponsiveLine } from '@nivo/line'
-import { Paper, makeStyles, createStyles, Theme, List, ListItem, Grid, ListItemText, ListSubheader, ListItemIcon } from '@material-ui/core'
+import { Paper, makeStyles, createStyles, Theme, List, ListItem, Grid, ListItemText, ListSubheader, ListItemIcon, Typography } from '@material-ui/core'
 import useSWR from 'swr'
 import { history } from '../../history'
 import { ArrowBack } from '@material-ui/icons'
@@ -20,6 +20,13 @@ const useStyles = makeStyles((theme: Theme) =>
       height: '50vh',
       overflow: 'auto',
     },
+    zoneListItem: {
+      padding: theme.spacing(1),
+      cursor: 'pointer',
+      '&:hover': {
+        backgroundColor: "#eaeaea"
+      }
+    }
   })
 )
 
@@ -29,9 +36,9 @@ const ZonePageRoot: React.FC<Props> = ({ slug, gotoZone, gotoParentZone }) => {
 
   return (
     <Grid container spacing={1}>
-      <Grid item xs={12} md={2}>
+      <Grid item xs={12} md={4}>
         <Paper>
-          <List className={classes.zoneList}>
+          {/* <List className={classes.zoneList}>
             {
               data?.parentZone && (
               <ListItem button onClick={() => gotoParentZone()}>
@@ -47,10 +54,15 @@ const ZonePageRoot: React.FC<Props> = ({ slug, gotoZone, gotoParentZone }) => {
                 <ListItemText primary={zone.name} />
               </ListItem>
             ))}
-          </List>
+          </List> */}
+          {data?.siblingZones.map((zone: any) => (
+              <div key={zone.slug} onClick={() => gotoZone(zone.slug)} className={classes.zoneListItem}>
+                <Typography variant="body1">{zone.name} ({zone.totalCases})</Typography>
+              </div>
+          ))}
         </Paper>
       </Grid>
-      <Grid item xs={12} md={10}>
+      <Grid item xs={12} md={8}>
         <Paper className={classes.lineChartContainer}>
           <ResponsiveLine
             data={[
