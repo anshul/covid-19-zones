@@ -2,18 +2,27 @@ import React from 'react'
 import { Typography, makeStyles, Theme, createStyles, Grid, Card, CardContent } from '@material-ui/core'
 import BarChart from '../components/Charts/BarChart'
 import Navbar from './Navbar'
+import clsx from 'clsx'
+import { useScreen } from '../hooks/useScreen'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      width: '100% !important',
+      width: '100%',
       display: 'flex',
       backgroundColor: theme.palette.background.default,
       color: theme.palette.text.primary,
     },
+    rootSmallScreen: {
+      width: '100% !important',
+      height: '100%',
+      backgroundColor: theme.palette.background.default,
+      color: theme.palette.text.primary,
+    },
     appbar: {
-      width: '100%',
+      width: 'calc(100% - 24px)',
       height: '72px',
+      padding: '0 12px',
       backgroundColor: theme.palette.background.default,
       display: 'flex',
       alignItems: 'center',
@@ -21,6 +30,11 @@ const useStyles = makeStyles((theme: Theme) =>
     content: {
       height: '100vh',
       borderRadius: '12px',
+      paddingBottom: '60px',
+    },
+    gridContainer: {
+      width: '100%',
+      margin: 0,
     },
     sidebar: {
       paddingRight: theme.spacing(1),
@@ -37,16 +51,18 @@ const useStyles = makeStyles((theme: Theme) =>
 const Container: React.FC = () => {
   const classes = useStyles()
 
+  const { isSmallScreen } = useScreen()
+
   return (
-    <div className={classes.root}>
-      <Navbar />
-      <div>
+    <div className={clsx(isSmallScreen ? classes.rootSmallScreen : classes.root)}>
+      {!isSmallScreen && <Navbar />}
+      <div className={classes.content}>
         <div className={classes.appbar}>
           <Typography variant='h6'>COVID19ZONES</Typography>
         </div>
-        <Grid container spacing={1}>
-          <Grid container item xs={9} spacing={1}>
-            <Grid item xs={3}>
+        <Grid className={classes.gridContainer} container spacing={1}>
+          <Grid container item xs={12} sm={12} md={8} xl={9} spacing={1}>
+            <Grid item md={6} xl={3} xs={12}>
               <Card>
                 <CardContent>
                   <Typography variant='subtitle1'>Total Cases</Typography>
@@ -54,7 +70,7 @@ const Container: React.FC = () => {
                 </CardContent>
               </Card>
             </Grid>
-            <Grid item xs={3}>
+            <Grid item md={6} xl={3} xs={12}>
               <Card>
                 <CardContent>
                   <Typography variant='subtitle1'>Recovered</Typography>
@@ -62,7 +78,7 @@ const Container: React.FC = () => {
                 </CardContent>
               </Card>
             </Grid>
-            <Grid item xs={3}>
+            <Grid item md={6} xl={3} xs={12}>
               <Card>
                 <CardContent>
                   <Typography variant='subtitle1'>Active Cases</Typography>
@@ -70,7 +86,7 @@ const Container: React.FC = () => {
                 </CardContent>
               </Card>
             </Grid>
-            <Grid item xs={3}>
+            <Grid item md={6} xl={3} xs={12}>
               <Card>
                 <CardContent>
                   <Typography variant='subtitle1'>Total Death</Typography>
@@ -78,14 +94,14 @@ const Container: React.FC = () => {
                 </CardContent>
               </Card>
             </Grid>
-            <Grid item xs={12}>
-              <Card>
+            <Grid item md={12} xl={12} xs={12}>
+              <Card style={{ height: '100%', minHeight: '250px' }}>
                 <BarChart />
               </Card>
             </Grid>
           </Grid>
-          <Grid container item xs={3}>
-            <Grid item xs={12}>
+          <Grid container item spacing={1} xs={12} sm={12} md={4} xl={3}>
+            <Grid item sm={6} xs={12} md={12} lg={12} xl={12}>
               <Card>
                 <CardContent>
                   <Typography variant='h6'>Alert</Typography>
@@ -95,7 +111,8 @@ const Container: React.FC = () => {
                   </Typography>
                 </CardContent>
               </Card>
-              <br />
+            </Grid>
+            <Grid item sm={6} xs={12} md={12} lg={12} xl={12}>
               <Card>
                 <CardContent>
                   <Typography variant='h6'>Alert</Typography>
@@ -109,6 +126,7 @@ const Container: React.FC = () => {
           </Grid>
         </Grid>
       </div>
+      {isSmallScreen && <Navbar />}
     </div>
   )
 }
