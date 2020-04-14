@@ -32,12 +32,16 @@ const ZonePageRoot: React.FC<Props> = ({ slug, gotoZone, gotoParentZone }) => {
       <Grid item xs={12} md={2}>
         <Paper>
           <List className={classes.zoneList}>
-            <ListItem button onClick={() => gotoParentZone()}>
-              <ListItemIcon>
-                <ArrowBack />
-              </ListItemIcon>
-              <ListItemText primary='Parent Zone' />
-            </ListItem>
+            {
+              data?.parentZone && (
+              <ListItem button onClick={() => gotoParentZone()}>
+                <ListItemIcon>
+                  <ArrowBack />
+                </ListItemIcon>
+                <ListItemText primary={data?.parentZone.name} />
+              </ListItem>
+              )
+            }
             {data?.siblingZones.map((zone: any) => (
               <ListItem key={zone.slug} selected={zone.slug === slug} button onClick={() => gotoZone(zone.slug)}>
                 <ListItemText primary={zone.name} />

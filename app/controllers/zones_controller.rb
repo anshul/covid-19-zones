@@ -20,6 +20,7 @@ class ZonesController < ApplicationController
 
     point_formatter = ->(point) { { x: point[:date], y: point[:count] } }
     render status: :ok, json: {
+      parentZone:            zone.parent.present? ? zone.parent.as_json(only: Zone.view_attrs) : nil,
       siblingZones:          zone.parent&.children&.as_json(only: Zone.view_attrs) || [zone.as_json(only: Zone.view_attrs)],
       perDayCounts:          per_day_data.map { |point| point_formatter.call(point) },
       threeDayMovingAverage: three_day_moving_average.map { |point| point_formatter.call(point) }
