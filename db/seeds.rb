@@ -21,7 +21,7 @@ puts "1 country imported"
 file = File.open("data/districts.json", "r")
 json_data = JSON.parse(file.read)
 
-state_data = json_data.map { |data| { state_code: data["properties"]["ID_1"], state_name: data["properties"]["NAME_1"] } }.uniq
+state_data = json_data.map { |data| { state_code: data["properties"]["STATE_CODE"], state_name: data["properties"]["NAME_1"] } }.uniq
 state_data.each do |data|
   state = State.new
   state.slug = "india/#{data[:state_name].parameterize}"
@@ -33,7 +33,7 @@ end
 
 puts "#{state_data.count} states imported"
 
-district_data = json_data.map { |data| { district_name: data["properties"]["NAME_2"], state_code: data["properties"]["ID_1"], district_code: data["properties"]["HASC_2"] } }.uniq
+district_data = json_data.map { |data| { district_name: data["properties"]["NAME_2"], state_code: data["properties"]["STATE_CODE"], district_code: data["properties"]["HASC_2"] } }.uniq
 district_data.each do |data|
   district = District.new
   district.slug = "india/#{data[:state_code].parameterize}/#{data[:district_name].parameterize}"
