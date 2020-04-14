@@ -2,6 +2,8 @@
 
 class District < Zone
   validates :slug, :code, :type, :name, :parent_zone, presence: true
+  validates :parent_zone, format: %r{\A[a-z\-]+/[a-z\-]+\z}
+  validates :code, format: %r{\A[a-z\-]+/[a-z\-]+/[a-z\-]+\z}
 
   alias_attribute :children, :cities
   alias_attribute :parent, :state

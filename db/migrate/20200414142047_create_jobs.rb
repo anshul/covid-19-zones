@@ -9,6 +9,7 @@ class CreateJobs < ActiveRecord::Migration[6.0]
       t.datetime :started_at
       t.datetime :finished_at
       t.datetime :crashed_at
+      t.bigint :update_count, null: false, default: 0
       t.jsonb :logs, array: true, null: false, default: []
 
       t.timestamps

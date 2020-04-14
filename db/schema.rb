@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2020_04_14_142047) do
     t.datetime "started_at"
     t.datetime "finished_at"
     t.datetime "crashed_at"
+    t.bigint "update_count", default: 0, null: false
     t.jsonb "logs", default: [], null: false, array: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

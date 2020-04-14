@@ -7,14 +7,16 @@ class FetchCovid19india < BaseCommand
     new.call_with_transaction
   end
 
-  attr_reader :response, :raw_patients
+  attr_reader :response, :raw_patients, :unknown_districts
 
   def run
+    @unknown_districts = {}
     log(:yellow, "Starting job #{run_id}:  we have #{Patient.where(source: source.code).count} #{source.code} patient(s).")
     result = fetch &&
              parse &&
              errors.empty?
     mark_job(result)
+    log(:yellow, "Finished job #{run_id}:  we have #{Patient.where(source: source.code).count} #{source.code} patient(s).")
     log(:yellow, "Done!", return_value: result)
   rescue StandardError => e
     line = e.backtrace.select { |l| l =~ %r{app/} }.first.sub(Rails.root.to_s, "")
@@ -28,6 +30,7 @@ class FetchCovid19india < BaseCommand
   def mark_job(result)
     f = result ? :finished_at : :crashed_at
     job[f] = Time.zone.now
+    job.update_count = new_patients.size if result
     job.save!
     result
   end
@@ -45,6 +48,9 @@ class FetchCovid19india < BaseCommand
   def parse
     @raw_patients = JSON.parse(response.body)["raw_data"]
     log(:green, "Found #{new_patients.size} new or updated patients")
+    unknown_districts.each do |district, names|
+      log(:yellow, "[WARN] #{district} is an unknown district and occurs in #{names.count} patient(s) including #{names[0, 5].to_sentence}")
+    end
 
     Patient.import!(new_patients, on_duplicate_key_update: { conflict_target: %i[code], columns: (Patient.attribute_names - %w[id first_imported_at]).map(&:to_sym) }, batch_size: 500)
   end
@@ -90,7 +96,13 @@ class FetchCovid19india < BaseCommand
     state = State.named(parent_zone: "in", name: row["detectedstate"])
     return add_error("No state named #{row['detectedstate']} found") unless state
 
-    district = District.named(parent_zone: state.code, name: row["detecteddistrict"]) || District.other(parent_zone: state.code)
+    district = District.named(parent_zone: state.code, name: row["detecteddistrict"])
+    unless district
+      key = "#{row['detecteddistrict']} of #{state.code}"
+      unknown_districts[key] ||= []
+      unknown_districts[key] << row["patientnumber"]
+      district = District.other(parent_zone: state.code)
+    end
     return add_error("No district named #{row['detecteddistrict']} found in #{state.code}") unless district
 
     city = City.named_or_new(parent_zone: district.code, name: row["detectedcity"])
@@ -99,7 +111,7 @@ class FetchCovid19india < BaseCommand
   end
 
   def signature(row)
-    "#{as_str(row['patientnumber'])}-#{Digest::MD5.hexdigest(row.values.map(&:to_s).map(&:strip).sort.join(';'))}"
+    "#{as_str(row['patientnumber'])}-#{Digest::MD5.hexdigest(row.values.map(&:to_s).map(&:strip).sort.join(';') + zone_code_for(row))}"
   end
 
   def source

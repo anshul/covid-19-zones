@@ -51,7 +51,7 @@ class ImportWiki < BaseCommand
     _, dist, fname, hqname, pop2001, farea, fdensity = line.split("||").map(&:strip)
 
     cn = country.code
-    st = state.code
+    st = state.code.sub("#{cn}/", "")
 
     dist = dist =~ /dash/ ? namify(fname).parameterize[0, 20] : dist.downcase
     name = namify(fname)
