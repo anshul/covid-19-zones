@@ -22,10 +22,26 @@ class GetZoneData < BaseQuery
 
   def show
     @result = {
-      parent_zone:           decorated_parent_zone,
-      sibling_zones:         decorated_sibling_zones,
-      series_announced:      chart_announced,
-      series_announced_sma5: chart_announced_sma5
+      y_max:         [announced_vector.max, announced_vector_sma5.max].max,
+      zone:          zone.name,
+      total_cases:   total_cases,
+      active:        {
+        total_count:             total_active_cases,
+        per_day_counts:          chart_announced,
+        five_day_moving_average: chart_announced_sma5
+      },
+      recovered:     {
+        total_count:             total_recovered,
+        per_day_counts:          chart_recovered,
+        five_day_moving_average: chart_recovered_sma5
+      },
+      deceased:      {
+        total_count:             total_deceased,
+        per_day_counts:          chart_deceased,
+        five_day_moving_average: chart_deceased_sma5
+      },
+      parent_zone:   decorated_parent_zone,
+      sibling_zones: decorated_sibling_zones
     }.deep_transform_keys { |k| k.to_s.camelize :lower }
   end
 
@@ -41,6 +57,22 @@ class GetZoneData < BaseQuery
     @sibling_zones ||= parent_zone&.children || [zone]
   end
 
+  def total_cases
+    @total_cases ||= chart_announced.map { |d| d[:y] }.sum.to_i
+  end
+
+  def total_recovered
+    @total_recovered ||= recovered_vector.sum.to_i
+  end
+
+  def total_deceased
+    @total_deceased ||= deceased_vector.sum.to_i
+  end
+
+  def total_active_cases
+    @total_active_cases ||= (announced_vector.sum - total_recovered - total_deceased).to_i
+  end
+
   def decorated_parent_zone
     return @decorated_parent_zone if @decorated_parent_zone
 
@@ -53,8 +85,21 @@ class GetZoneData < BaseQuery
 
     sibling_total_case_counts = Patient.where("zone_code like ?", "#{parent_zone&.code || zone.code}/%").group(:zone_code).count
     total_count_extractor = ->(s_zone) { sibling_total_case_counts.filter { |code| code.starts_with?(s_zone.code) }.map { |_, v| v }.sum }
+    sibling_active_case_counts = Patient.where("zone_code like ?", "#{parent_zone&.code || zone.code}/%").where.not(status: %w[recovered deceased]).group(:zone_code).count
+    total_active_count_extractor = ->(s_zone) { sibling_active_case_counts.filter { |code| code.starts_with?(s_zone.code) }.map { |_, v| v }.sum }
+    sibling_recovered_case_counts = Patient.where("zone_code like ?", "#{parent_zone&.code || zone.code}/%").where(status: "recovered").group(:zone_code).count
+    total_recovered_count_extractor = ->(s_zone) { sibling_recovered_case_counts.filter { |code| code.starts_with?(s_zone.code) }.map { |_, v| v }.sum }
+    sibling_deceased_case_counts = Patient.where("zone_code like ?", "#{parent_zone&.code || zone.code}/%").where(status: "deceased").group(:zone_code).count
+    total_deceased_count_extractor = ->(s_zone) { sibling_recovered_case_counts.filter { |code| code.starts_with?(s_zone.code) }.map { |_, v| v }.sum }
 
-    @decorated_sibling_zones = sibling_zones.map { |z| z.as_json(only: Zone.view_attrs).merge("total_cases" => total_count_extractor.call(z)) }
+    @decorated_sibling_zones = sibling_zones.map do |z|
+      z.as_json(only: Zone.view_attrs).merge({
+                                               "total_cases"     => total_count_extractor.call(z),
+                                               "total_active"    => total_active_count_extractor.call(z),
+                                               "total_recovered" => total_recovered_count_extractor.call(z),
+                                               "total_deceased"  => total_deceased_count_extractor.call(z)
+                                             })
+    end
     @decorated_sibling_zones
   end
 
@@ -64,6 +109,22 @@ class GetZoneData < BaseQuery
 
   def chart_announced_sma5
     @chart_announced_sma5 ||= dates.map { |dt| { x: dt, y: announced_vector_sma5[dt] } }
+  end
+
+  def chart_recovered
+    @chart_recovered ||= dates.map { |dt| { x: dt, y: recovered_vector[dt] } }
+  end
+
+  def chart_recovered_sma5
+    @chart_recovered_sma5 ||= dates.map { |dt| { x: dt, y: recovered_vector_sma5[dt] } }
+  end
+
+  def chart_deceased
+    @chart_deceased ||= dates.map { |dt| { x: dt, y: deceased_vector[dt] } }
+  end
+
+  def chart_deceased_sma5
+    @chart_deceased_sma5 ||= dates.map { |dt| { x: dt, y: deceased_vector_sma5[dt] } }
   end
 
   def index
@@ -90,7 +151,15 @@ class GetZoneData < BaseQuery
     @announced_vector_sma5 ||= announced_vector.rolling_mean(5)
   end
 
+  def recovered_vector_sma5
+    @recovered_vector_sma5 ||= recovered_vector.rolling_mean(5)
+  end
+
+  def deceased_vector_sma5
+    @deceased_vector_sma5 ||= deceased_vector.rolling_mean(5)
+  end
+
   def oldest_date
-    @oldest_date ||= Patient.where("zone_code like ?", "#{parent_zone&.code || zone.code}%").minimum(:announced_on) || 14.days.ago
+    @oldest_date ||= Patient.where("zone_code like ?", "#{parent_zone.code || zone.code}%").minimum(:announced_on) || 14.days.ago
   end
 end

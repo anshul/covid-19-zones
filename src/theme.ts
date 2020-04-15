@@ -22,7 +22,7 @@ export const baseTheme = createMuiTheme(
     // },
 
     typography: {
-      fontFamily: `Roboto Mono, sans-serif`,
+      fontFamily: `Montserrat, sans-serif`,
     },
   },
   {

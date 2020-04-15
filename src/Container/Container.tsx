@@ -42,28 +42,28 @@ const Container: React.FC = () => {
 
   const { isSmallScreen } = useScreen()
 
-  const renderNavBar = () => {
-    return (
-      <Route
-        path='*'
-        render={({ history }) => {
-          const path = history.location.pathname
-          return <Navbar path={path.replace('/', '')} />
-        }}
-      />
-    )
-  }
+  // const renderNavBar = () => {
+  //   return (
+  //     <Route
+  //       path='*'
+  //       render={({ history }) => {
+  //         const path = history.location.pathname
+  //         return <Navbar path={path.replace('/', '')} />
+  //       }}
+  //     />
+  //   )
+  // }
 
   return (
     <div className={clsx(isSmallScreen ? classes.rootSmallScreen : classes.root)}>
-      {!isSmallScreen && renderNavBar()}
+      {/* {!isSmallScreen && renderNavBar()} */}
       <div className={classes.content}>
         <div className={classes.appbar}>
           <Typography variant='h6'>COVID19ZONES</Typography>
         </div>
         <Routes />
       </div>
-      {isSmallScreen && renderNavBar()}
+      {/* {isSmallScreen && renderNavBar()} */}
     </div>
   )
 }
