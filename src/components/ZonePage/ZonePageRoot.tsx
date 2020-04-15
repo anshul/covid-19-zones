@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme: Theme) =>
 const ZonePageRoot: React.FC<Props> = ({ slug, gotoZone, gotoParentZone }) => {
   const classes = useStyles()
   const { data, error } = useSWR(`/api/zone?slug=${slug}`)
-  console.log(data, data?.fiveDayMovingAverage ?? [])
+  console.log(data, data?.seriesAnnouncedSma5 ?? [])
 
   return (
     <Grid container spacing={1}>
@@ -72,7 +72,7 @@ const ZonePageRoot: React.FC<Props> = ({ slug, gotoZone, gotoParentZone }) => {
             <div key={zone.slug} onClick={() => gotoZone(zone.slug)} className={classes.zoneListItem}>
               <Typography variant='body1'>
                 {zone.name} ({zone.totalCases})
-                </Typography>
+              </Typography>
             </div>
           ))}
         </Paper>
@@ -81,8 +81,8 @@ const ZonePageRoot: React.FC<Props> = ({ slug, gotoZone, gotoParentZone }) => {
         <Paper className={classes.lineChartContainer}>
           <ResponsiveLine
             data={[
-              { id: 'Confirmed Cases (Daily)', data: data?.perDayCounts ?? [] },
-              { id: 'Confirmed Cases (3 Day Moving Average)', data: data?.fiveDayMovingAverage ?? [] },
+              { id: 'Confirmed Cases (Daily)', data: data?.seriesAnnounced ?? [] },
+              { id: 'Confirmed Cases (5 Day Moving Average)', data: data?.seriesAnnouncedSma5 ?? [] },
             ]}
             margin={{ top: 50, right: 50, bottom: 50, left: 50 }}
             xScale={{ type: 'point' }}
