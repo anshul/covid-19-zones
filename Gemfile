@@ -23,6 +23,7 @@ gem "awesome_print", "~> 1.8"
 gem "deepsort", "~> 0.4.5"
 gem "hashdiff", "~> 1.0", ">= 1.0.1"
 
+gem "daru", "~> 0.2.2"
 gem "devise", "~> 4.7", ">= 4.7.1"
 gem "devise-jwt", "~> 0.6.0"
 gem "excon", "~> 0.73.0"

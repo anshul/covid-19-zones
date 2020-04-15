@@ -22,10 +22,10 @@ class GetZoneData < BaseQuery
 
   def show
     @result = {
-      parent_zone:             decorated_parent_zone,
-      sibling_zones:           decorated_sibling_zones,
-      per_day_counts:          chart_per_day,
-      five_day_moving_average: chart_per_day_sma
+      parent_zone:           decorated_parent_zone,
+      sibling_zones:         decorated_sibling_zones,
+      series_announced:      chart_announced,
+      series_announced_sma5: chart_announced_sma5
     }.deep_transform_keys { |k| k.to_s.camelize :lower }
   end
 
@@ -58,23 +58,36 @@ class GetZoneData < BaseQuery
     @decorated_sibling_zones
   end
 
-  def chart_per_day
-    return @chart_per_day if @chart_per_day
-
-    points_hash = Hash[TimeSeriesPoint.where(target_code: zone.code).order(:dated).map { |point| [point.dated, point.announced] }]
-
-    @chart_per_day = (oldest_date..Time.zone.today).map { |date| decorated_point({ dated: date, count: points_hash[date] || 0 }) }
+  def chart_announced
+    @chart_announced ||= dates.map { |dt| { x: dt, y: announced_vector[dt] } }
   end
 
-  def chart_per_day_sma
-    average_computer = ->(group) { (group.map { |point| point[:y] }.sum / group.count.to_f).round(2) }
-    @chart_per_day_sma ||= chart_per_day.in_groups_of(5).select { |group| group.compact.count == group.count }.map do |group|
-      { x: group.last[:x], y: average_computer.call(group) }
-    end
+  def chart_announced_sma5
+    @chart_announced_sma5 ||= dates.map { |dt| { x: dt, y: announced_vector_sma5[dt] } }
   end
 
-  def decorated_point(point)
-    { x: point[:dated], y: point[:count] }
+  def index
+    @index ||= TimeSeriesPoint.index(start: oldest_date, stop: 1.day.ago)
+  end
+
+  def announced_vector
+    @announced_vector ||= TimeSeriesPoint.vector(target: zone, field: "announced", index: index)
+  end
+
+  def recovered_vector
+    @recovered_vector ||= TimeSeriesPoint.vector(target: zone, field: "recovered", index: index)
+  end
+
+  def deceased_vector
+    @deceased_vector ||= TimeSeriesPoint.vector(target: zone, field: "deceased", index: index)
+  end
+
+  def dates
+    @dates ||= index.entries.map(&:to_date).map(&:to_s)
+  end
+
+  def announced_vector_sma5
+    @announced_vector_sma5 ||= announced_vector.rolling_mean(5)
   end
 
   def oldest_date
