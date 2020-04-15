@@ -5,7 +5,10 @@ class GetZoneData < BaseQuery
   def initialize(slug:, log: nil)
     @slug = slug
     @result = {}
-    @log = log || ->(color, msg, return_value:) { puts_colored color.to_sym, "#{format('%.3f', t).rjust(5)}s - #{msg}"; return_value }
+    @log = log || lambda { |color, msg, return_value:|
+      puts_colored color.to_sym, "#{format('%.3f', t).rjust(5)}s - #{msg}"
+      return_value
+    }
   end
 
   validates :zone, presence: true
@@ -48,7 +51,10 @@ class GetZoneData < BaseQuery
   def decorated_sibling_zones
     return @decorated_sibling_zones if @decorated_sibling_zones
 
-    @decorated_sibling_zones = sibling_zones.map { |z| z.as_json(only: Zone.view_attrs) }
+    sibling_total_case_counts = Patient.where("zone_code like ?", "#{parent_zone&.code || zone.code}/%").group(:zone_code).count
+    total_count_extractor = ->(zone) { sibling_total_case_counts.filter { |code| code.starts_with?(zone.code) }.map { |_, v| v }.sum }
+
+    @decorated_sibling_zones = sibling_zones.map { |z| z.as_json(only: Zone.view_attrs).merge("total_cases" => total_count_extractor.call(zone)) }
     @decorated_sibling_zones
   end
 
@@ -57,7 +63,7 @@ class GetZoneData < BaseQuery
 
     points_hash = Hash[TimeSeriesPoint.where(target_code: zone.code).order(:dated).map { |point| [point.dated, point.announced] }]
 
-    @chart_per_day = (oldest_date..Date.today).map { |date| decorated_point({ dated: date, count: points_hash[date] || 0 }) }
+    @chart_per_day = (oldest_date..Time.zone.today).map { |date| decorated_point({ dated: date, count: points_hash[date] || 0 }) }
   end
 
   def chart_per_day_sma
