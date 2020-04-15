@@ -137,9 +137,6 @@ ActiveRecord::Schema.define(version: 2020_04_15_051547) do
     t.string "search_name", null: false
     t.string "parent_zone"
     t.string "zone_md", default: "", null: false
-    t.decimal "pop", precision: 14, scale: 2, default: "0.0", null: false
-    t.decimal "area", precision: 14, scale: 2, default: "0.0", null: false
-    t.decimal "density", precision: 14, scale: 4, default: "0.0", null: false
     t.jsonb "details", default: "{}", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
