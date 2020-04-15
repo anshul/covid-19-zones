@@ -1,0 +1,2006 @@
+=== Andhra Pradesh (AP) ===
+{{See also|Districts of Andhra Pradesh}}
+{| class="wikitable sortable"
+|- bgcolor=#99ccff
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 || AN|| [[Anantapur district|Anantapur]]|| [[Anantapur]]|| align=right | 4,083,315|| align=right | 19,130|| align=right | 213
+|-
+| 2 ||	CH|| [[Chittoor district|Chittoor]]|| [[Chittoor]] || align=right | 4,170,468|| align=right | 15,152|| align=right | 275
+|-
+| 3 ||	EG|| [[East Godavari district|East Godavari]]|| [[Kakinada]]|| align=right | 5,151,549|| align=right | 10,807|| align=right | 477
+|-
+| 4 ||	GU|| [[Guntur district|Guntur]]|| [[Guntur]]|| align=right | 4,889,230|| align=right | 11,391|| align=right | 429
+|-
+| 5 ||	CU|| [[Kadapa district|Kadapa]]|| [[Kadapa]]|| align=right | 2,884,524|| align=right | 15,359|| align=right | 188
+|-
+| 6 ||	KR|| [[Krishna district|Krishna]]|| [[Machilipatnam]]|| align=right | 4,529,009|| align=right | 8,727|| align=right | 519
+|-
+| 7 ||	KU|| [[Kurnool district|Kurnool]]|| [[Kurnool]]|| align=right | 4,046,601|| align=right | 17,658|| align=right | 229
+|-
+| 8 ||	PR|| [[Prakasam district|Prakasam]]|| [[Ongole]]|| align=right | 3,392,764|| align=right | 17,626|| align=right | 192
+|-
+| 9 ||	NE|| [[Nellore district|Sri Potti Sriramulu Nellore]]|| [[Nellore]] || align=right | 2,966,082|| align=right | 13,076|| align=right | 227
+|-
+| 10 ||	SR|| [[Srikakulam district|Srikakulam]]|| [[Srikakulam]]|| align=right | 2,699,471|| align=right | 5,837|| align=right | 462
+|-
+| 11 ||	VS|| [[Visakhapatnam district|Visakhapatnam]]|| [[Visakhapatnam]]|| align=right | 4,288,113|| align=right | 11,161|| align=right | 384
+|-
+| 12 ||	VZ|| [[Vizianagaram district|Vizianagaram]]|| [[Vizianagaram]]|| align=right | 2,342,868|| align=right | 6,539|| align=right | 358
+|-
+| 13 ||	WG|| [[West Godavari district|West Godavari]]|| [[Eluru]]|| align=right | 3,934,782|| align=right | 7,742|| align=right | 508
+|-
+|}
+
+=== Arunachal Pradesh (AR) ===
+{{See also|Districts of Arunachal Pradesh}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 || AJ|| [[Anjaw district|Anjaw]]|| [[Hawai, India|Hawai]]|| align=right | 21,089|| align=right | 6,190|| align=right | 3
+|-
+| 2 ||	CH|| [[Changlang district|Changlang]]|| [[Changlang]]|| align=right | 147,951|| align=right | 4,662|| align=right | 32
+|-
+| 3 ||	EK|| [[East Kameng district|East Kameng]]|| [[Seppa]]|| align=right | 78,413|| align=right | 4,134|| align=right | 19
+|-
+| 4 ||	ES|| [[East Siang district|East Siang]]|| [[Pasighat]]|| align=right | 99,019|| align=right | 3,603|| align=right | 27
+|-
+| 5 || {{dash}} {{ref|AR1|[Note 1]}} || [[Kamle district|Kamle]]|| [[Raga, Arunachal Pradesh|Raga]] || align=right | 22,256 || align=right | 200 || align="right" | 111
+|-
+| 6 || {{dash}} {{ref|AR2|[Note 2]}} ||[[Kra Daadi district|Kra Daadi]]|| [[Jamin (Arunachal Pradesh)|Jamin]]|| align=right | {{dash}} || align="right" | {{dash}}|| align="right" | {{dash}}
+|-
+| 7 ||	KK|| [[Kurung Kumey district|Kurung Kumey]]|| [[Koloriang]]|| align=right | 89,717|| align=right | 6,040|| align=right | 15
+|-
+| 8 || {{dash}} {{ref|AR3|[Note 3]}} ||[[Lepa Rada district|Lepa Rada]] ||[[Basar, Arunachal Pradesh|Basar]] ||align=right |{{dash}} ||align=right |{{dash}}||align=right |{{dash}}
+|-
+| 9 ||	EL|| [[Lohit district|Lohit]]|| [[Tezu]]|| align=right | 145,538|| align=right | 2,402|| align=right | 61
+|-
+| 10 ||	LD|| [[Longding district|Longding]]|| [[Longding]]|| align=right | 60,000 || align="right" | 1,200|| align="right" | 50
+|-
+| 11 ||	DV|| [[Lower Dibang Valley district|Lower Dibang Valley]]|| [[Roing]]|| align=right | 53,986|| align=right | 3,900|| align=right | 14
+|-
+| 12 || {{dash}} {{ref|AR4|[Note 4]}} ||[[Lower Siang district|Lower Siang]] || [[Likabali]] || align=right | 80,597 || align=right |{{dash}}|| align=right |{{dash}}
+|-
+| 13 ||	LB|| [[Lower Subansiri district|Lower Subansiri]]|| [[Ziro]]|| align=right | 82,839|| align=right | 3,508|| align=right | 24
+|-
+| 14 || {{dash}} {{ref|AR5|[Note 5]}} ||[[Namsai district|Namsai]]|| [[Namsai, Arunachal Pradesh|Namsai]]|| align=right | 95,950 || align="right" | 1,587|| align="right" | 60
+|-
+| 15 || {{dash}} {{ref|AR6|[Note 6]}} ||[[Pakke-Kessang district|Pakke-Kessang]] ||Lemmi ||align=right |{{dash}} ||align=right |{{dash}}||align=right |{{dash}}
+|-
+| 16 ||	PA|| [[Papum Pare district|Papum Pare]]|| [[Yupia]]|| align=right | 176,385|| align=right | 2,875|| align=right | 61
+|-
+| 17 || {{dash}} {{ref|AR7|[Note 7]}}  || [[Shi Yomi district|Shi Yomi]] ||Tato ||align=right |13,310 ||align=right | 2,875||align=right | 5
+|-
+| 18 || {{dash}} {{ref|AR8|[Note 8]}} ||[[Siang district|Siang]]||[[Pangin]]|| align="right" | 31,920 || align="right" | 2,919 || align="right" | 11
+|-
+| 19 ||	TA|| [[Tawang district|Tawang]]|| [[Tawang Town]]|| align=right | 49,950|| align=right | 2,085|| align=right | 24
+|-
+| 20 ||	TI|| [[Tirap district|Tirap]]|| [[Khonsa]]|| align=right | 111,997|| align=right | 2,362|| align=right | 47
+|-
+| 21 || UD|| [[Upper Dibang Valley district|Upper Dibang Valley]]|| [[Anini]]|| align=right | 7,948|| align=right | 9,129|| align=right | 1
+|-
+| 22 ||	US|| [[Upper Siang district|Upper Siang]]|| [[Yingkiong]]|| align=right | 35,289 || align=right | 6,188 || align=right | 6
+|-
+| 23 ||	UB|| [[Upper Subansiri district|Upper Subansiri]]|| [[Daporijo]]|| align=right | 83,205|| align=right | 7,032|| align=right | 12
+|-
+| 24 ||	WK|| [[West Kameng district|West Kameng]]|| [[Bomdila]]|| align=right | 87,013|| align=right | 7,422|| align=right | 12
+|-
+| 25 ||	WS|| [[West Siang district|West Siang]]|| [[Along, Arunachal Pradesh|Along]]|| align=right | 112,272 || align=right | 8,325  || align=right | 13
+|-
+|}
+
+# <sup>{{note|AR1|[Note 1]}}</sup> [[Kamle district]] was created in 2017 after bifurcation from [[Lower Subansiri district]].<ref>{{cite web | url=https://www.indiatoday.in/pti-feed/story/arunachal-assembly-approves-kamle-as-23rd-district-1067276-2017-10-19 | title=Arunachal Assembly approves Kamle as 23rd district | publisher=India Today | date=19 October 2017 | accessdate=10 April 2019}}</ref>
+# <sup>{{note|AR2|[Note 2]}}</sup> [[Kra Daadi district]] was created in 2015 after bifurcation from [[Kurung Kumey district]].<ref>{{cite web | url=https://www.northeasttoday.in/kra-daadi-new-arunachal-district-inaugurated/ | title=Kra Daadi, New Arunachal District Inaugurated | publisher=North East Today | date=9 February 2015 | accessdate=10 April 2019}}</ref>
+# <sup>{{note|AR3|[Note 3]}}</sup> [[Lepa Rada district]] was created in 2018 after bifurcation from [[Lower Siang district]].<ref name="3states">{{cite web | url=https://www.ndtv.com/india-news/for-creation-of-3-new-districts-pakke-kesang-lepa-rada-shi-yomi-arunachal-pradesh-assembly-passes-bi-1908352 | title=Arunachal Assembly Passes Bill For Creation Of 3 New Districts | publisher=NDTV | date=30 August 2018 | accessdate=10 April 2019}}</ref>
+# <sup>{{note|AR4|[Note 4]}}</sup> [[Lower Siang district]] was created in 2017 after bifurcation from [[West Siang district|West Siang]] & [[East Siang district]].{{citation needed|date=April 2019}}
+# <sup>{{note|AR5|[Note 5]}}</sup> [[Namsai district]] was created in 2014.{{citation needed|date=April 2019}}
+# <sup>{{note|AR6|[Note 6]}}</sup> [[Pakke-Kessang district]] was created in 2018 after bifurcation from [[East Kameng district]].<ref name="3states" />
+# <sup>{{note|AR7|[Note 7]}}</sup> [[Shi Yomi district]] was created in 2018 after bifurcation from [[West Siang district]].<ref name="3states" />
+# <sup>{{note|AR8|[Note 8]}}</sup> [[Siang district]] was created in 2015.{{citation needed|date=April 2019}}
+
+=== Assam (AS) ===
+{{See also|Districts of Assam}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 ||	BK|| [[Baksa district|Baksa]] || [[Mushalpur]]|| align=right | 953,773|| align=right | 2,008|| align=right | 475
+|-
+| 2 ||	BP|| [[Barpeta district|Barpeta]]|| [[Barpeta]]|| align=right | 1,693,190|| align=right | 3,245|| align=right | 522
+|-
+| 3 ||	BS|| [[Bishwanath district|Bishwanath]] || [[Bishwanath Chariali]]|| align=right | 612,491 {{ref|AS1|[Note 1]}} ||align=right | 1,100 || align=right | 560
+|-
+| 4 ||	BO|| [[Bongaigaon district|Bongaigaon]]|| [[Bongaigaon]]|| align=right | 732,639|| align=right | 1,724|| align=right | 425
+|-
+| 5 ||	CA|| [[Cachar district|Cachar]]|| [[Silchar]]|| align=right | 1,736,319|| align=right | 3,786|| align=right | 459
+|-
+| 6 ||	CD|| [[Charaideo district|Charaideo]] || [[Sonari]] || align=right | {{dash}} {{ref|AS2|[Note 2]}} || align="right" |{{dash}} || align="right" |{{dash}}
+|-
+| 7 ||	CH|| [[Chirang district|Chirang]] || [[Kajalgaon]]|| align=right | 481,818|| align=right | 1,975|| align=right | 244
+|-
+| 8 ||	DR|| [[Darrang district|Darrang]]|| [[Mangaldoi]]|| align=right | 908,090|| align=right | 1,849|| align=right | 491
+|-
+| 9 ||	DM|| [[Dhemaji district|Dhemaji]]|| [[Dhemaji]]|| align=right | 688,077|| align=right | 3,237|| align=right | 213
+|-
+| 10 ||	DU|| [[Dhubri district|Dhubri]]|| [[Dhubri]]|| align=right | 1,948,632|| align=right | 2,838|| align=right | 687
+|-
+| 11 ||	DI|| [[Dibrugarh district|Dibrugarh]]|| [[Dibrugarh]]|| align=right | 1,327,748|| align=right | 3,381|| align=right | 393
+|-
+| 12 ||	NC|| [[Dima Hasao district|Dima Hasao]]|| [[Haflong]]|| align=right | 213,529|| align=right | 4,888|| align=right | 44
+|-
+| 13 ||	GP|| [[Goalpara district|Goalpara]]|| [[Goalpara]]|| align=right | 1,008,959|| align=right | 1,824|| align=right | 553
+|-
+| 14 ||	GG|| [[Golaghat district|Golaghat]]|| [[Golaghat]]|| align=right | 1,058,674|| align=right | 3,502|| align=right | 302
+|-
+| 15 ||	HA|| [[Hailakandi district|Hailakandi]]|| [[Hailakandi]]|| align=right | 659,260|| align=right | 1,327|| align=right | 497
+|-
+| 16 ||	HJ|| [[Hojai district|Hojai]] || [[Hojai]] || align=right | 9,31,218 {{ref|AS3|[Note 3]}}|| align=right | {{dash}}
+| align="right" |{{dash}}
+|-
+| 17 ||	JO|| [[Jorhat district|Jorhat]]|| [[Jorhat]]|| align=right | 1,091,295|| align=right | 2,851|| align=right | 383
+|-
+| 18 ||	KU|| [[Kamrup district|Kamrup]]|| [[Amingaon]]|| align=right | 1,517,202|| align=right | 3,480|| align=right | 436
+|-
+| 19 ||	KM|| [[Kamrup Metropolitan district|Kamrup Metropolitan]]|| [[Guwahati]]|| align=right | 1,260,419|| align=right | 627|| align=right | 2,010
+|-
+| 20 ||	KG|| [[Karbi Anglong district|Karbi Anglong]]|| [[Diphu]]|| align=right | 965,280|| align=right | 10,434|| align=right | 93
+|-
+| 21 ||	KR|| [[Karimganj district|Karimganj]]|| [[Karimganj]]|| align=right | 1,217,002|| align=right | 1,809|| align=right | 673
+|-
+| 22 ||	KJ|| [[Kokrajhar district|Kokrajhar]] || [[Kokrajhar]]|| align=right | 886,999|| align=right | 3,129|| align=right | 283
+|-
+| 23 ||	LA|| [[Lakhimpur district|Lakhimpur]]|| [[North Lakhimpur]]|| align=right | 1,040,644|| align=right | 2,277|| align=right | 457
+|-
+| 24 ||	MJ|| [[Majuli district|Majuli]] || [[Garamur]] || align=right | 1,67,304 {{ref|AS4|[Note 4]}}|| align=right | 880 || align=right | 300 
+|-
+| 25 ||	MA|| [[Morigaon district|Morigaon]]|| [[Marigaon]]|| align=right | 957,853|| align=right | 1,704|| align=right | 562
+|-
+| 26 ||	NN|| [[Nagaon district|Nagaon]]|| [[Nagaon]]|| align=right | 2,826,006|| align=right | 3,831|| align=right | 738
+|-
+| 27 ||	NB|| [[Nalbari district|Nalbari]]|| [[Nalbari]]|| align=right | 769,919|| align=right | 1,009|| align=right | 763
+|-
+| 28 ||	ST|| [[Sivasagar district|Sivasagar]]|| [[Sibsagar]]|| align=right | 1,150,253|| align=right | 2,668|| align=right | 431
+|-
+| 29 ||	SM|| [[South Salmara district|South Salmara]] || [[Hatsingimari]] || align=right | 555,114 {{ref|AS5|[Note 5]}} || align="right" |568 || align="right" |980 
+|-
+| 30 ||	SO|| [[Sonitpur district|Sonitpur]]|| [[Tezpur]]|| align=right | 1,925,975|| align=right | 5,324|| align=right | 362
+|-
+| 31 ||	TI|| [[Tinsukia district|Tinsukia]]|| [[Tinsukia]]|| align=right | 1,316,948|| align=right | 3,790|| align=right | 347
+|-
+| 32 ||	UD|| [[Udalguri district|Udalguri]]|| [[Udalguri]]|| align=right | 832,769|| align=right | 1,676|| align=right | 497
+|-
+| 33 ||	WK|| [[West Karbi Anglong district|West Karbi Anglong]] || [[Hamren]]  || align=right | 3,00,320 {{ref|AS6|[Note 6]}} || align="right" |3,035|| align="right" |99
+|-
+|}
+
+# <sup>{{note|AS1|[Note 1]}}</sup>[[Biswanath district]] was created in 2015 after bifurcation from [[Sonitpur district]].<ref name="Assam5" />
+# <sup>{{note|AS2|[Note 2]}}</sup>[[Charaideo district]] was created in 2015 after bifurcation from [[Sivasagar district]].<ref name="Assam5">{{cite web | url=https://www.telegraphindia.com/states/north-east/celebrations-tempered-with-caution/cid/1393440 | title=Celebrations tempered with caution | publisher=Telegraph India | date=16 August 2015 | accessdate=11 April 2019 | author=Karmakar, Sumir}}</ref>
+# <sup>{{note|AS3|[Note 3]}}</sup>[[Hojai district]] was created in 2015 after bifurcation from [[Nagaon district]].<ref name="Assam5" />
+# <sup>{{note|AS4|[Note 4]}}</sup>[[Majuli district]] was created in 2016 after bifurcation from [[Jorhat district]].<ref>{{cite news|title=World's largest river island, Majuli, becomes India's first island district|url=http://www.firstpost.com/india/worlds-largest-river-island-majuli-becomes-indias-first-island-district-2995952.html|accessdate=13 September 2016|agency=FP India|date=8 September 2016}}</ref><ref>{{cite web | url=https://www.hindustantimes.com/india-news/assam-majuli-to-become-india-s-first-river-island-district/story-hzFoxSUxh3IpRpSeIqrhtM.html | title=Assam: Majuli to become India's first river island district | publisher=Hindustan Times | date=27 June 2016 | accessdate=11 April 2019}}</ref>
+# <sup>{{note|AS5|[Note 5]}}</sup>[[South Salmara district]] was created in 2015 after bifurcation from [[Dhubri district]].<ref name="Assam5" />
+# <sup>{{note|AS6|[Note 6]}}</sup>[[West Karbi Anglong district]] was created in 2015 after bifurcation from [[Karbi Anglong district]].<ref name="Assam5" />
+
+=== Bihar (BR) ===
+{{See also|Districts of Bihar}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 ||	AR|| [[Araria district|Araria]]|| [[Araria]]|| align=right | 2,806,200|| align=right | 2,829|| align=right | 992
+|-
+| 2 ||  ARW|| [[Arwal district|Arwal]]|| [[Arwal]]|| align=right | 700,843|| align=right | 638|| align=right | 1,098
+|-
+| 3 ||	AU|| [[Aurangabad district, Bihar|Aurangabad]]|| [[Aurangabad, Bihar|Aurangabad]]|| align=right | 2,511,243|| align=right | 3,303|| align=right | 760
+|-
+| 4 ||	BA|| [[Banka district|Banka]]|| [[Banka, Bihar|Banka]]|| align=right | 2,029,339|| align=right | 3,018|| align=right | 672
+|-
+| 5 ||	BE|| [[Begusarai district|Begusarai]]|| [[Begusarai]]|| align=right | 2,954,367|| align=right | 1,917|| align=right | 1,540
+|-
+| 6 ||	BG|| [[Bhagalpur district|Bhagalpur]]|| [[Bhagalpur]]|| align=right | 3,032,226|| align=right | 2,569|| align=right | 1,180
+|-
+| 7 ||	BJ||[[Bhojpur district, India|Bhojpur]]|| [[Arrah]]|| align=right | 2,720,155|| align=right | 2,473|| align=right | 1,136
+|-
+| 8 ||	BU|| [[Buxar district|Buxar]]|| [[Buxar]]|| align=right | 1,707,643|| align=right | 1,624|| align=right | 1,003
+|-
+| 9 ||	DA|| [[Darbhanga district|Darbhanga]]|| [[Darbhanga]]|| align=right | 3,921,971|| align=right | 2,278|| align=right | 1,721
+|-
+| 10 ||	EC|| [[East Champaran district|East Champaran]]|| [[Motihari]]|| align=right | 5,082,868|| align=right | 3,969|| align=right | 1,281
+|-
+| 11 ||	GA|| [[Gaya district|Gaya]]|| [[Gaya, India|Gaya]]|| align=right | 4,379,383|| align=right | 4,978|| align=right | 880
+|-
+| 12 ||	GO|| [[Gopalganj district, India|Gopalganj]]|| [[Gopalganj (Bihar)|Gopalganj]]|| align=right | 2,558,037|| align=right | 2,033|| align=right | 1,258
+|-
+| 13 ||	JA|| [[Jamui district|Jamui]]|| [[Jamui]]|| align=right | 1,756,078|| align=right | 3,099|| align=right | 567
+|-
+| 14 ||	JE|| [[Jehanabad district|Jehanabad]]|| [[Jehanabad]]|| align=right | 1,124,176|| align=right | 1,569|| align=right | 1,206
+|-
+| 15 ||	KM|| [[Kaimur district|Kaimur]]|| [[Bhabua]]|| align=right | 1,626,900|| align=right | 3,363|| align=right | 488
+|-
+| 16 ||	KT|| [[Katihar district|Katihar]]|| [[Katihar]]|| align=right | 3,068,149|| align=right | 3,056|| align=right | 1,004
+|-
+| 17 ||	KH|| [[Khagaria district|Khagaria]]|| [[Khagaria]]|| align=right | 1,657,599|| align=right | 1,486|| align=right | 1,115
+|-
+| 18 ||	KI|| [[Kishanganj district|Kishanganj]]|| [[Kishanganj]]|| align=right | 1,690,948|| align=right | 1,884|| align=right | 898
+|-
+| 19 ||	LA|| [[Lakhisarai district|Lakhisarai]]|| [[Lakhisarai]]|| align=right | 1,000,717|| align=right | 1,229|| align=right | 815
+|-
+| 20 ||	MP|| [[Madhepura district|Madhepura]]|| [[Madhepura]]|| align=right | 1,994,618|| align=right | 1,787|| align=right | 1,116
+|-
+| 21 ||	MB|| [[Madhubani district|Madhubani]]|| [[Madhubani, India|Madhubani]]|| align=right | 4,476,044|| align=right | 3,501|| align=right | 1,279
+|-
+| 22 ||	MG|| [[Munger district|Munger]]|| [[Munger]]|| align=right | 1,359,054|| align=right | 1,419|| align=right | 958
+|-
+| 23 ||	MZ|| [[Muzaffarpur district|Muzaffarpur]]|| [[Muzaffarpur]]|| align=right | 4,778,610|| align=right | 3,173|| align=right | 1,506
+|-
+| 24 ||	NL|| [[Nalanda district|Nalanda]]|| [[Bihar Sharif]]|| align=right | 2,872,523|| align=right | 2,354|| align=right | 1,220
+|-
+| 25 ||	NW|| [[Nawada district|Nawada]]|| [[Nawada]]|| align=right | 2,216,653|| align=right | 2,492|| align=right | 889
+|-
+| 26 ||	PA|| [[Patna district|Patna]]|| [[Patna]]|| align=right | 5,772,804|| align=right | 3,202|| align=right | 1,803
+|-
+| 27 ||	PU|| [[Purnia district|Purnia]]|| [[Purnia]]|| align=right | 3,273,127|| align=right | 3,228|| align=right | 1,014
+|-
+| 28 ||	RO|| [[Rohtas district|Rohtas]]|| [[Sasaram]]|| align=right | 2,962,593|| align=right | 3,850|| align=right | 763
+|-
+| 29 ||	SH|| [[Saharsa district|Saharsa]]|| [[Saharsa]]|| align=right | 1,897,102|| align=right | 1,702|| align=right | 1,125
+|-
+| 30 ||	SM|| [[Samastipur district|Samastipur]]|| [[Samastipur]]|| align=right | 4,254,782|| align=right | 2,905|| align=right | 1,465
+|-
+| 31 ||	SR|| [[Saran district|Saran]]|| [[Chhapra]]|| align=right | 3,943,098|| align=right | 2,641|| align=right | 1,493
+|-
+| 32 ||	SP|| [[Sheikhpura district|Sheikhpura]]|| [[Sheikhpura]]|| align=right | 634,927|| align=right | 689|| align=right | 922
+|-
+| 33 ||	SO|| [[Sheohar district|Sheohar]]|| [[Sheohar]]|| align=right | 656,916|| align=right | 443|| align=right | 1,882
+|-
+| 34 ||	ST|| [[Sitamarhi district|Sitamarhi]]|| [[Sitamarhi]]|| align=right | 3,419,622|| align=right | 2,199|| align=right | 1,491
+|-
+| 35 ||	SW|| [[Siwan district|Siwan]]|| [[Siwan, Bihar|Siwan]]|| align=right | 3,318,176|| align=right | 2,219|| align=right | 1,495
+|-
+| 36 ||	SU|| [[Supaul district|Supaul]]|| [[Supaul]]|| align=right | 2,228,397|| align=right | 2,410|| align=right | 919
+|-
+| 37 ||	VA|| [[Vaishali district|Vaishali]]|| [[Hajipur]]|| align=right | 3,495,021|| align=right | 2,036|| align=right | 1,717
+|-
+| 38 ||	WC|| [[West Champaran district|West Champaran]]|| [[Bettiah]]|| align=right |3,935,042|| align=right | 5,229|| align=right | 753
+|-
+|}
+
+=== Chhattisgarh (CG) ===
+{{See also|Districts of Chhattisgarh}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 || {{dash}} ||[[Balod district|Balod]]|| [[Balod]]|| align=right | 8,26,165|| align=right | 3,527|| align=right | 234
+|-
+| 2 || {{dash}}||[[Baloda Bazar district|Baloda Bazar]]|| [[Baloda Bazar]]|| align=right| 1,305,343|| align=right | 4,748|| align=right| 275
+|-
+| 3 || {{dash}}||[[Balrampur district, Chhattisgarh|Balrampur]]|| [[Balrampur, Chhattisgarh|Balrampur]] || align=right | 5,98,855|| align=right | 3,806|| align=right | 157
+|-
+| 4 || BA|| [[Bastar district|Bastar]]|| [[Jagdalpur]]|| align=right | 1,302,253|| align=right | 4,030|| align=right | 87
+|-
+| 5 || {{dash}}||[[Bemetara district|Bemetara]]|| [[Bemetara]]|| align=right | 1,97,035|| align=right | 2,855|| align=right | 69
+|-
+| 6 || BJ|| [[Bijapur district, Chhattisgarh|Bijapur]]|| [[Bijapur, Chhattisgarh|Bijapur]]|| align=right | 2,29,832|| align=right | 6,562|| align=right | 35
+|-
+| 7 || BI|| [[Bilaspur district, Chhattisgarh|Bilaspur]]|| [[Bilaspur, Chhattisgarh|Bilaspur]]|| align=right | 1,961,922|| align=right | 5,818|| align=right | 337
+|-
+| 8 || DA|| [[Dantewada district|Dantewada]]|| [[Dantewada]]|| align=right | 5,33,638|| align=right | 3,411|| align=right | 59
+|-
+| 9 || DH|| [[Dhamtari district|Dhamtari]]|| [[Dhamtari]]|| align=right | 7,99,199|| align=right | 2,029|| align=right | 394
+|-
+| 10 || DU|| [[Durg district|Durg]]|| [[Durg]]|| align=right | 3,343,079|| align=right | 8,542|| align=right | 391
+|-
+| 11 || {{dash}}||[[Gariaband district|Gariaband]]|| [[Gariaband]]|| align=right| 5,97,653|| align=right| 5,823|| align=right| 103
+|-
+| 12 ||{{dash}}||[[Gaurela-Pendra-Marwahi district|Gaurela-Pendra-Marwahi]]|| [[Gaurela-Pendra-Marwahi]]|| align=right| {{dash}}|| align=right| 1,682|| align=right| {{dash}}
+|-
+| 13 || JC|| [[Janjgir-Champa district|Janjgir-Champa]]|| [[Naila Janjgir]]|| align=right | 1,620,632|| align=right | 3,848|| align=right | 421
+|-
+| 14 || JA|| [[Jashpur district|Jashpur]]|| [[Jashpur Nagar]]|| align=right | 8,52,043|| align=right | 5,825|| align=right | 146
+|-
+| 15 || KW|| [[Kabirdham district|Kabirdham]] ||[[Kawardha]]|| align=right | 5,84,667|| align=right | 4,237|| align=right | 195
+|-
+| 16 || KK|| [[Kanker district|Kanker]]|| [[Kanker, Chhattisgarh|Kanker]]|| align=right | 7,48,593|| align=right | 6,513|| align=right | 115
+|-
+| 17 || {{dash}}||[[Kondagaon district|Kondagaon]]|| [[Kondagaon]]||align=right| 5,78,326|| align=right| 7769|| align=right| 74
+|-
+| 18 || KB|| [[Korba district|Korba]]|| [[Korba, Chhattisgarh|Korba]]|| align=right | 1,206,563|| align=right | 6,615|| align=right | 183
+|-
+| 19 || KJ|| [[Koriya district|Koriya]]|| [[Baikunthpur, Koriya|Baikunthpur]]|| align=right | 6,59,039|| align=right | 6,578|| align=right | 100
+|-
+| 20 || MA|| [[Mahasamund district|Mahasamund]]|| [[Mahasamund]]|| align=right | 1,032,275|| align=right | 4,779|| align=right | 216
+|-
+| 21 || {{dash}}||[[Mungeli District|Mungeli]]|| [[Mungeli]]|| align=right| 7,01,707|| align=right| 2,750|| align=right| 255
+|-
+| 22 || NR|| [[Narayanpur district|Narayanpur]]|| [[Narayanpur town|Narayanpur]]|| align=right | 1,40,206|| align=right | 6,640|| align=right | 20
+|-
+| 23 || RG|| [[Raigarh district|Raigarh]]|| [[Raigarh]]|| align=right | 1,493,627|| align=right | 7,068|| align=right | 211
+|-
+| 24 || RP|| [[Raipur district|Raipur]]|| [[Raipur, Chhattisgarh|Raipur]]|| align=right | 4,062,160|| align=right | 13,083|| align=right | 310
+|-
+| 25 || RN|| [[Rajnandgaon district|Rajnandgaon]]|| [[Rajnandgaon]]|| align=right | 1,537,520|| align=right | 8,062|| align=right | 191
+|-
+| 26 || SK|| [[Sukma district|Sukma]]|| [[Sukma]]|| align=right |2,49,000|| align=right| 5,636 || align=right | 49
+|-
+| 27 || SJ|| [[Surajpur district|Surajpur]]|| [[Surajpur]] || align=right | 6,60,280|| align=right | 6,787|| align=right | 150
+|-
+| 28 || SG|| [[Surguja district|Surguja]]|| [[Ambikapur, Chhattisgarh|Ambikapur]] || align=right | 4,20,661|| align=right | 3,265|| align=right | 150
+|-
+|}
+
+=== Goa (GA) ===
+{{See also|Districts of Goa}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 || NG || [[North Goa]]|| [[Panaji]]|| align=right | 817,761|| align=right | 1,736|| align=right | 471
+|-
+| 2 || SG|| [[South Goa]]|| [[Margao]]|| align=right | 639,962|| align=right | 1,966|| align=right | 326
+|-
+|}
+
+=== Gujarat (GJ) ===
+{{See also|Districts of Gujarat}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 || AH || [[Ahmedabad district|Ahmedabad]] || [[Ahmedabad]] || align=right | 7,208,200 || align=right | 8,707 || align=right | 890
+|-
+| 2 || AM ||	[[Amreli district|Amreli]] || [[Amreli]] || align=right | 1,513,614 || align=right | 6,760 || align=right | 205
+|-
+| 3 || AN ||	[[Anand district|Anand]] || [[Anand, Gujarat|Anand]] || align=right | 2,090,276 || align=right | 2,942 || align=right | 711
+|-
+| 4 || AR || [[Aravalli district|Aravalli]] || [[Modasa]] ||align=right | 1,051,746 || align=right | 3,217 ||align=right | 327
+|-
+| 5 || BK ||	[[Banaskantha district|Banaskantha]] || [[Palanpur]] || align=right | 3,116,045 || align=right | 12,703|| align=right | 290
+|-
+| 6 || BR || [[Bharuch district|Bharuch]] || [[Bharuch]] || align=right | 1,550,822 || align=right | 6,524 || align=right | 238
+|-
+| 7 || BV || [[Bhavnagar district|Bhavnagar]] || [[Bhavnagar]] || align=right | 2,877,961 || align=right | 11,155 || align=right | 288
+|-
+| 8 || BT|| [[Botad District|Botad]] || [[Botad]] ||align="right"| 656,005 ||align="right"|2,564 ||align="right"|256
+|-
+| 9 || CU|| [[Chhota Udaipur district|Chhota Udepur]] || [[Chhota Udaipur|Chhota Udepur]]  ||align="right"|1,071,831 ||align="right"|3,237 ||align="right"| 331
+|-
+| 10 || DA || [[Dahod district|Dahod]] || [[Dahod]] || align=right | 2,126,558 || align=right | 3,642 || align=right | 582
+|-
+| 11 || DG || [[Dang District, India|Dang]] || [[Ahwa]] || align=right | 226,769 || align=right | 1,764 || align=right | 129
+|-
+| 12 || DD || [[Devbhoomi Dwarka district|Devbhoomi Dwarka]] || [[Khambhalia]] ||align="right"|752,484 ||align="right"| 5,684||align="right"|132
+|-
+| 13 || GA || [[Gandhinagar district|Gandhinagar]] || [[Gandhinagar]] || align=right | 1,387,478 || align=right | 649 || align=right | 660
+|-
+| 14 || GS || [[Gir Somnath district|Gir Somnath]] || [[Veraval]] || align="right" |1,217,477 || align="right" |3,754 || align="right" | 324
+|-
+| 15 || JA || [[Jamnagar district|Jamnagar]] || [[Jamnagar]] || align=right | 2,159,130 || align=right | 14,125 || align=right | 153
+|-
+| 16 || JU ||	[[Junagadh district|Junagadh]] || [[Junagadh]] || align=right | 2,742,291 || align=right | 8,839 || align=right | 310
+|-
+| 17 || KH || [[Kheda district|Kheda]] || [[Nadiad]] || align=right | 2,298,934 || align=right | 4,215 || align=right | 541
+|-
+| 18 || KA || [[Kutch district|Kutch]] || [[Bhuj]] || align=right | 2,090,313 || align=right | 45,652 || align=right | 46
+|-
+| 19 || MH || [[Mahisagar district|Mahisagar]] || [[Lunavada]] || align="right" |  994,624 || align="right" |2,500 || align="right " |398
+|-
+| 20 || MA || [[Mehsana district|Mehsana]] || [[Mehsana]] || align=right | 2,027,727 || align=right | 4,386 || align=right | 462
+|-
+| 21 || MB || [[Morbi district|Morbi]] || [[Morbi]] ||align="right"|960,329 ||align="right"|4,871 ||align="right"|197
+|-
+| 22 || NR || [[Narmada district|Narmada]] || [[Rajpipla]] || align=right | 590,379 || align=right | 2,749 || align=right | 214
+|-
+| 23 || NV || [[Navsari district|Navsari]] || [[Navsari]] || align=right | 1,330,711 || align=right | 2,211 || align=right | 602
+|-
+| 24 || PM || [[Panchmahal district|Panchmahal]] || [[Godhra]] || align=right | 2,388,267 || align=right | 5,219 || align=right | 458
+|-
+| 25 || PA || [[Patan district|Patan]] || [[Patan, Gujarat|Patan]] || align=right | 1,342,746 || align=right | 5,738 || align=right | 234
+|-
+| 26 || PO || [[Porbandar district|Porbandar]] || [[Porbandar]] || align=right | 586,062 || align=right | 2,294 || align=right | 255
+|-
+| 27 || RA || [[Rajkot district|Rajkot]] || [[Rajkot]] || align=right | 3,157,676 || align=right | 11,203 || align=right | 282
+|-
+| 28 || SK || [[Sabarkantha district|Sabarkantha]] || [[Himatnagar]] || align=right | 2,427,346 || align=right | 7,390 || align=right | 328
+|-
+| 29 || ST || [[Surat district|Surat]] || [[Surat]] || align=right | 4,996,391 || align=right | 4,327 || align=right | 653
+|-
+| 30 || SN || [[Surendranagar district|Surendranagar]] || [[Surendranagar city|Surendranagar]] || align=right | 1,755,873 || align=right | 10,489 || align=right | 167
+|-
+| 31 || TA || [[Tapi district|Tapi]] || [[Vyara]] || align=right | 806,489 || align=right | 3,435 || align=right | 249
+|-
+| 32 || VD || [[Vadodara district|Vadodara]] || [[Vadodara]] || align=right | 3,639,775 || align=right | 7,794 || align=right | 467
+|-
+| 33 || VL || [[Valsad district|Valsad]] || [[Valsad]] || align=right | 1,703,068 || align=right | 3,034 || align=right | 561
+|-
+|}
+
+=== Haryana (HR) ===
+{{See also|Districts of Haryana}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 || AM|| [[Ambala district|Ambala]]|| [[Ambala]]|| align=right | 1,136,784|| align=right | 1,569|| align=right | 722
+|-
+| 2 || BH|| [[Bhiwani district|Bhiwani]]|| [[Bhiwani]]|| align=right | 1,629,109|| align=right | 5,140|| align=right | 341
+|-
+| 3 || CD ||[[Charkhi Dadri district|Charkhi Dadri]]|| [[Charkhi Dadri]]|| align=right | 5,02,276|| align="right" | 1370 || align="right" | 367
+|-
+| 4 || FR|| [[Faridabad district|Faridabad]]|| [[Faridabad]]|| align=right | 1,798,954|| align=right | 783|| align=right | 2,298
+|-
+| 5 || FT|| [[Fatehabad district|Fatehabad]]|| [[Fatehabad, Haryana|Fatehabad]]|| align=right | 941,522|| align=right | 2,538|| align=right | 371
+|-
+| 6 || GU||[[Gurgaon district|Gurgaon]]||[[Gurgaon]]|| align="right" | 1,514,085|| align=right | 1,258|| align=right | 1,241
+|-
+| 7 || HI|| [[Hisar (district)|Hissar]]|| [[Hisar (city)|Hissar]]|| align=right | 1,742,815|| align=right | 3,788|| align=right | 438
+|-
+| 8 || JH|| [[Jhajjar district|Jhajjar]]|| [[Jhajjar]]|| align=right | 956,907|| align=right | 1,868|| align=right | 522
+|-
+| 9 || JI|| [[Jind district|Jind]]|| [[Jind]]|| align=right | 1,332,042|| align=right | 2,702|| align=right | 493
+|-
+| 10 || KT|| [[Kaithal district|Kaithal]]|| [[Kaithal]]|| align=right | 1,072,861|| align=right | 2,799|| align=right | 467
+|-
+| 11 || KR|| [[Karnal district|Karnal]]|| [[Karnal]]|| align=right | 1,506,323|| align=right | 2,471|| align=right | 598
+|-
+| 12 || KU|| [[Kurukshetra district|Kurukshetra]]|| [[Kurukshetra]]|| align=right | 964,231|| align=right | 1,530|| align=right | 630
+|-
+| 13 || MA|| [[Mahendragarh district|Mahendragarh]]|| [[Narnaul]]|| align=right | 921,680|| align=right | 1,900|| align=right | 485
+|-
+| 14 || MW|| [[Nuh district|Nuh]]|| [[Nuh (city)|Nuh]]|| align=right | 1,089,406|| align=right | 1,765 || align=right | 729
+|-
+| 15 || PW|| [[Palwal district|Palwal]]|| [[Palwal]]|| align=right | 1,040,493|| align=right | 1,367|| align=right | 761
+|-
+| 16 || PK|| [[Panchkula district|Panchkula]]|| [[Panchkula]]|| align=right | 558,890|| align=right | 816|| align=right | 622
+|-
+| 17 || PP|| [[Panipat district|Panipat]]|| [[Panipat]]|| align=right | 1,202,811|| align=right | 1,250|| align=right | 949
+|-
+| 18 || RE|| [[Rewari district|Rewari]]|| [[Rewari]]|| align=right | 896,129|| align=right | 1,559|| align=right | 562
+|-
+| 19 || RO|| [[Rohtak district|Rohtak]]|| [[Rohtak]]|| align=right | 1,058,683|| align=right | 1,668|| align=right | 607
+|-
+| 20 || SI|| [[Sirsa district|Sirsa]]|| [[Sirsa, Haryana|Sirsa]]|| align=right | 1,295,114|| align=right | 4,276|| align=right | 303
+|-
+| 21 || SNP|| [[Sonipat district|Sonipat]]|| [[Sonipat]]|| align=right | 1,480,080|| align=right | 2,260|| align=right | 697
+|-
+| 22 || YN|| [[Yamuna Nagar district|Yamuna Nagar]]|| [[Yamuna Nagar]]|| align=right | 1,214,162|| align=right | 1,756|| align=right | 687
+|-
+|}
+
+=== Himachal Pradesh (HP) ===
+{{See also|Districts of Himachal Pradesh}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 || BI|| [[Bilaspur district, Himachal Pradesh|Bilaspur]]|| [[Bilaspur, Himachal Pradesh|Bilaspur]]|| align=right | 382,056|| align=right | 1,167|| align=right | 327
+|-
+| 2 || CH|| [[Chamba district|Chamba]]|| [[Chamba, Himachal Pradesh|Chamba]]|| align=right | 518,844|| align=right | 6,528|| align=right | 80
+|-
+| 3 || HA|| [[Hamirpur district, Himachal Pradesh|Hamirpur]]|| [[Hamirpur, Himachal Pradesh|Hamirpur]]|| align=right | 454,293|| align=right | 1,118|| align=right | 406
+|-
+| 4 || KA|| [[Kangra district|Kangra]]|| [[Dharamshala]]|| align=right | 1,507,223|| align=right | 5,739|| align=right | 263
+|-
+| 5 || KI|| [[Kinnaur district|Kinnaur]]|| [[Reckong Peo]]|| align=right | 84,298|| align=right | 6,401|| align=right | 13
+|-
+| 6 || KU|| [[Kullu district|Kullu]]|| [[Kullu]]|| align=right | 437,474|| align=right | 5,503|| align=right | 79
+|-
+| 7 || LS|| [[Lahaul and Spiti district|Lahaul and Spiti]]|| [[Keylong]]|| align=right | 31,528|| align=right | 13,835|| align=right | 2
+|-
+| 8 || MA|| [[Mandi district|Mandi]]|| [[Mandi district|Mandi]]|| align=right | 999,518|| align=right | 3,950|| align=right | 253
+|-
+| 9 || SH|| [[Shimla district|Shimla]]|| [[Shimla]]|| align=right | 813,384|| align=right | 5,131|| align=right | 159
+|-
+| 10 || SI|| [[Sirmaur district|Sirmaur]]|| [[Nahan]]|| align=right | 530,164|| align=right | 2,825|| align=right | 188
+|-
+| 11 || SO|| [[Solan district|Solan]]|| [[Solan]]|| align=right | 576,670|| align=right | 1,936|| align=right | 298
+|-
+| 12 || UN|| [[Una district|Una]]|| [[Una, Himachal Pradesh|Una]]|| align=right | 521,057|| align=right | 1,540|| align=right | 328
+|-
+|}
+
+=== Jharkhand (JH) ===
+{{See also|Districts of Jharkhand}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 || BO|| [[Bokaro district|Bokaro]]|| [[Bokaro Steel City|Bokaro]]|| align=right | 2,061,918 || align=right | 2,861|| align=right | 716
+|-
+| 2 || CH|| [[Chatra district|Chatra]]|| [[Chatra]]|| align=right | 1,042,304 || align=right | 3,700|| align=right | 275
+|-
+| 3 || DE|| [[Deoghar district|Deoghar]]|| [[Deoghar]]|| align=right | 1,491,879|| align=right | 2,479|| align=right | 602
+|-
+| 4 || DH|| [[Dhanbad district|Dhanbad]]|| [[Dhanbad]]|| align=right | 2,682,662|| align=right | 2,075|| align=right | 1,284
+|-
+| 5 || DU|| [[Dumka district|Dumka]]|| [[Dumka]]|| align=right | 1,321,096 || align=right | 4,404 || align=right | 300
+|-
+| 6 || ES|| [[East Singhbhum district|East Singhbhum]]|| [[Jamshedpur]]|| align=right | 2,291,032 || align=right | 3,533|| align=right | 648
+|-
+| 7 || GA|| [[Garhwa district|Garhwa]]|| [[Garhwa]]|| align=right | 1,322,387 || align=right | 4,064|| align=right | 327
+|-
+| 8 || GI|| [[Giridih district|Giridih]]|| [[Giridih]]|| align=right | 2,445,203|| align=right | 4,887|| align=right | 497
+|-
+| 9 || GO|| [[Godda district|Godda]]|| [[Godda]]|| align=right | 1,311,382|| align=right | 2,110|| align=right | 622
+|-
+| 10 || GU|| [[Gumla district|Gumla]]|| [[Gumla]]|| align=right | 1,025,656 || align=right | 5327|| align=right | 193
+|-
+| 11 || HA|| [[Hazaribagh district|Hazaribag]]|| [[Hazaribagh|Hazaribag]]|| align=right | 1,734,005 || align=right | 4,302 || align=right | 403
+|-
+| 12 || JA|| [[Jamtara district|Jamtara]]|| [[Jamtara]]|| align=right | 790,207 || align=right | 1,802 || align=right | 439
+|-
+| 13 || KH|| [[Khunti district|Khunti]]|| [[Khunti]]|| align=right | 530,299 || align=right | 2,467 || align=right | 215
+|-
+| 14 || KO|| [[Koderma district|Koderma]]|| [[Koderma]]|| align=right | 717,169 || align=right | 1,312|| align=right | 427
+|-
+| 15 || LA|| [[Latehar district|Latehar]]|| [[Latehar]]|| align=right | 725,673 || align=right | 3,630 || align=right | 200
+|-
+| 16 || LO|| [[Lohardaga district|Lohardaga]]|| [[Lohardaga]]|| align=right | 461,738|| align=right | 1,494|| align=right | 310
+|-
+| 17 || PK|| [[Pakur district|Pakur]]|| [[Pakur]]|| align=right | 899,200 || align=right | 1,805|| align=right | 498
+|-
+| 18 || PL|| [[Palamu district|Palamu]]|| [[Daltonganj]]|| align=right | 1,936,319 || align=right | 5,082|| align=right | 381
+|-
+| 19 || RM|| [[Ramgarh district|Ramgarh]]|| [[Ramgarh, Jharkhand|Ramgarh]]|| align=right | 949,159 || align=right | 1,212|| align=right | 684
+|-
+| 20 || RA|| [[Ranchi district|Ranchi]]|| [[Ranchi]]|| align=right | 2,912,022|| align=right | 7,974|| align=right | 557
+|-
+| 21 || SA|| [[Sahebganj district|Sahibganj]]|| [[Sahebganj]]|| align=right | 1,150,038 || align=right | 1,599|| align=right | 719
+|-
+| 22 || SK|| [[Seraikela Kharsawan district|Seraikela Kharsawan]]|| [[Seraikela]] || align=right | 1,063,458|| align=right | 2,725|| align=right | 390
+|-
+| 23 || SI|| [[Simdega district|Simdega]]|| [[Simdega]]|| align=right | 599,813 || align=right | 3,750 || align=right | 160
+|-
+| 24 || WS|| [[West Singhbhum district|West Singhbhum]]|| [[Chaibasa]]|| align=right | 1,501,619|| align=right | 7,186 || align=right | 209
+|-
+|}
+
+=== Karnataka (KA) ===
+{{See also|Districts of Karnataka}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 || BK|| [[Bagalkot district|Bagalkot]]|| [[Bagalkot]]|| align=right | 1,890,826 || align=right | 6,583|| align=right | 288
+|-
+| 2 || BL|| [[Bellary district|Ballari]]|| [[Ballari]]|| align=right | 2,532,383 || align=right | 8,439|| align=right | 300
+|-
+| 3 || BG|| [[Belgaum district|Belgaum]]|| [[Belgaum]]|| align=right | 4,778,439 || align=right | 13,415|| align=right | 356
+|-
+| 4 || BR|| [[Bangalore Rural district|Bangalore Rural]]|| [[Bangalore]]|| align=right | 987,257|| align=right | 2,239 || align=right | 441
+|-
+| 5 || BN|| [[Bangalore Urban district|Bangalore Urban]]|| [[Bangalore]]|| align=right | 9,588,910|| align=right | 2,190|| align=right | 4,378
+|-
+| 6 || BD|| [[Bidar district|Bidar]]|| [[Bidar]]|| align=right | 1,700,018 || align=right | 5,448|| align=right | 312
+|-
+| 7 || CJ|| [[Chamarajanagar district|Chamarajnagar]]|| [[Chamarajanagar]]|| align=right | 1,020,962|| align=right | 5,102|| align=right | 200
+|-
+| 8 || CKB|| [[Chikkaballapur district|Chikkaballapur]] || [[Chikkaballapur]] || align=right | 1,254,377 || align=right | 4,208 || align=right | 298
+|-
+| 9 || CK|| [[Chikkamagaluru district|Chikkamagaluru]]|| [[Chikmagalur]]|| align=right | 1,137,753 || align=right | 7,201|| align=right | 158
+|-
+| 10 || CT|| [[Chitradurga district|Chitradurga]]|| [[Chitradurga]]|| align=right | 1,660,378 || align=right | 8,437|| align=right | 197
+|-
+| 11 || DK|| [[Dakshina Kannada]]|| [[Mangaluru]]|| align=right | 2,083,625 || align=right | 4,559|| align=right | 457
+|-
+| 12 || DA|| [[Davanagere district|Davanagere]]|| [[Davangere]]|| align=right | 1,946,905 || align=right | 5,926|| align=right | 329
+|-
+| 13 || DH|| [[Dharwad district|Dharwad]]|| [[Dharwad]]|| align=right | 1,846,993 || align=right | 4,265|| align=right | 434
+|-
+| 14 || GA|| [[Gadag district|Gadag]]|| [[Gadag-Betageri]]|| align=right | 1,065,235 || align=right | 4,651|| align=right | 229
+|-
+| 15 || GU|| [[Gulbarga district|Gulbarga]]|| [[Gulbarga]]|| align=right | 2,564,892 || align=right | 10,990 || align=right | 233
+|-
+| 16 || HS|| [[Hassan district|Hassan]]|| [[Hassan, Karnataka|Hassan]]|| align=right | 1,776,221 || align=right | 6,814|| align=right | 261
+|-
+| 17 || HV|| [[Haveri district|Haveri]]|| [[Haveri]]|| align=right | 1,598,506 || align=right | 4,825|| align=right | 331
+|-
+| 18 || KD|| [[Kodagu district|Kodagu]]|| [[Madikeri]]|| align=right | 554,762 || align=right | 4,102|| align=right | 135
+|-
+| 19 || KL|| [[Kolar district|Kolar]]|| [[Kolar]]|| align=right | 1,540,231 || align=right | 4,012 || align=right | 384
+|-
+| 20 || KP|| [[Koppal district|Koppal]]|| [[Koppal]]|| align=right | 1,391,292 || align=right | 5,565 || align=right | 250
+|-
+| 21 || MA|| [[Mandya district|Mandya]]|| [[Mandya]]|| align=right | 1,808,680 || align=right | 4,961|| align=right | 365
+|-
+| 22 || MY|| [[Mysore district|Mysuru]]|| [[Mysore]]|| align=right | 2,994,744|| align=right | 6,854|| align=right | 437
+|-
+| 23 || RA|| [[Raichur district|Raichur]]|| [[Raichur]]|| align=right | 1,924,773 || align=right | 6,839|| align=right | 228
+|-
+| 24 || RM|| [[Ramanagara district|Ramanagara]] || [[Ramanagara]] || align=right | 1,082,739 || align=right | 3,573 || align=right | 303
+|-
+| 25 || SH|| [[Shimoga district|Shimoga]]|| [[Shimoga]]|| align=right | 1,755,512 || align=right | 8,495|| align=right | 207
+|-
+| 26 || TU|| [[Tumakuru district|Tumakuru]]|| [[Tumakuru]]|| align=right | 2,681,449 || align=right | 10,598|| align=right | 253
+|-
+| 27 || UD|| [[Udupi district|Udupi]]|| [[Udupi]]|| align=right | 1,177,908 || align=right | 3,879|| align=right | 304
+|-
+| 28 || UK|| [[Uttara Kannada]]|| [[Karwar]]|| align=right | 1,353,299|| align=right | 10,291|| align=right | 132
+|-
+| 29 || BJ|| [[Bijapur district, Karnataka|Vijayapura]]|| [[Bijapur, Karnataka|Vijayapura]]|| align=right | 2,175,102 || align=right | 10,517|| align=right | 207
+|-
+| 30 || YG|| [[Yadgir district|Yadgir]] || [[Yadgir]] || align=right | 1,172,985 || align=right | 5,225 || align=right | 224
+|-
+|}
+
+=== Kerala (KL) ===
+{{See also|Districts of Kerala}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 || AL|| [[Alappuzha district|Alappuzha]]|| [[Alappuzha]]||align=right|  2,121,943 ||align=right| 1,414 || align="right" |  1,501
+|-
+| 2 || ER|| [[Ernakulam district|Ernakulam]]|| [[Kakkanad]]||align=right|  3,279,860 ||align=right|  2,951 || align="right" |  1,069
+|-
+| 3 || ID|| [[Idukki district|Idukki]]|| [[Painavu]]||align=right| 1,107,453 ||align=right| 4,479 || align="right" | 254
+|-
+| 4 || KN|| [[Kannur district|Kannur]]|| [[Kannur]]||align=right| 2,525,637 ||align=right| 2,966 || align="right" | 852
+|-
+| 5 || KS|| [[Kasaragod district|Kasaragod]]|| [[Kasaragod]]||align=right| 1,302,600 ||align=right| 1,992 || align="right" | 654
+|-
+| 6 || KL|| [[Kollam district|Kollam]]|| [[Kollam]]||align=right| 2,629,703 ||align=right| 2,498 || align="right" | 1,056
+|-
+| 7 || KT|| [[Kottayam district|Kottayam]]|| [[Kottayam]]||align=right| 1,979,384 ||align=right| 2,203 || align="right" | 896
+|-
+| 8 || KZ|| [[Kozhikode district|Kozhikode]]|| [[Kozhikode]]||align=right| 3,089,543 ||align=right| 2,345 || align="right" | 1,318
+|-
+| 9 || MA|| [[Malappuram district|Malappuram]]|| [[Malappuram]]||align=right| 4,110,956 ||align=right| 3,550 || align="right" |  1,058
+|-
+| 10 || PL|| [[Palakkad district|Palakkad]]|| [[Palakkad]]||align=right| 2,810,892 ||align=right| 4,480 || align="right" | 627
+|-
+| 11 || PT|| [[Pathanamthitta district|Pathanamthitta]]|| [[Pathanamthitta]]||align=right| 1,195,537 ||align=right| 2,462 || align="right" |  453
+|-
+| 12 || TS|| [[Thrissur district|Thrissur]]|| [[Thrissur]]||align=right| 3,110,327 ||align=right| 3,032 || align="right" | 1,026
+|-
+| 13 || TV||[[Thiruvananthapuram district|Thiruvananthapuram]]||[[Thiruvananthapuram]]||align=right| 3,307,284 ||align=right| 2,192 || align="right" | 1,509
+|-
+| 14 || WA|| [[Wayanad district|Wayanad]]|| [[Kalpetta]]||align=right| 816,558 ||align=right| 2,131 || align="right" | 383
+|-
+|}
+
+=== Madhya Pradesh (MP) ===
+{{See also|Districts of Madhya Pradesh}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 || AG|| [[Agar Malwa district|Agar Malwa]]|| [[Agar, Madhya Pradesh|Agar]]||align=right |{{dash}} || align="right" |2,785 || align="right" |{{dash}}
+|-
+| 2 || AL|| [[Alirajpur district|Alirajpur]]|| [[Alirajpur]]|| align=right | 728,677 || align=right | 3,182 || align=right | 229
+|-
+| 3 || AP|| [[Anuppur district|Anuppur]]|| [[Anuppur]]|| align=right | 749,521 || align=right | 3,747 || align=right | 200
+|-
+| 4 || AS|| [[Ashok Nagar district|Ashok Nagar]]|| [[Ashok Nagar]]|| align=right | 844,979 || align=right | 4,674 || align=right | 181
+|-
+| 5 || BL|| [[Balaghat district|Balaghat]]|| [[Balaghat]]|| align=right | 1,701,156 || align=right | 9,229|| align=right | 184
+|-
+| 6 || BR|| [[Barwani district|Barwani]]|| [[Barwani]]|| align=right | 1,385,659 || align=right | 5,432|| align=right | 256
+|-
+| 7 || BE|| [[Betul district|Betul]]|| [[Betul, Madhya Pradesh|Betul]]|| align=right | 1,575,247 || align=right | 10,043|| align=right | 157
+|-
+| 8 || BD|| [[Bhind district|Bhind]]|| [[Bhind]]|| align=right | 1,703,562 || align=right | 4,459|| align=right | 382
+|-
+| 9 || BP|| [[Bhopal district|Bhopal]]|| [[Bhopal]]|| align=right | 2,368,145 || align=right | 2,772|| align=right | 854
+|-
+| 10 || BU || [[Burhanpur district|Burhanpur]]|| [[Burhanpur, Madhya Pradesh|Burhanpur]]|| align=right | 756,993 || align=right | 3,427 || align=right | 221
+|-
+| 11 || {{dash}}|| [[Chachaura-Binaganj district|Chachaura-Binaganj]]||[[Chachaura]]|| align=right| {{dash}}||align=right |{{dash}} ||align=right |{{dash}}
+|-
+| 12 || CT|| [[Chhatarpur district|Chhatarpur]]|| [[Chhatarpur]]|| align=right | 1,762,857 || align=right | 8,687|| align=right | 203
+|-
+| 13 || CN|| [[Chhindwara district|Chhindwara]]|| [[Chhindwara]]|| align=right | 2,090,306 || align=right | 11,815|| align=right | 177
+|-
+| 14 || DM|| [[Damoh district|Damoh]]|| [[Damoh]]|| align=right | 1,263,703 || align=right | 7,306 || align=right | 173
+|-
+| 15 || DT|| [[Datia district|Datia]]|| [[Datia]]|| align=right | 786,375 || align=right | 2,694 || align=right | 292
+|-
+| 16 || DE|| [[Dewas district|Dewas]]|| [[Dewas]]|| align=right | 1,563,107 || align=right | 7,020 || align=right | 223
+|-
+| 17 || DH|| [[Dhar district|Dhar]]|| [[Dhar]]|| align=right | 2,184,672 || align=right | 8,153 || align=right | 268
+|-
+| 18 || DI|| [[Dindori district|Dindori]]|| [[Dindori, Madhya Pradesh|Dindori]]|| align=right | 704,218 || align=right | 7,427 || align=right | 94
+|-
+| 19 || GU|| [[Guna district|Guna]]|| [[Guna, India|Guna]]|| align=right | 1,240,938 || align=right | 6,485 || align=right | 194
+|-
+| 20 || GW|| [[Gwalior district|Gwalior]]|| [[Gwalior]]|| align=right | 2,030,543 || align=right | 5,465 || align=right | 445
+|-
+| 21 || HA|| [[Harda district|Harda]]|| [[Harda]]|| align=right | 570,302 || align=right | 3,339 || align=right | 171
+|-
+| 22 || HO|| [[Hoshangabad district|Hoshangabad]]|| [[Hoshangabad]]|| align=right | 1,240,975 || align=right | 6,698 || align=right | 185
+|-
+| 23 || IN|| [[Indore district|Indore]]|| [[Indore]]|| align=right | 3,272,335 || align=right | 3,898 || align=right | 839
+|-
+| 24 || JA|| [[Jabalpur district|Jabalpur]]|| [[Jabalpur]]|| align=right | 2,460,714 || align=right | 5,210 || align=right | 472
+|-
+| 25 || JH|| [[Jhabua district|Jhabua]]|| [[Jhabua]]|| align=right | 1,024,091 || align=right | 6,782 || align=right | 285
+|-
+| 26 || KA|| [[Katni district|Katni]]|| [[Katni]]|| align=right | 1,291,684 || align=right | 4,947 || align=right | 261
+|-
+| 27 || EN|| [[Khandwa district|Khandwa]] (East Nimar)|| [[Khandwa]]|| align=right | 1,309,443 || align=right | 7,349 || align=right | 178
+|-
+| 28 || WN|| [[Khargone district|Khargone]] (West Nimar)|| [[Khargone]]|| align=right | 1,872,413 || align=right | 8,010 || align=right | 233
+|-
+| 29 ||  {{dash}} || [[Maihar district|Maihar]]|| [[Maihar]]||align=right | {{dash}}||align=right | {{dash}}|| align=right|{{dash}}
+|-
+| 30 || ML|| [[Mandla district|Mandla]]|| [[Mandla]]|| align=right | 1,053,522 || align=right | 5,805 || align=right | 182
+|-
+| 31 || MS|| [[Mandsaur district|Mandsaur]]|| [[Mandsaur]]|| align=right | 1,339,832 || align=right | 5,530 || align=right | 242
+|-
+| 32 || MO|| [[Morena district|Morena]]|| [[Morena, India|Morena]]|| align=right | 1,965,137 || align=right | 4,991 || align=right | 394
+|-
+| 33 || NA|| [[Narsinghpur district|Narsinghpur]]|| [[Narsinghpur]]|| align=right | 1,092,141 || align=right | 5,133 || align=right | 213
+|-
+| 34 || {{dash}} ||[[Nagda district|Nagda]]|| [[Nagda]]||align=right |{{dash}} || align=right| {{dash}}||align=right |{{dash}}
+|-
+| 35 || NE|| [[Neemuch district|Neemuch]]|| [[Neemuch]]|| align=right | 825,958 || align=right | 4,267 || align=right | 194
+|-
+| 36 || {{dash}} ||[[Niwari district|Niwari]] ||[[Niwari, Madhya Pradesh|Niwari]] ||align=right |{{dash}} ||align=right |{{dash}} ||align=right |{{dash}}
+|-
+| 37 || PA|| [[Panna district|Panna]]|| [[Panna, India|Panna]]|| align=right | 1,016,028 || align=right | 7,135 || align=right | 142
+|-
+| 38 || RS|| [[Raisen district|Raisen]]|| [[Raisen]]|| align=right | 1,331,699 || align=right | 8,466 || align=right | 157
+|-
+| 39 || RG|| [[Rajgarh district|Rajgarh]]|| [[Rajgarh, Madhya Pradesh|Rajgarh]]|| align=right | 1,546,541 || align=right | 6,143 || align=right | 251
+|-
+| 40 || RL|| [[Ratlam district|Ratlam]]|| [[Ratlam]]|| align=right | 1,454,483 || align=right | 4,861 || align=right | 299
+|-
+| 41 || RE|| [[Rewa district|Rewa]]|| [[Rewa, India|Rewa]]|| align=right | 2,363,744 || align=right | 6,314 || align=right | 374
+|-
+| 42 || SG|| [[Sagar district|Sagar]]|| [[Sagar, Madhya Pradesh|Sagar]]|| align=right | 2,378,295 || align=right | 10,252 || align=right | 272
+|-
+| 43 || ST|| [[Satna district|Satna]]|| [[Satna]]|| align=right | 2,228,619 || align=right | 7,502 || align=right | 297
+|-
+| 44 || SR|| [[Sehore district|Sehore]]|| [[Sehore]]|| align=right | 1,311,008 || align=right | 6,578 || align=right | 199
+|-
+| 45 || SO|| [[Seoni district|Seoni]]|| [[Seoni]]|| align=right | 1,378,876 || align=right | 8,758 || align=right | 157
+|-
+| 46 || SH|| [[Shahdol district|Shahdol]]|| [[Shahdol]]|| align=right | 1,064,989 || align=right | 6,205 || align=right | 172
+|-
+| 47 || SJ|| [[Shajapur district|Shajapur]]|| [[Shajapur]]|| align=right | 1,512,353 || align=right | 6,196 || align=right | 244
+|-
+| 48 || SP|| [[Sheopur district|Sheopur]]|| [[Sheopur]]|| align=right | 687,952 || align=right | 6,585 || align=right | 104
+|-
+| 49 || SV|| [[Shivpuri district|Shivpuri]]|| [[Shivpuri]]|| align=right | 1,725,818 || align=right | 10,290 || align=right | 168
+|-
+| 50 || SI|| [[Sidhi district|Sidhi]]|| [[Sidhi]]|| align=right | 1,126,515 || align=right | 10,520 || align=right | 232
+|-
+| 51 || SN|| [[Singrauli district|Singrauli]]|| [[Waidhan]]|| align=right | 1,178,132 || align=right | 5,672 || align=right | 208
+|-
+| 52 || TI|| [[Tikamgarh district|Tikamgarh]]|| [[Tikamgarh]]|| align=right | 1,444,920 || align=right | 5,055 || align=right | 286
+|-
+| 53 || UJ|| [[Ujjain district|Ujjain]]|| [[Ujjain]]|| align=right | 1,986,864 || align=right | 6,091 || align=right | 356
+|-
+| 54 || UM|| [[Umaria district|Umaria]]|| [[Umaria]]|| align=right | 643,579 || align=right | 4,062 || align=right | 158
+|-
+| 55 || VI|| [[Vidisha district|Vidisha]]|| [[Vidisha]]|| align=right | 1,458,212 || align=right | 7,362|| align=right | 198
+|-
+|}
+
+=== Maharashtra (MH) ===
+{{See also|Districts of Maharashtra}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 || AH|| [[Ahmednagar district|Ahmednagar]]|| [[Ahmednagar]]|| align=right | 4,543,083 || align=right | 17,048 || align=right | 266
+|-
+| 2 || AK|| [[Akola district|Akola]]|| [[Akola]]|| align=right | 1,818,617 || align=right | 5,429 || align=right | 321
+|-
+| 3 || AM|| [[Amravati district|Amravati]]|| [[Amravati]]|| align=right | 2,887,826 || align=right | 12,235 || align=right | 237
+|-
+| 4 || AU|| [[Aurangabad district, Maharashtra|Aurangabad]]|| [[Aurangabad, Maharashtra|Aurangabad]]|| align=right | 3,695,928 || align=right | 10,107 || align=right | 365
+|-
+| 5 || BI|| [[Beed district|Beed]]|| [[Beed]]|| align=right | 2,585,962 || align=right | 10,693 || align=right | 242
+|-
+| 6 || BH|| [[Bhandara district|Bhandara]]|| [[Bhandara]]|| align=right | 1,198,810 || align=right | 3,890 || align=right | 293
+|-
+| 7 || BU|| [[Buldhana district|Buldhana]]|| [[Buldhana]]|| align=right | 2,588,039 || align=right | 9,661 || align=right | 268
+|-
+| 8 || CH|| [[Chandrapur district|Chandrapur]]|| [[Chandrapur]]|| align=right | 2,194,262 || align=right | 11,443 || align=right | 192
+|-
+| 9 || DH|| [[Dhule district|Dhule]]|| [[Dhule]]|| align=right | 2,048,781 || align=right | 8,095 || align=right | 285
+|-
+| 10 || GA|| [[Gadchiroli district|Gadchiroli]]|| [[Gadchiroli]]|| align=right | 1,071,795 || align=right | 14,412 || align=right | 74
+|-
+| 11 || GO|| [[Gondia district|Gondia]]|| [[Gondia]]|| align=right | 1,322,331 || align=right | 5,431 || align=right | 253
+|-
+| 12 || HI|| [[Hingoli district|Hingoli]]|| [[Hingoli]]|| align=right | 1,178,973 || align=right | 4,526 || align=right | 244
+|-
+| 13 || JG|| [[Jalgaon district|Jalgaon]]|| [[Jalgaon]]|| align=right | 4,224,442 || align=right | 11,765 || align=right | 359
+|-
+| 14 || JN|| [[Jalna district|Jalna]]|| [[Jalna, Maharashtra|Jalna]]|| align=right | 1,958,483 || align=right | 7,718 || align=right | 255
+|-
+| 15 || KO|| [[Kolhapur district|Kolhapur]]|| [[Kolhapur]]|| align=right | 3,874,015 || align=right | 7,685 || align=right | 504
+|-
+| 16 || LA|| [[Latur district|Latur]]|| [[Latur]]|| align=right | 2,455,543 || align=right | 7,157|| align=right | 343
+|-
+| 17 || MC||[[Mumbai City district|Mumbai]]||[[Mumbai]]|| align="right" | 3,145,966 || align=right | 69 || align=right | 20,038
+|-
+| 18 || MU|| [[Mumbai Suburban district|Mumbai suburban]]|| [[Bandra]] (East)|| align=right | 9,332,481 || align=right | 369 || align=right | 20,925
+|-
+| 19 || ND|| [[Nanded district|Nanded]]|| [[Nanded]]|| align=right | 3,356,566 || align=right | 10,528 || align=right | 319
+|-
+| 20 || NB|| [[Nandurbar district|Nandurbar]]|| [[Nandurbar]]|| align=right | 1,646,177 || align=right | 5,055 || align=right | 276
+|-
+| 21 || NG|| [[Nagpur district|Nagpur]]|| [[Nagpur]]|| align=right | 4,653,171 || align=right | 9,892 || align=right | 470
+|-
+| 22 || NS|| [[Nashik district|Nashik]]|| [[Nashik]]|| align=right | 6,109,052 || align=right | 15,539 || align=right | 393
+|-
+| 23 || OS|| [[Osmanabad district|Osmanabad]]|| [[Osmanabad]]|| align=right | 1,660,311 || align=right | 7,569 || align=right | 219
+|-
+| 24 || PL||[[Palghar district|Palghar]]|| [[Palghar]]|| align=right | 2,990,116 || align="right" | 5,344 || align="right" | 560
+|-
+| 25 || PA|| [[Parbhani district|Parbhani]]|| [[Parbhani]]|| align=right | 1,835,982 || align=right | 6,511 || align=right | 295
+|-
+| 26 || PU|| [[Pune district|Pune]]|| [[Pune]]|| align=right | 9,426,959|| align=right | 15,643 || align=right | 603
+|-
+| 27 || RG|| [[Raigad district|Raigad]]|| [[Alibag]]|| align=right | 2,635,394 || align=right | 7,152 || align=right | 368
+|-
+| 28 || RT|| [[Ratnagiri district|Ratnagiri]]|| [[Ratnagiri]]|| align=right | 1,612,672 || align=right | 8,208 || align=right | 196
+|-
+| 29 || SN|| [[Sangli district|Sangli]]|| [[Sangli]]|| align=right | 2,820,575 || align=right | 8,572 || align=right | 329
+|-
+| 30 || ST|| [[Satara district|Satara]]|| [[Satara (city)|Satara]]|| align=right | 3,003,922 || align=right | 10,475 || align=right | 287
+|-
+| 31 || SI|| [[Sindhudurg district|Sindhudurg]]|| [[Oros, Sindhudurg|Oros]]|| align=right | 848,868 || align=right | 5,207 || align=right | 163
+|-
+| 32 || SO|| [[Solapur district|Solapur]]|| [[Solapur]]|| align=right | 4,315,527 || align=right | 14,895 || align=right | 290
+|-
+| 33 || TH|| [[Thane district|Thane]]|| [[Thane]]|| align=right | 11,060,148 || align=right | 4,214 || align=right | 1,157
+|-
+| 34 || WR|| [[Wardha district|Wardha]]|| [[Wardha]]|| align=right | 1,296,157 || align=right | 6,309 || align=right | 205
+|-
+| 35 || WS|| [[Washim district|Washim]]|| [[Washim]]|| align=right | 1,196,714 || align=right | 5,155 || align=right | 244
+|-
+| 36 || YA|| [[Yavatmal district|Yavatmal]]|| [[Yavatmal]]|| align=right | 2,775,457 || align=right | 13,582 || align=right | 204
+|-
+|}
+
+=== Manipur (MN) ===
+{{See also|Districts of Manipur}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 || BPR|| [[Bishnupur District|Bishnupur]]|| [[Bishnupur (city)|Bishnupur]]|| align=right |240,363|| align=right |496|| align=right |415
+|-
+| 2 || CDL|| [[Chandel District|Chandel]]|| [[Chandel district|Chandel]]|| align=right |144,028|| align=right |3,317|| align=right |37
+|-
+| 3 || CCpr|| [[Churachandpur district|Churachandpur]]|| [[Churachandpur]]|| align=right |271,274|| align=right |4,574|| align=right |50
+|-
+| 4 || IE|| [[Imphal East]]|| [[Porompat]]|| align=right |452,661|| align=right |710|| align=right |555
+|-
+| 5 || IW|| [[Imphal West]]|| [[Lamphelpat]]|| align=right |514,683||align=right | 519|| align=right |847
+|-
+| 6 || JBM|| [[Jiribam District|Jiribam]]|| [[Jiribam]]|| align=right |43,818|| align=right |232|| align=right |190
+|-
+| 7 || KAK||[[Kakching district|Kakching]]|| [[Kakching]]|| align=right |135,481||align=right | {{dash}}|| align=right |{{dash}}
+|-
+| 8 || KJ|| [[Kamjong District|Kamjong]]|| [[Kamjong]]|| align=right |45,616|| align=right |2,000|| align=right |23
+|-
+| 9 || KPI|| [[Kangpokpi District|Kangpokpi]] || [[Kangpokpi]]|| align=right |{{dash}}|| align=right |{{dash}}|| align=right |{{dash}}
+|-
+| 10 || NL|| [[Noney District|Noney]]|| [[Noney]] (Longmai)|| align=right |{{dash}}|| align=right |{{dash}}|| align=right |{{dash}}
+|-
+| 11 || PZ|| [[Pherzawl District|Pherzawl]]|| [[Pherzawl]]|| align=right |47,250|| align=right |2,285|| align=right |21
+|-
+| 12 || SE|| [[Senapati District|Senapati]]|| [[Senapati (Tahamzam)|Senapati]]|| align=right |354,772|| align=right |3,269|| align=right |116
+|-
+| 13 || TML|| [[Tamenglong District|Tamenglong]]|| [[Tamenglong]]|| align=right |140,143||align=right | 4,391||align=right | 25
+|-
+| 14 || TNL || [[Tengnoupal District|Tengnoupal]]|| [[Tengnoupal]]|| align=right |{{dash}}|| align=right |{{dash}}|| align=right |{{dash}}
+|-
+| 15 || TBL|| [[Thoubal District|Thoubal]]|| [[Thoubal]]||align=right | 420,517|| align=right |514||align=right | 713
+|-
+| 16 || UKR|| [[Ukhrul District|Ukhrul]]|| [[Ukhrul]]|| align=right |183,115|| align=right |4,547|| align=right |31
+|-
+|}
+
+=== Meghalaya (ML) ===
+{{See also|Districts of Meghalaya}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 || EG|| [[East Garo Hills]]|| [[Williamnagar]]|| align=right | 317,618 || align=right | 2,603 || align=right | 121
+|-
+| 2 || EK|| [[East Khasi Hills]]|| [[Shillong]]|| align=right | 824,059 || align=right | 2,752 || align=right | 292
+|-
+| 3 || {{dash}}||[[East Jaintia Hills]] || [[Khliehriat]]|| align=right | 122,436 || align=right | 2,115 || align=right | 58
+|-
+| 4 || {{dash}}||[[North Garo Hills]] || [[Resubelpara]]|| align=right | 118,325 || align=right | 1,113 || align=right | 106
+|-
+| 5 || RB|| [[Ri-Bhoi|Ri Bhoi]]|| [[Nongpoh]]|| align=right | 258,380 || align=right | 2,378 || align=right | 109
+|-
+| 6 || SG|| [[South Garo Hills]]|| [[Baghmara, India|Baghmara]]|| align=right | 142,574 || align=right | 1,850 || align=right | 77
+|-
+| 7 || {{dash}} ||[[South West Garo Hills]]|| [[Ampati]]|| align=right |172,495 || align=right | 822 || align=right | 210
+|-
+| 8 || {{dash}}||[[South West Khasi Hills]]|| [[Mawkyrwat]]|| align=right | 110,152 || align=right | 1,341 || align=right |82
+|-
+| 9 || WJH|| [[West Jaintia Hills]]|| [[Jowai]]|| align=right | 270,352 || align=right | 1,693 || align=right | 160
+|-
+| 10 || WG|| [[West Garo Hills]]|| [[Tura, India|Tura]]|| align=right | 642,923 || align=right | 3,714 || align=right | 173
+|-
+| 11 || WK|| [[West Khasi Hills]]|| [[Nongstoin]]|| align=right | 385,601 || align=right | 5,247 || align=right | 73
+|-
+|}
+
+=== Mizoram (MZ) ===
+{{See also|Districts of Mizoram}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 || AI|| [[Aizawl district|Aizawl]]|| [[Aizawl]]|| align=right | 404,054 || align=right | 3,577 || align=right | 113
+|-
+| 2 || CH|| [[Champhai district|Champhai]]|| [[Champhai]]|| align=right | 125,370 || align=right | 3,168|| align=right | 39
+|-
+| 3 || KO|| [[Kolasib district|Kolasib]]|| [[Kolasib]]|| align=right | 83,054 || align=right | 1,386 || align=right | 60
+|-
+| 4 || LA|| [[Lawngtlai district|Lawngtlai]]|| [[Lawngtlai]]|| align=right | 117,444 || align=right | 2,519 || align=right | 46
+|-
+| 5 || LU|| [[Lunglei district|Lunglei]]|| [[Lunglei]]|| align=right | 154,094 || align=right | 4,572 || align=right | 34
+|-
+| 6 || MA|| [[Mamit district|Mamit]]|| [[Mamit]]|| align=right | 85,757 || align=right | 2,967 || align=right | 28
+|-
+| 7 || SA|| [[Saiha district|Saiha]]|| [[Saiha]]|| align=right | 56,366 || align=right | 1,414 || align=right | 40
+|-
+| 8 || SE|| [[Serchhip district|Serchhip]]|| [[Serchhip]]|| align=right | 64,875 || align=right | 1,424 || align=right | 46
+|-
+|}
+
+=== Nagaland (NL) ===
+{{See also|Districts of Nagaland}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 || DI|| [[Dimapur district|Dimapur]]|| [[Dimapur]]|| align=right | 379,769 || align=right | 926 || align=right | 410
+|-
+| 2 || KI|| [[Kiphire district|Kiphire]]|| [[Kiphire]]|| align=right | 74,033 || align=right | 1,255 || align=right | 66
+|-
+| 3 || KO|| [[Kohima district|Kohima]]|| [[Kohima]]|| align=right | 270,063 || align=right | 1,041 || align=right | 213
+|-
+| 4 || LO|| [[Longleng district|Longleng]]|| [[Longleng]]|| align=right | 50,593 || align=right | 885 || align=right | 89
+|-
+| 5 || MK|| [[Mokokchung district|Mokokchung]]|| [[Mokokchung]]|| align=right | 193,171 || align=right | 1,615 || align=right | 120
+|-
+| 6 || MN|| [[Mon district|Mon]]|| [[Mon, India|Mon]]|| align=right | 259,604|| align=right | 1,786 || align=right | 145
+|-
+| 7 || {{dash}} || [[Noklak district|Noklak]]|| [[Noklak]]|| align=right | 59,300 || align=right | 1,152 || align=right | 51
+|-
+| 8 || PE|| [[Peren district|Peren]]|| [[Peren]]|| align=right | 163,294 || align=right | 2,300 || align=right | 55
+|-
+| 9 || PH|| [[Phek district|Phek]]|| [[Phek]]|| align=right | 163,294 || align=right | 2,026 || align=right | 81
+|-
+| 10 || TU|| [[Tuensang district|Tuensang]]|| [[Tuensang]]|| align=right | 414,801|| align=right | 4,228 || align=right | 98
+|-
+| 11 || WO|| [[Wokha district|Wokha]]|| [[Wokha]]|| align=right | 166,239 || align=right | 1,628 || align=right | 120
+|-
+| 12 || ZU|| [[Zunheboto district|Zunheboto]]|| [[Zunheboto]]|| align=right | 141,014 || align=right | 1,255 || align=right | 112
+|-
+|}
+
+=== Odisha (OD) ===
+{{See also|Districts of Odisha}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 || AN|| [[Angul district|Angul]]|| [[Angul]]|| align=right | 1,271,703 || align=right | 6,347 || align=right | 199
+|-
+| 2 || BD|| [[Boudh district|Boudh]] (Bauda)|| [[Boudh]]|| align=right | 439,917 || align=right | 4,289 || align=right | 142
+|-
+| 3 || BH|| [[Bhadrak district|Bhadrak]]|| [[Bhadrak]]|| align=right | 1,506,522 || align=right | 2,788 || align=right | 601
+|-
+| 4 || BL|| [[Balangir district|Balangir]] || [[Balangir]]|| align=right | 1,648,574 || align=right | 6,552 || align=right | 251
+|-
+| 5 || BR|| [[Bargarh district|Bargarh]] (Baragarh)|| [[Bargarh]]|| align=right | 1,478,833 || align=right | 5,832 || align=right | 253
+|-
+| 6 || BW|| [[Balasore district|Balasore]] || [[Balasore]]|| align=right | 2,317,419 || align=right | 3,706 || align=right | 609
+|-
+| 7 || CU|| [[Cuttack district|Cuttack]]|| [[Cuttack]]|| align=right | 2,618,708 || align=right | 3,915|| align=right | 666
+|-
+| 8 || DE|| [[Debagarh district|Debagarh]] (Deogarh)|| [[Debagarh]]|| align=right | 312,164 || align=right | 2,781 || align=right | 106
+|-
+| 9 || DH|| [[Dhenkanal district|Dhenkanal]]|| [[Dhenkanal, India|Dhenkanal]]|| align=right | 1,192,948 || align=right | 4,597 || align=right | 268
+|-
+| 10 || GN|| [[Ganjam district|Ganjam]]|| [[Chhatrapur]]|| align=right | 3,520,151|| align=right | 8,033|| align=right | 429
+|-
+| 11 || GP|| [[Gajapati district|Gajapati]]|| [[Paralakhemundi]]|| align=right | 575,880|| align=right | 3,056 || align=right | 133
+|-
+| 12 || JH|| [[Jharsuguda district|Jharsuguda]]|| [[Jharsuguda]]|| align=right | 579,499|| align=right | 2,202 || align=right | 274
+|-
+| 13 || JP|| [[Jajpur district|Jajpur]] || [[Panikoili]]|| align=right | 1,826,275|| align=right | 2,885 || align=right | 630
+|-
+| 14 || JS|| [[Jagatsinghpur district|Jagatsinghpur]]|| [[Jagatsinghpur]]|| align=right | 1,136,604|| align=right | 1,759|| align=right | 681
+|-
+| 15 || KH|| [[Khordha district|Khordha]]|| [[Khordha]]|| align=right | 2,246,341 || align=right | 2,888 || align=right | 799
+|-
+| 16 || KJ|| [[Kendujhar district|Kendujhar]] (Keonjhar)|| [[Kendujhar]]|| align=right | 1,802,777 || align=right | 8,336 || align=right | 217
+|-
+| 17 || KL|| [[Kalahandi district|Kalahandi]]|| [[Bhawanipatna]]|| align=right | 1,573,054 || align=right | 8,197 || align=right | 199
+|-
+| 18 || KN|| [[Kandhamal district|Kandhamal]]|| [[Phulbani]]|| align=right | 731,952|| align=right | 6,004 || align=right | 91
+|-
+| 19 || KO|| [[Koraput district|Koraput]]|| [[Koraput]]|| align=right | 1,376,934 || align=right | 8,534 || align=right | 156
+|-
+| 20 || KP|| [[Kendrapara district|Kendrapara]]|| [[Kendrapara]]|| align=right | 1,439,891 || align=right | 2,546 || align=right | 545
+|-
+| 21 || ML|| [[Malkangiri district|Malkangiri]]|| [[Malkangiri]]|| align=right | 612,727 || align=right | 6,115 || align=right | 106
+|-
+| 22 || MY|| [[Mayurbhanj district|Mayurbhanj]]|| [[Baripada]]|| align=right | 2,513,895 || align=right | 10,418 || align=right | 241
+|-
+| 23 || NB|| [[Nabarangpur district|Nabarangpur]]|| [[Nabarangpur]]|| align=right | 1,218,762 || align=right | 5,135 || align=right | 230
+|-
+| 24 || NU|| [[Nuapada district|Nuapada]]|| [[Nuapada]]|| align=right | 606,490 || align=right | 3,408 || align=right | 157
+|-
+| 25 || NY|| [[Nayagarh district|Nayagarh]]|| [[Nayagarh]]|| align=right | 962,215 || align=right | 3,954 || align=right | 247
+|-
+| 26 || PU|| [[Puri district|Puri]]|| [[Puri]]|| align=right | 1,697,983 || align=right | 3,055 || align=right | 488
+|-
+| 27 || RA|| [[Rayagada district|Rayagada]]|| [[Rayagada]]|| align=right | 961,959 || align=right | 7,585 || align=right | 136
+|-
+| 28 || SA|| [[Sambalpur district|Sambalpur]]|| [[Sambalpur]]|| align=right | 1,044,410 || align=right | 6,702 || align=right | 158
+|-
+| 29 || SO|| [[Subarnapur district|Subarnapur]] (Sonepur)|| [[Sonepur, Orissa|Subarnapur]]|| align=right | 652,107 || align=right | 2,284 || align=right | 279
+|-
+| 30 || SU|| [[Sundargarh district|Sundargarh]] || [[Sundargarh]]|| align=right | 2,080,664 || align=right | 9,942 || align=right | 214
+|-
+|}
+
+=== Punjab (PB) ===
+{{See also|Districts of Punjab (India)}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 || AM|| [[Amritsar district|Amritsar]]|| [[Amritsar]]|| align=right | 2,490,891 || align=right | 2,673 || align=right | 932
+|-
+| 2 || BNL|| [[Barnala district|Barnala]]|| [[Barnala]]|| align=right | 596,294 || align=right | 1,423 || align=right | 419
+|-
+| 3 || BA|| [[Bathinda district|Bathinda]]|| [[Bathinda]]|| align=right | 1,388,859 || align=right | 3,355 || align=right | 414
+|-
+| 4 || FI|| [[Firozpur district|Firozpur]]|| [[Firozpur]]|| align=right | 2,026,831 || align=right | 5,334 || align=right | 380
+|-
+| 5 || FR|| [[Faridkot district|Faridkot]]|| [[Faridkot, Punjab|Faridkot]]|| align=right | 618,008 || align=right | 1,472 || align=right | 424
+|-
+| 6 || FT|| [[Fatehgarh Sahib district|Fatehgarh Sahib]]|| [[Fatehgarh Sahib]]|| align=right | 599,814 || align=right | 1,180 || align=right | 508
+|-
+| 7 || FA|| [[Fazilka district|Fazilka]]<ref name="auto">Fazilka district was formed in 2011, no data in census 2011 on this district</ref>|| [[Fazilka]]|| align=right |1,180,483|| align="right" | 3113 || align="right" |379
+|-
+| 8 || GU|| [[Gurdaspur district|Gurdaspur]]|| [[Gurdaspur]]|| align=right | 2,299,026 || align=right | 3,542 || align=right | 649
+|-
+| 9 || HO|| [[Hoshiarpur district|Hoshiarpur]]|| [[Hoshiarpur]]|| align=right | 1,582,793 || align=right | 3,397 || align=right | 466
+|-
+| 10 || JA|| [[Jalandhar district|Jalandhar]]|| [[Jalandhar]]|| align=right | 2,181,753 || align=right | 2,625 || align=right | 831
+|-
+| 11 || KA|| [[Kapurthala district|Kapurthala]]|| [[Kapurthala]]|| align=right | 817,668 || align=right | 1,646 || align=right | 501
+|-
+| 12 || LU|| [[Ludhiana district|Ludhiana]]|| [[Ludhiana]]|| align=right | 3,487,882 || align=right | 3,744 || align=right | 975
+|-
+| 13 || MA|| [[Mansa district, India|Mansa]]|| [[Mansa, Punjab|Mansa]]|| align=right | 768,808 || align=right | 2,174 || align=right | 350
+|-
+| 14 || MO|| [[Moga district|Moga]]|| [[Moga, Punjab|Moga]]|| align=right | 992,289 || align=right | 2,235 || align=right | 444
+|-
+| 15 || MU|| [[Sri Muktsar Sahib district|Sri Muktsar Sahib]]|| [[Sri Muktsar Sahib]]|| align=right | 902,702 || align=right | 2,596|| align=right | 348
+|-
+| 16 || PAT|| [[Pathankot district|Pathankot]]|| [[Pathankot]]|| align=right | 626,154|| align="right" | 929|| align="right" | 674
+|-
+| 17 || PA|| [[Patiala district|Patiala]]|| [[Patiala]]|| align=right | 2,892,282 || align=right | 3,175 || align=right | 596
+|-
+| 18 || RU|| [[Rupnagar district|Rupnagar]]|| [[Rupnagar]]|| align=right | 683,349 || align=right | 1,400 || align=right | 488
+|-
+| 19 || SAS|| [[Sahibzada Ajit Singh Nagar district|Sahibzada Ajit Singh Nagar]]|| [[Mohali]]|| align=right | 986,147 || align=right | 1,188 || align=right | 830
+|-
+| 20 || SA || [[Sangrur district|Sangrur]]|| [[Sangrur]]|| align=right | 1,654,408 || align=right | 3,685 || align=right | 449
+|-
+| 21 || PB || [[Shahid Bhagat Singh Nagar district|Shahid Bhagat Singh Nagar]]|| [[Nawanshahr]]|| align=right | 614,362 || align=right | 1,283 || align=right | 479
+|-
+| 22 || TT || [[Tarn Taran district|Tarn Taran]]|| [[Tarn Taran Sahib]]|| align=right | 1,120,070 || align=right | 2,414 || align=right | 464
+|-
+|}
+
+=== Rajasthan (RJ) ===
+{{See also|Districts of Rajasthan}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 || AJ|| [[Ajmer district|Ajmer]]|| [[Ajmer]]|| align=right | 2,584,913 || align=right | 8,481 || align=right | 305
+|-
+| 2 || AL|| [[Alwar district|Alwar]]|| [[Alwar]]|| align=right | 3,671,999 || align=right | 8,380 || align=right | 438
+|-
+| 3 || BI|| [[Bikaner district|Bikaner]]|| [[Bikaner]]|| align=right | 2,367,745 || align=right | 27,244 || align=right | 78
+|-
+| 4 || BM|| [[Barmer district|Barmer]]|| [[Barmer, Rajasthan|Barmer]]|| align=right | 2,604,453 || align=right | 28,387 || align=right | 92
+|-
+| 5 || BN|| [[Banswara district|Banswara]]|| [[Banswara]]|| align=right | 1,798,194 || align=right | 5,037 || align=right | 399
+|-
+| 6 || BP|| [[Bharatpur district|Bharatpur]]|| [[Bharatpur, India|Bharatpur]]|| align=right | 2,549,121 || align=right | 5,066 || align=right | 503
+|-
+| 7 || BR|| [[Baran district|Baran]]|| [[Baran, Rajasthan|Baran]]|| align=right | 1,223,921 || align=right | 6,955 || align=right | 175
+|-
+| 8 || BU|| [[Bundi district|Bundi]]|| [[Bundi]]|| align=right | 1,113,725 || align=right | 5,550 || align=right | 193
+|-
+| 9 || BW|| [[Bhilwara district|Bhilwara]]|| [[Bhilwara]]|| align=right | 2,410,459 || align=right | 10,455 || align=right | 230
+|-
+| 10 || CR|| [[Churu district|Churu]]|| [[Churu]]|| align=right | 2,041,172 || align=right | 16,830 || align=right | 148
+|-
+| 11 || CT|| [[Chittorgarh district|Chittorgarh]]|| [[Chittorgarh]]|| align=right | 1,544,392 || align=right | 10,856 || align=right | 193
+|-
+| 12 || DA|| [[Dausa district|Dausa]]|| [[Dausa]]|| align=right | 1,637,226 || align=right | 3,429|| align=right | 476
+|-
+| 13 || DH|| [[Dholpur district|Dholpur]]|| [[Dholpur]]|| align=right | 1,207,293 || align=right | 3,084 || align=right | 398
+|-
+| 14 || DU|| [[Dungarpur district|Dungarpur]]|| [[Dungarpur]]|| align=right | 1,388,906 || align=right | 3,771 || align=right | 368
+|-
+| 15 || GA|| [[Ganganagar district|Ganganagar]]|| [[Ganganagar]]|| align=right | 1,969,520 || align=right | 10,990 || align=right | 179
+|-
+| 16 || HA|| [[Hanumangarh district|Hanumangarh]]|| [[Hanumangarh]]|| align=right | 1,779,650 || align=right | 9,670 || align=right | 184
+|-
+| 17 || JJ|| [[Jhunjhunu district|Jhunjhunu]]|| [[Jhunjhunu]]|| align=right | 2,139,658 || align=right | 5,928 || align=right | 361
+|-
+| 18 || JL|| [[Jalore district|Jalore]]|| [[Jalore]]|| align=right | 1,830,151 || align=right | 10,640 || align=right | 172
+|-
+| 19 || JO|| [[Jodhpur district|Jodhpur]]|| [[Jodhpur]]|| align=right | 3,685,681 || align=right | 22,850 || align=right | 161
+|-
+| 20 || JP|| [[Jaipur district|Jaipur]]|| [[Jaipur]]|| align=right | 6,663,971 || align=right | 11,152 || align=right | 598
+|-
+| 21 || JS|| [[Jaisalmer district|Jaisalmer]]|| [[Jaisalmer]]|| align=right | 672,008 || align=right | 38,401 || align=right | 17
+|-
+| 22 || JW|| [[Jhalawar district|Jhalawar]]|| [[Jhalawar]]|| align=right | 1,411,327 || align=right | 6,219 || align=right | 227
+|-
+| 23 || KA|| [[Karauli district|Karauli]]|| [[Karauli]]|| align=right | 1,458,459 || align=right | 5,530 || align=right | 264
+|-
+| 24 || KO|| [[Kota district|Kota]]|| [[Kota, Rajasthan|Kota]]|| align=right | 1,950,491 || align=right | 5,446 || align=right | 374
+|-
+| 25 || NA|| [[Nagaur district|Nagaur]]|| [[Nagaur]]|| align=right | 3,309,234 || align=right | 17,718 || align=right | 187
+|-
+| 26 || PA|| [[Pali district|Pali]]|| [[Pali, Rajasthan|Pali]]|| align=right | 2,038,533 || align=right | 12,387 || align=right | 165
+|-
+| 27 || PG|| [[Pratapgarh district (Rajasthan)|Pratapgarh]]|| [[Pratapgarh, Rajasthan|Pratapgarh]]|| align=right | 868,231 || align=right | 4,112 || align=right | 211
+|-
+| 28 || RA|| [[Rajsamand district|Rajsamand]]|| [[Rajsamand]]|| align=right | 1,158,283 || align=right | 3,853 || align=right | 302
+|-
+| 29 || SK|| [[Sikar district|Sikar]]|| [[Sikar]]|| align=right | 2,677,737 || align=right | 7,732|| align=right | 346
+|-
+| 30 || SM|| [[Sawai Madhopur district|Sawai Madhopur]]|| [[Sawai Madhopur]]|| align=right | 1,338,114 || align=right | 4,500 || align=right | 257
+|-
+| 31 || SR|| [[Sirohi district|Sirohi]]|| [[Sirohi]]|| align=right | 1,037,185 || align=right | 5,136 || align=right | 202
+|-
+| 32 || TO|| [[Tonk district|Tonk]]|| [[Tonk, India|Tonk]]|| align=right | 1,421,711 || align=right | 7,194 || align=right | 198
+|-
+| 33 || UD|| [[Udaipur district|Udaipur]]|| [[Udaipur]]|| align=right | 3,067,549 || align=right | 13,430 || align=right | 242
+|-
+|}
+
+=== Sikkim (SK) ===
+{{See also|Districts of Sikkim}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 || ES|| [[East Sikkim]]|| [[Gangtok]]|| align=right | 281,293 || align=right | 954 || align=right | 295
+|-
+| 2 || NS|| [[North Sikkim]]|| [[Mangan, India|Mangan]]|| align=right | 43,354 || align=right | 4,226 || align=right | 10
+|-
+| 3 || SS|| [[South Sikkim]]|| [[Namchi]]|| align=right | 146,742 || align=right | 750 || align=right | 196
+|-
+| 4 || WS|| [[West Sikkim]]|| [[Geyzing]]|| align=right | 136,299 || align=right | 1,166 || align=right | 117
+|-
+|}
+
+=== Tamil Nadu (TN) ===
+{{See also|Districts of Tamil Nadu}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 || AY|| [[Ariyalur district|Ariyalur]]|| [[Ariyalur]]|| align=right | 752,481 || align=right | 3,208 || align=right | 387
+|-
+| 2 || CGL|| [[Chengalpattu district|Chengalpattu]]|| [[Chengalpattu]]|| align=right | 2,556,244|| align="right" | 2,945|| align=right | 868
+|-
+| 3 || CH|| [[Chennai district|Chennai]]|| [[Chennai]] || align=right | 7,100,000 || align=right | 426 || align="right" | 17,000
+|-
+| 4 || CO|| [[Coimbatore district|Coimbatore]]|| [[Coimbatore]]|| align=right | 3,472,578 || align=right | 7,469 || align=right | 748
+|-
+| 5 || CU|| [[Cuddalore district|Cuddalore]]|| [[Cuddalore]]|| align=right | 2,600,880 || align=right | 3,999 || align=right | 702
+|-
+| 6 || DH|| [[Dharmapuri district|Dharmapuri]]|| [[Dharmapuri]]|| align=right | 1,502,900 || align=right | 4,532 || align=right | 332
+|-
+| 7 || DI|| [[Dindigul district|Dindigul]]|| [[Dindigul]]|| align=right | 2,161,367 || align=right | 6,058 || align=right | 357
+|-
+| 8 || ER|| [[Erode district|Erode]]|| [[Erode]]|| align=right | 2,259,608 || align=right | 5,714 || align=right | 397
+|-
+| 9 || KL|| [[Kallakurichi district|Kallakurichi]]|| [[Kallakurichi]]|| align=right | 1,370,281|| align="right" | 3,520|| align=right | 389
+|-
+| 10 || KC|| [[Kanchipuram district|Kanchipuram]]|| [[Kanchipuram]]|| align=right | 1,166,401 || align=right | 1,656 || align=right | 704
+|-
+| 11 || KK|| [[Kanyakumari district|Kanyakumari]]|| [[Nagercoil]]|| align=right | 1,863,178|| align=right | 1,685 || align=right | 1,106
+|-
+| 12 || KA|| [[Karur district|Karur]]|| [[Karur]]|| align=right | 1,076,588 || align=right | 2,901 || align=right | 371
+|-
+| 13 || KR|| [[Krishnagiri district|Krishnagiri]]|| [[Krishnagiri]]|| align=right | 1,883,731 || align=right | 5,086 || align=right | 370
+|-
+| 14 || MDU|| [[Madurai district|Madurai]]|| [[Madurai]]|| align=right | 3,991,038 || align=right | 3,676 || align=right | 823
+|-
+| 15 || {{dash}}|| [[Mayiladuthurai district|Mayiladuthurai]]|| [[Mayiladuthurai]]|| align=right | {{dash}}|| align=right |{{dash}} || align=right | {{dash}}
+|-
+| 16 || NG|| [[Nagapattinam district|Nagapattinam]]|| [[Nagapattinam]]|| align=right | 1,614,069 || align=right | 2,716 || align=right | 668
+|-
+| 17 || NI|| [[Nilgiris district|Nilgiris]]|| [[Ooty]]|| align=right | 735,071 || align=right | 2,549 || align=right | 288
+|-
+| 18 || NM|| [[Namakkal district|Namakkal]]|| [[Namakkal]]|| align=right | 1,721,179 || align=right | 3,429 || align=right | 506
+|-
+| 19 || PE|| [[Perambalur district|Perambalur]]|| [[Perambalur]]|| align=right | 564,511 || align=right | 1,752 || align=right | 323
+|-
+| 20 || PU|| [[Pudukkottai district|Pudukkottai]]|| [[Pudukkottai]]|| align=right | 1,918,725 || align=right | 4,651 || align=right | 348
+|-
+| 21 || RA|| [[Ramanathapuram district|Ramanathapuram]]|| [[Ramanathapuram]]|| align=right | 1,337,560 || align=right | 4,123 || align=right | 320
+|-
+| 22 || RN|| [[Ranipet district|Ranipet]]|| [[Ranipet]]|| align=right | 1,210,277|| align="right" | 2,234|| align=right | 524
+|-
+| 23 || SA|| [[Salem district|Salem]]|| [[Salem, Tamil Nadu|Salem]]|| align=right | 3,480,008 || align=right | 5,245 || align=right | 663
+|-
+| 24 || SI|| [[Sivaganga district|Sivaganga]]|| [[Sivaganga]]|| align=right | 1,341,250 || align=right | 4,086 || align=right | 324
+|-
+| 25 || TS|| [[Tenkasi district|Tenkasi]]|| [[Tenkasi]]|| align=right | 14,07,627|| align="right" | 2916 || align=right | 483
+|-
+| 26 || TP|| [[Tirupur district|Tirupur]]|| [[Tirupur]]|| align=right | 2,471,222 || align=right | 5,106 || align=right | 476
+|-
+| 27 || TC|| [[Tiruchirappalli district|Tiruchirappalli]]|| [[Tiruchirappalli]]|| align=right | 2,713,858 || align=right | 4,407 || align=right | 602
+|-
+| 28 || TH|| [[Theni district|Theni]]|| [[Theni]]|| align=right | 1,243,684 || align=right | 3,066 || align=right | 433
+|-
+| 29 || TI|| [[Tirunelveli district|Tirunelveli]]|| [[Tirunelveli]]|| align=right | 1,665,253 || align="right" | 3,842 ||align=right | 433
+|-
+| 30 || TJ|| [[Thanjavur district|Thanjavur]]|| [[Thanjavur]]|| align=right | 2,402,781 || align="right" | 3,397 || align=right | 691
+|-
+| 31 || TK|| [[Thoothukudi district|Thoothukudi]]|| [[Thoothukudi]] || align="right" | 1,738,376 || align="right" | 4,594 || align=right | 378
+|-
+| 32 || TPT|| [[Tirupattur district|Tirupattur]]|| [[Tirupattur]] || align="right" | 1,111,812|| align="right" |1,792|| align="right" |620
+|-
+| 33 || TL|| [[Tiruvallur district|Tiruvallur]]|| [[Tiruvallur]]|| align=right | 3,725,697 || align="right" | 3,424 || align=right | 1,049
+|-
+| 34 || TR|| [[Tiruvarur district|Tiruvarur]]|| [[Tiruvarur]]|| align=right | 1,268,094 || align="right" | 2,377 || align=right | 533
+|-
+| 35 || TV|| [[Tiruvannamalai district|Tiruvannamalai]]|| [[Tiruvannaamalai]]|| align=right | 2,468,965 || align="right" | 6,191 || align=right | 399
+|-
+| 36 || VE|| [[Vellore district|Vellore]]|| [[Vellore]]|| align=right | 1,614,242 || align=right | 2,080 || align="right" | 776
+|-
+| 37 || VL|| [[Viluppuram district|Viluppuram]]|| [[Viluppuram]]|| align=right | 2,093,003 || align="right" | 3,725 || align=right | 562
+|-
+| 38 || VR|| [[Virudhunagar district|Virudhunagar]]|| [[Virudhunagar]]|| align=right | 1,943,309 || align="right" | 3,446 || align=right | 454
+|-
+|}
+
+=== Telangana (TS) ===
+{{See also|Districts of Telangana}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 || AD || [[Adilabad district|Adilabad]] || [[Adilabad]] || align=right | 708,952|| align=right | 4,185.97 || align=right | 171
+|-
+| 2 || {{dash}} ||[[Komaram Bheem district|Komaram Bheem]] || [[Komaram Bheem, Telangana|Komaram Bheem]] || align=right | 515,835|| align=right | 4,300.16|| align=right | 106
+|-
+| 3 || {{dash}} ||[[Bhadradri district|Bhadradri Kothagudem]] || [[Kothagudem]] || align=right | 1,304,811 || align=right | 8,951.00 || align=right | 143
+|-
+| 4 || HY|| [[Hyderabad district, India|Hyderabad]] || [[Hyderabad, India|Hyderabad]] || align=right | 3,441,992 || align=right | 4,325.29|| align=right | 18,172
+|-
+| 5 || {{dash}}||[[Jagtial district|Jagtial]] || [[Jagitial|Jagtial]] || align=right | 983,414 || align=right | 3,043.23 || align=right | 407
+|-
+| 6 || {{dash}}||[[Jangaon district|Jangaon]] || [[Jangaon]] || align=right | 582,457 || align=right | 2,187.50 || align=right | 259
+|-
+| 7 || {{dash}}||[[Jayashankar district|Jayashankar Bhupalpally]] || [[Bhupalpalle]] || align=right | 712,257 || align=right | 6,361.70 || align=right | 115
+|-
+| 8 || {{dash}}||[[Jogulamba district|Jogulamba Gadwal]] || [[Gadwal]] || align=right | 664,971 || align=right | 2,928.00 || align=right | 208
+|-
+| 9 || {{dash}}||[[Kamareddy district|Kamareddy]] || [[Kamareddy]] || align=right | 972,625 || align=right | 3,651.00 || align=right | 266
+|-
+| 10 || KA|| [[Karimnagar district|Karimnagar]]|| [[Karimnagar]]|| align=right | 1,016,063 || align=right | 2,379.07 || align=right | 473
+|-
+| 11 || KH|| [[Khammam district|Khammam]] || [[Khammam]]|| align=right | 1,401,639 || align=right | 4,453.00 || align=right | 321
+|-
+| 12 || {{dash}}||[[Mahabubabad district|Mahabubabad]] || [[Mahabubabad]] || align=right | 770,170 || align=right | 2,876.70 || align=right | 269
+|-
+| 13 || MA|| [[Mahbubnagar district|Mahbubnagar]]|| [[Mahbubnagar]]|| align=right | 1,318,110 || align=right | 4,037.00 || align=right |  281
+|-
+| 14 || {{dash}}||[[Mancherial district|Mancherial]]  || [[Mancherial]] || align=right | 807,037 || align=right | 4,056.36 || align=right | 201
+|-
+| 15 || ME|| [[Medak district|Medak]] || [[Medak]] || align=right | 767,428 || align=right | 2,740.89 || align=right | 275
+|-
+| 16 || {{dash}}||[[Medchal district|Medchal-Malkajgiri]] || [[Shamirpet]] || align=right | 2,542,203 || align=right | 5,005.98 || align=right | 2,251
+|-
+| 17 || {{dash}}||[[Mulugu district|Mulugu]] || [[Mulugu]] || align=right | 2,94,671 || align=right | 3,881 || align=right | 124
+|-
+| 18 || NA||[[Nalgonda district|Nalgonda]]||[[Nalgonda]]|| align="right" | 1,631,399 || align="right" | 2,449.79 || align="right" | 227
+|-
+| 19 || {{dash}}||[[Narayanapet District|Narayanpet]] ||[[Narayanpet]] ||align="right"| 5,66,874 || align=right| 2336.44 || align="right" | 243
+|-
+| 20 ||{{dash}}||[[Nagarkurnool district|Nagarkurnool]]||[[Nagarkurnool]]|| align="right" | 893,308 || align="right" | 6,545.00 || align="right" | 124
+|-
+| 21 || {{dash}}||[[Nirmal district|Nirmal]]||[[Nirmal]]|| align="right" | 709,415 || align="right" | 3,562.51 || align="right" | 185
+|-
+| 22 || NI||[[Nizamabad district|Nizamabad]]||[[Nizamabad, Andhra Pradesh|Nizamabad]]|| align="right" | 1,534,428 || align="right" | 4,153.00 || align="right" | 366
+|-
+| 23 ||{{dash}}||[[Peddapalli district|Peddapalli]]||[[Peddapalli, Peddapalli district|Peddapalle]]|| align="right" | 795,332 || align="right" | 4,614.74 || align="right" | 356
+|-
+| 24 || {{dash}}||[[Rajanna district|Rajanna Sircilla]]||[[Sircilla]]|| align="right" | 546,121 || align="right" | 2,030.89 || align="right" | 273
+|-
+| 25 || RA||[[Ranga Reddy district|Ranga Reddy]]||[[Shamshabad]]|| align="right" | 2,551,731 || align="right" | 1,038.00 || align="right" | 486
+|-
+| 26 || {{dash}}||[[Sangareddy district|Sangareddy]]||[[Sangareddy]]|| align="right" | 1,527,628 || align="right" | 4,464.87 || align="right" | 347
+|-
+| 27 || {{dash}}||[[Siddipet district|Siddipet]]||[[Siddipet]]|| align="right" | 993,376 || align="right" | 3,425.19 || align="right" | 279
+|-
+| 28 || {{dash}}||[[Suryapet district|Suryapet]]||[[Suryapet]]|| align="right" | 1,099,560 || align="right" | 3,374.47 || align="right" | 305
+|-
+| 29 ||{{dash}}||[[Vikarabad district|Vikarabad]]||[[Vikarabad]]|| align="right" | 881,250 || align="right" | 3,385.00 || align="right" | 274
+|-
+| 30 || {{dash}}||[[Wanaparthy district|Wanaparthy]]||[[Wanaparthy]]|| align="right" | 751,553 || align="right" | 2,938.00 || align="right" | 268
+|-
+| 31 || WL||[[Warangal Urban district|Warangal Urban]]||[[Warangal]]|| align="right" | 1,135,707 || align="right" | 1,304.50 || align="right" | 826
+|-
+| 32 ||{{dash}}||[[Warangal Rural district|Warangal Rural]]||[[Geesugonda]]|| align="right" | 716,457 || align="right" | 2,175.50 || align="right" | 330
+|-
+| 33 ||{{dash}}||[[Yadadri district|Yadadri Bhuvanagiri]]||[[Bhongir, Telangana|Bhongiri]]|| align="right" | 726,465 || align="right" | 3,091.48 || align="right" | 239
+|-
+|}
+
+=== Tripura (TR) ===
+{{See also|Districts of Tripura}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 ||	DH|| [[Dhalai district|Dhalai]]|| [[Ambassa]]|| align=right | 377,988 || align=right | 2,400 || align=right | 157
+|-
+| 2 ||  GM|| [[Gomati district|Gomati]]|| [[Udaipur, Tripura]]|| align=right | 4,36,868 || align=right | 1522.8 || align=right | 287
+|-
+| 3 ||	KH|| [[Khowai district|Khowai]]<ref name="auto1">Khowai district of Tripura did not exist during census 2011.</ref>|| [[Khowai]]|| align=right | 3,27,391 || align=right | 1005.67 || align=right | 326
+|-
+| 4 ||	NT|| [[North Tripura district|North Tripura]]|| [[Dharmanagar]]|| align=right | 4,15,946 || align=right | 1444.5 || align=right | 288
+|-
+| 5 ||	SP|| [[Sepahijala district|Sepahijala]]<ref name="auto2">Sepahijala district of Tripura did not exist during census 2011.</ref>|| [[Bishramganj]]|| align=right | 4,84,233 || align=right | 1044.78 || align=right | 463
+|-
+| 6 ||	ST|| [[South Tripura district|South Tripura]]|| [[Belonia, India|Belonia]]|| align=right | 4,33,737 || align=right | 1534.2 || align=right | 283
+|-
+| 7 ||	UK|| [[Unakoti district|Unokoti]]<ref name="auto3">Unakoti district of Tripura did not exist during census 2011.</ref>|| [[Kailashahar]]|| align=right | 2,77,335 || align=right | 591.93 || align=right | 469
+|-
+| 8 ||	WT|| [[West Tripura district|West Tripura]]|| [[Agartala]]|| align=right | 9,17,534 || align=right | 942.55 || align=right | 973
+|-
+|}
+
+=== Uttar Pradesh (UP) ===
+{{See also|Districts of Uttar Pradesh}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 || AG|| [[Agra district|Agra]]|| [[Agra]]|| align=right | 4,380,793 || align=right | 4,027 || align=right | 1,084
+|-
+| 2 || AL|| [[Aligarh district|Aligarh]]|| [[Aligarh, Uttar Pradesh|Aligarh]]|| align=right | 3,673,849 || align=right | 3,747 || align=right | 1,007
+|-
+| 3 || AH|| [[Allahabad district|Allahabad]]|| [[Allahabad]]|| align=right | 5,959,798|| align=right | 5,481 || align=right | 1,087
+|-
+| 4 || AN|| [[Ambedkar Nagar district|Ambedkar Nagar]]|| [[Akbarpur, Ambedkar Nagar|Akbarpur]]|| align=right | 2,398,709 || align=right | 2,372 || align=right | 1,021
+|-
+| 5 || AM|| [[Amethi district|Amethi]]|| [[Gauriganj]]||align=right | 2,549,935 ||align=right | 3,063|| align=right | 830
+|-
+| 6 || JP|| [[Amroha district|Amroha]]|| [[Amroha]]|| align=right | 1,838,771 || align=right | 2,321 || align=right | 818
+|-
+| 7 || AU|| [[Auraiya district|Auraiya]]|| [[Auraiya]]|| align=right | 1,372,287 || align=right | 2,051 || align=right | 681
+|-
+| 8 || AZ|| [[Azamgarh district|Azamgarh]]|| [[Azamgarh]]|| align=right | 4,616,509 || align=right | 4,053 || align=right | 1,139
+|-
+| 9 || BG|| [[Bagpat district|Bagpat]]|| [[Baghpat]]|| align=right | 1,302,156 || align=right | 1,345 || align=right | 986
+|-
+| 10 || BH|| [[Bahraich district|Bahraich]]|| [[Bahraich]]|| align=right | 2,384,239|| align=right | 4,926 || align=right | 415
+|-
+| 11 || BL|| [[Ballia district|Ballia]]|| [[Ballia]]|| align=right | 3,223,642 || align=right | 2,981 || align=right | 1,081
+|-
+| 12 || BP|| [[Balrampur district|Balrampur]]|| [[Balrampur]]|| align=right | 2,149,066 || align=right | 3,349 || align=right | 642
+|-
+| 13 || BN|| [[Banda district (India)|Banda]]|| [[Banda, Uttar Pradesh|Banda]]|| align=right | 1,799,541 || align=right | 4,413 || align=right | 404
+|-
+| 14 || BB|| [[Barabanki district|Barabanki]]|| [[Barabanki city|Barabanki]]|| align=right | 3,257,983 || align=right | 3,825 || align=right | 739
+|-
+| 15 || BR|| [[Bareilly district|Bareilly]]|| [[Bareilly]]|| align=right | 4,465,344 || align=right | 4,120 || align=right | 1,084
+|-
+| 16 || BS|| [[Basti district|Basti]]|| [[Basti, Uttar Pradesh|Basti]]|| align=right | 2,461,056 || align=right | 2,687 || align=right | 916
+|-
+| 17 || BHA||[[Bhadohi district|Bhadohi]]||[[Gyanpur]]|| align="right" | 1,554,203 || align="right" | 960 || align="right" | 1,531
+|-
+| 18 || BI|| [[Bijnor district|Bijnor]]|| [[Bijnor]]|| align=right | 3,683,896 || align=right | 4,561 || align=right | 808
+|-
+| 19 || BD|| [[Budaun district|Budaun]]|| [[Budaun]]|| align=right | 3,712,738 || align=right | 5,168 || align=right | 718
+|-
+| 20 || BU|| [[Bulandshahr district|Bulandshahr]]|| [[Bulandshahr]]|| align=right | 3,498,507 || align=right | 3,719 || align=right | 788
+|-
+| 21 || CD|| [[Chandauli district|Chandauli]]|| [[Chandauli]]|| align=right | 1,952,713 || align=right | 2,554 || align=right | 768
+|-
+| 22 || CT|| [[Chitrakoot district|Chitrakoot]]|| [[Chitrakoot Dham (Karwi)|Karwi]]|| align=right | 990,626 || align=right | 3,202 || align=right | 315
+|-
+| 23 || DE|| [[Deoria district|Deoria]]|| [[Deoria, Uttar Pradesh|Deoria]]|| align=right | 3,098,637 || align=right | 2,535 || align=right | 1,220
+|-
+| 24 || ET|| [[Etah district|Etah]]|| [[Etah]]|| align=right | 1,761,152 || align=right | 2,456 || align=right | 717
+|-
+| 25 || EW|| [[Etawah district|Etawah]]|| [[Etawah]]|| align=right | 1,579,160 || align=right | 2,287 || align=right | 683
+|-
+| 26 || FZ|| [[Faizabad district|Faizabad]]|| [[Faizabad]]|| align=right | 2,468,371 || align=right | 2,765 || align=right | 1,054
+|-
+| 27 || FR|| [[Farrukhabad district|Farrukhabad]]|| [[Fatehgarh]]|| align=right | 1,887,577 || align=right | 2,279 || align=right | 865
+|-
+| 28 || FT|| [[Fatehpur district|Fatehpur]]|| [[Fatehpur, Uttar Pradesh|Fatehpur]] || align=right | 2,632,684 || align=right | 4,152 || align=right | 634
+|-
+| 29 || FI|| [[Firozabad district|Firozabad]]|| [[Firozabad]]|| align=right | 2,496,761 || align=right | 2,361 || align=right | 1,044
+|-
+| 30 || GB|| [[Gautam Buddh Nagar district|Gautam Buddh Nagar]]|| [[Noida]]|| align=right | 1,674,714 || align=right | 1,269 || align=right | 1,252
+|-
+| 31 || GZ|| [[Ghaziabad district, India|Ghaziabad]]|| [[Ghaziabad, Uttar Pradesh|Ghaziabad]]|| align=right | 4,661,452 || align=right | 1,175 || align=right | 3,967
+|-
+| 32 || GP|| [[Ghazipur district|Ghazipur]]|| [[Ghazipur]] || align=right | 3,622,727 || align=right | 3,377 || align=right | 1,072
+|-
+| 33 || GN|| [[Gonda district|Gonda]]|| [[Gonda district|Gonda]]|| align=right | 3,431,386 || align=right | 4,425 || align=right | 857
+|-
+| 34 || GR|| [[Gorakhpur district|Gorakhpur]]|| [[Gorakhpur]]|| align=right | 4,436,275 || align=right | 3,325 || align=right | 1,336
+|-
+| 35 || HM|| [[Hamirpur district, Uttar Pradesh|Hamirpur]]|| [[Hamirpur, Uttar Pradesh|Hamirpur]]|| align=right | 1,104,021 || align=right | 4,325 || align=right | 268
+|-
+| 36 || PN || [[Hapur district|Hapur]]|| [[Hapur]]|| align=right | 1,338,211|| align=right | 660|| align="right" | 2,028
+|-
+| 37 || HR|| [[Hardoi district|Hardoi]]|| [[Hardoi]]|| align=right | 4,091,380 || align=right | 5,986 || align=right | 683
+|-
+| 38 || HT|| [[Hathras district|Hathras]]|| [[Hathras]]|| align=right | 1,565,678 || align=right | 1,752 || align=right | 851
+|-
+| 39 || JL|| [[Jalaun district|Jalaun]]|| [[Orai]]|| align=right | 1,670,718 || align=right | 4,565 || align=right | 366
+|-
+| 40 || JU|| [[Jaunpur district|Jaunpur]]|| [[Jaunpur, Uttar Pradesh|Jaunpur]]|| align=right | 4,476,072 || align=right | 4,038 || align=right | 1,108
+|-
+| 41 || JH|| [[Jhansi district|Jhansi]]|| [[Jhansi]]|| align=right | 2,000,755 || align=right | 5,024 || align=right | 398
+|-
+| 42 || KJ|| [[Kannauj district|Kannauj]]|| [[Kannauj]]|| align=right | 1,658,005 || align=right | 1,993 || align=right | 792
+|-
+| 43 || KD|| [[Kanpur Dehat district|Kanpur Dehat]]|| [[Akbarpur, Kanpur Dehat|Akbarpur]]|| align=right | 1,795,092 || align=right | 3,021 || align=right | 594
+|-
+| 44 || KN|| [[Kanpur Nagar district|Kanpur Nagar]]|| [[Kanpur]]|| align=right | 4,572,951 || align=right | 3,156 || align=right | 1,415
+|-
+| 45 || KR || [[Kasganj district|Kasganj]]|| [[Kasganj]]|| align=right | 1,438,156 || align=right | 1,955 || align=right | 736
+|-
+| 46 || KS|| [[Kaushambi district|Kaushambi]]|| [[Manjhanpur]]|| align=right | 1,596,909 || align=right | 1,837 || align=right | 897
+|-
+| 47 || KU|| [[Kushinagar district|Kushinagar]]|| [[Padrauna]]|| align=right | 3,560,830 || align=right | 2,909 || align=right | 1,226
+|-
+| 48 || LK|| [[Lakhimpur Kheri District|Lakhimpur Kheri]]|| [[Lakhimpur, Uttar Pradesh|Lakhimpur]]|| align=right | 4,013,634 || align=right | 7,674 || align=right | 523
+|-
+| 49 || LA|| [[Lalitpur district, India|Lalitpur]]|| [[Lalitpur, India|Lalitpur]]|| align=right | 1,218,002 || align=right | 5,039 || align=right | 242
+|-
+| 50 || LU|| [[Lucknow district|Lucknow]]|| [[Lucknow]]|| align=right | 4,588,455 || align=right | 2,528 || align=right | 1,815
+|-
+| 51 || MG|| [[Maharajganj district|Maharajganj]]|| [[Mahrajganj, Uttar Pradesh|Maharajganj]]|| align=right | 2,665,292 || align=right | 2,953 || align=right | 903
+|-
+| 52 || MH|| [[Mahoba district|Mahoba]]|| [[Mahoba]]|| align=right | 876,055 || align=right | 2,847 || align=right | 288
+|-
+| 53 || MP|| [[Mainpuri district|Mainpuri]]|| [[Mainpuri]]|| align=right | 1,847,194 || align=right | 2,760 || align=right | 670
+|-
+| 54 || MT|| [[Mathura district|Mathura]]|| [[Mathura]]|| align=right | 2,541,894 || align=right | 3,333 || align=right | 761
+|-
+| 55 || MB|| [[Mau district|Mau]]|| [[Mau]]|| align=right | 2,205,170 || align=right | 1,713 || align=right | 1,287
+|-
+| 56 || ME|| [[Meerut district|Meerut]]|| [[Meerut]]|| align=right | 3,447,405 || align=right | 2,522 || align=right | 1,342
+|-
+| 57 || MI|| [[Mirzapur district|Mirzapur]]|| [[Mirzapur]]|| align=right | 2,494,533 || align=right | 4,522 || align=right | 561
+|-
+| 58 || MO|| [[Moradabad district|Moradabad]]|| [[Moradabad]]|| align=right | 4,773,138 || align=right | 3,718 || align=right | 1,284
+|-
+| 59 || MU|| [[Muzaffarnagar district|Muzaffarnagar]]|| [[Muzaffarnagar]]|| align=right | 4,138,605 || align=right | 4,008 || align=right | 1,033
+|-
+| 60 || PI|| [[Pilibhit district|Pilibhit]]|| [[Pilibhit]]|| align=right | 2,037,225 || align=right | 3,499 || align=right | 567
+|-
+| 61 || PR|| [[Pratapgarh district, Uttar Pradesh|Pratapgarh]]|| [[Pratapgarh, Uttar Pradesh|Pratapgarh]]|| align=right | 3,173,752 || align=right | 3,717 || align=right | 854
+|-
+| 62 || RB|| [[Raebareli district|Raebareli]]|| [[Raebareli]]|| align=right | 3,404,004 || align=right | 4,609 || align=right | 739
+|-
+| 63 || RA|| [[Rampur district|Rampur]]|| [[Rampur, Uttar Pradesh|Rampur]]|| align=right | 2,335,398 || align=right | 2,367 || align=right | 987
+|-
+| 64 || SA|| [[Saharanpur district|Saharanpur]]|| [[Saharanpur]]|| align=right | 3,464,228 || align=right | 3,689 || align=right | 939
+|-
+| 65 || SM|| [[Sambhal district|Sambhal]]||[[Sambhal]]|| align=right | 2,217,020|| align=right| 2453 ||align=right| 890
+|-
+| 66 || SK|| [[Sant Kabir Nagar district|Sant Kabir Nagar]]|| [[Khalilabad, India|Khalilabad]]|| align=right | 1,714,300 || align=right | 1,442|| align=right | 1,014
+|-
+| 67 || SJ|| [[Shahjahanpur district|Shahjahanpur]]|| [[Shahjahanpur]]|| align=right | 3,002,376 || align=right | 4,575 || align=right | 673
+|-
+| 68 || SH || [[Shamli district|Shamli]]<ref name="auto5">Shamli district of Uttar Pradesh was formerly named Prabudh Nagar district, which did not exist during census 2011.</ref> || [[Shamli]]|| align=right| 1,274,815|| align="right" |1,063 || align="right" | 1,200
+|-
+| 69 || SV|| [[Shravasti district|Shravasti]]|| [[Sravasti|Shravasti]]|| align=right | 1,114,615 || align=right | 1,948 || align=right | 572
+|-
+| 70 || SN|| [[Siddharthnagar district|Siddharthnagar]]|| [[Naugarh]]|| align=right | 2,553,526 || align=right | 2,751 || align=right | 882
+|-
+| 71 || SI|| [[Sitapur district|Sitapur]]|| [[Sitapur]]|| align=right | 4,474,446 || align=right | 5,743 || align=right | 779
+|-
+| 72 || SO|| [[Sonbhadra district|Sonbhadra]]|| [[Robertsganj]]|| align=right | 1,862,612 || align=right | 6,788 || align=right | 274
+|-
+| 73 || SU|| [[Sultanpur district|Sultanpur]]|| [[Sultanpur, Uttar Pradesh|Sultanpur]]|| align=right | 3,790,922 || align=right | 4,436 || align=right | 855
+|-
+| 74 || UN|| [[Unnao district|Unnao]]|| [[Unnao]]|| align=right | 3,110,595 || align=right | 4,561 || align=right | 682
+|-
+| 75 || VA|| [[Varanasi district|Varanasi]]|| [[Varanasi]]|| align=right | 3,682,194 || align=right | 1,535 || align=right | 2,399
+|-
+|}
+
+=== Uttarakhand (UK) ===
+{{See also|Districts of Uttarakhand}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 || AL|| [[Almora district|Almora]]||[[Almora]] || align=right | 621,927 || align=right | 3,090 || align=right | 198
+|-
+| 2 || BA|| [[Bageshwar district|Bageshwar]]|| [[Bageshwar]]|| align=right | 259,840 || align=right | 2,310 || align=right | 116
+|-
+| 3 || CL|| [[Chamoli district|Chamoli]]|| [[Chamoli Gopeshwar|Gopeshwar]]|| align=right | 391,114 || align=right | 7,692 || align=right | 49
+|-
+| 4 || CP|| [[Champawat district|Champawat]]|| [[Champawat]]|| align=right | 259,315 || align=right | 1,781 || align=right | 147
+|-
+| 5 || DD|| [[Dehradun district|Dehradun]]|| [[Dehradun]]|| align=right | 1,698,560 || align=right | 3,088 || align=right | 550
+|-
+| 6 || HA|| [[Haridwar district|Haridwar]]|| [[Haridwar]]|| align=right | 1,927,029 || align=right | 2,360 || align=right | 817
+|-
+| 7 || NA|| [[Nainital district|Nainital]]|| [[Nainital]]|| align=right | 955,128 || align=right | 3,853 || align=right | 225
+|-
+| 8 || PG|| [[Pauri Garhwal district|Pauri Garhwal]]|| [[Pauri]]|| align=right | 686,527 || align=right | 5,438 || align=right | 129
+|-
+| 9 || PI|| [[Pithoragarh district|Pithoragarh]]|| [[Pithoragarh]]|| align=right | 485,993 || align=right | 7,110 || align=right | 69
+|-
+| 10 || RP|| [[Rudraprayag district|Rudraprayag]]|| [[Rudraprayag]]|| align=right | 236,857 || align=right | 1,896 || align=right | 119
+|-
+| 11 || TG|| [[Tehri Garhwal district|Tehri Garhwal]]|| [[Tehri|New Tehri]]|| align=right | 616,409 || align=right | 4,085 || align=right | 169
+|-
+| 12 || US|| [[Udham Singh Nagar district|Udham Singh Nagar]]|| [[Rudrapur, Uttarakhand|Rudrapur]]|| align=right | 1,648,367 || align=right | 2,912 || align=right | 648
+|-
+| 13 || UT|| [[Uttarkashi district|Uttarkashi]]|| [[Uttarkashi]]|| align=right | 329,686 || align=right | 7,951 || align=right | 41
+|-
+|}
+
+=== West Bengal (WB) ===
+{{See also|Districts of West Bengal}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 || AD|| [[Alipurduar district|Alipurduar]]|| [[Alipurduar]]|| align=right | 1,700,000 || align=right | 3,383 || align=right | 400
+|-
+| 2 || BN|| [[Bankura district|Bankura]]|| [[Bankura]]|| align=right | 3,596,292 || align=right | 6,882 || align=right | 523
+|-
+| 3 || PBR|| [[Paschim Bardhaman district|Paschim Bardhaman]]|| [[Asansol]]|| align=right | 2,882,031|| align=right | 1,603 || align=right | 1,100
+|-
+| 4 || BR|| [[Purba Bardhaman district|Purba Bardhaman]]|| [[Bardhaman]]|| align=right | 4,835,532 || align=right |	5,433 || align=right | 890
+|-
+| 5 || BI|| [[Birbhum district|Birbhum]]|| [[Suri, Birbhum|Suri]]|| align=right | 3,502,387 || align=right | 4,545 || align=right | 771
+|-
+| 6 || KB|| [[Cooch Behar district|Cooch Behar]]|| [[Cooch Behar]]|| align=right | 2,822,780 || align=right | 3,387 || align=right | 833
+|-
+| 7 || DD|| [[Dakshin Dinajpur district|Dakshin Dinajpur]]|| [[Balurghat]]|| align=right | 1,670,931 || align=right | 2,183 || align=right | 753
+|-
+| 8 || DA|| [[Darjeeling district|Darjeeling]]|| [[Darjeeling]]|| align=right | 1,842,034 || align=right | 3,149 || align=right | 585
+|-
+| 9 || HG|| [[Hooghly district|Hooghly]]|| [[Hugli-Chuchura|Chinsurah]]|| align=right | 5,520,389 || align=right | 3,149 || align=right | 1,753
+|-
+| 10 || HR|| [[Howrah district|Howrah]]|| [[Howrah]]|| align=right | 4,841,638 || align=right | 1,467 || align=right | 3,300
+|-
+| 11 || JA|| [[Jalpaiguri district|Jalpaiguri]]|| [[Jalpaiguri]]|| align=right | 3,869,675 || align=right | 6,227 || align=right | 621
+|-
+| 12 || JH|| [[Jhargram district|Jhargram]]|| [[Jhargram]]|| align=right | 1,136,548 || align=right | 3,038 || align=right | 370
+|-
+| 13 || KA|| [[Kalimpong district|Kalimpong]]|| [[Kalimpong]]|| align=right | 251,642 || align=right | 1,054 || align=right | 239
+|-
+| 14 || KO|| [[Kolkata district|Kolkata]]|| [[Kolkata]]|| align=right | 4,486,679 || align=right | 185 || align=right | 24,252
+|-
+| 15 || MA|| [[Maldah district|Maldah]]|| [[English Bazar]]|| align=right | 3,997,970 || align=right | 3,733 || align=right | 1,071
+|-
+| 16 || MSD|| [[Murshidabad district|Murshidabad]]|| [[Baharampur]]|| align=right | 7,102,430 || align=right | 5,324 || align=right | 1,334
+|-
+| 17 || NA|| [[Nadia district|Nadia]]|| [[Krishnanagar, Nadia|Krishnanagar]]|| align=right | 5,168,488 || align=right | 3,927 || align=right | 1,316
+|-
+| 18 || PN|| [[North 24 Parganas district|North 24 Parganas]]|| [[Barasat]]|| align=right | 10,082,852 || align=right | 4,094 || align=right | 2,463
+|-
+| 19 || PM || [[Paschim Medinipur district|Paschim Medinipur]]|| [[Midnapore]]|| align=right | 5,094,238 || align=right | 9,345 || align=right | 1,076
+|-
+| 20 || PR || [[Purba Medinipur district|Purba Medinipur]]|| [[Tamluk]]|| align=right | 4,417,377 || align=right | 4,736 || align=right | 923
+|-
+| 21 || PU|| [[Purulia district|Purulia]]|| [[Purulia]]|| align=right | 2,927,965 || align=right | 6,259 || align=right | 468
+|-
+| 22 || PS|| [[South 24 Parganas district|South 24 Parganas]]|| [[Alipore]]|| align=right | 8,153,176 || align=right | 9,960 || align=right | 819
+|-
+| 23 || UD|| [[Uttar Dinajpur district|Uttar Dinajpur]]|| [[Raiganj]]|| align=right | 3,000,849 || align=right | 3,180 || align=right | 956
+|-
+|}
+
+=== Andaman and Nicobar (AN) ===
+{{See also|Districts of the Andaman and Nicobar Islands}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011){{sfn|''Andaman & Nicobar Islands''|2011|pp= 62, 63}}
+! Area <br />(km²){{sfn|''Andaman & Nicobar Islands''|2011|p= 28}}
+! Density <br />(/km²)<ref name=censusdist2011 />{{sfn|''Andaman & Nicobar Islands''|2011|p= 65}}
+|-
+| 1 || NI || [[Nicobar district|Nicobar]]|| [[Car Nicobar]]|| align=right |{{formatnum:36842}}|| align=right |{{formatnum:1841}}|| align=right |20
+|-
+| 2 || NA || [[North and Middle Andaman district|North and Middle Andaman]]|| [[Mayabunder]]|| align=right |{{formatnum:105597}}|| align=right |{{formatnum:3736}}|| align=right |28
+|-
+| 3 || SA || [[South Andaman district|South Andaman]]|| [[Port Blair]]|| align=right |{{formatnum:238142}}|| align=right |{{formatnum:2672}}|| align=right |89
+|-
+|}
+
+=== Chandigarh (CH) ===
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District
+! Headquarters
+! Population <br />(2011)<ref name=censusdist2011 />{{sfn|''Chandigarh''|2011|p= 36}}
+! Area <br />(km²){{sfn|''Chandigarh''|2011|p= 20}}
+! Density <br />(/km²)<ref name=censusdist2011 />{{sfn|''Chandigarh''|2011|p= 21}}
+|-
+| 1 || CH || [[Chandigarh district|Chandigarh]]|| [[Chandigarh]]|| align=right | {{formatnum:1055450}}|| align=right | {{formatnum:114}}|| align=right | {{formatnum:9258}}
+|}
+
+=== Dadra and Nagar Haveli (DN) ===
+{{See also|Districts of Dadra and Nagar Haveli and Daman and Diu}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 || DN || [[Dadra and Nagar Haveli]]|| [[Silvassa]]|| align=right | {{formatnum:343709}} || align=right | {{formatnum:491}} || align=right | {{formatnum:700}}
+|-
+|}
+
+=== Daman and Diu (DD) ===
+{{See also|Districts of Dadra and Nagar Haveli and Daman and Diu}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 || DA || [[Daman district, India|Daman]]|| [[Daman, Daman and Diu|Daman]]|| align=right | {{formatnum:191173}}{{sfn|''Daman''|2011|p=47}} || align=right | {{formatnum:72}}{{sfn|''Daman''|2011|p=20}} || align=right | {{formatnum:2651}}
+|-
+| 2 || DI || [[Diu district|Diu]]|| [[Diu, India|Diu]]|| align=right | {{formatnum:52074}}{{sfn|''Diu''|2011|p=45}} || align=right | {{formatnum:39}}{{sfn|''Diu''|2011|p=20}} || align=right | {{formatnum:2058}}
+|-
+|}
+
+
+=== Jammu and Kashmir (JK) ===
+{{See also|Districts of Jammu and Kashmir}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 || AN|| [[Anantnag district|Anantnag]]|| [[Anantnag]]|| align=right | 1,070,144 || align=right | 2853 || align=right | 375
+|-
+| 2 || BPR ||[[Bandipora district|Bandipora]]||[[Bandipore]]|| align=right | 385,099 || align=right | 3,010|| align=right | 128
+|-
+| 3 || BR|| [[Baramulla district|Baramulla]]|| [[Baramulla]]|| align=right | 1,015,503 || align=right | 3329 || align=right | 305
+|-
+| 4 || BD|| [[Badgam district|Badgam]]|| [[Badgam]]|| align=right | 735,753 || align=right | 1406 || align=right | 537
+|-
+| 5 || DO|| [[Doda district|Doda]]|| [[Doda, Jammu and Kashmir|Doda]]|| align=right | 409,576 || align=right | 11,691|| align=right | 79
+|-
+| 6 || GB||[[Ganderbal district|Ganderbal]] || [[Ganderbal]] || align=right | 297,003 || align=right | 258|| align=right | 1,151
+|-
+| 7 || JA|| [[Jammu district|Jammu]]|| [[Jammu]]|| align=right | 1,526,406|| align=right | 3,097|| align=right | 596
+|-
+
+| 8 || KT|| [[Kathua district|Kathua]]|| [[Kathua]]|| align=right | 615,711 || align=right | 2,651|| align=right | 232
+|-
+| 9 || KW|| [[Kishtwar district|Kishtwar]] ||[[Kishtwar]]|| align=right | 230,696 || align=right | 7737|| align=right | 30
+|-
+| 10 || KG|| [[Kulgam district|Kulgam]]|| [[Kulgam]] || align=right | 422,786 || align=right | 457|| align=right | 925
+|-
+| 11 || KU|| [[Kupwara district|Kupwara]]|| [[Kupwara]] || align=right | 875,564|| align=right | 2,379|| align=right | 368
+|-
+| 12 || PO|| [[Poonch district, India|Poonch]]|| [[Poonch (town)|Poonch]]|| align=right | 476,820 || align=right | 1,674|| align=right | 285
+|-
+| 13 || PU|| [[Pulwama district|Pulwama]]|| [[Pulwama]]|| align=right | 570,060 || align=right | 1,398|| align=right | 598
+|-
+| 14 || RA|| [[Rajauri district|Rajouri]]|| [[Rajouri]]|| align=right | 619,266 || align=right | 2,630|| align=right | 235
+|-
+| 15 || RB|| [[Ramban district|Ramban]]|| [[Ramban (Jammu and Kashmir)|Ramban]]|| align=right | 283,313 || align=right | 1,330 || align=right | 213
+|-
+| 16 || RS|| [[Reasi district|Reasi]] || [[Reasi]] || align=right | 314,714 || align=right | 1710 || align=right | 184
+|-
+| 17 || SB|| [[Samba district|Samba]]|| [[Samba, Jammu|Samba]]|| align=right | 318,611|| align=right | 913 || align=right | 318
+|-
+| 18 || SH|| [[Shopian district|Shopian]] || [[Shupiyan]] || align=right | 265,960 || align=right | 312 || align=right | 852
+|-
+| 19 || SR|| [[Srinagar district|Srinagar]]|| [[Srinagar]]|| align=right | 1,269,751 || align=right | 2,228|| align=right | 703
+|-
+| 20 || UD|| [[Udhampur district|Udhampur]]|| [[Udhampur]]|| align=right | 555,357 || align=right | 4,550|| align=right | 211
+|-
+|}
+
+=== Ladakh (LA) ===
+{{See also|Districts of Ladakh}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 || KR|| [[Kargil district|Kargil]] || [[Kargil town|Kargil]]|| align=right | 143,388 || align=right | 14,036|| align=right | 10
+|-
+| 2 || LE|| [[Leh district|Leh]]|| [[Leh]]|| align=right | 147,104 || align=right | 45,110|| align=right | 3
+|-
+|}
+
+=== Lakshadweep (LD) ===
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 || LD || [[Lakshadweep]]|| [[Kavaratti]]|| align=right | {{formatnum:64473}}{{sfn|''Lakshadweep''|2011|p=42}} || align=right | {{formatnum:30}}{{sfn|''Lakshadweep''|2011|p=15}} || align=right | {{formatnum:2149}}{{sfn|''Lakshadweep''|2011|p=43}}
+|-
+|}
+
+=== Delhi (DL) ===
+{{See also|Districts of Delhi}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011){{sfn|''Delhi''|2011|p=57}}
+! Area <br />(km²){{citation needed|date=May 2019}}
+! Density <br />(/km²)<ref name=censusdist2011 />{{sfn|''Delhi''|2011|p=58}}
+|-
+| 1 || CD || [[Central Delhi]] || [[Daryaganj]] || align=right| {{formatnum:582320}} || align=right| 25 || align=right| {{formatnum:27730}}
+|-
+| 2 || ED || [[East Delhi]] || [[Preet Vihar]] || align=right| {{formatnum:1709346}} || align=right| 440 || align=right| {{formatnum:27132}}
+|-
+| 3 || ND || [[New Delhi]] || [[Connaught Place, New Delhi|Connaught Place]] || align=right| {{formatnum:142004}} || align=right| 22 || align=right| {{formatnum:4057}}
+|-
+| 4 || NO || [[North Delhi]] || [[Sadar Bazaar, Delhi|Sadar Bazaar]] || align=right| {{formatnum:887978}} || align=right| 59 || align=right| {{formatnum:14557}}
+|-
+| 5 || NE || [[North East Delhi]] || [[Seelampur]] || align=right| {{formatnum:2241624}} || align=right| 52 || align=right| {{formatnum:36155}}
+|-
+| 6 || NW || [[North West Delhi]] || [[Kanjhawala]] || align=right| {{formatnum:3656539}}|| align=right| 130 || align=right| {{formatnum:8254}}
+|-
+| 7 || {{dash}} || [[Shahdara]] || [[Shahdara]] || {{dash}} || align=right| 59.75 || {{dash}}
+|-
+| 8 || SD || [[South Delhi]] || [[Saket (Delhi)|Saket]] || align=right| {{formatnum:2731929}} || align=right| 250 || align=right| {{formatnum:11060}}
+|-
+| 9 || {{dash}} || [[South East Delhi]] || [[Defence Colony]] || {{dash}} || {{dash}} || {{dash}}
+|-
+| 10 || SW || [[South West Delhi]] || [[Vasant Vihar]] || align=right| {{formatnum:2292958}} || align=right| 395 || align=right| {{formatnum:5446}}
+|-
+| 11 || WD || [[West Delhi]] || [[Rajouri Garden]] || align=right| {{formatnum:2543243}} || align=right| 112 || align=right| {{formatnum:19563}}
+|-
+|}
+
+=== Puducherry (PY) ===
+{{See also|Districts of Puducherry}}
+{| class="wikitable sortable"
+|-
+! #
+! Code<ref name=distcodes />
+! District<ref name=censusdist2011 />
+! Headquarters
+! Population <br />(2011)
+! Area <br />(km²)
+! Density <br />(/km²)<ref name=censusdist2011 />
+|-
+| 1 || KA|| [[Karaikal district|Karaikal]]|| [[Karaikal]] || align=right | {{formatnum:200222}}{{sfn|''Karaikal''|2011|p= 65}} || align=right | {{formatnum:157}}{{sfn|''Karaikal''|2011|p= 26}} || align=right | {{formatnum:1275}}{{sfn|''Karaikal''|2011|p= 66}}
+|-
+| 2 || MA|| [[Mahé district|Mahé]]|| [[Mahé, India|Mahé]] || align=right | {{formatnum:41816}}{{sfn|''Mahe''|2011|p= 52}} || align=right | {{formatnum:9}}{{sfn|''Mahe''|2011|p= 23}} || align=right | {{formatnum:4646}}{{sfn|''Mahe''|2011|p= 52}}
+|-
+| 3 || PO|| [[Pondicherry district|Pondicherry]]|| [[Pondicherry (city)|Pondicherry]] || align=right | {{formatnum:950289}}{{sfn|''Puducherry''|2011|p= 70}} || align=right | {{formatnum:293}}{{sfn|''Puducherry''|2011|p= 29}} || align=right | {{formatnum:3232}}{{sfn|''Puducherry''|2011|p= 71}}
+|-
+| 4 || YA|| [[Yanam district|Yanam]]|| [[Yanam, Pondicherry|Yanam]] || align=right | {{formatnum:55626}}{{sfn|''Yanam''|2011|p= 54}} || align=right | {{formatnum:30}}{{sfn|''Yanam''|2011|p= 22}} || align=right | {{formatnum:1854}}{{sfn|''Yanam''|2011|p= 54}}
+|-
+|}
+

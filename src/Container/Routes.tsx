@@ -1,12 +1,16 @@
 import React from 'react'
 
-import { Route, Switch } from 'react-router-dom'
-import Container from './Container'
+import { Route, Switch, Redirect } from 'react-router-dom'
+import Home from '../containers/Home'
+import ZonePage from '../components/ZonePage'
 
 const Routes: React.FC = () => {
   return (
     <Switch>
-      <Route exact path='/' component={Container} />
+      {/* <Route path='/home' component={Home} /> */}
+      {/* <Route exact path='/' component={Home} /> */}
+      <Route path='/zones/:slug*' component={ZonePage} />
+      <Redirect from='/' to='/zones/india/maharashtra/mumbai' />
     </Switch>
   )
 }

@@ -2,17 +2,24 @@ import React from 'react'
 import './App.scss'
 import { ThemeProvider } from '@material-ui/core'
 import { baseTheme } from './theme'
-import Routes from './Container/Routes'
 import { Router } from 'react-router-dom'
 import { history } from './history'
+import Container from './Container/Container'
+import { SWRConfig } from 'swr'
 
 const App = () => {
   return (
-    <ThemeProvider theme={baseTheme}>
-      <Router history={history}>
-        <Routes />
-      </Router>
-    </ThemeProvider>
+    <SWRConfig
+      value={{
+        fetcher: (url, ...args) => fetch(url, ...args).then((res) => res.json()),
+      }}
+    >
+      <ThemeProvider theme={baseTheme}>
+        <Router history={history}>
+          <Container />
+        </Router>
+      </ThemeProvider>
+    </SWRConfig>
   )
 }
 

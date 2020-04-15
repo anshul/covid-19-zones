@@ -1,38 +1,38 @@
 import React from 'react'
-import {
-  Typography,
-  AppBar,
-  Toolbar,
-  Container as MuiContainer,
-  makeStyles,
-  Theme,
-  createStyles,
-  Grid,
-  Card,
-  CardContent,
-} from '@material-ui/core'
-import BarChart from '../components/Charts/BarChart'
+import { Typography, makeStyles, Theme, createStyles } from '@material-ui/core'
+import Navbar from './Navbar'
+import clsx from 'clsx'
+import { useScreen } from '../hooks/useScreen'
+import Routes from './Routes'
+import { Route } from 'react-router-dom'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
+      width: '100%',
+      display: 'flex',
+      backgroundColor: theme.palette.background.default,
+      color: theme.palette.text.primary,
+    },
+    rootSmallScreen: {
+      width: '100% !important',
+      height: '100%',
       backgroundColor: theme.palette.background.default,
       color: theme.palette.text.primary,
     },
     appbar: {
+      width: 'calc(100% - 24px)',
+      height: '72px',
+      padding: '0 12px',
       backgroundColor: theme.palette.background.default,
-      borderBottomWidth: '1px',
-      borderBottomStyle: 'solid',
-      borderBottomColor: theme.palette.divider,
+      display: 'flex',
+      alignItems: 'center',
     },
     content: {
-      height: 'calc(100vh - 65px)',
-      marginTop: '65px',
-      '& > div': {
-        paddingTop: theme.spacing(2),
-        paddingLeft: theme.spacing(3),
-        paddingRight: theme.spacing(3),
-      },
+      height: '100vh',
+      width: '100%',
+      overflow: 'auto',
+      borderRadius: '12px',
     },
   })
 )
@@ -40,31 +40,30 @@ const useStyles = makeStyles((theme: Theme) =>
 const Container: React.FC = () => {
   const classes = useStyles()
 
+  const { isSmallScreen } = useScreen()
+
+  const renderNavBar = () => {
+    return (
+      <Route
+        path='*'
+        render={({ history }) => {
+          const path = history.location.pathname
+          return <Navbar path={path.replace('/', '')} />
+        }}
+      />
+    )
+  }
+
   return (
-    <div className={classes.root}>
-      <AppBar position='fixed' className={classes.appbar} elevation={0}>
-        <MuiContainer>
-          <Toolbar>
-            <Typography variant='h6'>COVID19ZONES</Typography>
-          </Toolbar>
-        </MuiContainer>
-      </AppBar>
-      <MuiContainer className={classes.content}>
-        <Grid container>
-          <Grid item xs={12}>
-            <Card variant='outlined'>
-              <CardContent>
-                <Typography variant='h6'>Some stuff</Typography>
-                <Typography variant='body1'>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque et numquam porro dolores obcaecati iusto minima, ipsam commodi
-                  aut officiis suscipit consectetur accusamus eius temporibus nisi! Ut temporibus aspernatur suscipit!
-                </Typography>
-              </CardContent>
-              <BarChart />
-            </Card>
-          </Grid>
-        </Grid>
-      </MuiContainer>
+    <div className={clsx(isSmallScreen ? classes.rootSmallScreen : classes.root)}>
+      {!isSmallScreen && renderNavBar()}
+      <div className={classes.content}>
+        <div className={classes.appbar}>
+          <Typography variant='h6'>COVID19ZONES</Typography>
+        </div>
+        <Routes />
+      </div>
+      {isSmallScreen && renderNavBar()}
     </div>
   )
 }

@@ -1,0 +1,8 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+sample:
+  code: covid19india-1586874137
+  slug: covid19india-1586874137
+  source: covid19india
+  started_at: 2020-04-14 19:50:47
+

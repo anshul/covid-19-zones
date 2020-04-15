@@ -1,5 +1,5 @@
 import React from 'react'
-import { Bar } from '@nivo/bar'
+import { ResponsiveBar } from '@nivo/bar'
 import { chartTheme } from './chartTheme'
 import { useTheme } from '@material-ui/core'
 
@@ -9,8 +9,6 @@ const BarChart: React.FC = () => {
   const keys = ['hot dogs', 'burgers', 'sandwich', 'kebab', 'fries', 'donut']
 
   const commonProps = {
-    width: 900,
-    height: 500,
     margin: { top: 60, right: 80, bottom: 60, left: 80 },
     theme: chartTheme(theme),
     data: [
@@ -128,7 +126,11 @@ const BarChart: React.FC = () => {
     labelSkipHeight: 16,
   }
 
-  return <Bar {...commonProps} groupMode='grouped' />
+  return (
+    <div style={{ height: '400px' }}>
+      <ResponsiveBar {...commonProps} groupMode='grouped' />
+    </div>
+  )
 }
 
 export default BarChart

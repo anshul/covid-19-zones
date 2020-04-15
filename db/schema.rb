@@ -10,25 +10,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_13_151911) do
+ActiveRecord::Schema.define(version: 2020_04_15_051547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "jobs", force: :cascade do |t|
+    t.string "code", null: false
+    t.string "slug", null: false
+    t.string "source", null: false
+    t.datetime "started_at"
+    t.datetime "finished_at"
+    t.datetime "crashed_at"
+    t.bigint "update_count", default: 0, null: false
+    t.jsonb "logs", default: [], null: false, array: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["code"], name: "index_jobs_on_code", unique: true
+    t.index ["slug"], name: "index_jobs_on_slug", unique: true
+    t.index ["source"], name: "index_jobs_on_source"
+  end
+
   create_table "patients", force: :cascade do |t|
     t.string "slug", null: false
     t.string "code", null: false
-    t.string "external_code", null: false
-    t.string "status", null: false
-    t.string "zone_code", null: false
     t.string "source", null: false
+    t.string "external_code", null: false
+    t.string "zone_code", null: false
+    t.string "external_signature", null: false
+    t.jsonb "external_details", default: {}, null: false
+    t.date "announced_on", null: false
+    t.string "status", null: false
+    t.date "status_changed_on"
     t.string "name"
     t.string "gender"
     t.string "age"
-    t.string "nationality"
-    t.string "transmission_type"
-    t.date "announced_on", null: false
-    t.date "status_changed_on"
+    t.datetime "first_imported_at"
+    t.datetime "last_imported_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["code"], name: "index_patients_on_code", unique: true
@@ -70,6 +88,21 @@ ActiveRecord::Schema.define(version: 2020_04_13_151911) do
     t.index ["tag_md"], name: "index_tags_on_tag_md"
   end
 
+  create_table "time_series_points", force: :cascade do |t|
+    t.date "dated"
+    t.string "target_code"
+    t.string "target_type"
+    t.decimal "population", precision: 14, scale: 2, default: "0.0", null: false
+    t.decimal "area_sq_km", precision: 14, scale: 2, default: "0.0", null: false
+    t.decimal "density", precision: 14, scale: 4, default: "0.0", null: false
+    t.decimal "announced", precision: 14, scale: 2, default: "0.0", null: false
+    t.decimal "recovered", precision: 14, scale: 2, default: "0.0", null: false
+    t.decimal "deceased", precision: 14, scale: 2, default: "0.0", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["dated", "target_code", "target_type"], name: "time_series_points_uniq", unique: true
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -97,17 +130,23 @@ ActiveRecord::Schema.define(version: 2020_04_13_151911) do
   end
 
   create_table "zones", force: :cascade do |t|
+    t.string "type", null: false
     t.string "slug", null: false
     t.string "code", null: false
-    t.string "type", null: false
-    t.string "name"
+    t.string "name", null: false
+    t.string "search_name", null: false
     t.string "parent_zone"
-    t.string "zone_md"
+    t.string "zone_md", default: "", null: false
+    t.decimal "pop", precision: 14, scale: 2, default: "0.0", null: false
+    t.decimal "area", precision: 14, scale: 2, default: "0.0", null: false
+    t.decimal "density", precision: 14, scale: 4, default: "0.0", null: false
+    t.jsonb "details", default: "{}", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["code"], name: "index_zones_on_code", unique: true
+    t.index ["name"], name: "index_zones_on_name"
     t.index ["slug"], name: "index_zones_on_slug", unique: true
-    t.index ["zone_md"], name: "index_zones_on_zone_md"
+    t.index ["type"], name: "index_zones_on_type"
   end
 
 end
