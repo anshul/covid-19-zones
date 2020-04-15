@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+cwd=$(pwd)
+name=${PWD##*/}
+
+echo "Running download in ${cwd} ($(date +%H:%M:%S))"
+if [ "x$name" != "xcovid-19-zones" ]; then
+  echo "Not in covid-19-zones directory. Exiting..."
+  exit 1
+fi
+
+db_file="covid-19-zones"
+chmod 600 config/*.pem
+
+echo "Dumping to ./$db_file.sql.gz"
+DATABASE_URL=$(heroku config:get DATABASE_URL --app covid-19-zones)
+pg_dump "$DATABASE_URL" --verbose -x -Z 6 -O > ./$db_file.sql.gz
+
+echo "Downloaded ./$db_file.sql.gz from production live db."
+echo
+echo "Done download-sql ${db_file} in ${cwd} ($(date +%H:%M:%S))"

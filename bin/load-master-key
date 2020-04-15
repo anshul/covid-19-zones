@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+echo $(heroku config:get RAILS_MASTER_KEY --app covid-19-zones) > config/master.key
+
+echo "Updated $(pwd)/config/master.key"
