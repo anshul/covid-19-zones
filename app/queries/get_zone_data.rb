@@ -52,9 +52,9 @@ class GetZoneData < BaseQuery
     return @decorated_sibling_zones if @decorated_sibling_zones
 
     sibling_total_case_counts = Patient.where("zone_code like ?", "#{parent_zone&.code || zone.code}/%").group(:zone_code).count
-    total_count_extractor = ->(zone) { sibling_total_case_counts.filter { |code| code.starts_with?(zone.code) }.map { |_, v| v }.sum }
+    total_count_extractor = ->(s_zone) { sibling_total_case_counts.filter { |code| code.starts_with?(s_zone.code) }.map { |_, v| v }.sum }
 
-    @decorated_sibling_zones = sibling_zones.map { |z| z.as_json(only: Zone.view_attrs).merge("total_cases" => total_count_extractor.call(zone)) }
+    @decorated_sibling_zones = sibling_zones.map { |z| z.as_json(only: Zone.view_attrs).merge("total_cases" => total_count_extractor.call(z)) }
     @decorated_sibling_zones
   end
 
@@ -78,6 +78,6 @@ class GetZoneData < BaseQuery
   end
 
   def oldest_date
-    @oldest_date ||= Patient.where("zone_code like ?", "#{parent_zone.code}%").minimum(:announced_on) || 14.days.ago
+    @oldest_date ||= Patient.where("zone_code like ?", "#{parent_zone&.code || zone.code}%").minimum(:announced_on) || 14.days.ago
   end
 end
