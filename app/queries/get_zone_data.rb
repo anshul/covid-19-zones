@@ -19,10 +19,10 @@ class GetZoneData < BaseQuery
 
   def show
     @result = {
-      parent_zone:              decorated_parent_zone,
-      sibling_zones:            decorated_sibling_zones,
-      per_day_counts:           chart_per_day,
-      three_day_moving_average: chart_per_day_sma
+      parent_zone:             decorated_parent_zone,
+      sibling_zones:           decorated_sibling_zones,
+      per_day_counts:          chart_per_day,
+      five_day_moving_average: chart_per_day_sma
     }.deep_transform_keys { |k| k.to_s.camelize :lower }
   end
 
@@ -50,6 +50,25 @@ class GetZoneData < BaseQuery
 
     @decorated_sibling_zones = sibling_zones.map { |z| z.as_json(only: Zone.view_attrs) }
     @decorated_sibling_zones
+  end
+
+  def chart_per_day
+    return @chart_per_day if @chart_per_day
+
+    points_hash = Hash[TimeSeriesPoint.where(target_code: zone.code).order(:dated).map { |point| [point.dated, point.announced] }]
+
+    @chart_per_day = (oldest_date..Date.today).map { |date| decorated_point({ dated: date, count: points_hash[date] || 0 }) }
+  end
+
+  def chart_per_day_sma
+    average_computer = ->(group) { (group.map { |point| point[:y] }.sum / group.count.to_f).round(2) }
+    @chart_per_day_sma ||= chart_per_day.in_groups_of(5).select { |group| group.compact.count == group.count }.map do |group|
+      { x: group.last[:x], y: average_computer.call(group) }
+    end
+  end
+
+  def decorated_point(point)
+    { x: point[:dated], y: point[:count] }
   end
 
   def oldest_date

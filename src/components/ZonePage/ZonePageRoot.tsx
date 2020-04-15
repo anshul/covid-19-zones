@@ -54,6 +54,7 @@ const useStyles = makeStyles((theme: Theme) =>
 const ZonePageRoot: React.FC<Props> = ({ slug, gotoZone, gotoParentZone }) => {
   const classes = useStyles()
   const { data, error } = useSWR(`/api/zone?slug=${slug}`)
+  console.log(data, data?.fiveDayMovingAverage ?? [])
 
   return (
     <Container>
@@ -82,7 +83,7 @@ const ZonePageRoot: React.FC<Props> = ({ slug, gotoZone, gotoParentZone }) => {
             <ResponsiveLine
               data={[
                 { id: 'Confirmed Cases (Daily)', data: data?.perDayCounts ?? [] },
-                { id: 'Confirmed Cases (3 Day Moving Average)', data: data?.threeDayMovingAverage ?? [] },
+                { id: 'Confirmed Cases (3 Day Moving Average)', data: data?.fiveDayMovingAverage ?? [] },
               ]}
               margin={{ top: 50, right: 50, bottom: 50, left: 50 }}
               xScale={{ type: 'point' }}
