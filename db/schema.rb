@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_14_142047) do
+ActiveRecord::Schema.define(version: 2020_04_15_051547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,6 +88,21 @@ ActiveRecord::Schema.define(version: 2020_04_14_142047) do
     t.index ["tag_md"], name: "index_tags_on_tag_md"
   end
 
+  create_table "time_series_points", force: :cascade do |t|
+    t.date "dated"
+    t.string "target_code"
+    t.string "target_type"
+    t.decimal "population", precision: 14, scale: 2, default: "0.0", null: false
+    t.decimal "area_sq_km", precision: 14, scale: 2, default: "0.0", null: false
+    t.decimal "density", precision: 14, scale: 4, default: "0.0", null: false
+    t.decimal "announced", precision: 14, scale: 2, default: "0.0", null: false
+    t.decimal "recovered", precision: 14, scale: 2, default: "0.0", null: false
+    t.decimal "deceased", precision: 14, scale: 2, default: "0.0", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["dated", "target_code", "target_type"], name: "time_series_points_uniq", unique: true
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -122,6 +137,9 @@ ActiveRecord::Schema.define(version: 2020_04_14_142047) do
     t.string "search_name", null: false
     t.string "parent_zone"
     t.string "zone_md", default: "", null: false
+    t.decimal "pop", precision: 14, scale: 2, default: "0.0", null: false
+    t.decimal "area", precision: 14, scale: 2, default: "0.0", null: false
+    t.decimal "density", precision: 14, scale: 4, default: "0.0", null: false
     t.jsonb "details", default: "{}", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

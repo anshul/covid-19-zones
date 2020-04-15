@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
-class BaseCommand
+class BaseQuery
   include ActiveModel::Validations
+
+  attr_reader :result
 
   def call_with_transaction
     ::ActiveRecord::Base.transaction(requires_new: true) do
@@ -32,16 +34,6 @@ class BaseCommand
 
   def error_message
     errors.full_messages.to_sentence.gsub(";,", ";").gsub(".,", ",")
-  end
-
-  private
-
-  def t_start
-    @t_start ||= Time.zone.now
-  end
-
-  def t
-    (Time.zone.now.to_f - t_start.to_f).round(3)
   end
 
   def add_error(msg)

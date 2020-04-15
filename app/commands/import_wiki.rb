@@ -6,8 +6,6 @@ class ImportWiki < BaseCommand
   end
 
   attr_reader :response, :raw_patients
-
-  # rubocop:disable Metrics/AbcSize
   def run
     create_india!
     log " - We have #{Country.count} countries, #{State.count} states, #{District.count} districts, #{City.count} cities, #{Locality.count} localities."
@@ -22,6 +20,11 @@ class ImportWiki < BaseCommand
     wiki.split(/^===/).reject { |section| section.length < 10 }.map(&:each_line).map(&:to_a).each do |lines|
       create_indian_states!(country: country, lines: lines)
     end
+    country = Country.find_by(code: country.code)
+    country.pop = country.states.map(&:pop).sum
+    country.area = country.states.map(&:area).sum
+    country.density = country.area > 1 ? country.pop.to_f / country.area : 0
+    country.save!
   end
 
   def namify(name)
@@ -45,6 +48,11 @@ class ImportWiki < BaseCommand
 
       create_indian_districts!(country: country, state: state, line: line)
     end
+    state = State.find_by(code: state.code)
+    state.pop = state.districts.map(&:pop).sum
+    state.area = state.districts.map(&:area).sum
+    state.density = state.area > 1 ? state.pop.to_f / state.area : 0
+    state.save!
   end
 
   def create_indian_districts!(country:, state:, line:)
@@ -56,8 +64,12 @@ class ImportWiki < BaseCommand
     dist = dist =~ /dash/ ? namify(fname).parameterize[0, 20] : dist.downcase
     name = namify(fname)
     hq = namify(hqname)
+    pop = numerify(pop2001)
+    area = numerify(farea)
+    density = area >= 1 ? pop.to_f / area : 0
     details = { name: name, pop2001: numerify(pop2001), area: [numerify(farea), "km²"], density: [numerify(fdensity), "/km²"] }
-    district = District["#{cn}/#{st}/#{dist}"] || District.new(slug: state.slug + "/" + name.parameterize, code: "#{cn}/#{st}/#{dist}", name: name, parent_zone: state.code, details: details, search_name: name.parameterize)
+    district = District["#{cn}/#{st}/#{dist}"] ||
+               District.new(slug: state.slug + "/" + name.parameterize, code: "#{cn}/#{st}/#{dist}", name: name, parent_zone: state.code, details: details, search_name: name.parameterize, pop: pop, area: area, density: density)
     log "      - #{district.code} #{district.type.downcase} added (#{district.slug})" unless district.id
     district.save! unless district.id
 
@@ -66,7 +78,6 @@ class ImportWiki < BaseCommand
     log "        - #{city.code} #{city.type.downcase} added (#{city.slug})" unless city.id
     city.save! unless city.id
   end
-  # rubocop:enable Metrics/AbcSize
 
   def log(msg, return_value: true)
     puts_blue "#{format('%.3f', t).rjust(5)}s - #{msg}" unless Rails.env.test?

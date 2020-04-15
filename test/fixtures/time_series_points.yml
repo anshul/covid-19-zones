@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+sample:
+  dated: 2020-04-15
+  target_code: in/mh/mc/mumbai
+  target_type: City
+  announced: 5
+  recovered: 2
+  deceased: 1

@@ -4,3 +4,8 @@ inherit_from:
 inherit_mode:
   merge:
     - Exclude
+Metrics/AbcSize:
+  Max: 90
+Metrics/ClassLength:
+  Max: 180
+

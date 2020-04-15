@@ -4,7 +4,7 @@ first_mumbai_patient:
   source: covid19india
   external_code: MU-MH-P1
   status: confirmed
-  zone_code: in/mh/mumbai/mumbai
+  zone_code: in/mh/mc/mumbai/dadar
   external_signature: md5-value
   name: John Doe
   gender: Male

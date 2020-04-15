@@ -14,6 +14,7 @@ class FetchCovid19india < BaseCommand
     log(:yellow, "Starting job #{run_id}:  we have #{Patient.where(source: source.code).count} #{source.code} patient(s).")
     result = fetch &&
              parse &&
+             recompute &&
              errors.empty?
     mark_job(result)
     log(:yellow, "Finished job #{run_id}:  we have #{Patient.where(source: source.code).count} #{source.code} patient(s).")
@@ -26,6 +27,11 @@ class FetchCovid19india < BaseCommand
   end
 
   private
+
+  def recompute
+    cmd = Recompute.new(log: ->(color, message, return_value = true) { log(color, message, return_value: return_value) })
+    cmd.run
+  end
 
   def mark_job(result)
     f = result ? :finished_at : :crashed_at
@@ -131,14 +137,6 @@ class FetchCovid19india < BaseCommand
 
   def run_id
     @run_id ||= "covid19india-#{Time.zone.now.to_f}"
-  end
-
-  def t_start
-    @t_start ||= Time.zone.now
-  end
-
-  def t
-    (Time.zone.now.to_f - t_start.to_f).round(3)
   end
 
   def as_date(val)
