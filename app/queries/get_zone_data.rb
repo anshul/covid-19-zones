@@ -78,6 +78,6 @@ class GetZoneData < BaseQuery
   end
 
   def oldest_date
-    @oldest_date ||= Patient.where("zone_code like ?", "#{parent_zone.code}%").minimum(:announced_on) || 14.days.ago
+    @oldest_date ||= Patient.where("zone_code like ?", "#{parent_zone&.code || zone.code}%").minimum(:announced_on) || 14.days.ago
   end
 end
