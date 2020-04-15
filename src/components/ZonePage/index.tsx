@@ -5,11 +5,11 @@ import { history } from '../../history'
 
 const ZonePage: React.FC<RouteComponentProps<{ slug: string }>> = ({ location, match }) => {
   const gotoParentZone = () => {
-    history.push(`/zone/${match.params.slug.split('/').slice(0, -1).join('/')}`)
+    history.push(`/zones/${match.params.slug.split('/').slice(0, -1).join('/')}`)
   }
 
   const gotoZone = (slug: string) => {
-    history.push(`/zone/${slug}`)
+    history.push(`/zones/${slug}`)
   }
 
   return <ZonePageRoot slug={match.params.slug} gotoZone={gotoZone} gotoParentZone={gotoParentZone} />
