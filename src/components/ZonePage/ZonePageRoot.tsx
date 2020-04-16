@@ -122,25 +122,16 @@ const ZonePageRoot: React.FC<Props> = ({ slug, gotoZone, gotoParentZone }) => {
       <Grid item xs={12} md={4}>
         <Grid container spacing={2} item xs={12}>
           <Grid item xs={12}>
-            {data && (
-              <Breadcrumbs>
-                <Link color='inherit' href='/' onClick={gotoParentZone}>
-                  {data.parentZone.name}
-                </Link>
-                <Typography color='textPrimary'>{data.zone}</Typography>
-              </Breadcrumbs>
-            )}
+            {data && <Breadcrumbs>
+              <Link color="inherit" href="/" onClick={gotoParentZone}>
+                {data.parentZone.name}
+              </Link>
+              <Typography color="textPrimary">{data.zone}</Typography>
+            </Breadcrumbs>}
           </Grid>
           {['confirmed', 'active', 'recovered', 'deceased'].map((cases) => (
             <Grid item xs={12} md={3}>
-              <div
-                style={{
-                  cursor: 'pointer',
-                  padding: '8px 16px',
-                  color: colorMap[cases].color,
-                  backgroundColor: colorMap[cases].backgroundColor,
-                }}
-              >
+              <div style={{ cursor: 'pointer', padding: '8px 16px', color: colorMap[cases].color, backgroundColor: colorMap[cases].backgroundColor }}>
                 <Typography variant='subtitle1'>{startCase(cases)}</Typography>
                 <Typography variant='h5'>
                   <b>{data ? data[cases].totalCount : '--'}</b>

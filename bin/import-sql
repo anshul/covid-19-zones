@@ -3,7 +3,7 @@
 cwd=$(pwd)
 name=${PWD##*/}
 
-echo "Running upload in ${cwd} ($(date +%H:%M:%S))"
+echo "Running import in ${cwd} ($(date +%H:%M:%S))"
 if [ "x$name" != "xcovid-19-zones" ]; then
   echo "Not in covid-19-zones directory. Exiting..."
   exit 1
