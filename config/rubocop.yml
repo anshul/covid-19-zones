@@ -100,9 +100,9 @@ Naming/MethodParameterName:
     - "t"
 
 # lints with no defaults
-Lint/RaiseException:
-  Enabled: true
+# Lint/RaiseException:
+#   Enabled: true
 
-Lint/StructNewOverride:
-  Enabled: true
+# Lint/StructNewOverride:
+#   Enabled: true
 

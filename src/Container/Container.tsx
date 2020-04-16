@@ -1,10 +1,10 @@
 import React from 'react'
 import { Typography, makeStyles, Theme, createStyles } from '@material-ui/core'
-import Navbar from './Navbar'
+// import Navbar from './Navbar'
 import clsx from 'clsx'
 import { useScreen } from '../hooks/useScreen'
 import Routes from './Routes'
-import { Route } from 'react-router-dom'
+// import { Route } from 'react-router-dom'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

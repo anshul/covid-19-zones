@@ -24,7 +24,11 @@ class GetZoneData < BaseQuery
     @result = {
       y_max:         [announced_vector.max, announced_vector_sma5.max].max,
       zone:          zone.name,
-      total_cases:   total_cases,
+      confirmed:     {
+        total_count:             total_cases,
+        per_day_counts:          chart_confirmed,
+        five_day_moving_average: chart_confirmed_sma5
+      },
       active:        {
         total_count:             total_active_cases,
         per_day_counts:          chart_announced,
@@ -103,12 +107,20 @@ class GetZoneData < BaseQuery
     @decorated_sibling_zones
   end
 
+  def chart_confirmed
+    @chart_confirmed ||= dates.map { |dt| { x: dt, y: announced_vector[dt] } }
+  end
+
+  def chart_confirmed_sma5
+    @chart_confirmed_sma5 ||= dates.map { |dt| { x: dt, y: announced_vector_sma5[dt] } }
+  end
+
   def chart_announced
-    @chart_announced ||= dates.map { |dt| { x: dt, y: announced_vector[dt] } }
+    @chart_announced ||= dates.map { |dt| { x: dt, y: (announced_vector[dt].to_i - recovered_vector[dt].to_i - deceased_vector[dt].to_i) } }
   end
 
   def chart_announced_sma5
-    @chart_announced_sma5 ||= dates.map { |dt| { x: dt, y: announced_vector_sma5[dt] } }
+    @chart_announced_sma5 ||= dates.map { |dt| { x: dt, y: (announced_vector_sma5[dt].to_i - recovered_vector_sma5[dt].to_i - deceased_vector_sma5[dt].to_i) } }
   end
 
   def chart_recovered
