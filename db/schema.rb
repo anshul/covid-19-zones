@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_15_051547) do
+ActiveRecord::Schema.define(version: 2020_04_18_115830) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "data_snapshots", force: :cascade do |t|
+    t.string "source", null: false
+    t.string "api_code", null: false
+    t.string "signature", null: false
+    t.string "job_code", null: false
+    t.jsonb "raw_data", default: {}
+    t.datetime "downloaded_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["downloaded_at"], name: "index_data_snapshots_on_downloaded_at"
+    t.index ["job_code"], name: "index_data_snapshots_on_job_code"
+    t.index ["source", "api_code", "signature"], name: "data_snapshots_uniq", unique: true
+  end
 
   create_table "jobs", force: :cascade do |t|
     t.string "code", null: false

@@ -1,0 +1,137 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.mohfw.gov.in/dashboard/data/data.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - excon/0.73.0
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: null
+    headers:
+      Server:
+      - Apache
+      X-Frame-Options:
+      - SAMEORIGIN
+      Last-Modified:
+      - Sat, 18 Apr 2020 03:10:15 GMT
+      X-Content-Type-Options:
+      - nosniff
+      X-XSS-Protection:
+      - 1; mode=block
+      X-Firefox-Spdy:
+      - h2
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - accept, content-type, X-Requested-With, X-Prototype-Version, X-CSRF-Token,
+        authorization
+      Content-Type:
+      - application/json
+      Expires:
+      - Sat, 18 Apr 2020 11:20:09 GMT
+      Cache-Control:
+      - max-age=0, no-cache, no-store
+      Pragma:
+      - no-cache
+      Date:
+      - Sat, 18 Apr 2020 11:20:09 GMT
+      Content-Length:
+      - '4676'
+      Connection:
+      - keep-alive
+      Server-Timing:
+      - cdn-cache; desc=HIT, edge; dur=1
+    body:
+      encoding: ASCII-8BIT
+      string: "[\n\t{\n\t\t\"sno\": \"1\",\n\t\t\"state_name\": \"Andhra Pradesh\",\n\t\t\"positive\":
+        \"572\",\n\t\t\"cured\": \"36\",\n\t\t\"death\": \"14\",\n\t\t\"state_code\":
+        \"28\"\n\t},\n\t{\n\t\t\"sno\": \"2\",\n\t\t\"state_name\": \"Andaman and
+        Nicobar Islands\",\n\t\t\"positive\": \"12\",\n\t\t\"cured\": \"11\",\n\t\t\"death\":
+        \"0\",\n\t\t\"state_code\": \"35\"\n\t},\n\t{\n\t\t\"sno\": \"3\",\n\t\t\"state_name\":
+        \"Arunachal Pradesh\",\n\t\t\"positive\": \"1\",\n\t\t\"cured\": \"0\",\n\t\t\"death\":
+        \"0\",\n\t\t\"state_code\": \"12\"\n\t},\n\t{\n\t\t\"sno\": \"4\",\n\t\t\"state_name\":
+        \"Assam\",\n\t\t\"positive\": \"35\",\n\t\t\"cured\": \"5\",\n\t\t\"death\":
+        \"1\",\n\t\t\"state_code\": \"18\"\n\t},\n\t{\n\t\t\"sno\": \"5\",\n\t\t\"state_name\":
+        \"Bihar\",\n\t\t\"positive\": \"83\",\n\t\t\"cured\": \"37\",\n\t\t\"death\":
+        \"2\",\n\t\t\"state_code\": \"10\"\n\t},\n\t{\n\t\t\"sno\": \"6\",\n\t\t\"state_name\":
+        \"Chandigarh\",\n\t\t\"positive\": \"21\",\n\t\t\"cured\": \"9\",\n\t\t\"death\":
+        \"0\",\n\t\t\"state_code\": \"04\"\n\t},\n\t{\n\t\t\"sno\": \"7\",\n\t\t\"state_name\":
+        \"Chhattisgarh\",\n\t\t\"positive\": \"36\",\n\t\t\"cured\": \"24\",\n\t\t\"death\":
+        \"0\",\n\t\t\"state_code\": \"22\"\n\t},\n\t{\n\t\t\"sno\": \"8\",\n\t\t\"state_name\":
+        \"Dadra and Nagar Haveli\",\n\t\t\"positive\": \"0\",\n\t\t\"cured\": \"0\",\n\t\t\"death\":
+        \"0\",\n\t\t\"state_code\": \"26\"\n\t},\n\t{\n\t\t\"sno\": \"9\",\n\t\t\"state_name\":
+        \"Daman and Diu\",\n\t\t\"positive\": \"0\",\n\t\t\"cured\": \"0\",\n\t\t\"death\":
+        \"0\",\n\t\t\"state_code\": \"25\"\n\t},\n\t{\n\t\t\"sno\": \"10\",\n\t\t\"state_name\":
+        \"Delhi\",\n\t\t\"positive\": \"1707\",\n\t\t\"cured\": \"72\",\n\t\t\"death\":
+        \"42\",\n\t\t\"state_code\": \"07\"\n\t},\n\t{\n\t\t\"sno\": \"11\",\n\t\t\"state_name\":
+        \"Goa\",\n\t\t\"positive\": \"7\",\n\t\t\"cured\": \"6\",\n\t\t\"death\":
+        \"0\",\n\t\t\"state_code\": \"30\"\n\t},\n\t{\n\t\t\"sno\": \"12\",\n\t\t\"state_name\":
+        \"Gujarat\",\n\t\t\"positive\": \"1099\",\n\t\t\"cured\": \"86\",\n\t\t\"death\":
+        \"41\",\n\t\t\"state_code\": \"24\"\n\t},\n\t{\n\t\t\"sno\": \"13\",\n\t\t\"state_name\":
+        \"Haryana\",\n\t\t\"positive\": \"225\",\n\t\t\"cured\": \"43\",\n\t\t\"death\":
+        \"3\",\n\t\t\"state_code\": \"06\"\n\t},\n\t{\n\t\t\"sno\": \"14\",\n\t\t\"state_name\":
+        \"Himachal Pradesh\",\n\t\t\"positive\": \"36\",\n\t\t\"cured\": \"16\",\n\t\t\"death\":
+        \"1\",\n\t\t\"state_code\": \"02\"\n\t},\n\t{\n\t\t\"sno\": \"15\",\n\t\t\"state_name\":
+        \"Jammu and Kashmir\",\n\t\t\"positive\": \"328\",\n\t\t\"cured\": \"42\",\n\t\t\"death\":
+        \"5\",\n\t\t\"state_code\": \"01\"\n\t},\n\t{\n\t\t\"sno\": \"16\",\n\t\t\"state_name\":
+        \"Jharkhand\",\n\t\t\"positive\": \"33\",\n\t\t\"cured\": \"0\",\n\t\t\"death\":
+        \"2\",\n\t\t\"state_code\": \"20\"\n\t},\n\t{\n\t\t\"sno\": \"17\",\n\t\t\"state_name\":
+        \"Karnataka\",\n\t\t\"positive\": \"359\",\n\t\t\"cured\": \"89\",\n\t\t\"death\":
+        \"13\",\n\t\t\"state_code\": \"29\"\n\t},\n\t{\n\t\t\"sno\": \"18\",\n\t\t\"state_name\":
+        \"Kerala\",\n\t\t\"positive\": \"396\",\n\t\t\"cured\": \"255\",\n\t\t\"death\":
+        \"3\",\n\t\t\"state_code\": \"32\"\n\t},\n\t{\n\t\t\"sno\": \"19\",\n\t\t\"state_name\":
+        \"Ladakh\",\n\t\t\"positive\": \"18\",\n\t\t\"cured\": \"14\",\n\t\t\"death\":
+        \"0\",\n\t\t\"state_code\": \"37\"\n\t},\n\t\t{\n\t\t\"sno\": \"20\",\n\t\t\"state_name\":
+        \"Lakshadweep\",\n\t\t\"positive\": \"0\",\n\t\t\"cured\": \"0\",\n\t\t\"death\":
+        \"0\",\n\t\t\"state_code\": \"31\"\n\t},\n\t{\n\t\t\"sno\": \"21\",\n\t\t\"state_name\":
+        \"Madhya Pradesh\",\n\t\t\"positive\": \"1310\",\n\t\t\"cured\": \"69\",\n\t\t\"death\":
+        \"69\",\n\t\t\"state_code\": \"23\"\n\t},\n\t{\n\t\t\"sno\": \"22\",\n\t\t\"state_name\":
+        \"Maharashtra\",\n\t\t\"positive\": \"3323\",\n\t\t\"cured\": \"331\",\n\t\t\"death\":
+        \"201\",\n\t\t\"state_code\": \"27\"\n\t},\n\t{\n\t\t\"sno\": \"23\",\n\t\t\"state_name\":
+        \"Manipur\",\n\t\t\"positive\": \"2\",\n\t\t\"cured\": \"1\",\n\t\t\"death\":
+        \"0\",\n\t\t\"state_code\": \"14\"\n\t},\n\t\t{\n\t\t\"sno\": \"24\",\n\t\t\"state_name\":
+        \"Meghalaya\",\n\t\t\"positive\": \"9\",\n\t\t\"cured\": \"0\",\n\t\t\"death\":
+        \"1\",\n\t\t\"state_code\": \"17\"\n\t},\n\t{\n\t\t\"sno\": \"25\",\n\t\t\"state_name\":
+        \"Mizoram\",\n\t\t\"positive\": \"1\",\n\t\t\"cured\": \"0\",\n\t\t\"death\":
+        \"0\",\n\t\t\"state_code\": \"15\"\n\t},\n\t\t{\n\t\t\"sno\": \"26\",\n\t\t\"state_name\":
+        \"Nagaland\",\n\t\t\"positive\": \"0\",\n\t\t\"cured\": \"0\",\n\t\t\"death\":
+        \"0\",\n\t\t\"state_code\": \"13\"\n\t},\n\t{\n\t\t\"sno\": \"27\",\n\t\t\"state_name\":
+        \"Odisha\",\n\t\t\"positive\": \"60\",\n\t\t\"cured\": \"19\",\n\t\t\"death\":
+        \"1\",\n\t\t\"state_code\": \"21\"\n\t},\n\t{\n\t\t\"sno\": \"28\",\n\t\t\"state_name\":
+        \"Puducherry\",\n\t\t\"positive\": \"7\",\n\t\t\"cured\": \"1\",\n\t\t\"death\":
+        \"0\",\n\t\t\"state_code\": \"34\"\n\t},\n\t{\n\t\t\"sno\": \"29\",\n\t\t\"state_name\":
+        \"Punjab\",\n\t\t\"positive\": \"202\",\n\t\t\"cured\": \"27\",\n\t\t\"death\":
+        \"13\",\n\t\t\"state_code\": \"03\"\n\t},\n\t{\n\t\t\"sno\": \"30\",\n\t\t\"state_name\":
+        \"Rajasthan\",\n\t\t\"positive\": \"1229\",\n\t\t\"cured\": \"183\",\n\t\t\"death\":
+        \"11\",\n\t\t\"state_code\": \"08\"\n\t},\n\t\t{\n\t\t\"sno\": \"31\",\n\t\t\"state_name\":
+        \"Sikkim\",\n\t\t\"positive\": \"0\",\n\t\t\"cured\": \"0\",\n\t\t\"death\":
+        \"0\",\n\t\t\"state_code\": \"11\"\n\t},\n\t{\n\t\t\"sno\": \"32\",\n\t\t\"state_name\":
+        \"Tamil Nadu\",\n\t\t\"positive\": \"1323\",\n\t\t\"cured\": \"283\",\n\t\t\"death\":
+        \"18\",\n\t\t\"state_code\": \"33\"\n\t},\n\t{\n\t\t\"sno\": \"33\",\n\t\t\"state_name\":
+        \"Tripura\",\n\t\t\"positive\": \"2\",\n\t\t\"cured\": \"1\",\n\t\t\"death\":
+        \"0\",\n\t\t\"state_code\": \"16\"\n\t},\n\t\t{\n\t\t\"sno\": \"34\",\n\t\t\"state_name\":
+        \"Telengana\",\n\t\t\"positive\": \"766\",\n\t\t\"cured\": \"186\",\n\t\t\"death\":
+        \"18\",\n\t\t\"state_code\": \"36\"\n\t},\n\t{\n\t\t\"sno\": \"35\",\n\t\t\"state_name\":
+        \"Uttarakhand\",\n\t\t\"positive\": \"40\",\n\t\t\"cured\": \"9\",\n\t\t\"death\":
+        \"0\",\n\t\t\"state_code\": \"05\"\n\t},\n\t{\n\t\t\"sno\": \"36\",\n\t\t\"state_name\":
+        \"Uttar Pradesh\",\n\t\t\"positive\": \"849\",\n\t\t\"cured\": \"82\",\n\t\t\"death\":
+        \"14\",\n\t\t\"state_code\": \"09\"\n\t},\n\t{\n\t\t\"sno\": \"37\",\n\t\t\"state_name\":
+        \"West Bengal\",\n\t\t\"positive\": \"287\",\n\t\t\"cured\": \"55\",\n\t\t\"death\":
+        \"10\",\n\t\t\"state_code\": \"19\"\n\t}\n]"
+    http_version: null
+  recorded_at: Sat, 18 Apr 2020 11:20:09 GMT
+recorded_with: VCR 5.1.0
