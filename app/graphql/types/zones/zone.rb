@@ -13,7 +13,7 @@ module Types
       field :density, String, null: true
 
       def parent_zone
-        ::Zone.find_by(code: object.parent_zone)
+        ::RecordLoader.for(::Zone, column: "code").load(object[:parent_zone])
       end
     end
   end

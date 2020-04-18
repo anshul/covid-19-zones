@@ -21,14 +21,14 @@ module Types
     end
 
     def home
-      confirmed = ::TimeSeriesPoint.where(target_code: "in").map(&:announced).sum
-      recovered = ::TimeSeriesPoint.where(target_code: "in").map(&:recovered).sum
-      deceased = ::TimeSeriesPoint.where(target_code: "in").map(&:deceased).sum
+      confirmed = ::TimeSeriesPoint.where(target_code: "in").sum(:announced)
+      recovered = ::TimeSeriesPoint.where(target_code: "in").sum(:recovered)
+      deceased = ::TimeSeriesPoint.where(target_code: "in").sum(:deceased)
       {
         cases: [
           { label: "Active", name: "active", value: confirmed - recovered - deceased },
-          # { label: "Recovered", name: "recovered", value: recovered },
-          # { label: "Deceased", name: "deceased", value: deceased }
+          { label: "Recovered", name: "recovered", value: recovered },
+          { label: "Deceased", name: "deceased", value: deceased }
         ]
       }
     end

@@ -70,10 +70,6 @@ Layout/LineLength:
 Style/StringLiterals:
   EnforcedStyle: double_quotes
 
-Style/FormatStringToken:
-  Enabled: true
-  EnforcedStyle: unannotated
-
 Style/Documentation:
   Enabled: false
 
@@ -100,9 +96,9 @@ Naming/MethodParameterName:
     - "t"
 
 # lints with no defaults
-# Lint/RaiseException:
-#   Enabled: true
+Lint/RaiseException:
+  Enabled: true
 
-# Lint/StructNewOverride:
-#   Enabled: true
+Lint/StructNewOverride:
+  Enabled: true
 
