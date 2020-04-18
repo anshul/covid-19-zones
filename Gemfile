@@ -23,7 +23,7 @@ gem "awesome_print", "~> 1.8"
 gem "deepsort", "~> 0.4.5"
 gem "hashdiff", "~> 1.0", ">= 1.0.1"
 
-gem "graphiql-rails", group: :development
+gem "graphiql-rails"
 gem "graphql", "~> 1.10"
 gem "graphql-batch", "~> 0.4.2"
 

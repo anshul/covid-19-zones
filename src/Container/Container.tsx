@@ -1,10 +1,6 @@
 import React from 'react'
 import { Typography, makeStyles, Theme, createStyles } from '@material-ui/core'
-// import Navbar from './Navbar'
-import clsx from 'clsx'
-import { useScreen } from '../hooks/useScreen'
 import Routes from './Routes'
-// import { Route } from 'react-router-dom'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -40,8 +36,6 @@ const useStyles = makeStyles((theme: Theme) =>
 const Container: React.FC = () => {
   const classes = useStyles()
 
-  const { isSmallScreen } = useScreen()
-
   // const renderNavBar = () => {
   //   return (
   //     <Route
@@ -55,15 +49,13 @@ const Container: React.FC = () => {
   // }
 
   return (
-    <div className={clsx(isSmallScreen ? classes.rootSmallScreen : classes.root)}>
-      {/* {!isSmallScreen && renderNavBar()} */}
+    <div className={classes.root}>
       <div className={classes.content}>
         <div className={classes.appbar}>
           <Typography variant='h6'>COVID19ZONES</Typography>
         </div>
         <Routes />
       </div>
-      {/* {isSmallScreen && renderNavBar()} */}
     </div>
   )
 }
