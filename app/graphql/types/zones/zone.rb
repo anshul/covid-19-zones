@@ -4,6 +4,7 @@ module Types
   module Zones
     class Zone < Types::BaseObject
       field :slug, String, null: false
+      field :code, String, null: false
       field :name, String, null: false
       field :search_name, String, null: true
       field :parent_zone, ::Types::Zones::Zone, null: true
@@ -13,7 +14,7 @@ module Types
       field :density, String, null: true
 
       def parent_zone
-        ::Zone.find_by(code: object.parent_zone)
+        ::RecordLoader.for(::Zone, column: "code").load(object[:parent_zone])
       end
     end
   end
