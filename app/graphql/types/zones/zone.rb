@@ -4,6 +4,7 @@ module Types
   module Zones
     class Zone < Types::BaseObject
       field :slug, String, null: false
+      field :code, String, null: false
       field :name, String, null: false
       field :search_name, String, null: true
       field :parent_zone, ::Types::Zones::Zone, null: true
