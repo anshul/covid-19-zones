@@ -17,7 +17,7 @@ module Types
     end
 
     def zones_list(search_query:)
-      ::Zone.where("search_name LIKE ?", "%#{search_query}%").distinct(:slug).order(:name).limit(10)
+      ::Zone.where("search_name LIKE ?", "%#{search_query.parameterize}%").distinct(:slug).order(:name).limit(20)
     end
 
     def home
@@ -27,8 +27,8 @@ module Types
       {
         cases: [
           { label: "Active", name: "active", value: confirmed - recovered - deceased },
-          { label: "Recovered", name: "recovered", value: recovered },
-          { label: "Deceased", name: "deceased", value: deceased }
+          # { label: "Recovered", name: "recovered", value: recovered },
+          # { label: "Deceased", name: "deceased", value: deceased }
         ]
       }
     end
