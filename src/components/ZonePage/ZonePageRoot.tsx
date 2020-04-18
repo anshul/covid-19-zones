@@ -166,7 +166,7 @@ const ZonePageRoot: React.FC<Props> = ({ slug, gotoZone, gotoParentZone }) => {
                     tickPadding: 5,
                     tickRotation: 90,
                     format: '%b %d',
-                    tickValues: 'every 2 days',
+                    tickValues: 'every 5 days',
                   }}
                   axisRight={{
                     orient: 'right',
