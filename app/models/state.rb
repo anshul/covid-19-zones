@@ -2,8 +2,8 @@
 
 class State < ::Zone
   validates :slug, :code, :type, :name, :parent_zone, presence: true
-  validates :parent_zone, format: /\A[a-z\-]+\z/
-  validates :code, format: %r{\A[a-z\-]+/[a-z\-]+\z}
+  validates :parent_zone, format: /\A[a-z0-9\-_]+\z/
+  validates :code, format: %r{\A[a-z0-9\-_]+/[a-z0-9\-_]+\z}
   alias_attribute :children, :districts
   alias_attribute :parent, :country
 

@@ -3,7 +3,7 @@
 class Country < Zone
   validates :slug, :code, :type, :name, presence: true
   validates :parent_zone, absence: true
-  validates :code, format: /\A[a-z\-]+\z/
+  validates :code, format: /\A[a-z0-9\-_]+\Z/
 
   has_many :states, -> { order(code: :asc) }, foreign_key: "parent_zone", primary_key: "code", dependent: :delete_all, inverse_of: :country
 
