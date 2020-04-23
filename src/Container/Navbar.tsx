@@ -65,7 +65,7 @@ const Navbar: React.FC<Props> = ({ path }) => {
           history.push(`/${newValue}`)
         }}
         className={classes.root}
-      // className={clsx(isSmallScreen ? classes.rootSmallScreen : classes.root)}
+        // className={clsx(isSmallScreen ? classes.rootSmallScreen : classes.root)}
       >
         <BottomNavigationAction
           classes={{ root: classes.action, selected: classes.selected }}

@@ -27,6 +27,8 @@ gem "graphiql-rails"
 gem "graphql", "~> 1.10"
 gem "graphql-batch", "~> 0.4.2"
 
+gem "google_drive", "~> 3.0", ">= 3.0.4"
+
 gem "daru", "~> 0.2.2"
 gem "devise", "~> 4.7", ">= 4.7.1"
 gem "devise-jwt", "~> 0.6.0"
