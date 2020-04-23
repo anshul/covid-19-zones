@@ -16,6 +16,10 @@ module Types
       argument :code, String, required: true
     end
 
+    field :compare, ::Types::Zones::CompareStats, null: false do
+      argument :codes, [String], required: true
+    end
+
     def zone(slug:)
       ::Zone.find_by(slug: slug)
     end
@@ -26,13 +30,9 @@ module Types
 
     def home
       confirmed = ::TimeSeriesPoint.where(target_code: "in").sum(:announced)
-      recovered = ::TimeSeriesPoint.where(target_code: "in").sum(:recovered)
-      deceased = ::TimeSeriesPoint.where(target_code: "in").sum(:deceased)
       {
         cases: [
           { label: "Active", name: "active", value: confirmed - recovered - deceased }
-          # { label: "Recovered", name: "recovered", value: recovered },
-          # { label: "Deceased", name: "deceased", value: deceased }
         ]
       }
     end
@@ -50,15 +50,43 @@ module Types
         {
           date: date.strftime("%b %d"),
           zone.name => announced_vector[date.to_s].to_i,
-          new_cases_sma_key => announced_vector_sma5[date.to_s]
+          new_cases_sma_key => announced_vector_sma5[date.to_s].to_i
         }
       end
 
       {
-        zone:      zone,
-        new_cases: {
+        zone:        zone,
+        total_cases: announced_vector.sum,
+        new_cases:   {
           x_axis_key: "date",
           line_keys:  [zone.name, new_cases_sma_key],
+          data:       new_cases_daily
+        }
+      }
+    end
+
+    def compare(codes:)
+      zones = Zone.where(code: codes)
+      series_start = TimeSeriesPoint.where(target_code: codes).minimum(:dated)
+      index = TimeSeriesPoint.index(start: series_start || Time.zone.today - 14.days, stop: Time.zone.today)
+      announced_vectors = {}
+      zones.map do |zone|
+        announced_vectors[zone.name.to_s] = TimeSeriesPoint.vector(target: zone, field: "announced", index: index)
+      end
+
+      new_cases_daily = index.entries.map(&:to_date).map do |date|
+        data = {}
+        announced_vectors.keys.map do |key|
+          data[key] = announced_vectors[key][date.to_s].to_i
+        end
+        { date: date.strftime("%b %d") }.merge(data)
+      end
+      {
+        zones:       zones,
+        total_cases: announced_vectors.keys.map { |key| { zone_name: key, count: announced_vectors[key].sum } },
+        new_cases:   {
+          x_axis_key: "date",
+          line_keys:  zones.map(&:name),
           data:       new_cases_daily
         }
       }
