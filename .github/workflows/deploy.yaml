@@ -4,7 +4,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Set up Ruby
       uses: actions/setup-ruby@v1
       with:
@@ -34,6 +34,6 @@ jobs:
       run: |
         bash .github/workflows/setup-heroku.sh
         heroku git:remote -a covid-19-zones
-        git push heroku master
+        git push heroku HEAD:master -f
         heroku run rails db:migrate --app ${HEROKU_APP_NAME} --exit-code
 
