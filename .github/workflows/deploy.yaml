@@ -33,9 +33,10 @@ jobs:
         HEROKU_LOGIN: "anshul@anshul.io"
       if: github.ref == 'refs/heads/master' && job.status == 'success'
       run: |
+        set -ex
         bash .github/workflows/setup-heroku.sh
         heroku git:remote -a covid-19-zones
-        git fetch --all --unshallow
-        git push heroku master:master -f
+        git fetch --prune --unshallow
+        git push heroku master
         heroku run rails db:migrate --app ${HEROKU_APP_NAME} --exit-code
 
