@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql" if Rails.env.development?
   post "/graphql", to: "graphql#execute"
 
-  devise_for :users
+  devise_for :users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
   root to: "single_page_app#index"
 
   scope "api/", format: :json do
