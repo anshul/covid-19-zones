@@ -34,6 +34,6 @@ jobs:
       run: |
         bash .github/workflows/setup-heroku.sh
         heroku git:remote -a covid-19-zones
-        git push heroku master
+        git push -f heroku master
         heroku run rails db:migrate --app ${HEROKU_APP_NAME} --exit-code
 
