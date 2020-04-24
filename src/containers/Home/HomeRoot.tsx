@@ -1,6 +1,5 @@
 import React from 'react'
 import { Typography, makeStyles, createStyles, Grid, Card, CardContent } from '@material-ui/core'
-import BarChart from '../../components/Charts/BarChart'
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -50,9 +49,7 @@ const HomeRoot: React.FC = () => {
           </Card>
         </Grid>
         <Grid item md={12} xl={12} xs={12}>
-          <Card style={{ height: '100%', minHeight: '250px' }}>
-            <BarChart />
-          </Card>
+          <Card style={{ height: '100%', minHeight: '250px' }}>Bar chart goes here</Card>
         </Grid>
       </Grid>
       <Grid container item spacing={1} xs={12} sm={12} md={4} xl={3}>
