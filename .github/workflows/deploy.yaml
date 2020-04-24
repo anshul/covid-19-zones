@@ -3,6 +3,7 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 12
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby
@@ -34,6 +35,7 @@ jobs:
       run: |
         bash .github/workflows/setup-heroku.sh
         heroku git:remote -a covid-19-zones
-        git push heroku HEAD:master -f
+        git fetch --all --unshallow
+        git push heroku master:master -f
         heroku run rails db:migrate --app ${HEROKU_APP_NAME} --exit-code
 
