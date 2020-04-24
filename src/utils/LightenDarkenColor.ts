@@ -5,7 +5,7 @@ interface RGB {
 }
 
 export const LightenDarkenColor = (col: string, amt: number, tintOrShade: 'tint' | 'shade'): string => {
-  if (col[0] == '#') {
+  if (col[0] === '#') {
     col = col.slice(1)
   }
 

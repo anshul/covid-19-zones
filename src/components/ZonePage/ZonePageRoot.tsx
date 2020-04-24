@@ -1,5 +1,4 @@
 import React from 'react'
-import { ResponsiveLine } from '@nivo/line'
 import {
   makeStyles,
   createStyles,
@@ -20,13 +19,22 @@ import {
 import useSWR from 'swr'
 import { ArrowBack } from '@material-ui/icons'
 import clsx from 'clsx'
-import { startCase } from 'lodash'
 import { LightenDarkenColor } from '../../utils/LightenDarkenColor'
 
 interface Props {
   slug: string
   gotoZone: (slug: string) => void
   gotoParentZone: () => void
+}
+
+interface Zone {
+  slug: string
+  code: string
+  name: string
+  totalCases: number
+  totalActive: number
+  totalRecovered: number
+  totalDeceased: number
 }
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -106,7 +114,7 @@ const ZonePageRoot: React.FC<Props> = ({ slug, gotoZone, gotoParentZone }) => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {data?.siblingZones.map((zone: any) => (
+              {data?.siblingZones.map((zone: Zone) => (
                 <TableRow selected={slug === zone.slug} hover key={zone.code} onClick={() => gotoZone(zone.slug)}>
                   <TableCell>{zone.name}</TableCell>
                   <TableCell>{zone.totalCases}</TableCell>
@@ -132,7 +140,7 @@ const ZonePageRoot: React.FC<Props> = ({ slug, gotoZone, gotoParentZone }) => {
             )}
           </Grid>
           {['confirmed', 'active', 'recovered', 'deceased'].map((cases) => (
-            <Grid item xs={12} md={3}>
+            <Grid key={cases} item xs={12} md={3}>
               <div
                 style={{
                   cursor: 'pointer',
@@ -141,7 +149,7 @@ const ZonePageRoot: React.FC<Props> = ({ slug, gotoZone, gotoParentZone }) => {
                   backgroundColor: colorMap[cases].backgroundColor,
                 }}
               >
-                <Typography variant='subtitle1'>{startCase(cases)}</Typography>
+                <Typography variant='subtitle1'>{cases}</Typography>
                 <Typography variant='h5'>
                   <b>{data ? data[cases].totalCount : '--'}</b>
                 </Typography>
@@ -150,56 +158,7 @@ const ZonePageRoot: React.FC<Props> = ({ slug, gotoZone, gotoParentZone }) => {
           ))}
           {['confirmed', 'active', 'recovered', 'deceased'].map((cases) => (
             <Grid key={cases} item xs={12}>
-              <div className={classes.lineChart}>
-                <ResponsiveLine
-                  colors={[colorMap[cases].chartColor, '#B0BEC5']}
-                  data={[
-                    { id: `${startCase(cases)} Cases (Daily)`, data: data ? data[cases].perDayCounts : [] },
-                    { id: `${startCase(cases)} Cases (5 Day Moving Average)`, data: data ? data[cases].fiveDayMovingAverage : [] },
-                  ]}
-                  margin={{ top: 60, right: 50, bottom: 60, left: 30 }}
-                  enableGridX={false}
-                  enableGridY={false}
-                  xScale={{
-                    type: 'time',
-                    format: '%Y-%m-%d',
-                    precision: 'day',
-                  }}
-                  xFormat='time:%Y-%m-%d'
-                  yScale={{ type: 'linear', min: 'auto', max: data ? data.yMax : 'auto', reverse: false }}
-                  axisTop={null}
-                  axisLeft={null}
-                  axisBottom={{
-                    orient: 'bottom',
-                    tickSize: 5,
-                    tickPadding: 5,
-                    tickRotation: 90,
-                    format: '%b %d',
-                    tickValues: 'every 5 days',
-                  }}
-                  axisRight={{
-                    orient: 'right',
-                    tickSize: 5,
-                    tickPadding: 5,
-                    tickRotation: 0,
-                  }}
-                  pointSize={5}
-                  pointBorderColor={{ from: 'serieColor' }}
-                  useMesh={true}
-                  legends={[
-                    {
-                      anchor: 'top-left',
-                      direction: 'column',
-                      itemWidth: 80,
-                      itemHeight: 20,
-                      itemOpacity: 0.75,
-                      symbolSize: 12,
-                      symbolShape: 'circle',
-                      symbolBorderColor: 'rgba(0, 0, 0, .5)',
-                    },
-                  ]}
-                />
-              </div>
+              <div className={classes.lineChart}>chart goes here</div>
             </Grid>
           ))}
         </Grid>

@@ -11,7 +11,7 @@ fi
 
 db_file="covid-19-zones"
 
-bundle exec heroku local:run -e .env-local rails db:drop db:create && (PGPASSWORD=covid_19_zones gunzip < ./$db_file.sql.gz | sed -e 's/\blive\b/local/g' | PGPASSWORD=covid_19_zones psql -h localhost -U covid_19_zones -d covid_19_zones_development) && bundle exec heroku local:run -e .env-local rails db:migrate
+bundle exec bin/rails db:drop db:create && (PGPASSWORD=covid_19_zones gunzip < ./$db_file.sql.gz | sed -e 's/\blive\b/local/g' | PGPASSWORD=covid_19_zones psql -h localhost -U covid_19_zones -d covid_19_zones_development) && bundle exec bin/rails db:migrate
 echo "Imported ./$db_file.sql.gz to development db."
 echo
 echo "Done import-sql ${db_file} in ${cwd} ($(date +%H:%M:%S))"

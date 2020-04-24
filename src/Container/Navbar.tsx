@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { BottomNavigation, BottomNavigationAction, makeStyles, createStyles, Theme } from '@material-ui/core'
 import { LocationOnTwoTone, LocalOfferTwoTone, HelpTwoTone, HomeTwoTone } from '@material-ui/icons'
-import clsx from 'clsx'
 import { history } from '../history'
 
 interface Props {

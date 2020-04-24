@@ -94,6 +94,8 @@ Naming/MethodParameterName:
     - "op"
     - "h"
     - "t"
+    - "e"
+    - "i"
 
 # lints with no defaults
 Lint/RaiseException:
