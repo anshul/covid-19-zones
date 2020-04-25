@@ -41,7 +41,7 @@ module Types
       zone = ::Zone.find_by(code: code)
       series_start = TimeSeriesPoint.where("target_code like ?", "#{zone.code}%").where(target_type: zone.type).minimum(:dated)
 
-      index = TimeSeriesPoint.index(start: series_start || Time.zone.today - 14.days, stop: Time.zone.today)
+      index = TimeSeriesPoint.index(start: series_start || Time.zone.today - 14.days, stop: 1.day.ago)
       announced_vector = TimeSeriesPoint.vector(target: zone, field: "announced", index: index)
       announced_vector_sma5 = announced_vector.rolling_mean(5)
 
