@@ -28,7 +28,7 @@ class ImportWiki < BaseCommand
   end
 
   def namify(name)
-    name.split("|").last.gsub(/[^a-zA-Z]+/, " ").strip
+    name.split("|").last.gsub(/[^a-zA-Z]+/, " ").strip.sub(/ ref name .*/, "")
   end
 
   def numerify(num)
@@ -78,5 +78,4 @@ class ImportWiki < BaseCommand
     log "        - #{city.code} #{city.type.downcase} added (#{city.slug})" unless city.id
     city.save! unless city.id
   end
-
 end
