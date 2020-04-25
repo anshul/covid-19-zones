@@ -9,6 +9,7 @@ class CreateV2Zones < ActiveRecord::Migration[6.0]
       t.string :parent_code
       t.text :md, null: false, default: ""
       t.string :maintainer
+      t.datetime :published_at
 
       t.timestamps
     end
@@ -16,5 +17,6 @@ class CreateV2Zones < ActiveRecord::Migration[6.0]
     add_index :v2_zones, :code, unique: true
     add_index :v2_zones, :category
     add_index :v2_zones, :parent_code
+    add_index :v2_zones, :published_at
   end
 end

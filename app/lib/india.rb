@@ -24,7 +24,7 @@ class India
   end
 
   def countries
-    @countries ||= Hash[states.values.group_by { |h| h[:country_code] }.transform_values { |arr| combine(arr).except(:st_2011, :state).merge(code: "in") }]
+    @countries ||= Hash[states.values.group_by { |h| h[:country_code] }.transform_values { |arr| combine(arr).except(:st_2011, :state).merge(code: "in", country: "India") }]
   end
 
   def states

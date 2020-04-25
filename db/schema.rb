@@ -161,6 +161,7 @@ ActiveRecord::Schema.define(version: 2020_04_24_183010) do
     t.string "entity_slug", null: false
     t.string "entity_type", null: false
     t.string "fact_type", null: false
+    t.string "signature", null: false
     t.integer "sequence", null: false
     t.jsonb "details", default: {}, null: false
     t.datetime "happened_at", null: false
@@ -182,11 +183,12 @@ ActiveRecord::Schema.define(version: 2020_04_24_183010) do
   end
 
   create_table "v2_posts", force: :cascade do |t|
+    t.string "code", null: false
     t.string "unit_code", null: false
     t.string "zone_code", null: false
-    t.boolean "published", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["code"], name: "index_v2_posts_on_code", unique: true
     t.index ["unit_code", "zone_code"], name: "index_v2_posts_on_unit_code_and_zone_code", unique: true
   end
 
@@ -250,11 +252,13 @@ ActiveRecord::Schema.define(version: 2020_04_24_183010) do
     t.string "parent_code"
     t.text "md", default: "", null: false
     t.string "maintainer"
+    t.datetime "published_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["category"], name: "index_v2_zones_on_category"
     t.index ["code"], name: "index_v2_zones_on_code", unique: true
     t.index ["parent_code"], name: "index_v2_zones_on_parent_code"
+    t.index ["published_at"], name: "index_v2_zones_on_published_at"
   end
 
   create_table "zones", force: :cascade do |t|

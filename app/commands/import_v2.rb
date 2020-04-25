@@ -2,11 +2,34 @@
 
 class ImportV2 < BaseCommand
   def self.perform_task
-    new.call!
+    new.call_with_transaction
   end
 
-  attr_reader :response, :raw_patients
   def run
-    log " - We have #{::V2::Unit.count} units, #{::V2::Zone.count} zones and #{::V2::Post.count} posts."
+    upsert_india &&
+      log(" - We have #{::V2::Unit.count} units, #{::V2::Zone.count} zones and #{::V2::Post.count} posts.") ||
+      puts_red("Failed: #{error_message}")
+  end
+
+  def upsert_india
+    india = ::India.new
+    upsert(arr: india.countries.values, category: "country", topojson_file: "india-districts-727.json", topojson_key: nil, topojson_value: nil)
+  end
+
+  def upsert(arr:, **common_attrs)
+    arr.all? do |attr|
+      cmd = ::V2::RecordFact.new(details: unit_params(attr, common_attrs[:category]).merge(common_attrs), entity_type: "unit", entity_slug: attr[:code], fact_type: "unit_patched")
+      cmd.call || add_error(cmd.error_message)
+    end
+  end
+
+  def unit_params(attr, key)
+    out = attr.slice(:code, :name, :population, :population_year, :area_sq_km)
+    out[:name] ||= attr[key.to_sym]
+    out[:parent_code] ||= out[:code].split("/")[0..-2].join("/")
+    out[:parent_code] = nil if out[:parent_code].blank?
+    out[:details] ||= {}
+    out[:maintainer] ||= "bot@covid19zones.com"
+    out
   end
 end

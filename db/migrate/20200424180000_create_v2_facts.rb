@@ -6,6 +6,7 @@ class CreateV2Facts < ActiveRecord::Migration[6.0]
       t.string :entity_slug, null: false
       t.string :entity_type, null: false
       t.string :fact_type, null: false
+      t.string :signature, null: false
       t.integer :sequence, null: false
       t.jsonb :details, null: false, default: {}
       t.datetime :happened_at, null: false
