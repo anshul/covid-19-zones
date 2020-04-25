@@ -175,6 +175,9 @@ ActiveRecord::Schema.define(version: 2020_04_24_183010) do
   create_table "v2_origins", force: :cascade do |t|
     t.string "code", null: false
     t.string "name", null: false
+    t.string "attribution_text", null: false
+    t.string "source_name", null: false
+    t.string "source_subname", null: false
     t.string "md", default: "", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -193,21 +196,19 @@ ActiveRecord::Schema.define(version: 2020_04_24_183010) do
   end
 
   create_table "v2_snapshots", force: :cascade do |t|
-    t.string "unit_code", null: false
     t.string "origin_code", null: false
-    t.string "snapshot_type", null: false
     t.string "signature", null: false
-    t.jsonb "data", null: false
+    t.jsonb "data", default: {}, null: false
     t.datetime "downloaded_at", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["downloaded_at"], name: "index_v2_snapshots_on_downloaded_at"
-    t.index ["unit_code", "origin_code", "snapshot_type", "signature"], name: "v2_snapshots_signature_unique", unique: true
+    t.index ["origin_code", "signature"], name: "v2_snapshots_signature_unique", unique: true
   end
 
   create_table "v2_streams", force: :cascade do |t|
     t.string "code", null: false
-    t.string "type", null: false
+    t.string "category", null: false
     t.string "unit_code", null: false
     t.string "origin_code", null: false
     t.jsonb "time_series", default: {}, null: false
@@ -217,11 +218,11 @@ ActiveRecord::Schema.define(version: 2020_04_24_183010) do
     t.bigint "snapshot_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["category", "unit_code", "origin_code"], name: "v2_stream_signature_unique", unique: true
     t.index ["code"], name: "v2_stream_unique", unique: true
     t.index ["dated"], name: "index_v2_streams_on_dated"
     t.index ["priority"], name: "index_v2_streams_on_priority"
     t.index ["snapshot_id"], name: "index_v2_streams_on_snapshot_id"
-    t.index ["type", "unit_code", "origin_code"], name: "v2_stream_signature_unique", unique: true
   end
 
   create_table "v2_units", force: :cascade do |t|

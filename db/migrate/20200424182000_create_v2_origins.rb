@@ -5,6 +5,9 @@ class CreateV2Origins < ActiveRecord::Migration[6.0]
     create_table :v2_origins do |t|
       t.string :code, null: false
       t.string :name, null: false
+      t.string :attribution_text, null: false
+      t.string :source_name, null: false
+      t.string :source_subname, null: false
       t.string :md, null: false, default: ""
 
       t.timestamps
