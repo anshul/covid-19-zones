@@ -7,7 +7,7 @@ module V2
         new(origin_code: origin_code).call_with_transaction
       end
 
-      attr_reader :origin, :origin_code, :response, :response_json
+      attr_reader :origin, :origin_code, :response, :response_json, :snapshot
       def initialize(origin_code:)
         @origin_code = origin_code.to_s
         @origin = ::V2::Origin.find_by(code: origin_code)
@@ -18,7 +18,8 @@ module V2
         return add_error("Origin does not have a valid source url") if origin.source_url.blank?
 
         fetch_data &&
-          create_snapshot_if_needed
+          create_snapshot_if_needed &&
+          ingest_created_snapshot
       end
 
       def fetch_data
@@ -35,8 +36,8 @@ module V2
       def create_snapshot_if_needed
         return log("Data hasn't changed, skipping...") if ::V2::Snapshot.exists?(origin_code: origin_code, signature: signature)
 
-        snapshot = ::V2::Snapshot.find_or_initialize_by(origin_code: origin_code)
-        snapshot.assign_attributes(
+        @snapshot = ::V2::Snapshot.new(
+          origin_code:   origin_code,
           signature:     signature,
           data:          response_json,
           downloaded_at: t_start
@@ -45,6 +46,13 @@ module V2
         return log("Failed to save snapshot, err: #{snapshot.errors.full_messages.to_sentence}", return_value: false) unless snapshot.save
 
         true
+      end
+
+      def ingest_created_snapshot
+        return true if snapshot.blank?
+
+        cmd = ::V2::IngestSnapshot.new(snapshot_id: snapshot.id)
+        cmd.run
       end
 
       def signature

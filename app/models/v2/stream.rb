@@ -6,7 +6,7 @@ module V2
     validates :category, inclusion: { in: CATEGORIES }
     validate :check_format_of_time_series
 
-    validates :code, :type, :unit_code, :origin_code, presence: true
+    validates :code, :unit_code, :origin_code, presence: true
     validates :time_series, :dated, :snapshot_id, presence: true
     belongs_to :snapshot, class_name: "V2::Snapshot"
 
