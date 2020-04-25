@@ -25,7 +25,7 @@ module Types
     end
 
     def zones_list(search_query:)
-      ::Zone.where("search_name LIKE ?", "%#{search_query.parameterize}%").distinct(:slug).order(:name).limit(20)
+      ::Zone.where("search_name LIKE ?", "%#{search_query.parameterize}%").where(type: %w[District State Country]).distinct(:slug).order(:name).limit(20)
     end
 
     def home
@@ -41,26 +41,43 @@ module Types
       zone = ::Zone.find_by(code: code)
       series_start = TimeSeriesPoint.where("target_code like ?", "#{zone.code}%").where(target_type: zone.type).minimum(:dated)
 
-      index = TimeSeriesPoint.index(start: series_start || Time.zone.today - 14.days, stop: Time.zone.today)
+      index = TimeSeriesPoint.index(start: series_start || Time.zone.today - 14.days, stop: 1.day.ago)
       announced_vector = TimeSeriesPoint.vector(target: zone, field: "announced", index: index)
       announced_vector_sma5 = announced_vector.rolling_mean(5)
+      cum_announced_vector = announced_vector.cumsum
+      cum_announce_vector_ema5 = cum_announced_vector.ema(5)
 
-      new_cases_sma_key = "#{zone.name} SMA (5 days)"
+      new_cases_ma_key = "#{zone.name} - 5 day moving average"
       new_cases_daily = index.entries.map(&:to_date).map do |date|
         {
           date: date.strftime("%b %d"),
           zone.name => announced_vector[date.to_s].to_i,
-          new_cases_sma_key => announced_vector_sma5[date.to_s].to_i
+          new_cases_ma_key => announced_vector_sma5[date.to_s].to_i
+        }
+      end
+
+      cum_cases_ma_key = "#{zone.name} - 5 day exp average"
+      cum_cases_daily = index.entries.map(&:to_date).map do |date|
+        {
+          date: date.strftime("%b %d"),
+          zone.name => cum_announced_vector[date.to_s].to_i,
+          cum_cases_ma_key => cum_announce_vector_ema5[date.to_s].to_i
         }
       end
 
       {
         zone:        zone,
         total_cases: announced_vector.sum,
+        as_of:       index.entries.last.strftime("%d %B, %Y"),
         new_cases:   {
           x_axis_key: "date",
-          line_keys:  [zone.name, new_cases_sma_key],
+          line_keys:  [zone.name, new_cases_ma_key],
           data:       new_cases_daily
+        },
+        cum_cases:   {
+          x_axis_key: "date",
+          line_keys:  [zone.name, cum_cases_ma_key],
+          data:       cum_cases_daily
         }
       }
     end
