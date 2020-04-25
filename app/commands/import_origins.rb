@@ -36,6 +36,15 @@ class ImportOrigins < BaseCommand
         source_name:      "www.covid19india.org",
         source_subname:   "api.covid19india.org/raw_data.json",
         source_url:       "https://api.covid19india.org/raw_data.json"
+      },
+      {
+        code:             "covid19-india-deaths-and-recoveries",
+        name:             "Covid19 India",
+        data_category:    "json",
+        attribution_text: "",
+        source_name:      "www.covid19india.org",
+        source_subname:   "api.covid19india.org/deaths_recoveries.json",
+        source_url:       "https://api.covid19india.org/deaths_recoveries.json"
       }
     ]
   end

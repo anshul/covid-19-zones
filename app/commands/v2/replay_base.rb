@@ -13,6 +13,7 @@ module V2
 
     def run
       replay_all &&
+        fill_search_keys &&
         delete({ ::V2::Unit => @units, ::V2::Zone => @zones, ::V2::Post => @posts }) &&
         upsert({ ::V2::Unit => @units, ::V2::Zone => @zones, ::V2::Post => @posts })
     end
@@ -34,6 +35,15 @@ module V2
       targets.all? do |klass, h|
         models = h.values.select { |k| k }
         models.empty? ? true : klass.import(models, on_duplicate_key_update: klass.on_duplicate_key_options, batch_size: 500)
+      end
+    end
+
+    def fill_search_keys
+      @zones.transform_values do |zone|
+        search_candidates = [zone.name] + (zone.aliases || [])
+        zone.search_key = search_candidates.map(&:downcase).join(";")
+
+        zone
       end
     end
 

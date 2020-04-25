@@ -18,8 +18,7 @@ module V2
         return add_error("Origin does not have a valid source url") if origin.source_url.blank?
 
         fetch_data &&
-          create_snapshot_if_needed &&
-          ingest_created_snapshot
+          create_snapshot_if_needed
       end
 
       def fetch_data
@@ -46,13 +45,6 @@ module V2
         return log("Failed to save snapshot, err: #{snapshot.errors.full_messages.to_sentence}", return_value: false) unless snapshot.save
 
         true
-      end
-
-      def ingest_created_snapshot
-        return true if snapshot.blank?
-
-        cmd = ::V2::IngestSnapshot.new(snapshot_id: snapshot.id)
-        cmd.run
       end
 
       def signature
