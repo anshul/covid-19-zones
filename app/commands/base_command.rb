@@ -36,12 +36,17 @@ class BaseCommand
 
   private
 
+  def log(msg, return_value: true)
+    puts_blue "#{format('%.3f', t).rjust(5)}s - #{msg}" unless Rails.env.test?
+    return_value
+  end
+
   def t_start
     @t_start ||= Time.zone.now
   end
 
   def t
-    (Time.zone.now.to_f - t_start.to_f).round(3)
+    (Time.zone.now.to_f - t_start.to_f).abs.round(3)
   end
 
   def add_error(msg)

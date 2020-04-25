@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_18_115830) do
+ActiveRecord::Schema.define(version: 2020_04_25_180859) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "active_admin_comments", force: :cascade do |t|
+    t.string "namespace"
+    t.text "body"
+    t.string "resource_type"
+    t.bigint "resource_id"
+    t.string "author_type"
+    t.bigint "author_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
+    t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
+    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
+  end
 
   create_table "data_snapshots", force: :cascade do |t|
     t.string "source", null: false
@@ -143,6 +157,127 @@ ActiveRecord::Schema.define(version: 2020_04_18_115830) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  create_table "v2_facts", force: :cascade do |t|
+    t.string "entity_slug", null: false
+    t.string "entity_type", null: false
+    t.string "fact_type", null: false
+    t.string "signature", null: false
+    t.integer "sequence", null: false
+    t.jsonb "details", default: {}, null: false
+    t.datetime "happened_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["entity_slug", "sequence"], name: "index_v2_facts_on_entity_slug_and_sequence", unique: true
+    t.index ["fact_type"], name: "index_v2_facts_on_fact_type"
+    t.index ["happened_at"], name: "index_v2_facts_on_happened_at"
+  end
+
+  create_table "v2_origins", force: :cascade do |t|
+    t.string "code", null: false
+    t.string "name", null: false
+    t.string "data_category", null: false
+    t.string "attribution_text", null: false
+    t.string "source_name", null: false
+    t.string "source_subname", null: false
+    t.string "source_url"
+    t.string "md", default: "", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["code"], name: "index_v2_origins_on_code", unique: true
+    t.index ["data_category"], name: "index_v2_origins_on_data_category"
+    t.index ["name"], name: "index_v2_origins_on_name"
+  end
+
+  create_table "v2_posts", force: :cascade do |t|
+    t.string "code", null: false
+    t.string "unit_code", null: false
+    t.string "zone_code", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["code"], name: "index_v2_posts_on_code", unique: true
+    t.index ["unit_code", "zone_code"], name: "index_v2_posts_on_unit_code_and_zone_code", unique: true
+  end
+
+  create_table "v2_snapshots", force: :cascade do |t|
+    t.string "origin_code", null: false
+    t.string "signature", null: false
+    t.jsonb "data", default: {}, null: false
+    t.datetime "downloaded_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["downloaded_at"], name: "index_v2_snapshots_on_downloaded_at"
+    t.index ["origin_code", "signature"], name: "v2_snapshots_signature_unique", unique: true
+  end
+
+  create_table "v2_streams", force: :cascade do |t|
+    t.string "code", null: false
+    t.string "category", null: false
+    t.string "unit_code", null: false
+    t.string "origin_code", null: false
+    t.jsonb "time_series", default: {}, null: false
+    t.date "dated", null: false
+    t.integer "priority", default: 50, null: false
+    t.string "md", default: "", null: false
+    t.bigint "snapshot_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.decimal "min_count", precision: 14, scale: 2, null: false
+    t.decimal "max_count", precision: 14, scale: 2, null: false
+    t.decimal "cumulative_count", precision: 14, scale: 2, null: false
+    t.datetime "min_date", null: false
+    t.datetime "max_date", null: false
+    t.index ["category", "unit_code", "origin_code"], name: "v2_stream_signature_unique", unique: true
+    t.index ["code"], name: "v2_stream_unique", unique: true
+    t.index ["cumulative_count"], name: "index_v2_streams_on_cumulative_count"
+    t.index ["dated"], name: "index_v2_streams_on_dated"
+    t.index ["max_count"], name: "index_v2_streams_on_max_count"
+    t.index ["max_date"], name: "index_v2_streams_on_max_date"
+    t.index ["min_count"], name: "index_v2_streams_on_min_count"
+    t.index ["min_date"], name: "index_v2_streams_on_min_date"
+    t.index ["priority"], name: "index_v2_streams_on_priority"
+    t.index ["snapshot_id"], name: "index_v2_streams_on_snapshot_id"
+  end
+
+  create_table "v2_units", force: :cascade do |t|
+    t.string "code", null: false
+    t.string "name", null: false
+    t.string "category", null: false
+    t.string "parent_code"
+    t.string "topojson_file"
+    t.string "topojson_key"
+    t.string "topojson_value"
+    t.jsonb "topojson_override"
+    t.bigint "population", null: false
+    t.integer "population_year", null: false
+    t.decimal "area_sq_km", null: false
+    t.jsonb "details"
+    t.string "maintainer"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category"], name: "index_v2_units_on_category"
+    t.index ["code"], name: "index_v2_units_on_code", unique: true
+    t.index ["parent_code"], name: "index_v2_units_on_parent_code"
+  end
+
+  create_table "v2_zones", force: :cascade do |t|
+    t.string "code", null: false
+    t.string "name", null: false
+    t.string "category", null: false
+    t.string "parent_code"
+    t.text "md", default: "", null: false
+    t.string "maintainer"
+    t.datetime "published_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "aliases", default: [], null: false, array: true
+    t.string "search_key", default: "", null: false
+    t.index ["category"], name: "index_v2_zones_on_category"
+    t.index ["code"], name: "index_v2_zones_on_code", unique: true
+    t.index ["parent_code"], name: "index_v2_zones_on_parent_code"
+    t.index ["published_at"], name: "index_v2_zones_on_published_at"
+    t.index ["search_key"], name: "index_v2_zones_on_search_key"
+  end
+
   create_table "zones", force: :cascade do |t|
     t.string "type", null: false
     t.string "slug", null: false
@@ -163,4 +298,9 @@ ActiveRecord::Schema.define(version: 2020_04_18_115830) do
     t.index ["type"], name: "index_zones_on_type"
   end
 
+  add_foreign_key "v2_posts", "v2_units", column: "unit_code", primary_key: "code"
+  add_foreign_key "v2_posts", "v2_zones", column: "zone_code", primary_key: "code"
+  add_foreign_key "v2_streams", "v2_origins", column: "origin_code", primary_key: "code"
+  add_foreign_key "v2_streams", "v2_snapshots", column: "snapshot_id"
+  add_foreign_key "v2_streams", "v2_units", column: "unit_code", primary_key: "code"
 end

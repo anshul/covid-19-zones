@@ -32,6 +32,7 @@ Metrics/BlockLength:
     - "config/environments/production.rb"
     - "lib/tasks/**/*"
     - "test/**/*"
+    - "app/admin/**/*"
 
 Metrics/ClassLength:
   Max: 120
