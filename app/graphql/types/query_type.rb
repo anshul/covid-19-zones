@@ -12,7 +12,7 @@ module Types
 
     field :home, ::Types::Home::HomeData, null: false
 
-    field :zone_stats, ::Types::Zones::ZoneStats, null: false do
+    field :zone_stats, ::Types::Zones::ZoneStats, null: true do
       argument :code, String, required: true
     end
 
@@ -39,6 +39,8 @@ module Types
 
     def zone_stats(code:)
       zone = ::Zone.find_by(code: code)
+      return nil unless zone
+
       series_start = TimeSeriesPoint.where("target_code like ?", "#{zone.code}%").where(target_type: zone.type).minimum(:dated)
 
       index = TimeSeriesPoint.index(start: series_start || Time.zone.today - 14.days, stop: 1.day.ago)
