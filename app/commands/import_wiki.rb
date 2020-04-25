@@ -8,7 +8,7 @@ class ImportWiki < BaseCommand
   attr_reader :response, :raw_patients
   def run
     create_india!
-    log " - We have #{Country.count} countries, #{State.count} states, #{District.count} districts, #{City.count} cities, #{Locality.count} localities."
+    log " - v1: We have #{Country.count} countries, #{State.count} states, #{District.count} districts, #{City.count} cities, #{Locality.count} localities."
     true
   end
 
@@ -28,7 +28,7 @@ class ImportWiki < BaseCommand
   end
 
   def namify(name)
-    name.split("|").last.gsub(/[^a-zA-Z]+/, " ").strip
+    name.split("|").last.gsub(/[^a-zA-Z]+/, " ").strip.sub(/ ref name .*/, "")
   end
 
   def numerify(num)
@@ -77,18 +77,5 @@ class ImportWiki < BaseCommand
     city = City["#{cn}/#{st}/#{dist}/#{code}"] || City.new(slug: district.slug + "/" + hq.parameterize, code: "#{cn}/#{st}/#{dist}/#{code}", name: hq, parent_zone: district.code, search_name: hq.parameterize)
     log "        - #{city.code} #{city.type.downcase} added (#{city.slug})" unless city.id
     city.save! unless city.id
-  end
-
-  def log(msg, return_value: true)
-    puts_blue "#{format('%.3f', t).rjust(5)}s - #{msg}" unless Rails.env.test?
-    return_value
-  end
-
-  def t_start
-    @t_start ||= Time.zone.now
-  end
-
-  def t
-    (Time.zone.now.to_f - t_start.to_f).round(3)
   end
 end

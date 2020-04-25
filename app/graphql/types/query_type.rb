@@ -25,7 +25,7 @@ module Types
     end
 
     def zones_list(search_query:)
-      ::Zone.where("search_name LIKE ?", "%#{search_query.parameterize}%").where(type: %w[District State Country]).distinct(:slug).order(:name).limit(20)
+      ::Zone.where("search_name LIKE ? OR search_name LIKE ?", "#{search_query.parameterize}%", "%-#{search_query.parameterize}%").where(type: %w[District State Country]).distinct(:slug).order(type: :desc, name: :asc).limit(20)
     end
 
     def home
