@@ -35,8 +35,8 @@ module V2
       def create_snapshot_if_needed
         return log("Data hasn't changed, skipping...") if ::V2::Snapshot.exists?(origin_code: origin_code, signature: signature)
 
-        snapshot = ::V2::Snapshot.new(
-          origin_code:   origin_code,
+        snapshot = ::V2::Snapshot.find_or_initialize_by(origin_code: origin_code)
+        snapshot.assign_attributes(
           signature:     signature,
           data:          response_json,
           downloaded_at: t_start
