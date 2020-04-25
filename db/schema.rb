@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_24_183010) do
+ActiveRecord::Schema.define(version: 2020_04_25_180859) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -221,9 +221,19 @@ ActiveRecord::Schema.define(version: 2020_04_24_183010) do
     t.bigint "snapshot_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.decimal "min_count", precision: 14, scale: 2, null: false
+    t.decimal "max_count", precision: 14, scale: 2, null: false
+    t.decimal "cumulative_count", precision: 14, scale: 2, null: false
+    t.datetime "min_date", null: false
+    t.datetime "max_date", null: false
     t.index ["category", "unit_code", "origin_code"], name: "v2_stream_signature_unique", unique: true
     t.index ["code"], name: "v2_stream_unique", unique: true
+    t.index ["cumulative_count"], name: "index_v2_streams_on_cumulative_count"
     t.index ["dated"], name: "index_v2_streams_on_dated"
+    t.index ["max_count"], name: "index_v2_streams_on_max_count"
+    t.index ["max_date"], name: "index_v2_streams_on_max_date"
+    t.index ["min_count"], name: "index_v2_streams_on_min_count"
+    t.index ["min_date"], name: "index_v2_streams_on_min_date"
     t.index ["priority"], name: "index_v2_streams_on_priority"
     t.index ["snapshot_id"], name: "index_v2_streams_on_snapshot_id"
   end
@@ -259,10 +269,13 @@ ActiveRecord::Schema.define(version: 2020_04_24_183010) do
     t.datetime "published_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "aliases", default: [], null: false, array: true
+    t.string "search_key", default: "", null: false
     t.index ["category"], name: "index_v2_zones_on_category"
     t.index ["code"], name: "index_v2_zones_on_code", unique: true
     t.index ["parent_code"], name: "index_v2_zones_on_parent_code"
     t.index ["published_at"], name: "index_v2_zones_on_published_at"
+    t.index ["search_key"], name: "index_v2_zones_on_search_key"
   end
 
   create_table "zones", force: :cascade do |t|

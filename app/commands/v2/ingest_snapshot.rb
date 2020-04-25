@@ -21,6 +21,7 @@ module V2
       return log("Parsing failed, err: #{parser.error_message}") unless parser.run
 
       streams = parser.streams
+      streams.each(&:refresh_meta!)
 
       ::V2::Stream.import(streams, on_duplicate_key_update: ::V2::Stream.on_duplicate_key_options, batch_size: 500)
     end

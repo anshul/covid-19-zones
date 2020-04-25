@@ -19,6 +19,16 @@ module V2
       true
     end
 
+    def refresh_meta!
+      assign_attributes(
+        min_count:        time_series.values.min,
+        max_count:        time_series.values.max,
+        cumulative_count: time_series.values.sum,
+        min_date:         time_series.keys.min,
+        max_date:         time_series.keys.max
+      )
+    end
+
     def self.index(start: nil, stop: nil)
       Daru::DateTimeIndex.date_range(start: start.to_date.to_s, end: stop.to_date.to_s, freq: "D")
     end
