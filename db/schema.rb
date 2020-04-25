@@ -175,13 +175,16 @@ ActiveRecord::Schema.define(version: 2020_04_24_183010) do
   create_table "v2_origins", force: :cascade do |t|
     t.string "code", null: false
     t.string "name", null: false
+    t.string "data_category", null: false
     t.string "attribution_text", null: false
     t.string "source_name", null: false
     t.string "source_subname", null: false
+    t.string "source_url"
     t.string "md", default: "", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["code"], name: "index_v2_origins_on_code", unique: true
+    t.index ["data_category"], name: "index_v2_origins_on_data_category"
     t.index ["name"], name: "index_v2_origins_on_name"
   end
 
