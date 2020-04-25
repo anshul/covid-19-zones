@@ -16,7 +16,7 @@ module Types
       argument :code, String, required: true
     end
 
-    field :compare, ::Types::Zones::CompareStats, null: false do
+    field :compare, ::Types::Zones::CompareStats, null: true do
       argument :codes, [String], required: true
     end
 
@@ -86,23 +86,40 @@ module Types
 
     def compare(codes:)
       zones = Zone.where(code: codes)
+      return nil unless zones.count == codes.count
+
       series_start = TimeSeriesPoint.where(target_code: codes).minimum(:dated)
-      index = TimeSeriesPoint.index(start: series_start || Time.zone.today - 14.days, stop: Time.zone.today)
-      announced_vectors = {}
+      index = TimeSeriesPoint.index(start: series_start || Time.zone.today - 14.days, stop: 1.day.ago)
+      new_vectors = {}
+      cum_vectors = {}
       zones.map do |zone|
-        announced_vectors[zone.name.to_s] = TimeSeriesPoint.vector(target: zone, field: "announced", index: index)
+        new_vectors[zone.name.to_s] = TimeSeriesPoint.vector(target: zone, field: "announced", index: index)
+        cum_vectors[zone.name.to_s] = new_vectors[zone.name.to_s].cumsum
       end
 
       new_cases_daily = index.entries.map(&:to_date).map do |date|
         data = {}
-        announced_vectors.keys.map do |key|
-          data[key] = announced_vectors[key][date.to_s].to_i
+        new_vectors.keys.map do |key|
+          data[key] = new_vectors[key][date.to_s].to_i
         end
         { date: date.strftime("%b %d") }.merge(data)
       end
+      cum_cases_daily = index.entries.map(&:to_date).map do |date|
+        data = {}
+        cum_vectors.keys.map do |key|
+          data[key] = cum_vectors[key][date.to_s].to_i
+        end
+        { date: date.strftime("%b %d") }.merge(data)
+      end
+      as_of = index.entries.last.strftime("%d %B, %Y")
       {
         zones:       zones,
-        total_cases: announced_vectors.keys.map { |key| { zone_name: key, count: announced_vectors[key].sum } },
+        total_cases: new_vectors.keys.map { |key| { zone_name: key, count: new_vectors[key].sum, as_of: as_of } },
+        cum_cases:   {
+          x_axis_key: "date",
+          line_keys:  zones.map(&:name),
+          data:       cum_cases_daily
+        },
         new_cases:   {
           x_axis_key: "date",
           line_keys:  zones.map(&:name),
