@@ -8,7 +8,7 @@ class ImportWiki < BaseCommand
   attr_reader :response, :raw_patients
   def run
     create_india!
-    log " - We have #{Country.count} countries, #{State.count} states, #{District.count} districts, #{City.count} cities, #{Locality.count} localities."
+    log " - v1: We have #{Country.count} countries, #{State.count} states, #{District.count} districts, #{City.count} cities, #{Locality.count} localities."
     true
   end
 

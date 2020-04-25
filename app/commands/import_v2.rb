@@ -7,13 +7,15 @@ class ImportV2 < BaseCommand
 
   def run
     upsert_india &&
-      log(" - We have #{::V2::Unit.count} units, #{::V2::Zone.count} zones and #{::V2::Post.count} posts.") ||
+      log(" - v2: We have #{::V2::Unit.count} units, #{::V2::Zone.count} zones and #{::V2::Post.count} posts.") ||
       puts_red("Failed: #{error_message}")
   end
 
   def upsert_india
     india = ::India.new
-    upsert(arr: india.countries.values, category: "country", topojson_file: "india-districts-727.json", topojson_key: nil, topojson_value: nil)
+    upsert(arr: india.countries.values, category: "country", topojson_file: "india-districts-727.json", topojson_key: nil) &&
+      upsert(arr: india.states.values, category: "state", topojson_file: "india-districts-727.json", topojson_key: "st_nm") &&
+      upsert(arr: india.districts.values, category: "district", topojson_file: "india-districts-727.json", topojson_key: "district")
   end
 
   def upsert(arr:, **common_attrs)
@@ -30,6 +32,8 @@ class ImportV2 < BaseCommand
     out[:parent_code] = nil if out[:parent_code].blank?
     out[:details] ||= {}
     out[:maintainer] ||= "bot@covid19zones.com"
+    out[:topojson_value] ||= nil
+    out[:topojson_value] ||= out[:name] if out[:topojson_file] && out[:topojson_key]
     out
   end
 end

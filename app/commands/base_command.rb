@@ -46,7 +46,7 @@ class BaseCommand
   end
 
   def t
-    (Time.zone.now.to_f - t_start.to_f).round(3)
+    (Time.zone.now.to_f - t_start.to_f).abs.round(3)
   end
 
   def add_error(msg)
