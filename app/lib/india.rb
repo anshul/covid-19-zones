@@ -142,7 +142,7 @@ class India
   end
 
   def namify(name)
-    name.split("|").last.gsub(/[^a-zA-Z]+/, " ").strip
+    name.split("|").last.gsub(/[^a-zA-Z]+/, " ").strip.sub(/ ref name .*/, "")
   end
 
   def numerify(num)
