@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_24_190902) do
+ActiveRecord::Schema.define(version: 2020_04_24_183010) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -181,6 +181,15 @@ ActiveRecord::Schema.define(version: 2020_04_24_190902) do
     t.index ["name"], name: "index_v2_origins_on_name"
   end
 
+  create_table "v2_posts", force: :cascade do |t|
+    t.string "unit_code", null: false
+    t.string "zone_code", null: false
+    t.boolean "published", default: false, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["unit_code", "zone_code"], name: "index_v2_posts_on_unit_code_and_zone_code", unique: true
+  end
+
   create_table "v2_snapshots", force: :cascade do |t|
     t.string "unit_code", null: false
     t.string "origin_code", null: false
@@ -203,13 +212,13 @@ ActiveRecord::Schema.define(version: 2020_04_24_190902) do
     t.date "dated", null: false
     t.integer "priority", default: 50, null: false
     t.string "md", default: "", null: false
-    t.bigint "snapshot_id_id", null: false
+    t.bigint "snapshot_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["code"], name: "v2_stream_unique", unique: true
     t.index ["dated"], name: "index_v2_streams_on_dated"
     t.index ["priority"], name: "index_v2_streams_on_priority"
-    t.index ["snapshot_id_id"], name: "index_v2_streams_on_snapshot_id_id"
+    t.index ["snapshot_id"], name: "index_v2_streams_on_snapshot_id"
     t.index ["type", "unit_code", "origin_code"], name: "v2_stream_signature_unique", unique: true
   end
 
@@ -268,4 +277,9 @@ ActiveRecord::Schema.define(version: 2020_04_24_190902) do
     t.index ["type"], name: "index_zones_on_type"
   end
 
+  add_foreign_key "v2_posts", "v2_units", column: "unit_code", primary_key: "code"
+  add_foreign_key "v2_posts", "v2_zones", column: "zone_code", primary_key: "code"
+  add_foreign_key "v2_streams", "v2_origins", column: "origin_code", primary_key: "code"
+  add_foreign_key "v2_streams", "v2_snapshots", column: "snapshot_id"
+  add_foreign_key "v2_streams", "v2_units", column: "unit_code", primary_key: "code"
 end

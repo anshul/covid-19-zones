@@ -13,7 +13,7 @@ class CreateV2Streams < ActiveRecord::Migration[6.0]
       t.integer :priority, null: false, default: 50
       t.string :md, null: false, default: ""
 
-      t.references :snapshot_id, null: false
+      t.references :snapshot, null: false, foreign_key: { to_table: :v2_snapshots }
 
       t.timestamps
     end
@@ -22,5 +22,7 @@ class CreateV2Streams < ActiveRecord::Migration[6.0]
     add_index :v2_streams, %i[type unit_code origin_code], unique: true, name: "v2_stream_signature_unique"
     add_index :v2_streams, :dated
     add_index :v2_streams, :priority
+    add_foreign_key "v2_streams", "v2_units", column: "unit_code", primary_key: "code"
+    add_foreign_key "v2_streams", "v2_origins", column: "origin_code", primary_key: "code"
   end
 end

@@ -35,13 +35,13 @@ ActiveAdmin.setup do |config|
   #   config.default_namespace = false
   #
   # Default:
-  # config.default_namespace = :admin
+  config.default_namespace = :v2
   #
   # You can customize the settings for each namespace by using
   # a namespace block. For example, to change the site title
   # within a namespace:
   #
-  #   config.namespace :admin do |admin|
+  #   config.namespace :v2 do |admin|
   #     admin.site_title = "Custom Admin Title"
   #   end
   #
@@ -74,7 +74,7 @@ ActiveAdmin.setup do |config|
   # If you wish to maintain a separate set of Pundit policies for admin
   # resources, you may set a namespace here that Pundit will search
   # within when looking for a resource's policy.
-  # config.pundit_policy_namespace = :admin
+  # config.pundit_policy_namespace = :v2
 
   # You can customize your CanCan Ability class name here.
   # config.cancan_ability_class = "Ability"
@@ -232,7 +232,7 @@ ActiveAdmin.setup do |config|
   #
   # To change the default utility navigation to show a link to your website & a logout btn
   #
-  #   config.namespace :admin do |admin|
+  #   config.namespace :v2 do |admin|
   #     admin.build_menu :utility_navigation do |menu|
   #       menu.add label: "My Great Website", url: "http://www.mygreatwebsite.com", html_options: { target: :blank }
   #       admin.add_logout_button_to_menu menu
@@ -241,7 +241,7 @@ ActiveAdmin.setup do |config|
   #
   # If you wanted to add a static menu item to the default menu provided:
   #
-  #   config.namespace :admin do |admin|
+  #   config.namespace :v2 do |admin|
   #     admin.build_menu :default do |menu|
   #       menu.add label: "My Great Website", url: "http://www.mygreatwebsite.com", html_options: { target: :blank }
   #     end
@@ -252,9 +252,9 @@ ActiveAdmin.setup do |config|
   # You can disable download links on resource listing pages,
   # or customize the formats shown per namespace/globally
   #
-  # To disable/customize for the :admin namespace:
+  # To disable/customize for the :v2 namespace:
   #
-  #   config.namespace :admin do |admin|
+  #   config.namespace :v2 do |admin|
   #
   #     # Disable the links entirely
   #     admin.download_links = false

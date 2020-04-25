@@ -79,16 +79,4 @@ class ImportWiki < BaseCommand
     city.save! unless city.id
   end
 
-  def log(msg, return_value: true)
-    puts_blue "#{format('%.3f', t).rjust(5)}s - #{msg}" unless Rails.env.test?
-    return_value
-  end
-
-  def t_start
-    @t_start ||= Time.zone.now
-  end
-
-  def t
-    (Time.zone.now.to_f - t_start.to_f).round(3)
-  end
 end

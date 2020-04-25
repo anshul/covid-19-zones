@@ -4,5 +4,6 @@ module V2
   class Stream < ApplicationRecord
     validates :code, :type, :unit_code, :origin_code, presence: true
     validates :time_series, :dated, :snapshot_id, presence: true
+    belongs_to :snapshot, class_name: "V2::Snapshot"
   end
 end
