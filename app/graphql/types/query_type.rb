@@ -25,7 +25,13 @@ module Types
     end
 
     def zones_list(search_query:)
-      ::Zone.where("search_name LIKE ? OR search_name LIKE ?", "#{search_query.parameterize}%", "%-#{search_query.parameterize}%").where(type: %w[District State Country]).distinct(:slug).order(type: :desc, name: :asc).limit(20)
+      ::V2::Zone
+        .joins(units: :streams)
+        .group(:'v2_zones.id')
+        .select("v2_zones.*, MAX(v2_streams.cumulative_count) as total")
+        .order(total: :desc)
+        .where("search_key LIKE ? OR search_key LIKE ?", "#{search_query.parameterize}%", "%-#{search_query.parameterize}%")
+        .limit(20)
     end
 
     def home

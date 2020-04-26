@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 ActiveAdmin.register ::V2::Stream do
-  menu label: "Time Series (v2)", priority: 3
+  menu label: "Streams (v2 time series)", priority: 3
   scope :all, default: true
 
   ::V2::Stream::CATEGORIES.each do |cat|

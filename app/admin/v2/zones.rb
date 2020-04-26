@@ -3,6 +3,7 @@
 ActiveAdmin.register ::V2::Zone do
   menu label: "Zones (v2)", priority: 2
   scope :all, default: true
+  includes :units, :parent, :owner
 
   ::V2::Zone::CATEGORIES.each do |cat|
     scope cat.capitalize, group: :category do |zones|
@@ -20,7 +21,7 @@ ActiveAdmin.register ::V2::Zone do
     column :category do |zone|
       zone.category.capitalize
     end
-    column :maintainer
+    column :maintainer, &:owner
     column :parent do |zone|
       zone.parent ? link_to(zone.parent_code, v2_v2_zone_path(zone.parent)) : nil
     end

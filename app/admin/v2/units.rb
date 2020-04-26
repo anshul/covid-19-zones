@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 ActiveAdmin.register ::V2::Unit do
-  menu label: "Units (v2)", priority: 3
+  menu label: "Units (v2)", priority: 2
   scope :all, default: true
+  includes :zones, :parent, :owner, streams: :origin
 
   ::V2::Unit::CATEGORIES.each do |cat|
     scope cat.capitalize, group: :category do |units|
@@ -25,7 +26,7 @@ ActiveAdmin.register ::V2::Unit do
     column :category do |unit|
       unit.category.capitalize
     end
-    column :maintainer
+    column :maintainer, &:owner
     column :parent do |unit|
       unit.parent ? link_to(unit.parent_code, v2_v2_unit_path(unit.parent)) : nil
     end

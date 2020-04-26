@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_26_042927) do
+ActiveRecord::Schema.define(version: 2020_04_26_115634) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -231,10 +231,14 @@ ActiveRecord::Schema.define(version: 2020_04_26_042927) do
     t.decimal "cumulative_count", precision: 14, scale: 2, null: false
     t.datetime "min_date", null: false
     t.datetime "max_date", null: false
+    t.datetime "downloaded_at"
+    t.text "attribution_md"
+    t.index ["attribution_md"], name: "index_v2_streams_on_attribution_md"
     t.index ["category", "unit_code", "origin_code"], name: "v2_stream_signature_unique", unique: true
     t.index ["code"], name: "v2_stream_unique", unique: true
     t.index ["cumulative_count"], name: "index_v2_streams_on_cumulative_count"
     t.index ["dated"], name: "index_v2_streams_on_dated"
+    t.index ["downloaded_at"], name: "index_v2_streams_on_downloaded_at"
     t.index ["max_count"], name: "index_v2_streams_on_max_count"
     t.index ["max_date"], name: "index_v2_streams_on_max_date"
     t.index ["min_count"], name: "index_v2_streams_on_min_count"
@@ -262,6 +266,37 @@ ActiveRecord::Schema.define(version: 2020_04_26_042927) do
     t.index ["category"], name: "index_v2_units_on_category"
     t.index ["code"], name: "index_v2_units_on_code", unique: true
     t.index ["parent_code"], name: "index_v2_units_on_parent_code"
+  end
+
+  create_table "v2_zone_caches", force: :cascade do |t|
+    t.string "code", null: false
+    t.bigint "current_actives", null: false
+    t.bigint "cumulative_infections", null: false
+    t.bigint "cumulative_recoveries", null: false
+    t.bigint "cumulative_fatalities", null: false
+    t.bigint "cumulative_tests", null: false
+    t.datetime "as_of", null: false
+    t.date "start", null: false
+    t.date "stop", null: false
+    t.jsonb "attributions_md", default: {}, null: false
+    t.jsonb "unit_codes", default: [], null: false, array: true
+    t.jsonb "ts_actives", default: {}, null: false
+    t.jsonb "ts_infections", default: {}, null: false
+    t.jsonb "ts_recoveries", default: {}, null: false
+    t.jsonb "ts_fatalities", default: {}, null: false
+    t.jsonb "ts_tests", default: {}, null: false
+    t.datetime "cached_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["as_of"], name: "index_v2_zone_caches_on_as_of"
+    t.index ["code"], name: "index_v2_zone_caches_on_code", unique: true
+    t.index ["cumulative_fatalities"], name: "index_v2_zone_caches_on_cumulative_fatalities"
+    t.index ["cumulative_infections"], name: "index_v2_zone_caches_on_cumulative_infections"
+    t.index ["cumulative_recoveries"], name: "index_v2_zone_caches_on_cumulative_recoveries"
+    t.index ["cumulative_tests"], name: "index_v2_zone_caches_on_cumulative_tests"
+    t.index ["current_actives"], name: "index_v2_zone_caches_on_current_actives"
+    t.index ["start"], name: "index_v2_zone_caches_on_start"
+    t.index ["stop"], name: "index_v2_zone_caches_on_stop"
   end
 
   create_table "v2_zones", force: :cascade do |t|
