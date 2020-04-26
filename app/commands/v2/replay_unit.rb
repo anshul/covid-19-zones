@@ -2,10 +2,21 @@
 
 module V2
   class ReplayUnit < ::V2::ReplayBase
+    def self.perform_replay_all_task
+      log "Replaying #{::V2::Fact.where(entity_type: 'unit').distinct(:entity_slug).count} units"
+      ::V2::Fact.where(entity_type: "unit").distinct(:entity_slug).in_batches.all? do |rel|
+        rel.pluck(:entity_slug).all? do |slug|
+          cmd = new(entity_slug: slug)
+          out = cmd.call
+          out ? log("  * Replayed #{slug}", color: :green) : log(" A * Replay failed for #{slug.inspect}: #{cmd.error_message}", color: :red)
+          out
+        end
+      end
+    end
 
     def replay_unit_patched(details:, fact:, **_)
       unit = units(details[:code]).tap { |m| m.assign_attributes(**details.slice(*V2::Unit.rw_attribute_names)) }
-      zone = zones(details[:code]).tap { |m| m.assign_attributes(**details.slice(*V2::Zone.rw_attribute_names)) }
+      zone = zones(details[:code]).tap { |m| m.assign_attributes(**details.slice(*V2::Zone.rw_attribute_names), published_at: fact.happened_at) }
       join_code = "#{unit.code}|#{zone.code}"
       @posts[join_code] = ::V2::Post.new(code: join_code, unit_code: unit.code, zone_code: zone.code)
       Rails.logger.info "Invalid fact: #{fact.as_json}" unless unit.valid? && zone.valid?
@@ -14,6 +25,5 @@ module V2
 
       true
     end
-
   end
 end

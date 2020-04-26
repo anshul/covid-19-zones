@@ -29,6 +29,9 @@ gem "graphql-batch", "~> 0.4.2"
 
 gem "google_drive", "~> 3.0", ">= 3.0.4"
 
+gem "activeadmin", "~> 2.7"
+
+gem "activerecord-import", "~> 1.0"
 gem "daru", "~> 0.2.2"
 gem "devise", "~> 4.7", ">= 4.7.1"
 gem "devise-jwt", "~> 0.6.0"
@@ -50,6 +53,7 @@ group :development do
 
   gem "guard", "~> 2.16", ">= 2.16.2"
   gem "guard-minitest", "~> 2.4", ">= 2.4.6"
+  gem "minitest-focus", "~> 1.1"
   gem "minitest-reporters", "~> 1.4", ">= 1.4.2"
   gem "vcr", "~> 5.1"
   gem "webmock", "~> 3.8", ">= 3.8.3"
@@ -67,9 +71,3 @@ group :test do
 end
 
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
-
-gem "minitest-focus", "~> 1.1"
-
-gem "activerecord-import", "~> 1.0"
-
-gem "activeadmin", "~> 2.7"

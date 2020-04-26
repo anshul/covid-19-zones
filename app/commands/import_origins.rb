@@ -8,7 +8,7 @@ class ImportOrigins < BaseCommand
   attr_reader :response, :raw_patients
   def run
     create_origins &&
-      log(" - We have #{V2::Origin.count} origins") ||
+      log(" - We have #{::V2::Origin.count} origins") ||
       puts_red("Failed: #{error_message}")
   end
 
@@ -19,10 +19,12 @@ class ImportOrigins < BaseCommand
   end
 
   def create_origin(attrs)
-    return true if V2::Origin.exists?(code: attrs[:code])
+    origin = ::V2::Origin[attrs[:code]]
+    return true if origin && attrs.keys.reject { |k| k =~ /(attribution_text|name)/ }.all? { |k| origin[k] == attrs[k] } && origin[:attribution_text].present? && origin[:name].present?
 
-    origin = V2::Origin.new(**attrs)
-    log "   > Creating origin #{attrs[:code]}"
+    origin = ::V2::Origin.find_by(code: attrs[:code]) || ::V2::Origin.new(code: attrs[:code])
+    origin.assign_attributes(**attrs)
+    log "   > #{origin.id ? 'Updating' : 'Creating'} origin #{attrs[:code]}"
     origin.save || add_error(origin.error_message)
   end
 
@@ -30,18 +32,18 @@ class ImportOrigins < BaseCommand
     [
       {
         code:             "covid19-india-raw-data",
-        name:             "Covid19 India",
+        name:             "cio-db1",
         data_category:    "json",
-        attribution_text: "",
+        attribution_text: "covid19india.org",
         source_name:      "www.covid19india.org",
         source_subname:   "api.covid19india.org/raw_data.json",
         source_url:       "https://api.covid19india.org/raw_data.json"
       },
       {
         code:             "covid19-india-deaths-and-recoveries",
-        name:             "Covid19 India",
+        name:             "cio-db2",
         data_category:    "json",
-        attribution_text: "",
+        attribution_text: "covid19india.org",
         source_name:      "www.covid19india.org",
         source_subname:   "api.covid19india.org/deaths_recoveries.json",
         source_url:       "https://api.covid19india.org/deaths_recoveries.json"

@@ -2,13 +2,19 @@
 
 module V2
   class Stream < ApplicationRecord
-    CATEGORIES = %w[announce active recovery fatality testing].freeze
+    CATEGORIES = %w[infections recoveries fatalities tests].freeze
     validates :category, inclusion: { in: CATEGORIES }
     validate :check_format_of_time_series
 
     validates :code, :unit_code, :origin_code, presence: true
     validates :time_series, :dated, :snapshot_id, presence: true
     belongs_to :snapshot, class_name: "V2::Snapshot"
+    belongs_to :unit, class_name: "V2::Unit", foreign_key: :unit_code, primary_key: :code, inverse_of: :streams
+    belongs_to :origin, class_name: "V2::Origin", foreign_key: :origin_code, primary_key: :code, inverse_of: :streams
+
+    def name
+      "#{origin.name} (#{category}) - #{unit.name}"
+    end
 
     def check_format_of_time_series
       return true if time_series.nil?
@@ -29,16 +35,31 @@ module V2
       )
     end
 
-    def self.index(start: nil, stop: nil)
+    def self.index(start:, stop:)
       Daru::DateTimeIndex.date_range(start: start.to_date.to_s, end: stop.to_date.to_s, freq: "D")
     end
 
-    def self.vector(target:, field:, index:)
-      vector = Daru::Vector.new([0] * index.size, index: index)
-      series(target: target, field: field, start: index.first, stop: index.max).each do |dt, val|
+    def self.zero_vector(index:)
+      Daru::Vector.new([0] * index.size, index: index)
+    end
+
+    def self.vector(index:, time_series:)
+      vector = zero_vector(index: index)
+      time_series.each do |dt, val|
         vector[dt.to_s] = val
       end
       vector
+    end
+
+    def index(start: nil, stop: nil)
+      start ||= min_date
+      stop ||= max_date
+      self.class.index(start: start, stop: stop)
+    end
+
+    def vector(start: nil, stop: nil, idx: nil)
+      idx ||= index(start: start, stop: stop)
+      self.class.vector(index: idx, time_series: time_series)
     end
 
     private

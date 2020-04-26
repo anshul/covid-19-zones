@@ -8,8 +8,9 @@ class ApplicationRecord < ActiveRecord::Base
     @cached[code] ||= readonly.find_by(code: code)
   end
 
-  def self.reset_cache
+  def self.clear_cache
     @cached = {}
+    true
   end
 
   def self.view_attrs
