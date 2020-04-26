@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 ActiveAdmin.register ::V2::Unit do
-  menu label: "Units (v2)", priority: 2
+  menu label: "Units (v2)", priority: 20
   scope :all, default: true
   includes :zones, :parent, :owner, streams: :origin
 

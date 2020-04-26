@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 ActiveAdmin.register ::V2::Snapshot do
-  menu label: "Snapshots (v2)", priority: 3
+  menu label: "Snapshots (v2)", priority: 90
   scope :all, default: true
   includes :origin
   config.per_page = 10

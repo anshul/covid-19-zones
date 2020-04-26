@@ -2,7 +2,7 @@
 
 ActiveAdmin.register ::V2::Origin do
   permit_params :name, :attribution_text
-  menu label: "Origins (v2)", priority: 3
+  menu label: "Origins (v2)", priority: 100
   scope :all, default: true
 
   actions :index, :show, :edit, :update

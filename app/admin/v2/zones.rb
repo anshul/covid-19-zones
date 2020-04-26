@@ -1,13 +1,15 @@
 # frozen_string_literal: true
 
 ActiveAdmin.register ::V2::Zone do
-  menu label: "Zones (v2)", priority: 2
-  scope :all, default: true
-  includes :units, :parent, :owner
+  menu label: "Zones (v2)", priority: 10
+  scope :all, default: true do |zones|
+    zones.joins(:cache)
+  end
+  includes :cache, :units, :parent, :owner
 
   ::V2::Zone::CATEGORIES.each do |cat|
     scope cat.capitalize, group: :category do |zones|
-      zones.where(category: cat)
+      zones.joins(:cache).where(category: cat)
     end
   end
 
@@ -15,6 +17,9 @@ ActiveAdmin.register ::V2::Zone do
   index do
     column :code do |zone|
       link_to zone.code, v2_v2_zone_path(zone)
+    end
+    column :totals, sortable: "cumulative_infections" do |zone|
+      link_to %i[cumulative_infections cumulative_recoveries cumulative_fatalities].map { |f| zone.cache[f] }.join(", "), v2_zone_computation_path(zone)
     end
     column :name
     column :aliases

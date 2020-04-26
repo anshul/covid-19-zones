@@ -3,7 +3,7 @@
 ActiveAdmin.register User do
   permit_params :email, :role, :name, :github_handle, :twitter_handle, :password, :password_confirmation
   actions :all, except: [:destroy]
-  menu priority: 5
+  menu priority: 1000
 
   index do
     selectable_column

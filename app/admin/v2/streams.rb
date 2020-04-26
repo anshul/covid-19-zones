@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 ActiveAdmin.register ::V2::Stream do
-  menu label: "Streams (v2 time series)", priority: 3
+  menu label: "Streams (v2 time series)", priority: 80
   scope :all, default: true
   includes :origin, :unit, snapshot: :origin
 
