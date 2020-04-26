@@ -62,6 +62,10 @@ module V2
       self.class.vector(index: idx, time_series: time_series)
     end
 
+    def cum_vector
+      @cum_vector ||= vector.cumsum
+    end
+
     private
 
     def ts_error(msg)

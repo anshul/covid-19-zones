@@ -38,6 +38,38 @@ ActiveAdmin.register ::V2::Stream do
     column :attribution_md
     actions
   end
+  show do
+    attributes_table do
+      row :code
+      row :category
+      row :unit
+      row :origin
+      row :dated
+      row :snapshot
+      row :totals do |stream|
+        table_for [stream] do
+          column :cumulative_count
+          column :min_count
+          column :max_count
+          column :min_date
+          column :max_date
+        end
+      end
+      row :time_series do |stream|
+        table_for((stream.min_date.to_date..stream.max_date.to_date).to_a.reverse) do
+          column "date" do |dt|
+            dt
+          end
+          column stream.category do |dt|
+            stream.time_series[dt.to_s]
+          end
+          column "cumulative #{stream.category}" do |dt|
+            stream.cum_vector[dt.to_s]
+          end
+        end
+      end
+    end
+  end
 
   filter :code
   filter :unit_code
