@@ -7,10 +7,15 @@ module V2
         raw_data = snapshot.data["deaths_recoveries"]
         rows = raw_data.filter { |row| row["date"].present? }
 
+        @unparsed = []
         compute_rec_and_fat_time_series_for!(unit_code: country_code, rows: rows)
 
         grouped_by_state = rows.filter { |row| row["state"].present? }.group_by { |row| row["state"] }
         grouped_by_state.map { |state_name, s_rows| process_state(state_name: state_name, rows: s_rows) }
+        log("        > #{self.class} Failed to parse #{@unparsed.count} districts and states in #{@unparsed.map(&:last).sum} rows") unless @unparsed.empty?
+        @unparsed.sort.each do |dist, state, n|
+          dist.blank? ? log("          - #{state} in #{n} rows") : log("           - #{state}: #{dist} in #{n} rows")
+        end
         clean_up
       end
 
@@ -19,10 +24,11 @@ module V2
       end
 
       STATE_CODE_MAP = {
-        "andaman and nicobar islands" => "in/an"
+        "andamanp-and-nicobar-islands" => "in/an"
       }.freeze
       def process_state(state_name:, rows:)
-        unit_code = STATE_CODE_MAP[state_name.downcase] || states_map[state_name.downcase]&.code
+        unit_code = STATE_CODE_MAP[state_name.parameterize] || states_map[state_name.parameterize]&.code
+        @unparsed << ["", state_name, rows.count] if unit_code.blank?
         return true if unit_code.blank?
 
         compute_rec_and_fat_time_series_for!(unit_code: unit_code, rows: rows)
@@ -32,9 +38,10 @@ module V2
       end
 
       def process_district(state_code:, district_name:, rows:)
-        return true unless districts_grouped_by_parent_code[state_code]&.key?(district_name.downcase)
+        @unparsed << [district_name, state_code, rows.count] unless districts_grouped_by_parent_code[state_code]&.key?(district_name.parameterize)
+        return true unless districts_grouped_by_parent_code[state_code]&.key?(district_name.parameterize)
 
-        unit_code = districts_grouped_by_parent_code[state_code][district_name.downcase].code
+        unit_code = districts_grouped_by_parent_code[state_code][district_name.parameterize].code
         compute_rec_and_fat_time_series_for!(unit_code: unit_code, rows: rows)
       end
 
@@ -44,11 +51,11 @@ module V2
       end
 
       def states_map
-        @states_map ||= base_unit_query.where(category: "state").index_by { |state| state.name.downcase }
+        @states_map ||= base_unit_query.where(category: "state").index_by { |state| state.name.parameterize }
       end
 
       def districts_grouped_by_parent_code
-        @districts_grouped_by_parent_code ||= base_unit_query.where(category: "district").group_by(&:parent_code).transform_values { |districts| districts.index_by { |dist| dist.name.downcase } }
+        @districts_grouped_by_parent_code ||= base_unit_query.where(category: "district").group_by(&:parent_code).transform_values { |districts| districts.index_by { |dist| dist.name.parameterize } }
       end
 
       def recovery_time_series_for(rows)
