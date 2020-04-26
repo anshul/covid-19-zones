@@ -48,6 +48,34 @@ ActiveAdmin.register ::V2::ZoneCache, as: "ZoneComputation" do
       row :stop
       row :attributions_md
       row :cached_at
+      row :streams do |cache|
+        table_for cache.streams ? cache.streams.map { |k, h| h.keys.map { |u| [k, u] } }.sum.sort : [] do
+          column "time_series" do |k, _u|
+            k
+          end
+          column "units" do |_k, u|
+            ::V2::Unit[u]
+          end
+          column "series" do |k, u|
+            code, sid = cache.streams[k][u] || []
+            stream = ::V2::Stream[code]
+            (stream.snapshot_id == sid ? stream : "expired") if stream
+          end
+          column "latest series" do |k, u|
+            code, = cache.streams[k][u] || []
+            ::V2::Stream[code]
+          end
+          column "latest total" do |k, u|
+            code, = cache.streams[k][u] || []
+            ::V2::Stream[code]&.cumulative_count.to_i
+          end
+
+          column "snapshot" do |k, u|
+            _, sid = cache.streams[k][u] || []
+            ::V2::Snapshot.find_by(id: sid)
+          end
+        end
+      end
       row :totals do |cache|
         table_for [cache] do
           column "actives", :current_actives

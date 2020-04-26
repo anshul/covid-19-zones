@@ -2,10 +2,12 @@
 
 ActiveAdmin.register ::V2::Zone do
   menu label: "Zones (v2)", priority: 10
+  includes :cache, :units, :parent, :owner
+  config.sort_order = "cumulative_infections_desc"
+
   scope :all, default: true do |zones|
     zones.joins(:cache)
   end
-  includes :cache, :units, :parent, :owner
 
   ::V2::Zone::CATEGORIES.each do |cat|
     scope cat.capitalize, group: :category do |zones|
@@ -19,7 +21,7 @@ ActiveAdmin.register ::V2::Zone do
       link_to zone.code, v2_v2_zone_path(zone)
     end
     column :totals, sortable: "cumulative_infections" do |zone|
-      link_to %i[cumulative_infections cumulative_recoveries cumulative_fatalities].map { |f| zone.cache[f] }.join(", "), v2_zone_computation_path(zone)
+      zone.cache ? link_to(%i[cumulative_infections cumulative_recoveries cumulative_fatalities].map { |f| zone.cache[f] }.join(", "), v2_zone_computation_path(zone.cache)) : nil
     end
     column :name
     column :aliases
@@ -35,6 +37,22 @@ ActiveAdmin.register ::V2::Zone do
     end
     column :units, &:units
     actions
+  end
+  FIELDS = %i[cumulative_infections cumulative_recoveries cumulative_fatalities cumulative_tests current_actives].freeze
+  show do
+    attributes_table do
+      row :code
+      row :name
+      row :aliases
+      row :parent
+      row :units
+      row :owner
+      row "computations" do |zone|
+        zone.cache ? link_to("Computations: " + FIELDS.map { |f| zone.cache[f].to_s + " #{f.to_s.split('_').last}" }.join(", "), v2_zone_computation_path(zone.cache)) : nil
+      end
+      row :published_at
+      row :created_at
+    end
   end
 
   filter :published_at_present, label: "published", as: :boolean

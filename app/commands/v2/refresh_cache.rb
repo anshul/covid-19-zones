@@ -35,9 +35,14 @@ module V2
         ts_recoveries:         ts(:recoveries),
         ts_fatalities:         ts(:fatalities),
         ts_tests:              ts(:tests),
-        cached_at:             t_start
+        cached_at:             t_start,
+        streams:               streams_by_type
       )
       cache.save || add_error(cache.error_message)
+    end
+
+    def streams_by_type
+      %i[infections recoveries fatalities tests].index_with { |f| streams(f).transform_values { |s| s ? [s.code, s.snapshot_id] : nil } }
     end
 
     def index
