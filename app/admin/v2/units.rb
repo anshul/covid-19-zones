@@ -39,5 +39,5 @@ ActiveAdmin.register ::V2::Unit do
   filter :name
   filter :population
   filter :population_year
-  filter :maintainer, as: :select, collection: ::V2::Unit.distinct.pluck(:maintainer)
+  filter :maintainer, as: :select, collection: -> { ::V2::Unit.distinct.pluck(:maintainer) }
 end

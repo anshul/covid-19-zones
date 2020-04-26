@@ -75,6 +75,16 @@ class BaseCommand
 
   private
 
+  def import(klass, models, **options)
+    out = klass.import(models, **options)
+    return true if out.failed_instances.empty?
+
+    out.failed_instances.map(&:error_message).tally.each do |err, count|
+      add_error("#{count} #{klass} failed to import due to #{err}")
+    end
+    false
+  end
+
   def log(msg, return_value: true)
     puts_blue "#{format('%.3f', t).rjust(5)}s - #{msg}" unless Rails.env.test?
     return_value

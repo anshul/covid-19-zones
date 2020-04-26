@@ -25,13 +25,7 @@ module Types
     end
 
     def zones_list(search_query:)
-      ::V2::Zone
-        .joins(units: :streams)
-        .group(:'v2_zones.id')
-        .select("v2_zones.*, MAX(v2_streams.cumulative_count) as total")
-        .order(total: :desc)
-        .where("search_key LIKE ? OR search_key LIKE ?", "#{search_query.parameterize}%", "%-#{search_query.parameterize}%")
-        .limit(20)
+      ::V2::Zone.joins(:cache).includes(:cache).order(cumulative_infections: :desc).where("search_key LIKE ? OR search_key LIKE ?", "#{search_query.parameterize}%", "%-#{search_query.parameterize}%").limit(20)
     end
 
     def home

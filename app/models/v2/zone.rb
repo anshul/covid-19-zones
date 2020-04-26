@@ -14,5 +14,6 @@ module V2
     belongs_to :owner, class_name: "::User", foreign_key: "maintainer", primary_key: "email", inverse_of: :zones
     has_many :posts, class_name: "V2::Post", dependent: :delete_all, foreign_key: "zone_code", primary_key: "code", inverse_of: :zone
     has_many :units, through: :posts
+    has_one :cache, class_name: "::V2::ZoneCache", foreign_key: :code, primary_key: :code, inverse_of: :zone, dependent: :delete
   end
 end

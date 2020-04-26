@@ -33,6 +33,8 @@ ActiveAdmin.register ::V2::Stream do
     column :unit
     column :origin
     column :snapshot
+    column :downloaded_at
+    column :attribution_md
     actions
   end
 
@@ -43,4 +45,6 @@ ActiveAdmin.register ::V2::Stream do
   filter :max_count
   filter :min_date
   filter :max_date
+  filter :downloaded_at
+  filter :attribution_md
 end

@@ -34,7 +34,7 @@ module V2
     def upsert(targets)
       targets.all? do |klass, h|
         models = h.values.select { |k| k }
-        models.empty? ? true : klass.import(models, on_duplicate_key_update: klass.on_duplicate_key_options, batch_size: 500)
+        models.empty? ? true : import(klass, models, on_duplicate_key_update: klass.on_duplicate_key_options, batch_size: 500)
       end
     end
 

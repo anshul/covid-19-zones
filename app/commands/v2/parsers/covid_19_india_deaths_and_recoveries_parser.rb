@@ -2,26 +2,20 @@
 
 module V2
   module Parsers
-    class Covid19IndiaDeathsAndRecoveriesParser < ::BaseCommand
-      attr_reader :snapshot, :raw_data, :streams, :country_code
-      def initialize(snapshot_id:)
-        @snapshot = ::V2::Snapshot.find(snapshot_id)
-        @raw_data = snapshot.data["deaths_recoveries"]
-        @country_code = "in"
-        @streams = []
-      end
-
-      def run
-        parse_streams
-      end
-
+    class Covid19IndiaDeathsAndRecoveriesParser < ::V2::Parsers::BaseParser
       def parse_streams
+        raw_data = snapshot.data["deaths_recoveries"]
         rows = raw_data.filter { |row| row["date"].present? }
 
         compute_rec_and_fat_time_series_for!(unit_code: country_code, rows: rows)
 
         grouped_by_state = rows.filter { |row| row["state"].present? }.group_by { |row| row["state"] }
         grouped_by_state.map { |state_name, s_rows| process_state(state_name: state_name, rows: s_rows) }
+        clean_up
+      end
+
+      def clean_up
+        @streams = @streams.reject { |s| s.time_series.blank? }
       end
 
       STATE_CODE_MAP = {
@@ -45,8 +39,8 @@ module V2
       end
 
       def compute_rec_and_fat_time_series_for!(unit_code:, rows:)
-        @streams << stream_for(unit_code: unit_code, category: "recovery", time_series: recovery_time_series_for(rows))
-        @streams << stream_for(unit_code: unit_code, category: "fatality", time_series: fatality_time_series_for(rows))
+        @streams << stream_for(unit_code: unit_code, category: "recoveries", time_series: recovery_time_series_for(rows))
+        @streams << stream_for(unit_code: unit_code, category: "fatalities", time_series: fatality_time_series_for(rows))
       end
 
       def states_map
@@ -58,22 +52,24 @@ module V2
       end
 
       def recovery_time_series_for(rows)
-        rows.filter { |row| row["patientstatus"] == "Recovered" }.group_by { |row| Date.parse(row["date"]) }.transform_values(&:count)
+        rows.filter { |row| row["patientstatus"] == "Recovered" && row["date"].strip.present? }.group_by { |row| dateify(row["date"]) }.transform_values(&:count)
       end
 
       def fatality_time_series_for(rows)
-        rows.filter { |row| row["patientstatus"] == "Deceased" }.group_by { |row| Date.parse(row["date"]) }.transform_values(&:count)
+        rows.filter { |row| row["patientstatus"] == "Deceased" && row["date"].strip.present? }.group_by { |row| dateify(row["date"]) }.transform_values(&:count)
       end
 
       def stream_for(unit_code:, category:, time_series:)
         ::V2::Stream.new(
-          code:        "#{unit_code}|#{category}|#{snapshot.origin_code}",
-          category:    category,
-          unit_code:   unit_code,
-          origin_code: snapshot.origin_code,
-          time_series: time_series,
-          dated:       snapshot.downloaded_at,
-          snapshot:    snapshot
+          code:           "#{unit_code}|#{category}|#{snapshot.origin_code}",
+          category:       category,
+          unit_code:      unit_code,
+          origin_code:    snapshot.origin_code,
+          downloaded_at:  snapshot.downloaded_at,
+          attribution_md: snapshot.origin.attribution_text,
+          time_series:    time_series,
+          dated:          snapshot.downloaded_at,
+          snapshot:       snapshot
         )
       end
 

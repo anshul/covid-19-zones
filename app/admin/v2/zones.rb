@@ -35,5 +35,5 @@ ActiveAdmin.register ::V2::Zone do
   filter :published_at_present, label: "published", as: :boolean
   filter :code
   filter :name
-  filter :maintainer, as: :select, collection: ::V2::Zone.distinct.pluck(:maintainer)
+  filter :maintainer, as: :select, collection: -> { ::V2::Zone.distinct.pluck(:maintainer) }
 end
