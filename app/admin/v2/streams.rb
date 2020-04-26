@@ -3,6 +3,7 @@
 ActiveAdmin.register ::V2::Stream do
   menu label: "Streams (v2 time series)", priority: 3
   scope :all, default: true
+  includes :origin, :unit, snapshot: :origin
 
   ::V2::Stream::CATEGORIES.each do |cat|
     scope cat.capitalize, group: :category do |streams|

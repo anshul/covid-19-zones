@@ -32,6 +32,7 @@ gem "google_drive", "~> 3.0", ">= 3.0.4"
 gem "activeadmin", "~> 2.7"
 
 gem "activerecord-import", "~> 1.0"
+gem "cancancan", "~> 3.1"
 gem "daru", "~> 0.2.2"
 gem "devise", "~> 4.7", ">= 4.7.1"
 gem "devise-jwt", "~> 0.6.0"

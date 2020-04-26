@@ -3,6 +3,8 @@
 ActiveAdmin.register ::V2::Snapshot do
   menu label: "Snapshots (v2)", priority: 3
   scope :all, default: true
+  includes :origin
+  config.per_page = 10
 
   actions :index, :show
   index do

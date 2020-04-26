@@ -42,6 +42,10 @@ ActiveAdmin.register User do
       f.input :role, as: :select, collection: ::User::ROLES.map { |r| [r, r] }
       f.input :github_handle, hint: "without the @"
       f.input :twitter_handle, hint: "without the @"
+      if f.object.new_record?
+        f.input :password, unless: ->(user) { user.id }
+        f.input :password_confirmation, unless: ->(user) { user.id }
+      end
     end
     f.actions
   end
