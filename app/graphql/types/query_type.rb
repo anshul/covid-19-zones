@@ -2,7 +2,7 @@
 
 module Types
   class QueryType < Types::BaseObject
-    field :zone, ::Types::Zones::Zone, null: false, description: "Zone data" do
+    field :zone, ::Types::Zones::Zone, null: false, description: "Zone daily_chart" do
       argument :slug, String, required: true
     end
 
@@ -38,92 +38,96 @@ module Types
     end
 
     def zone_stats(code:)
-      zone = ::Zone.find_by(code: code)
+      zone = ::V2::Zone.find_by(code: code)
       return nil unless zone
 
-      series_start = TimeSeriesPoint.where("target_code like ?", "#{zone.code}%").where(target_type: zone.type).minimum(:dated)
+      cache = zone.cache
+      index = cache.chart_index
+      v_daily = cache.daily_infections(idx: index)
+      v_daily_sma5 = v_daily.rolling_mean(5)
+      v_total = cache.total_infections(idx: index)
+      v_total_ema5 = v_total.ema(5)
 
-      index = TimeSeriesPoint.index(start: series_start || Time.zone.today - 14.days, stop: 1.day.ago)
-      announced_vector = TimeSeriesPoint.vector(target: zone, field: "announced", index: index)
-      announced_vector_sma5 = announced_vector.rolling_mean(5)
-      cum_announced_vector = announced_vector.cumsum
-      cum_announce_vector_ema5 = cum_announced_vector.ema(5)
-
-      new_cases_ma_key = "#{zone.name} - 5 day moving average"
-      new_cases_daily = index.entries.map(&:to_date).map do |date|
+      daily_key = zone.name
+      daily_sma_key = "#{zone.name} - 5 day moving average"
+      chart_daily = index.entries.map(&:to_date).map do |date|
         {
           date: date.strftime("%b %d"),
-          zone.name => announced_vector[date.to_s].to_i,
-          new_cases_ma_key => announced_vector_sma5[date.to_s].to_i
+          daily_key => v_daily[date.to_s].to_i,
+          daily_sma_key => v_daily_sma5[date.to_s].to_i
         }
       end
 
-      cum_cases_ma_key = "#{zone.name} - 5 day exp average"
-      cum_cases_daily = index.entries.map(&:to_date).map do |date|
+      total_key = zone.name
+      total_ema_key = "#{zone.name} - 5 day exp average"
+      chart_total = index.entries.map(&:to_date).map do |date|
         {
           date: date.strftime("%b %d"),
-          zone.name => cum_announced_vector[date.to_s].to_i,
-          cum_cases_ma_key => cum_announce_vector_ema5[date.to_s].to_i
+          total_key => v_total[date.to_s].to_i,
+          total_ema_key => v_total_ema5[date.to_s].to_i
         }
       end
 
       {
         zone:        zone,
-        total_cases: announced_vector.sum,
-        as_of:       index.entries.last.strftime("%d %B, %Y"),
+        total_cases: cache.cumulative_infections,
+        as_of:       cache.as_of.strftime("%d %B %Y, %I:%M %P %Z"),
         new_cases:   {
           x_axis_key: "date",
-          line_keys:  [zone.name, new_cases_ma_key],
-          data:       new_cases_daily
+          line_keys:  [daily_key, daily_sma_key],
+          data:       chart_daily
         },
         cum_cases:   {
           x_axis_key: "date",
-          line_keys:  [zone.name, cum_cases_ma_key],
-          data:       cum_cases_daily
+          line_keys:  [total_key, total_ema_key],
+          data:       chart_total
         }
       }
     end
 
     def compare(codes:)
-      zones = Zone.where(code: codes)
+      zones = ::V2::Zone.includes(:cache).where(code: codes)
       return nil unless zones.count == codes.count
 
-      series_start = TimeSeriesPoint.where(target_code: codes).minimum(:dated)
-      index = TimeSeriesPoint.index(start: series_start || Time.zone.today - 14.days, stop: 1.day.ago)
-      new_vectors = {}
-      cum_vectors = {}
+      caches = zones.map(&:cache)
+      series_start = caches.map(&:start).min
+      index = TimeSeriesPoint.index(start: [series_start, 8.days.ago].min, stop: 1.day.ago)
+      v_daily = {}
+      v_total = {}
+
       zones.map do |zone|
-        new_vectors[zone.name.to_s] = TimeSeriesPoint.vector(target: zone, field: "announced", index: index)
-        cum_vectors[zone.name.to_s] = new_vectors[zone.name.to_s].cumsum
+        v_daily[zone.name] = zone.cache.daily_infections(idx: index)
+        v_total[zone.name] = zone.cache.total_infections(idx: index)
       end
 
-      new_cases_daily = index.entries.map(&:to_date).map do |date|
-        data = {}
-        new_vectors.keys.map do |key|
-          data[key] = new_vectors[key][date.to_s].to_i
+      daily_chart = index.entries.map(&:to_date).map do |date|
+        h = { date: date.strftime("%b %d") }
+        zones.each do |zone|
+          h[zone.name] = v_daily[zone.name][date.to_s].to_i
         end
-        { date: date.strftime("%b %d") }.merge(data)
+        h
       end
-      cum_cases_daily = index.entries.map(&:to_date).map do |date|
-        data = {}
-        cum_vectors.keys.map do |key|
-          data[key] = cum_vectors[key][date.to_s].to_i
+
+      total_chart = index.entries.map(&:to_date).map do |date|
+        h = { date: date.strftime("%b %d") }
+        zones.each do |zone|
+          h[zone.name] = v_total[zone.name][date.to_s].to_i
         end
-        { date: date.strftime("%b %d") }.merge(data)
+        h
       end
-      as_of = index.entries.last.strftime("%d %B, %Y")
+
       {
         zones:       zones,
-        total_cases: new_vectors.keys.map { |key| { zone_name: key, count: new_vectors[key].sum, as_of: as_of } },
+        total_cases: zones.map { |zone| { zone_name: zone.name, count: zone.cache.cumulative_infections, as_of: zone.cache.as_of.strftime("%d %B %Y, %I:%M %P %Z") } },
         cum_cases:   {
           x_axis_key: "date",
           line_keys:  zones.map(&:name),
-          data:       cum_cases_daily
+          data:       total_chart
         },
         new_cases:   {
           x_axis_key: "date",
           line_keys:  zones.map(&:name),
-          data:       new_cases_daily
+          data:       daily_chart
         }
       }
     end

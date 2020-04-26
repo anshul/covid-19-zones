@@ -93,6 +93,7 @@ Naming/MethodParameterName:
     - "as"
     - "if"
     - "op"
+    - "to"
     - "h"
     - "t"
     - "e"

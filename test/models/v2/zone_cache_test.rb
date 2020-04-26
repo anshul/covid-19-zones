@@ -1,7 +1,11 @@
-require 'test_helper'
+# frozen_string_literal: true
 
-class V2::ZoneCacheTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+require "test_helper"
+
+module V2
+  class ZoneCacheTest < ActiveSupport::TestCase
+    # test "the truth" do
+    #   assert true
+    # end
+  end
 end

@@ -14,7 +14,7 @@ module Types
       field :density, String, null: true
 
       def parent_zone
-        ::RecordLoader.for(::Zone, column: "code").load(object[:parent_zone])
+        ::RecordLoader.for(::Zone, column: "code").load(object[:parent_code])
       end
     end
   end
