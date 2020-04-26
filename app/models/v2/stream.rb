@@ -9,6 +9,12 @@ module V2
     validates :code, :unit_code, :origin_code, presence: true
     validates :time_series, :dated, :snapshot_id, presence: true
     belongs_to :snapshot, class_name: "V2::Snapshot"
+    belongs_to :unit, class_name: "V2::Unit", foreign_key: :unit_code, primary_key: :code, inverse_of: :streams
+    belongs_to :origin, class_name: "V2::Origin", foreign_key: :origin_code, primary_key: :code, inverse_of: :streams
+
+    def name
+      "#{origin.name} (#{category}) - #{unit.name}"
+    end
 
     def check_format_of_time_series
       return true if time_series.nil?

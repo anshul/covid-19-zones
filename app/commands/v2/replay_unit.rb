@@ -2,7 +2,6 @@
 
 module V2
   class ReplayUnit < ::V2::ReplayBase
-
     def replay_unit_patched(details:, fact:, **_)
       unit = units(details[:code]).tap { |m| m.assign_attributes(**details.slice(*V2::Unit.rw_attribute_names)) }
       zone = zones(details[:code]).tap { |m| m.assign_attributes(**details.slice(*V2::Zone.rw_attribute_names)) }
@@ -14,6 +13,5 @@ module V2
 
       true
     end
-
   end
 end
