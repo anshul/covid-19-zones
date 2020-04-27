@@ -46,10 +46,9 @@ module Types
       v_daily = cache.daily_infections(idx: index)
       v_daily_sma5 = v_daily.rolling_mean(5)
       v_total = cache.total_infections(idx: index)
-      v_total_ema5 = v_total.ema(5)
 
-      daily_key = zone.name
-      daily_sma_key = "#{zone.name} - 5 day moving average"
+      daily_key = "New infections"
+      daily_sma_key = "Avg. over 5 days"
       chart_daily = index.entries.map(&:to_date).map do |date|
         {
           date: date.strftime("%b %d"),
@@ -58,20 +57,18 @@ module Types
         }
       end
 
-      total_key = zone.name
-      total_ema_key = "#{zone.name} - 5 day exp average"
+      total_key = "Total infections (cumulative)"
       chart_total = index.entries.map(&:to_date).map do |date|
         {
           date: date.strftime("%b %d"),
-          total_key => v_total[date.to_s].to_i,
-          total_ema_key => v_total_ema5[date.to_s].to_i
+          total_key => v_total[date.to_s].to_i
         }
       end
 
       {
         zone:        zone,
         total_cases: cache.cumulative_infections,
-        as_of:       cache.as_of.strftime("%d %B %Y, %I:%M %P %Z"),
+        as_of:       cache.as_of.strftime("%d %B, %I %P"),
         new_cases:   {
           x_axis_key: "date",
           line_keys:  [daily_key, daily_sma_key],
@@ -79,7 +76,7 @@ module Types
         },
         cum_cases:   {
           x_axis_key: "date",
-          line_keys:  [total_key, total_ema_key],
+          line_keys:  [total_key],
           data:       chart_total
         }
       }
@@ -95,15 +92,17 @@ module Types
       v_daily = {}
       v_total = {}
 
+      daily_keys = Hash[zones.map { |zone| [zone.code, zone.name] }]
+
       zones.map do |zone|
-        v_daily[zone.name] = zone.cache.daily_infections(idx: index)
+        v_daily[daily_keys[zone.code]] = zone.cache.daily_infections(idx: index).rolling_mean(5)
         v_total[zone.name] = zone.cache.total_infections(idx: index)
       end
 
       daily_chart = index.entries.map(&:to_date).map do |date|
         h = { date: date.strftime("%b %d") }
         zones.each do |zone|
-          h[zone.name] = v_daily[zone.name][date.to_s].to_i
+          h[daily_keys[zone.code]] = v_daily[daily_keys[zone.code]][date.to_s].to_i
         end
         h
       end
@@ -118,7 +117,7 @@ module Types
 
       {
         zones:       zones,
-        total_cases: zones.map { |zone| { zone_name: zone.name, count: zone.cache.cumulative_infections, as_of: zone.cache.as_of.strftime("%d %B %Y, %I:%M %P %Z") } },
+        total_cases: zones.map { |zone| { zone_name: zone.name, count: zone.cache.cumulative_infections, as_of: zone.cache.as_of.strftime("%d %B, %I %P") } },
         cum_cases:   {
           x_axis_key: "date",
           line_keys:  zones.map(&:name),
@@ -126,7 +125,7 @@ module Types
         },
         new_cases:   {
           x_axis_key: "date",
-          line_keys:  zones.map(&:name),
+          line_keys:  daily_keys.values,
           data:       daily_chart
         }
       }
