@@ -4,6 +4,7 @@ class Zone < ApplicationRecord
   validates :slug, :code, :type, presence: true
 
   has_many :taggings, as: :taggable, dependent: :destroy
+  FIELDS = %i[cumulative_infections cumulative_recoveries cumulative_fatalities cumulative_tests current_actives].freeze
 
   ALIASES = {
     "Delhi".parameterize                       => %w[delhi new-delhi],

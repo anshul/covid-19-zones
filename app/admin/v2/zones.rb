@@ -38,7 +38,6 @@ ActiveAdmin.register ::V2::Zone do
     column :units, &:units
     actions
   end
-  FIELDS = %i[cumulative_infections cumulative_recoveries cumulative_fatalities cumulative_tests current_actives].freeze
   show do
     attributes_table do
       row :code
@@ -48,7 +47,7 @@ ActiveAdmin.register ::V2::Zone do
       row :units
       row :owner
       row "computations" do |zone|
-        zone.cache ? link_to("Computations: " + FIELDS.map { |f| zone.cache[f].to_s + " #{f.to_s.split('_').last}" }.join(", "), v2_zone_computation_path(zone.cache)) : nil
+        zone.cache ? link_to("Computations: " + ::V2::Zone::FIELDS.map { |f| zone.cache[f].to_s + " #{f.to_s.split('_').last}" }.join(", "), v2_zone_computation_path(zone.cache)) : nil
       end
       row :published_at
       row :created_at

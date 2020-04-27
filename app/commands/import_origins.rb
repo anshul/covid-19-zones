@@ -47,6 +47,19 @@ class ImportOrigins < BaseCommand
         source_name:      "www.covid19india.org",
         source_subname:   "api.covid19india.org/deaths_recoveries.json",
         source_url:       "https://api.covid19india.org/deaths_recoveries.json"
+      },
+      {
+        code:             "covid19-india-state-districts",
+        name:             "cio-git-v2",
+        data_category:    "github_history",
+        attribution_text: "daily snapshots from covid19india.org",
+        source_name:      "www.covid19india.org",
+        source_subname:   "api.covid19india.org/v2/state_district_wise.json",
+        source_url:       "covid19india/api",
+        details:          {
+          branches: %w[master gh-pages],
+          path:     "v2/state_district_wise.json"
+        }
       }
     ]
   end

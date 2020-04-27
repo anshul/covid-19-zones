@@ -4,7 +4,9 @@ module V2
   module Downloaders
     class DownloadJson < ::BaseCommand
       def self.perform_task(origin_code:)
-        new(origin_code: origin_code).call_with_transaction
+        log "Starting download of #{origin_code}"
+        cmd = new(origin_code: origin_code)
+        cmd.call_with_transaction ? log("Done!", color: :green) : log("Failed: #{cmd.error_message}", color: :red)
       end
 
       attr_reader :origin, :origin_code, :response, :response_json, :snapshot
@@ -15,6 +17,7 @@ module V2
 
       def run
         return add_error("Origin does not exist") if origin.blank?
+        return add_error("Origin is #{origin.data_category}, expected json") unless origin.data_category == "json"
         return add_error("Origin does not have a valid source url") if origin.source_url.blank?
 
         fetch_data &&
@@ -44,6 +47,7 @@ module V2
 
         return log("Failed to save snapshot, err: #{snapshot.errors.full_messages.to_sentence}", return_value: false) unless snapshot.save
 
+        log("  > snapshot ##{@snapshot.id} created")
         true
       end
 
