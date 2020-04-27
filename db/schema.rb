@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_26_182050) do
+ActiveRecord::Schema.define(version: 2020_04_27_170607) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -188,6 +188,7 @@ ActiveRecord::Schema.define(version: 2020_04_26_182050) do
     t.string "md", default: "", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.jsonb "details", default: {}, null: false
     t.index ["code"], name: "index_v2_origins_on_code", unique: true
     t.index ["data_category"], name: "index_v2_origins_on_data_category"
     t.index ["name"], name: "index_v2_origins_on_name"
