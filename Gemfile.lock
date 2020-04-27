@@ -341,6 +341,7 @@ GEM
     reverse_markdown (1.4.0)
       nokogiri
     rexml (3.2.4)
+    rollbar (2.25.0)
     rubocop (0.81.0)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
@@ -485,6 +486,7 @@ DEPENDENCIES
   rack-cors (~> 1.0, >= 1.0.3)
   rails (~> 6.0.2, >= 6.0.2.2)
   redis (~> 4.0)
+  rollbar (~> 2.25)
   rubocop (~> 0.81.0)
   rubocop-rails (~> 2.5, >= 2.5.2)
   sass-rails (>= 6)
