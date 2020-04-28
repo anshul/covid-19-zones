@@ -79,7 +79,8 @@ module V2
           attribution_md: snapshot.origin.attribution_text,
           time_series:    time_series,
           dated:          snapshot.downloaded_at,
-          snapshot:       snapshot
+          snapshot:       snapshot,
+          priority:       25
         )
       end
 
