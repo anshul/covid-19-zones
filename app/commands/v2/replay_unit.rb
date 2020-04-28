@@ -25,5 +25,19 @@ module V2
 
       true
     end
+
+    def replay_zone_published(fact:, **_)
+      zone = zones(fact.entity_slug)
+      zone.published_at = fact.happened_at
+
+      true
+    end
+
+    def replay_zone_unpublished(fact:, **_)
+      zone = zones(fact.entity_slug)
+      zone.published_at = nil
+
+      true
+    end
   end
 end
