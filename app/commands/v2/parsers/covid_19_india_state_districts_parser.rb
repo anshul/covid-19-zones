@@ -6,12 +6,13 @@ module V2
       def parse_streams
         data = snapshot.data
 
-        @categorized_streams = {}
+        @categorized_cumulative_streams = {}
 
         data.each do |date, state_rows|
           state_rows.each { |row| process_state(date: date, row: row) }
         end
-        @streams = STREAM_CATEGORY_MAP.keys.map { |cat| @categorized_streams[cat].values }.flatten.compact
+        @streams = STREAM_CATEGORY_MAP.keys.map { |cat| @categorized_cumulative_streams[cat].values }.flatten.compact
+        @streams.each { |stream| stream.time_series = cumulative_to_delta_ts(stream.time_series) }
         clean_up
       end
 
@@ -33,7 +34,7 @@ module V2
       def process_district(date:, state_code:, row:)
         unit_code = districts_grouped_by_parent_code[state_code][row["district"].parameterize]&.code
 
-        add_delta_to_streams(date: date, state_code: state_code, district_code: unit_code, delta: row["delta"])
+        add_to_cumulative_stream(date: date, state_code: state_code, district_code: unit_code, row: row)
       end
 
       STREAM_CATEGORY_MAP = {
@@ -41,13 +42,13 @@ module V2
         "recoveries" => "recovered",
         "fatalities" => "deceased"
       }.freeze
-      def add_delta_to_streams(date:, state_code:, district_code:, delta:)
-        STREAM_CATEGORY_MAP.each do |category, delta_key|
-          @categorized_streams[category] ||= {}
+      def add_to_cumulative_stream(date:, state_code:, district_code:, row:)
+        STREAM_CATEGORY_MAP.each do |category, row_key|
+          @categorized_cumulative_streams[category] ||= {}
 
-          next if delta[delta_key].blank?
+          next if row[row_key].blank?
 
-          cat_streams = @categorized_streams[category]
+          cat_streams = @categorized_cumulative_streams[category]
           affected_unit_codes = [country_code, state_code, district_code]
 
           affected_unit_codes.each do |unit_code|
@@ -56,7 +57,7 @@ module V2
             cat_streams[unit_code] ||= stream_for(unit_code: unit_code, category: category, time_series: {})
 
             cat_streams[unit_code].time_series[dateify(date).to_s] ||= 0
-            cat_streams[unit_code].time_series[dateify(date).to_s] += delta[delta_key].to_i
+            cat_streams[unit_code].time_series[dateify(date).to_s] += row[row_key].to_i
           end
         end
       end
@@ -82,6 +83,13 @@ module V2
           snapshot:       snapshot,
           priority:       25
         )
+      end
+
+      def cumulative_to_delta_ts(time_series)
+        sorted_ts = Hash[time_series.sort_by { |k, _v| k }]
+        cum_series = sorted_ts.values
+
+        sorted_ts.transform_values.with_index { |val, idx| idx.zero? ? val : val - cum_series[idx - 1] }
       end
 
       def base_unit_query
