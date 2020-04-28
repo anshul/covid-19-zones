@@ -15,8 +15,39 @@ ActiveAdmin.register ::V2::Zone do
     end
   end
 
+  batch_action :publish do |ids|
+    zone_to_publish = batch_action_collection.find(ids)
+    errors = []
+    zone_to_publish.filter { |zone| zone.published_at.nil? }.each do |zone|
+      cmd = ::V2::RecordFact.new(details: { published_by: current_user.email }, entity_type: "unit", entity_slug: zone.code, fact_type: :zone_published)
+      errors << "#{zone.name}: #{cmd.error_message}" unless cmd.call
+    end
+
+    message = "#{zone_to_publish.count - errors.count} zones were published."
+    message += " #{errors.count} failed (#{errors.slice(..2).join(', ')} ...)" if errors.present?
+    flash = errors.present? ? { alert: message } : { notice: message }
+
+    redirect_to collection_path, **flash
+  end
+
+  batch_action :unpublish do |ids|
+    zone_to_unpublish = batch_action_collection.find(ids)
+    errors = []
+    zone_to_unpublish.filter { |zone| zone.published_at.present? }.each do |zone|
+      cmd = ::V2::RecordFact.new(details: { unpublished_by: current_user.email }, entity_type: "unit", entity_slug: zone.code, fact_type: :zone_unpublished)
+      errors << "#{zone.name}: #{cmd.error_message}" unless cmd.call
+    end
+
+    message = "#{zone_to_unpublish.count - errors.count} zones were unpublished."
+    message += " #{errors.count} failed (#{errors.slice(..2).join(', ')} ...)" if errors.present?
+    flash = errors.present? ? { alert: message } : { notice: message }
+
+    redirect_to collection_path, **flash
+  end
+
   actions :index, :show
   index do
+    selectable_column
     column :code do |zone|
       link_to zone.code, v2_v2_zone_path(zone)
     end

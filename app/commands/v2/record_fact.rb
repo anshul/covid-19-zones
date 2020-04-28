@@ -3,7 +3,9 @@
 module V2
   class RecordFact < ::BaseCommand
     VALID_KEYS = {
-      unit_patched: ((::V2::Unit.attribute_names.map(&:to_s) + ::V2::Zone.attribute_names).map(&:to_s) - %w[id created_at updated_at]).map(&:to_sym).freeze
+      unit_patched:     ((::V2::Unit.attribute_names.map(&:to_s) + ::V2::Zone.attribute_names).map(&:to_s) - %w[id created_at updated_at]).map(&:to_sym).freeze,
+      zone_published:   %i[published_by],
+      zone_unpublished: %i[unpublished_by]
     }.freeze
     SIGNATURE_KEYS = {}.freeze
 
@@ -29,8 +31,9 @@ module V2
     def fact_repeats?
       return true if previous_fact_signature == fact.signature
 
-      fact.save &&
-        replay_all
+      return add_error(fact.errors.full_messages.to_sentence.gsub(";,", ";").gsub(".,", ",")) unless fact.save
+
+      replay_all
     end
 
     def replay_all

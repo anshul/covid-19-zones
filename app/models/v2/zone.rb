@@ -6,6 +6,8 @@ module V2
     alias_attribute :slug, :code
     alias_attribute :parent_zone, :parent
 
+    FIELDS = %i[cumulative_infections cumulative_recoveries cumulative_fatalities cumulative_tests current_actives].freeze
+
     CATEGORIES = %w[country state district city ward].freeze
     validates :category, inclusion: { in: CATEGORIES }
 
