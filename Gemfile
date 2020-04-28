@@ -28,7 +28,7 @@ gem "google_drive", "~> 3.0", ">= 3.0.4"
 gem "graphiql-rails"
 gem "graphql", "~> 1.10"
 gem "graphql-batch", "~> 0.4.2"
-gem 'octokit', '~> 4.18'
+gem "octokit", "~> 4.18"
 gem "rollbar", "~> 2.25"
 
 gem "activerecord-import", "~> 1.0"
