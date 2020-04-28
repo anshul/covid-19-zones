@@ -21,7 +21,8 @@ module V2
 
     ORIGIN_PARSER_MAP = {
       "covid19-india-raw-data"              => ::V2::Parsers::Covid19IndiaRawParser,
-      "covid19-india-deaths-and-recoveries" => ::V2::Parsers::Covid19IndiaDeathsAndRecoveriesParser
+      "covid19-india-deaths-and-recoveries" => ::V2::Parsers::Covid19IndiaDeathsAndRecoveriesParser,
+      "covid19-india-state-districts"       => ::V2::Parsers::Covid19IndiaStateDistrictsParser
     }.freeze
 
     attr_reader :snapshot

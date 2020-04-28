@@ -24,7 +24,7 @@ module V2
       end
 
       STATE_CODE_MAP = {
-        "andamanp-and-nicobar-islands" => "in/an"
+        "andaman-and-nicobar-islands" => "in/an"
       }.freeze
       def process_state(state_name:, rows:)
         unit_code = STATE_CODE_MAP[state_name.parameterize] || states_map[state_name.parameterize]&.code
