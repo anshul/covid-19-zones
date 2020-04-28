@@ -84,7 +84,7 @@ ActiveAdmin.register ::V2::Snapshot do
           column "Rank" do |i|
             i + 1
           end
-          snapshot.other_keys[5, 10].each do |k|
+          snapshot.other_keys[5, 10]&.each do |k|
             column k do |i|
               snapshot.stats[k.join(";")][i]
             end
