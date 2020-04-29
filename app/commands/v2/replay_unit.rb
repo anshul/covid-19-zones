@@ -39,5 +39,12 @@ module V2
 
       true
     end
+
+    def replay_override_created(details:, fact:, **_)
+      override = overrides(fact.entity_slug)
+      override.assign_attributes(**details.slice(*::V2::Override.rw_attribute_names), code: fact.entity_slug)
+
+      true
+    end
   end
 end
