@@ -24,6 +24,7 @@ gem "deepsort", "~> 0.4.5"
 gem "hashdiff", "~> 1.0", ">= 1.0.1"
 
 gem "activeadmin", "~> 2.7"
+gem "activeadmin_addons", git: "https://github.com/platanus/activeadmin_addons.git", ref: "60ddc29"
 gem "google_drive", "~> 3.0", ">= 3.0.4"
 gem "graphiql-rails"
 gem "graphql", "~> 1.10"

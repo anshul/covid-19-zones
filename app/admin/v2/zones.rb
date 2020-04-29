@@ -2,7 +2,7 @@
 
 ActiveAdmin.register ::V2::Zone do
   menu label: "Zones (v2)", priority: 10
-  includes :cache, :units, :parent, :owner, :posts
+  includes :cache, :units, :parent, :owner
   config.sort_order = "cumulative_infections_desc"
 
   scope :all, default: true do |zones|
@@ -85,7 +85,6 @@ ActiveAdmin.register ::V2::Zone do
     end
   end
 
-  # permit_params :name
   form do |f|
     f.inputs "Zone Details" do
       f.input :name
