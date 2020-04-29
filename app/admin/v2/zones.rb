@@ -2,7 +2,7 @@
 
 ActiveAdmin.register ::V2::Zone do
   menu label: "Zones (v2)", priority: 10
-  includes :cache, :units, :parent, :owner
+  includes :cache, :units, :parent, :owner, :posts
   config.sort_order = "cumulative_infections_desc"
 
   scope :all, default: true do |zones|
@@ -45,7 +45,7 @@ ActiveAdmin.register ::V2::Zone do
     redirect_to collection_path, **flash
   end
 
-  actions :index, :show
+  actions :index, :show, :new, :create
   index do
     selectable_column
     column :code do |zone|
@@ -83,6 +83,24 @@ ActiveAdmin.register ::V2::Zone do
       row :published_at
       row :created_at
     end
+  end
+
+  # permit_params :name
+  form do |f|
+    f.inputs "Zone Details" do
+      f.input :name
+      f.input :category, as: :select, collection: ::V2::Zone::CATEGORIES
+      f.input :parent
+      f.input :md
+      f.input :owner
+
+      f.input :units, as: :select, multiple: true, collection: ::V2::Unit.all.pluck(:name, :code)
+    end
+    f.actions
+  end
+
+  controller do
+    def create; end
   end
 
   filter :published_at_present, label: "published", as: :boolean
