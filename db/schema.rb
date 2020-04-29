@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_27_170607) do
+ActiveRecord::Schema.define(version: 2020_04_29_090551) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -290,6 +290,8 @@ ActiveRecord::Schema.define(version: 2020_04_27_170607) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.jsonb "streams", default: {}, null: false
+    t.bigint "population", null: false
+    t.decimal "area_sq_km", null: false
     t.index ["as_of"], name: "index_v2_zone_caches_on_as_of"
     t.index ["code"], name: "index_v2_zone_caches_on_code", unique: true
     t.index ["cumulative_fatalities"], name: "index_v2_zone_caches_on_cumulative_fatalities"

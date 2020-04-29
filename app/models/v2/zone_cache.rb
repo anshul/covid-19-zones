@@ -2,7 +2,9 @@
 
 module V2
   class ZoneCache < ApplicationRecord
-    validates :code, :current_actives, :cumulative_infections, :cumulative_recoveries, :cumulative_fatalities, :cumulative_tests, :as_of, :start, :stop, presence: true
+    validates :code, :current_actives, :cumulative_infections, :cumulative_recoveries,
+              :cumulative_fatalities, :cumulative_tests, :as_of, :start, :stop,
+              :population, :area_sq_km, presence: true
     belongs_to :zone, class_name: "::V2::Zone", foreign_key: :code, primary_key: :code, inverse_of: :cache
 
     def self.index(from:, to:)

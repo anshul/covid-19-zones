@@ -36,13 +36,15 @@ module V2
         ts_fatalities:         ts(:fatalities),
         ts_tests:              ts(:tests),
         cached_at:             t_start,
-        streams:               streams_by_type
+        streams:               streams_by_type,
+        population:            zone.units.sum(&:population),
+        area_sq_km:            zone.units.sum(&:area_sq_km)
       )
       cache.save || add_error(cache.error_message)
     end
 
     def streams_by_type
-      %i[infections recoveries fatalities tests].index_with { |f| streams(f).transform_values { |s| s ? [s.code, s.snapshot_id] : nil } }
+      %i[infections recoveries fatalities tests].index_with { |f| streams(f).transform_values { |s| s ? { code: s.code, snapshot_id: s.snapshot_id, origin_code: s.origin_code } : nil } }
     end
 
     def index
