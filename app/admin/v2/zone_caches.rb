@@ -57,21 +57,21 @@ ActiveAdmin.register ::V2::ZoneCache, as: "ZoneComputation" do
             ::V2::Unit[u]
           end
           column "series" do |k, u|
-            code, sid = cache.streams[k][u] || []
+            code, sid = cache.streams[k][u]&.values_at("code", "snapshot_id") || []
             stream = ::V2::Stream[code]
             (stream.snapshot_id == sid ? stream : "expired") if stream
           end
           column "latest series" do |k, u|
-            code, = cache.streams[k][u] || []
+            code, = cache.streams[k][u]&.values_at("code") || []
             ::V2::Stream[code]
           end
           column "latest total" do |k, u|
-            code, = cache.streams[k][u] || []
+            code, = cache.streams[k][u]&.values_at("code") || []
             ::V2::Stream[code]&.cumulative_count.to_i
           end
 
           column "snapshot" do |k, u|
-            _, sid = cache.streams[k][u] || []
+            sid, = cache.streams[k][u]&.values_at("snapshot_id") || []
             ::V2::Snapshot.find_by(id: sid)
           end
         end
