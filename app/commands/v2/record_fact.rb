@@ -5,7 +5,8 @@ module V2
     VALID_KEYS = {
       unit_patched:     ((::V2::Unit.attribute_names.map(&:to_s) + ::V2::Zone.attribute_names).map(&:to_s) - %w[id created_at updated_at]).map(&:to_sym).freeze,
       zone_published:   %i[published_by],
-      zone_unpublished: %i[unpublished_by]
+      zone_unpublished: %i[unpublished_by],
+      override_created: (::V2::Override.attribute_names.map(&:to_s) - %w[id created_at updated_at]).map(&:to_sym).freeze
     }.freeze
     SIGNATURE_KEYS = {}.freeze
 

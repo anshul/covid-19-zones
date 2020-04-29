@@ -9,13 +9,14 @@ module V2
       @units = {}
       @zones = {}
       @posts = {}
+      @overrides = {}
     end
 
     def run
       replay_all &&
         fill_search_keys &&
-        delete({ ::V2::Unit => @units, ::V2::Zone => @zones, ::V2::Post => @posts }) &&
-        upsert({ ::V2::Unit => @units, ::V2::Zone => @zones, ::V2::Post => @posts })
+        delete({ ::V2::Unit => @units, ::V2::Zone => @zones, ::V2::Post => @posts, ::V2::Override => @overrides }) &&
+        upsert({ ::V2::Unit => @units, ::V2::Zone => @zones, ::V2::Post => @posts, ::V2::Override => @overrides })
     end
 
     def replay_all
@@ -53,6 +54,10 @@ module V2
 
     def zones(key)
       _model_value(@zones, ::V2::Zone, key)
+    end
+
+    def overrides(key)
+      _model_value(@overrides, ::V2::Override, key)
     end
 
     def _model_value(hash, klass, key)
