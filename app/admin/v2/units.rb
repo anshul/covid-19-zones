@@ -3,7 +3,7 @@
 ActiveAdmin.register ::V2::Unit do
   menu label: "Units (v2)", priority: 20
   scope :all, default: true
-  includes :zones, :parent, :owner, streams: :origin
+  includes :zones, :parent, :owner, :override, streams: :origin
 
   ::V2::Unit::CATEGORIES.each do |cat|
     scope cat.capitalize, group: :category do |units|

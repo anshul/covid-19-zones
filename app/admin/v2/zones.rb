@@ -80,6 +80,7 @@ ActiveAdmin.register ::V2::Zone do
       row "computations" do |zone|
         zone.cache ? link_to("Computations: " + ::V2::Zone::FIELDS.map { |f| zone.cache[f].to_s + " #{f.to_s.split('_').last}" }.join(", "), v2_zone_computation_path(zone.cache)) : nil
       end
+      row("published?") { |b| status_tag b.published_at.present? }
       row :published_at
       row :created_at
     end
