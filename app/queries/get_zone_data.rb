@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 class GetZoneData < BaseQuery
-  attr_reader :slug, :log
-  def initialize(slug:, log: nil)
-    @slug = slug
+  attr_reader :code, :log
+  def initialize(code:, log: nil)
+    @code = code
     @result = {}
     @log = log || lambda { |color, msg, return_value:|
       puts_colored color.to_sym, "#{format('%.3f', t).rjust(5)}s - #{msg}"
@@ -21,36 +21,18 @@ class GetZoneData < BaseQuery
   private
 
   def show
-    @result = {
-      y_max:         50_000,
-      zone:          zone.name,
-      confirmed:     {
-        total_count:             cache.cumulative_infections,
-        per_day_counts:          [],
-        five_day_moving_average: []
-      },
-      active:        {
-        total_count:             cache.current_actives,
-        per_day_counts:          [],
-        five_day_moving_average: []
-      },
-      recovered:     {
-        total_count:             cache.cumulative_recoveries,
-        per_day_counts:          [],
-        five_day_moving_average: []
-      },
-      deceased:      {
-        total_count:             cache.cumulative_fatalities,
-        per_day_counts:          [],
-        five_day_moving_average: []
-      },
+    @result = zone.as_typical_json.merge(cache.as_typical_json).merge(
+      confirmed:     cache.cumulative_infections,
+      active:        cache.current_actives,
+      recovered:     cache.cumulative_recoveries,
+      deceased:      cache.cumulative_fatalities,
       parent_zone:   parent_zone.as_typical_json.merge(cache.as_typical_json),
-      sibling_zones: sibling_zones.map { |z| z.as_typical_json.merge(z.cache.as_typical_json) }
-    }.deep_transform_keys { |k| k.to_s.camelize :lower }
+      related_zones: related_zones.map { |z| z.as_typical_json.merge(z.cache.as_json(only: %i[name cumulative_infections current_actives cumulative_fatalities cumulative_recoveries])) }
+    ).deep_transform_keys { |k| k.to_s.camelize :lower }
   end
 
   def zone
-    @zone ||= ::V2::Zone.find_by(code: slug)
+    @zone ||= ::V2::Zone.find_by(code: code)
   end
 
   def cache
@@ -61,7 +43,12 @@ class GetZoneData < BaseQuery
     @parent_zone ||= zone.parent || zone
   end
 
-  def sibling_zones
-    @sibling_zones ||= parent_zone.children
+  def related_zones
+    return @related_zones if @related_zones
+
+    @related_zones = zone.children
+    @related_zones = parent_zone.children if @related_zones.empty?
+    @related_zones = @related_zones.sort_by { |z| - z.cache.cumulative_infections }
+    @related_zones
   end
 end

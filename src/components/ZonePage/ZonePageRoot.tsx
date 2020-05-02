@@ -20,15 +20,17 @@ import useSWR from 'swr'
 import { ArrowBack } from '@material-ui/icons'
 import clsx from 'clsx'
 import { LightenDarkenColor } from '../../utils/LightenDarkenColor'
+import LineChart from './LineChart'
+
+const capitalize = (str: string) => str.charAt(0).toUpperCase() + str.slice(1)
 
 interface Props {
-  slug: string
-  gotoZone: (slug: string) => void
+  code: string
+  gotoZone: (code: string) => void
   gotoParentZone: () => void
 }
 
 interface Zone {
-  slug: string
   code: string
   name: string
   cumulativeInfections: number
@@ -63,9 +65,20 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 )
 
-const ZonePageRoot: React.FC<Props> = ({ slug, gotoZone, gotoParentZone }) => {
+interface StringMap {
+  [key: string]: string
+}
+
+const LABELS: StringMap = {
+  confirmed: 'infections',
+  active: 'actives',
+  recovered: 'recoveries',
+  deceased: 'fatalities',
+}
+
+const ZonePageRoot: React.FC<Props> = ({ code, gotoZone, gotoParentZone }) => {
   const classes = useStyles()
-  const { data } = useSWR(`/api/zone?slug=${slug}`)
+  const { data } = useSWR(`/api/zone?code=${code}`)
   const colorMap: { [key: string]: { [key: string]: string } } = {
     confirmed: {
       color: '#ff1744',
@@ -91,7 +104,45 @@ const ZonePageRoot: React.FC<Props> = ({ slug, gotoZone, gotoParentZone }) => {
 
   return (
     <Grid container spacing={4}>
-      <Grid item xs={12} md={4}>
+      <Grid item xs={12} md={6}>
+        <Grid container spacing={2} item xs={12}>
+          <Grid item xs={12}>
+            {data && data.parentZone && (
+              <Breadcrumbs>
+                <Link color='inherit' href='/' onClick={gotoParentZone}>
+                  {data.parentZone.name}
+                </Link>
+                <Typography color='textPrimary'>{data.name}</Typography>
+              </Breadcrumbs>
+            )}
+          </Grid>
+          {['confirmed', 'active', 'recovered', 'deceased'].map((cases) => (
+            <Grid key={cases} item xs={12} md={3}>
+              <div
+                style={{
+                  cursor: 'pointer',
+                  padding: '8px 16px',
+                  color: colorMap[cases].color,
+                  backgroundColor: colorMap[cases].backgroundColor,
+                }}
+              >
+                <Typography variant='subtitle1'>{LABELS[cases]}</Typography>
+                <Typography variant='h5'>
+                  <b>{data ? data[cases] : '--'}</b>
+                </Typography>
+              </div>
+            </Grid>
+          ))}
+          {['confirmed', 'active', 'recovered', 'deceased'].map((cases) => (
+            <Grid key={cases} item xs={12} style={{ marginBottom: '30px', marginTop: '20px' }}>
+              <div className={classes.lineChart}>
+                <LineChart title={LABELS[cases]} data={data ? data[`ts${capitalize(LABELS[cases])}`] : {}} />
+              </div>
+            </Grid>
+          ))}
+        </Grid>
+      </Grid>
+      <Grid item xs={12} md={6}>
         {data?.parentZone && (
           <Toolbar>
             <IconButton edge='start' onClick={() => gotoParentZone()} className={clsx(classes.zoneListItem, classes.zoneListParentItem)}>
@@ -114,8 +165,8 @@ const ZonePageRoot: React.FC<Props> = ({ slug, gotoZone, gotoParentZone }) => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {data?.siblingZones.map((zone: Zone) => (
-                <TableRow selected={slug === zone.slug} hover key={zone.code} onClick={() => gotoZone(zone.slug)}>
+              {data?.relatedZones.map((zone: Zone) => (
+                <TableRow selected={code === zone.code} hover key={zone.code} onClick={() => gotoZone(zone.code)}>
                   <TableCell>{zone.name}</TableCell>
                   <TableCell>{zone.cumulativeInfections}</TableCell>
                   <TableCell>{zone.currentActives}</TableCell>
@@ -126,42 +177,6 @@ const ZonePageRoot: React.FC<Props> = ({ slug, gotoZone, gotoParentZone }) => {
             </TableBody>
           </Table>
         </TableContainer>
-      </Grid>
-      <Grid item xs={12} md={4}>
-        <Grid container spacing={2} item xs={12}>
-          <Grid item xs={12}>
-            {data && data.parentZone && (
-              <Breadcrumbs>
-                <Link color='inherit' href='/' onClick={gotoParentZone}>
-                  {data.parentZone.name}
-                </Link>
-                <Typography color='textPrimary'>{data.zone}</Typography>
-              </Breadcrumbs>
-            )}
-          </Grid>
-          {['confirmed', 'active', 'recovered', 'deceased'].map((cases) => (
-            <Grid key={cases} item xs={12} md={3}>
-              <div
-                style={{
-                  cursor: 'pointer',
-                  padding: '8px 16px',
-                  color: colorMap[cases].color,
-                  backgroundColor: colorMap[cases].backgroundColor,
-                }}
-              >
-                <Typography variant='subtitle1'>{cases}</Typography>
-                <Typography variant='h5'>
-                  <b>{data ? data[cases].totalCount : '--'}</b>
-                </Typography>
-              </div>
-            </Grid>
-          ))}
-          {['confirmed', 'active', 'recovered', 'deceased'].map((cases) => (
-            <Grid key={cases} item xs={12}>
-              <div className={classes.lineChart}>chart goes here</div>
-            </Grid>
-          ))}
-        </Grid>
       </Grid>
     </Grid>
   )
