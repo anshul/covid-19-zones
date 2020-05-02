@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_29_090551) do
+ActiveRecord::Schema.define(version: 2020_04_29_145504) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -192,6 +192,19 @@ ActiveRecord::Schema.define(version: 2020_04_29_090551) do
     t.index ["code"], name: "index_v2_origins_on_code", unique: true
     t.index ["data_category"], name: "index_v2_origins_on_data_category"
     t.index ["name"], name: "index_v2_origins_on_name"
+  end
+
+  create_table "v2_overrides", force: :cascade do |t|
+    t.string "code", null: false
+    t.jsonb "override_details", default: [], null: false, array: true
+    t.jsonb "events", default: [], null: false, array: true
+    t.jsonb "chart_events", default: [], null: false, array: true
+    t.jsonb "hotspots", default: [], null: false, array: true
+    t.string "maintainer"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["code"], name: "index_v2_overrides_on_code", unique: true
+    t.index ["maintainer"], name: "index_v2_overrides_on_maintainer"
   end
 
   create_table "v2_posts", force: :cascade do |t|

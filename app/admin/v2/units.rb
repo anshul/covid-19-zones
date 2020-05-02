@@ -32,7 +32,26 @@ ActiveAdmin.register ::V2::Unit do
     end
     column :zones, &:zones
     column :streams, &:streams
+    column :override, &:override
     actions
+  end
+
+  action_item :override_action, only: :show do
+    if resource.override.blank?
+      link_to "Create Override", create_override_v2_v2_unit_path(resource), method: :put
+    else
+      link_to "View Override", v2_v2_override_path(resource.override)
+    end
+  end
+
+  member_action :create_override, method: :put do
+    cmd = ::V2::RecordFact.new(details: { maintainer: current_user.email }, entity_type: "unit", entity_slug: resource.code, fact_type: :override_created)
+
+    if cmd.call
+      redirect_to v2_v2_override_path(resource.override), { notice: "Override created" }
+    else
+      redirect_to resource_path, { alert: "Override creation failed, error: #{cmd.error_message}" }
+    end
   end
 
   filter :code
