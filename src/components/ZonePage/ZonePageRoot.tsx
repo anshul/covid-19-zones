@@ -149,7 +149,7 @@ const ZonePageRoot: React.FC<Props> = ({ code, gotoZone, gotoParentZone }) => {
               <ArrowBack />
             </IconButton>
             <Typography variant='h6' style={{ marginLeft: '16px', fontWeight: 700, color: '#0000008a' }}>
-              {data?.parentZone.name}
+              {data?.parentZone.name} / {data.name}
             </Typography>
           </Toolbar>
         )}

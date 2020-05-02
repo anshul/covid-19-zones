@@ -39,7 +39,7 @@ const LineChart: React.FC<Props> = ({ data, title }) => {
   useEffect(() => {
     const maybeDiv: unknown = chartRef.current
     if (!maybeDiv) return
-    if (Object.keys(data).length <= 2) return
+    if (Object.keys(data).length <= 0) return
 
     const el: HTMLElement = maybeDiv as HTMLElement
     console.log('update', el)
