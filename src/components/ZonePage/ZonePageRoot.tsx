@@ -116,6 +116,18 @@ const ZonePageRoot: React.FC<Props> = ({ code, gotoZone, gotoParentZone }) => {
               </Breadcrumbs>
             )}
           </Grid>
+          <Grid item xs={12}>
+            <Typography>
+              <small>
+                <a href='/v2/zone_computations'>Download in excel </a>
+              </small>
+            </Typography>
+            <Typography>
+              <small>
+                <a href={data?.debugLink}> Debug</a>
+              </small>
+            </Typography>
+          </Grid>
           {['confirmed', 'active', 'recovered', 'deceased'].map((cases) => (
             <Grid key={cases} item xs={12} md={3}>
               <div

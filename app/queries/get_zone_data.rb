@@ -22,6 +22,7 @@ class GetZoneData < BaseQuery
 
   def show
     @result = zone.as_typical_json.merge(cache.as_typical_json).merge(
+      debug_link:         "/v2/zone_computations/#{zone.cache.id}",
       confirmed:     cache.cumulative_infections,
       active:        cache.current_actives,
       recovered:     cache.cumulative_recoveries,
