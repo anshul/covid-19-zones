@@ -31,10 +31,10 @@ interface Zone {
   slug: string
   code: string
   name: string
-  totalCases: number
-  totalActive: number
-  totalRecovered: number
-  totalDeceased: number
+  cumulativeInfections: number
+  currentActives: number
+  cumulativeRecoveries: number
+  cumulativeFatalities: number
 }
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -117,10 +117,10 @@ const ZonePageRoot: React.FC<Props> = ({ slug, gotoZone, gotoParentZone }) => {
               {data?.siblingZones.map((zone: Zone) => (
                 <TableRow selected={slug === zone.slug} hover key={zone.code} onClick={() => gotoZone(zone.slug)}>
                   <TableCell>{zone.name}</TableCell>
-                  <TableCell>{zone.totalCases}</TableCell>
-                  <TableCell>{zone.totalActive}</TableCell>
-                  <TableCell>{zone.totalRecovered}</TableCell>
-                  <TableCell>{zone.totalDeceased}</TableCell>
+                  <TableCell>{zone.cumulativeInfections}</TableCell>
+                  <TableCell>{zone.currentActives}</TableCell>
+                  <TableCell>{zone.cumulativeRecoveries}</TableCell>
+                  <TableCell>{zone.cumulativeFatalities}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -130,7 +130,7 @@ const ZonePageRoot: React.FC<Props> = ({ slug, gotoZone, gotoParentZone }) => {
       <Grid item xs={12} md={4}>
         <Grid container spacing={2} item xs={12}>
           <Grid item xs={12}>
-            {data && (
+            {data && data.parentZone && (
               <Breadcrumbs>
                 <Link color='inherit' href='/' onClick={gotoParentZone}>
                   {data.parentZone.name}
