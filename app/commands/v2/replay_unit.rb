@@ -46,5 +46,12 @@ module V2
 
       true
     end
+
+    def replay_override_details_uploaded(details:, fact:, **_)
+      override = overrides(fact.entity_slug)
+      override.assign_attributes(override_details: details[:override_details])
+
+      true
+    end
   end
 end

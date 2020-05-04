@@ -14,6 +14,11 @@ module V2
     has_one :override, class_name: "V2::Override", foreign_key: :code, primary_key: :code, inverse_of: :unit, dependent: :delete
 
     CATEGORIES = %w[country state district city ward].freeze
+    OVERRIDABLE_CATEGORIES = %w[country state].freeze
     validates :category, inclusion: { in: CATEGORIES }
+
+    def overridable?
+      OVERRIDABLE_CATEGORIES.include? category
+    end
   end
 end

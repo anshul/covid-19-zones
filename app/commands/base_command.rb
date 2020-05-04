@@ -12,7 +12,9 @@ class BaseCommand
     false
   end
 
-  def call
+  def call(**kwargs)
+    @errors = kwargs[:errors] if kwargs[:errors].present?
+
     return errors.empty? if run
 
     errors.add(:base, "Something went wrong") if errors.empty?
@@ -83,6 +85,11 @@ class BaseCommand
       add_error("#{count} #{klass} failed to import due to #{err}")
     end
     false
+  end
+
+  def record_fact(fact_type, entity_slug:, entity_type:, details:)
+    cmd = ::V2::RecordFact.new(details: details, entity_type: entity_type, entity_slug: entity_slug, fact_type: fact_type)
+    cmd.call(errors: errors)
   end
 
   def log(msg, return_value: true)

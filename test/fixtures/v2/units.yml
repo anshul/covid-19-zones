@@ -1,0 +1,532 @@
+in:
+  code: in
+  name: India
+  category: country
+  parent_code: 
+  topojson_file: india-districts-727.json
+  topojson_key: 
+  topojson_value: 
+  topojson_override: 
+  population: 1210854977
+  population_year: 2011
+  area_sq_km: '3166620.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/dl:
+  code: in/dl
+  name: Delhi
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 16787941
+  population_year: 2011
+  area_sq_km: '1483.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/ch:
+  code: in/ch
+  name: Chandigarh
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 1055450
+  population_year: 2011
+  area_sq_km: '114.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/uk:
+  code: in/uk
+  name: Uttarakhand
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 10086292
+  population_year: 2011
+  area_sq_km: '53483.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/pb:
+  code: in/pb
+  name: Punjab
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 27743338
+  population_year: 2011
+  area_sq_km: '50362.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/hp:
+  code: in/hp
+  name: Himachal Pradesh
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 6864602
+  population_year: 2011
+  area_sq_km: '55673.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/jk:
+  code: in/jk
+  name: Jammu and Kashmir
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 12267013
+  population_year: 2011
+  area_sq_km: '42241.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/la:
+  code: in/la
+  name: Ladakh
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 274289
+  population_year: 2011
+  area_sq_km: '59146.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/jh:
+  code: in/jh
+  name: Jharkhand
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 32988134
+  population_year: 2011
+  area_sq_km: '79716.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/br:
+  code: in/br
+  name: Bihar
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 104099452
+  population_year: 2011
+  area_sq_km: '94163.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/sk:
+  code: in/sk
+  name: Sikkim
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 610577
+  population_year: 2011
+  area_sq_km: '7096.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/hr:
+  code: in/hr
+  name: Haryana
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 25351462
+  population_year: 2011
+  area_sq_km: '44212.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/rj:
+  code: in/rj
+  name: Rajasthan
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 68548437
+  population_year: 2011
+  area_sq_km: '342239.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/up:
+  code: in/up
+  name: Uttar Pradesh
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 199812341
+  population_year: 2011
+  area_sq_km: '240928.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/an:
+  code: in/an
+  name: Andaman and Nicobar
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 380581
+  population_year: 2011
+  area_sq_km: '8249.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/mn:
+  code: in/mn
+  name: Manipur
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 2855794
+  population_year: 2011
+  area_sq_km: '22327.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/tr:
+  code: in/tr
+  name: Tripura
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 3673917
+  population_year: 2011
+  area_sq_km: '10486.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/mz:
+  code: in/mz
+  name: Mizoram
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 1097206
+  population_year: 2011
+  area_sq_km: '21081.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/ml:
+  code: in/ml
+  name: Meghalaya
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 2966889
+  population_year: 2011
+  area_sq_km: '22429.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/nl:
+  code: in/nl
+  name: Nagaland
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 1978502
+  population_year: 2011
+  area_sq_km: '16579.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/as:
+  code: in/as
+  name: Assam
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 31205576
+  population_year: 2011
+  area_sq_km: '78438.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/ar:
+  code: in/ar
+  name: Arunachal Pradesh
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 1383727
+  population_year: 2011
+  area_sq_km: '83743.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/dd:
+  code: in/dd
+  name: Daman and Diu
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 243247
+  population_year: 2011
+  area_sq_km: '111.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/ld:
+  code: in/ld
+  name: Lakshadweep
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 64473
+  population_year: 2011
+  area_sq_km: '30.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/py:
+  code: in/py
+  name: Puducherry
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 1247953
+  population_year: 2011
+  area_sq_km: '490.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/dn:
+  code: in/dn
+  name: Dadra and Nagar Haveli
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 343709
+  population_year: 2011
+  area_sq_km: '491.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/wb:
+  code: in/wb
+  name: West Bengal
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 91276115
+  population_year: 2011
+  area_sq_km: '88752.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/ts:
+  code: in/ts
+  name: Telangana
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 35193978
+  population_year: 2011
+  area_sq_km: '114840.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/kl:
+  code: in/kl
+  name: Kerala
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 33406061
+  population_year: 2011
+  area_sq_km: '38852.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/tn:
+  code: in/tn
+  name: Tamil Nadu
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 72147030
+  population_year: 2011
+  area_sq_km: '130060.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/ga:
+  code: in/ga
+  name: Goa
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 1458545
+  population_year: 2011
+  area_sq_km: '3702.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/ka:
+  code: in/ka
+  name: Karnataka
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 61095297
+  population_year: 2011
+  area_sq_km: '191791.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/ap:
+  code: in/ap
+  name: Andhra Pradesh
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 49386799
+  population_year: 2011
+  area_sq_km: '160205.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/od:
+  code: in/od
+  name: Odisha
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 41974218
+  population_year: 2011
+  area_sq_km: '155707.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/gj:
+  code: in/gj
+  name: Gujarat
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 60439692
+  population_year: 2011
+  area_sq_km: '196244.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/cg:
+  code: in/cg
+  name: Chhattisgarh
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 25545198
+  population_year: 2011
+  area_sq_km: '135192.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/mh:
+  code: in/mh
+  name: Maharashtra
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 112374333
+  population_year: 2011
+  area_sq_km: '307713.0'
+  details: {}
+  maintainer: bot@covid19zones.com
+in/mp:
+  code: in/mp
+  name: Madhya Pradesh
+  category: state
+  parent_code: in
+  topojson_file: india-districts-727.json
+  topojson_key: st_nm
+  topojson_value: 
+  topojson_override: 
+  population: 72626809
+  population_year: 2011
+  area_sq_km: '308252.0'
+  details: {}
+  maintainer: bot@covid19zones.com

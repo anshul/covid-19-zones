@@ -24,17 +24,25 @@ ActiveAdmin.register ::V2::Override do
   end
 
   sidebar "Upload Overrides", only: :show do
+    div do
+      button "Download"
+    end
     active_admin_form_for :override_details, url: upload_overrides_csv_v2_v2_override_path, method: :post do |f|
       f.inputs do
         f.input :csv, label: false, as: :file
-        f.action :submit
+        f.action :submit, label: "Upload CSV"
       end
     end
   end
 
   member_action :upload_overrides_csv, method: :post do
-    # file = params[:override_details][:csv]
-    redirect_to resource_path(resource), alert: "Not Implemented"
+    cmd = ::V2::UploadUnitOverrides.new(override_code: resource.code, csv: params.dig(:override_details, :csv).read)
+
+    if cmd.call
+      redirect_to resource_path(resource), { notice: "Override uploaded" }
+    else
+      redirect_to resource_path(resource), { alert: "Error: #{cmd.error_message}" }
+    end
   end
 
   filter :code
