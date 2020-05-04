@@ -45,7 +45,7 @@ ActiveAdmin.register ::V2::Unit do
   end
 
   member_action :create_override, method: :put do
-    cmd = ::V2::RecordFact.new(details: { maintainer: current_user.email }, entity_type: "unit", entity_slug: resource.code, fact_type: :override_created)
+    cmd = ::V2::CreateOverride.new(unit_code: resource.code, maintainer: current_user.email)
 
     if cmd.call
       redirect_to v2_v2_override_path(resource.override), { notice: "Override created" }
