@@ -31,9 +31,9 @@ module V2
           ts = streams[category][unit_code]&.time_series
           next nil if ts.blank?
 
-          range.map { |dt| ts[dt] ? [unit_code, category, dt, ts[dt]].join(",") : nil }.compact
-        end.compact
-      end.flatten
+          range.map { |dt| ts[dt] ? [unit_code, category, dt, ts[dt]].join(",") : nil }
+        end
+      end.flatten.compact
 
       ([header] + rows).join("\n")
     end
