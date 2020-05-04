@@ -46,6 +46,7 @@ module V2
     def transform_row(row)
       {
         **row,
+        "date"  => Date.parse(row["date"]),
         "value" => row["value"].to_i
       }
     end

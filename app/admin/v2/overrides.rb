@@ -20,6 +20,14 @@ ActiveAdmin.register ::V2::Override do
     attributes_table do
       row :unit
       row :maintainer
+      row :override_details do |override|
+        table_for override.override_details do
+          column("unit") { |row| ::V2::Unit[row["unit_code"]] }
+          column("date") { |row| ::Date.parse(row["date"]) }
+          column "category"
+          column "value"
+        end
+      end
     end
   end
 
