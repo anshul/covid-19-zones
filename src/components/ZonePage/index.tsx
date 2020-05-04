@@ -3,16 +3,16 @@ import { RouteComponentProps } from 'react-router'
 import ZonePageRoot from './ZonePageRoot'
 import { history } from '../../history'
 
-const ZonePage: React.FC<RouteComponentProps<{ slug: string }>> = ({ location, match }) => {
+const ZonePage: React.FC<RouteComponentProps<{ code: string }>> = ({ location, match }) => {
   const gotoParentZone = () => {
-    history.push(`/zones/${match.params.slug.split('/').slice(0, -1).join('/')}`)
+    history.push(`/zones/${match.params.code.split('/').slice(0, -1).join('/')}`)
   }
 
-  const gotoZone = (slug: string) => {
-    history.push(`/zones/${slug}`)
+  const gotoZone = (code: string) => {
+    history.push(`/zones/${code}`)
   }
 
-  return <ZonePageRoot slug={match.params.slug} gotoZone={gotoZone} gotoParentZone={gotoParentZone} />
+  return <ZonePageRoot code={match.params.code} gotoZone={gotoZone} gotoParentZone={gotoParentZone} />
 }
 
 export default ZonePage

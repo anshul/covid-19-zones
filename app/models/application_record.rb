@@ -13,6 +13,10 @@ class ApplicationRecord < ActiveRecord::Base
     true
   end
 
+  def as_typical_json
+    as_json(only: self.class.rw_attribute_names)
+  end
+
   def self.view_attrs
     @view_attrs ||= attribute_names.map(&:to_s) - %w[id created_at updated_at]
   end

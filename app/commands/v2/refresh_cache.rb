@@ -60,11 +60,15 @@ module V2
     end
 
     def start
-      @start ||= (CATEGORIES.keys.map { |k| streams(k).values.compact.map(&:min_date).compact.min }.compact.min || t_start).to_date
+      @start ||= (CATEGORIES.keys.map do |k|
+        [override_dates(k).min, stream_min_dates(k).min].compact.min
+      end.compact.min || t_start).to_date
     end
 
     def stop
-      @stop ||= (CATEGORIES.keys.map { |k| streams(k).values.compact.map(&:max_date).compact.max }.compact.max || t_start).to_date + 1.day
+      @stop ||= (CATEGORIES.keys.map do |k|
+        [override_dates(k).max, stream_max_dates(k).max].compact.max
+      end.compact.max || t_start).to_date + 1.day
     end
 
     CATEGORIES = {
@@ -92,12 +96,34 @@ module V2
 
     def vectors(type)
       @vectors ||= {}
-      @vectors[type.to_sym] ||= streams(type).transform_values { |v| v&.vector(idx: index) }
+      @vectors[type.to_sym] ||= streams(type).transform_values { |v| v&.vector(idx: index) }.tap do |vecs|
+        vecs.keys.map { |unit_code| overrides(type)[unit_code]&.each { |row| vecs[unit_code][row["date"]] = row["value"] } }
+      end
     end
 
     def streams(type)
       @streams ||= {}
       @streams[type.to_sym] ||= zone.units.index_with { |u| u.streams.select { |s| CATEGORIES[type.to_sym].include?(s.category) }.min_by(&:priority) }.transform_keys(&:code)
+    end
+
+    def stream_min_dates(type)
+      streams(type).values.compact.map(&:min_date).compact
+    end
+
+    def stream_max_dates(type)
+      streams(type).values.compact.map(&:max_date).compact
+    end
+
+    def overrides(type)
+      @overrides ||= {}
+      @overrides[type.to_sym] ||= zone.units.index_with do |u|
+        override = u.override || u.parent&.override
+        override.blank? ? nil : override.override_details.select { |ov| ov["unit_code"] == u.code && CATEGORIES[type.to_sym].include?(ov["category"]) }
+      end.transform_keys(&:code)
+    end
+
+    def override_dates(type)
+      overrides(type).values.compact.map { |ovs| ovs.map { |row| row["date"] } }.flatten
     end
 
     def cache

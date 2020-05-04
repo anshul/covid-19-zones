@@ -2,12 +2,12 @@
 
 class ZonesController < ApplicationController
   def index
-    zones = Zone.where(parent_zone: params[:parent_code])
+    zones = ::V2::Zone.where(parent: params[:parent_code])
     render status: :ok, json: { zones: zones.as_json(only: Zone.view_attrs) }
   end
 
   def show
-    query = GetZoneData.new(slug: params[:slug])
+    query = GetZoneData.new(code: params[:code])
     if query.run
       render status: :ok, json: query.result
     else
@@ -22,6 +22,6 @@ class ZonesController < ApplicationController
   end
 
   def show_params
-    params.permit(:slug)
+    params.permit(:code)
   end
 end

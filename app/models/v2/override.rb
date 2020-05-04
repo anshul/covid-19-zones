@@ -14,6 +14,10 @@ module V2
       true
     end
 
+    def overridable_units
+      unit.overridable? ? [unit] + unit.children : []
+    end
+
     def od_error(msg)
       errors.add(:override_details, msg)
       false
