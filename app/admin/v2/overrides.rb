@@ -21,6 +21,11 @@ ActiveAdmin.register ::V2::Override do
       row :unit
       row :maintainer
       row :override_details do |override|
+        div do
+          a href: download_overrides_csv_v2_v2_override_path, style: "float: right" do
+            button "Download"
+          end
+        end
         table_for override.override_details do
           column("unit") { |row| ::V2::Unit[row["unit_code"]] }
           column("date") { |row| ::Date.parse(row["date"]) }
@@ -32,9 +37,6 @@ ActiveAdmin.register ::V2::Override do
   end
 
   sidebar "Upload Overrides", only: :show do
-    div do
-      button "Download"
-    end
     active_admin_form_for :override_details, url: upload_overrides_csv_v2_v2_override_path, method: :post do |f|
       f.inputs do
         f.input :csv, label: false, as: :file
@@ -51,6 +53,19 @@ ActiveAdmin.register ::V2::Override do
     else
       redirect_to resource_path(resource), { alert: "Error: #{cmd.error_message}" }
     end
+  end
+
+  member_action :download_overrides_csv, method: :get do
+    headers = ::V2::Override::OVERRIDE_KEYS
+    csv_file = CSV.generate(headers: true) do |csv|
+      csv << headers
+
+      resource.override_details.each do |row|
+        csv << headers.map { |attr| row[attr.to_s] }
+      end
+    end
+
+    send_data csv_file, filename: "overrides-#{resource.code}--#{Time.zone.today}.csv"
   end
 
   filter :code
