@@ -68,7 +68,7 @@ module Types
       {
         zone:        zone,
         total_cases: cache.cumulative_infections,
-        as_of:       cache.as_of.strftime("%d %B, %I %P"),
+        as_of:       cache.as_of.strftime("%d %B, %l %P"),
         new_cases:   {
           x_axis_key: "date",
           line_keys:  [daily_key, daily_sma_key],
@@ -117,7 +117,7 @@ module Types
 
       {
         zones:       zones,
-        total_cases: zones.map { |zone| { zone_name: zone.name, count: zone.cache.cumulative_infections, as_of: zone.cache.as_of.strftime("%d %B, %I %P") } },
+        total_cases: zones.map { |zone| { zone_name: zone.name, count: zone.cache.cumulative_infections, as_of: zone.cache.as_of.strftime("%d %B, %l %P") } },
         cum_cases:   {
           x_axis_key: "date",
           line_keys:  zones.map(&:name),
