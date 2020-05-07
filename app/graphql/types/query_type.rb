@@ -20,11 +20,23 @@ module Types
       argument :codes, [String], required: true
     end
 
+    field :v2_stats, ::Types::Zones::V2Stats, null: false do
+      argument :codes, [String], required: true
+    end
+
+    def v2_stats(codes:)
+      {
+        zones: ::V2::Zone.includes(:cache).where(code: codes).limit(50).sort_by(&:cumulative_infections).reverse
+      }
+    end
+
     def zone(slug:)
       ::Zone.find_by(slug: slug)
     end
 
     def zones_list(search_query:)
+      return [] if search_query.blank?
+
       ::V2::Zone.joins(:cache).includes(:cache).order(cumulative_infections: :desc).where("search_key LIKE ? OR search_key LIKE ?", "#{search_query.parameterize}%", "%-#{search_query.parameterize}%").limit(20)
     end
 

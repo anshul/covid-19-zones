@@ -7,6 +7,10 @@ module V2
               :population, :area_sq_km, presence: true
     belongs_to :zone, class_name: "::V2::Zone", foreign_key: :code, primary_key: :code, inverse_of: :cache
 
+    def formatted_as_of
+      as_of&.strftime("%d %B, %l %P")
+    end
+
     def self.index(from:, to:)
       from = to.to_date - 1.day if from.to_date >= to.to_date
       Daru::DateTimeIndex.date_range(start: from.to_date.to_s, end: to.to_date.to_s, freq: "D")
@@ -68,6 +72,32 @@ module V2
 
     def total_tests(from: nil, to: nil, idx: nil)
       daily_tests(from: from, to: to, idx: idx).cumsum
+    end
+
+    def per_million_actives
+      per_million(:current_actives)
+    end
+
+    def per_million_infections
+      per_million(:cumulative_infections)
+    end
+
+    def per_million_fatalities
+      per_million(:cumulative_fatalities)
+    end
+
+    def per_million_recoveries
+      per_million(:cumulative_recoveries)
+    end
+
+    def per_million_tests
+      per_million(:cumulative_tests)
+    end
+
+    def per_million(field)
+      return -1 if population <= 100
+
+      public_send(field) * 1_000_000 / population
     end
 
     private
