@@ -23,6 +23,10 @@ module V2
         start:                 start,
         stop:                  stop,
         current_actives:       vec(:actives).entries.last,
+        current_hospitals:     vec(:hospitals).entries.reject(&:zero?).last || 0,
+        current_hospital_beds: vec(:hospital_beds).entries.reject(&:zero?).last || 0,
+        current_icu_beds:      vec(:icu_beds).entries.reject(&:zero?).last || 0,
+
         cumulative_infections: vec(:infections).sum,
         cumulative_recoveries: vec(:recoveries).sum,
         cumulative_fatalities: vec(:fatalities).sum,
@@ -31,6 +35,9 @@ module V2
         attributions_md:       attributions_md,
         unit_codes:            zone.units.map(&:code),
         ts_actives:            ts(:actives),
+        ts_hospitals:          ts(:hospitals),
+        ts_hospital_beds:      ts(:hospital_beds),
+        ts_icu_beds:           ts(:icu_beds),
         ts_infections:         ts(:infections),
         ts_recoveries:         ts(:recoveries),
         ts_fatalities:         ts(:fatalities),
@@ -72,10 +79,13 @@ module V2
     end
 
     CATEGORIES = {
-      infections: %w[announce infections],
-      recoveries: %w[recovery recoveries],
-      fatalities: %w[fatality fatalities],
-      tests:      %w[testing]
+      infections:    %w[announce infections],
+      recoveries:    %w[recovery recoveries],
+      fatalities:    %w[fatality fatalities],
+      tests:         %w[testing],
+      hospitals:     %w[hospitals],
+      hospital_beds: %w[hospital_beds],
+      icu_beds:      %w[icu_beds]
     }.freeze
 
     def ts(type)
@@ -96,7 +106,7 @@ module V2
 
     def vectors(type)
       @vectors ||= {}
-      @vectors[type.to_sym] ||= streams(type).transform_values { |v| v&.vector(idx: index) }.tap do |vecs|
+      @vectors[type.to_sym] ||= streams(type).transform_values { |v| v&.vector(idx: index).presence || ::V2::Stream.zero_vector(index: index) }.tap do |vecs|
         vecs.keys.map { |unit_code| overrides(type)[unit_code]&.each { |row| vecs[unit_code][row["date"]] = row["value"] } }
       end
     end
@@ -117,8 +127,9 @@ module V2
     def overrides(type)
       @overrides ||= {}
       @overrides[type.to_sym] ||= zone.units.index_with do |u|
-        override = u.override || u.parent&.override
-        override.blank? ? nil : override.override_details.select { |ov| ov["unit_code"] == u.code && CATEGORIES[type.to_sym].include?(ov["category"]) }
+        overrides = [u.override, u.parent&.override].compact
+        overrides.map { |override| override.override_details.select { |ov| ov["unit_code"] == u.code && CATEGORIES[type.to_sym].include?(ov["category"]) } }
+                 .flatten.uniq { |row| row["date"] }
       end.transform_keys(&:code)
     end
 
