@@ -20,13 +20,13 @@ class ImportV2 < BaseCommand
 
   def upsert(arr:, **common_attrs)
     arr.all? do |attr|
-      cmd = ::V2::RecordFact.new(details: unit_params(attr, common_attrs[:category]).merge(common_attrs), entity_type: "unit", entity_slug: attr[:code], fact_type: "unit_patched")
+      cmd = ::V2::RecordFact.new(details: unit_params(attr.merge(common_attrs), common_attrs[:category]).merge(common_attrs), entity_type: "unit", entity_slug: attr[:code], fact_type: "unit_patched")
       cmd.call || add_error(cmd.error_message)
     end
   end
 
   def unit_params(attr, key)
-    out = attr.slice(:code, :name, :population, :population_year, :area_sq_km)
+    out = attr.slice(:code, :name, :population, :population_year, :area_sq_km, :topojson_file, :topojson_key)
     out[:name] ||= attr[key.to_sym]
     out[:parent_code] ||= out[:code].split("/")[0..-2].join("/")
     out[:parent_code] = nil if out[:parent_code].blank?

@@ -10,8 +10,10 @@ Rails.application.routes.draw do
   root to: "single_page_app#index"
 
   scope "api/", format: :json do
+    get "/maps", to: "maps#show", as: :maps_show
     get "/zones", to: "zones#index", as: :zones_list
     get "/zone", to: "zones#show", as: :zone_show
+    get "*path", to: "single_page_app#api_not_found", as: :api_not_found
   end
 
   get "*path", to: "single_page_app#index", as: :single_page_app

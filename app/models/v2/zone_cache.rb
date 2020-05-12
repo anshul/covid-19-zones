@@ -7,6 +7,8 @@ module V2
               :population, :area_sq_km, presence: true
     belongs_to :zone, class_name: "::V2::Zone", foreign_key: :code, primary_key: :code, inverse_of: :cache
 
+    TS_CATEGORIES = %w[infections recoveries fatalities].freeze
+
     def formatted_as_of
       as_of&.strftime("%d %B, %l %P")
     end
