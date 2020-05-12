@@ -34,7 +34,7 @@ module V2
         state_time_series = announced_time_series_for(rows)
         @streams << stream_for(unit_code: unit_code, category: "infections", time_series: state_time_series)
 
-        grouped_by_district = rows.filter { |row| row["detecteddistrict"].present? }.group_by { |row| row["detecteddistrict"] }
+        grouped_by_district = rows.filter { |row| row["detecteddistrict"].present? }.group_by { |row| row["detecteddistrict"].parameterize }
         grouped_by_district.map { |district_name, d_rows| process_district(state_code: unit_code, district_name: district_name, rows: d_rows) }
       end
 
