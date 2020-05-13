@@ -27,7 +27,7 @@ class GetMapData < BaseQuery
   private
 
   def show
-    @result[:map] = master.merge("objects" => { "covid19zones" => { "type" => "GeometryCollection", "geometries" => geometries } })
+    @result[:map] = master.merge("objects" => { "districts" => { "type" => "GeometryCollection", "geometries" => geometries } })
   end
 
   def geometries
