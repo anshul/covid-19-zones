@@ -28,12 +28,24 @@ class GetMapData < BaseQuery
 
   def show
     @result[:map] = master.merge("objects" => { "districts" => { "type" => "GeometryCollection", "geometries" => geometries } })
-    @result[:max_ipm] = 500
-    @result[:max_fpm] = 50
+    @result[:max_ipm] = per_million(:cumulative_infections).values.flatten.max
+    @result[:max_fpm] = per_million(:cumulative_fatalities).values.flatten.max
   end
 
   def geometries
-    @geometries ||= master_geometries.map { |h| h.merge("properties" => { "zone" => h["district"], "ipm" => rand(500), "fpm" => rand(50) }) }
+    @geometries ||= master_geometries.map { |h| enhance_geometry(h) }
+  end
+
+  def enhance_geometry(geometry)
+    district_name = geometry.dig("properties", "district")
+    unit = units_index[district_name]
+    zone_cache = zones_caches_index[unit.code]
+
+    geometry.merge("properties" => {
+                     "zone" => zone_cache.code,
+                     "ipm"  => per_million(:cumulative_infections)[zone_cache.code],
+                     "fpm"  => per_million(:cumulative_fatalities)[zone_cache.code]
+                   })
   end
 
   def master_geometries
@@ -42,6 +54,21 @@ class GetMapData < BaseQuery
 
   def master
     self.class.master
+  end
+
+  def per_million(attr)
+    @per_million ||= {}
+    @per_million[attr.to_sym] ||= zones_caches_index.transform_values do |cache|
+      (cache[attr].to_f * (1_000_000 / [cache.population, 1].max.to_f)).round(2)
+    end
+  end
+
+  def units_index
+    @units_index ||= ::V2::Unit.all.index_by(&:topojson_value)
+  end
+
+  def zones_caches_index
+    @zones_caches_index ||= ::V2::ZoneCache.all.index_by(&:code)
   end
 
   def zones
