@@ -28,10 +28,12 @@ class GetMapData < BaseQuery
 
   def show
     @result[:map] = master.merge("objects" => { "districts" => { "type" => "GeometryCollection", "geometries" => geometries } })
+    @result[:max_ipm] = 500
+    @result[:max_fpm] = 50
   end
 
   def geometries
-    @geometries ||= master_geometries.map { |h| h.merge("properties" => { "zone" => h["district"], "v0" => 100 }) }
+    @geometries ||= master_geometries.map { |h| h.merge("properties" => { "zone" => h["district"], "ipm" => rand(500), "fpm" => rand(50) }) }
   end
 
   def master_geometries
