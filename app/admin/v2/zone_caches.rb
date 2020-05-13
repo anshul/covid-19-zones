@@ -84,6 +84,9 @@ ActiveAdmin.register ::V2::ZoneCache, as: "ZoneComputation" do
           column "recoveries", :cumulative_recoveries
           column "fatalities", :cumulative_fatalities
           column "tests", :cumulative_tests
+          column "hospitals", :current_hospitals
+          column "hospital_beds", :current_hospital_beds
+          column "icu_beds", :current_icu_beds
         end
       end
       row :time_series do |cache|
