@@ -2,7 +2,7 @@
 
 module V2
   class Stream < ApplicationRecord
-    CATEGORIES = %w[infections recoveries fatalities tests].freeze
+    CATEGORIES = %w[infections recoveries fatalities tests hospitals hospital_beds icu_beds].freeze
     validates :category, inclusion: { in: CATEGORIES }
     validate :check_format_of_time_series
 

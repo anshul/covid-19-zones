@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_29_145504) do
+ActiveRecord::Schema.define(version: 2020_05_12_144220) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -305,6 +305,12 @@ ActiveRecord::Schema.define(version: 2020_04_29_145504) do
     t.jsonb "streams", default: {}, null: false
     t.bigint "population", null: false
     t.decimal "area_sq_km", null: false
+    t.bigint "current_hospitals", default: 0, null: false
+    t.bigint "current_hospital_beds", default: 0, null: false
+    t.bigint "current_icu_beds", default: 0, null: false
+    t.jsonb "ts_hospitals", default: {}, null: false
+    t.jsonb "ts_hospital_beds", default: {}, null: false
+    t.jsonb "ts_icu_beds", default: {}, null: false
     t.index ["as_of"], name: "index_v2_zone_caches_on_as_of"
     t.index ["code"], name: "index_v2_zone_caches_on_code", unique: true
     t.index ["cumulative_fatalities"], name: "index_v2_zone_caches_on_cumulative_fatalities"
@@ -312,6 +318,9 @@ ActiveRecord::Schema.define(version: 2020_04_29_145504) do
     t.index ["cumulative_recoveries"], name: "index_v2_zone_caches_on_cumulative_recoveries"
     t.index ["cumulative_tests"], name: "index_v2_zone_caches_on_cumulative_tests"
     t.index ["current_actives"], name: "index_v2_zone_caches_on_current_actives"
+    t.index ["current_hospital_beds"], name: "index_v2_zone_caches_on_current_hospital_beds"
+    t.index ["current_hospitals"], name: "index_v2_zone_caches_on_current_hospitals"
+    t.index ["current_icu_beds"], name: "index_v2_zone_caches_on_current_icu_beds"
     t.index ["start"], name: "index_v2_zone_caches_on_start"
     t.index ["stop"], name: "index_v2_zone_caches_on_stop"
   end
