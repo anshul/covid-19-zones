@@ -32,6 +32,24 @@ module V2
 
     delegate :name, to: :zone
 
+    def chart
+      return @chart if @chart
+
+      index = chart_index
+      v_daily = daily_infections(idx: index)
+      v_daily_sma5 = v_daily.rolling_mean(5)
+      v_total = total_infections(idx: index)
+
+      @chart = index.entries.map(&:to_date).map do |date|
+        {
+          "dt"           => date.to_s(:db),
+          "new_inf"      => v_daily[date.to_s].to_i,
+          "new_inf_sma5" => v_daily_sma5[date.to_s].to_i,
+          "tot_inf"      => v_total[date.to_s].to_i
+        }
+      end
+    end
+
     def chart_index
       index(from: [start, 8.days.ago].min, to: [stop - 1.day, 1.day.ago].min)
     end
