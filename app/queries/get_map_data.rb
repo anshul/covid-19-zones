@@ -28,8 +28,8 @@ class GetMapData < BaseQuery
 
   def show
     @result[:map] = master.merge("objects" => { "districts" => { "type" => "GeometryCollection", "geometries" => geometries } })
-    @result[:max_ipm] = per_million(:cumulative_infections).values.flatten.max
-    @result[:max_fpm] = per_million(:cumulative_fatalities).values.flatten.max
+    @result[:max_ipm] = geometries.map { |geom| geom.dig("properties", "ipm") }.compact.max
+    @result[:max_fpm] = geometries.map { |geom| geom.dig("properties", "fpm") }.compact.max
   end
 
   def geometries
@@ -43,8 +43,8 @@ class GetMapData < BaseQuery
 
     geometry.merge("properties" => {
                      "zone" => zone_cache.code,
-                     "ipm"  => per_million(:cumulative_infections)[zone_cache.code],
-                     "fpm"  => per_million(:cumulative_fatalities)[zone_cache.code]
+                     "ipm"  => per_million(:infections)[zone_cache.code],
+                     "fpm"  => per_million(:fatalities)[zone_cache.code]
                    })
   end
 
@@ -58,9 +58,7 @@ class GetMapData < BaseQuery
 
   def per_million(attr)
     @per_million ||= {}
-    @per_million[attr.to_sym] ||= zones_caches_index.transform_values do |cache|
-      (cache[attr].to_f * (1_000_000 / [cache.population, 1].max.to_f)).round(2)
-    end
+    @per_million[attr.to_sym] ||= zones_caches_index.transform_values { |cache| cache.send("per_million_#{attr}") }
   end
 
   def units_index
