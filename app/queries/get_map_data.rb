@@ -21,20 +21,31 @@ class GetMapData < BaseQuery
     @master ||= JSON.parse(File.read(Rails.root.join("topojson/#{MAP_FILE}")))
   end
 
-  def self.geometries
-    @geometries ||= master["objects"]["india-districts-2019-734"]["geometries"]
+  def self.district_geometries
+    @district_geometries ||= master["objects"]["india-districts-2019-734"]["geometries"]
+  end
+
+  def self.state_geometries
+    @state_geometries ||= master["objects"]["india-states"]["geometries"]
   end
 
   private
 
   def show
-    @result[:map] = master.merge("objects" => { "districts" => { "type" => "GeometryCollection", "geometries" => geometries } })
-    @result[:max_ipm] = geometries.map { |geom| geom.dig("properties", "ipm") }.compact.max
-    @result[:max_fpm] = geometries.map { |geom| geom.dig("properties", "fpm") }.compact.max
+    @result[:map] = master.merge("objects" => {
+                                   "districts" => { "type" => "GeometryCollection", "geometries" => district_geometries },
+                                   "states"    => { "type" => "GeometryCollection", "geometries" => state_geometries }
+                                 })
+    @result[:max_ipm] = district_geometries.map { |geom| geom.dig("properties", "ipm") }.compact.max
+    @result[:max_fpm] = district_geometries.map { |geom| geom.dig("properties", "fpm") }.compact.max
   end
 
-  def geometries
-    @geometries ||= master_geometries.map { |h| enhance_geometry(h) }
+  def district_geometries
+    @district_geometries ||= self.class.district_geometries.map { |h| enhance_geometry(h) }
+  end
+
+  def state_geometries
+    @state_geometries ||= self.class.state_geometries.map { |h| enhance_geometry(h) }
   end
 
   def enhance_geometry(geometry)
@@ -62,10 +73,6 @@ class GetMapData < BaseQuery
         "fpm"  => 0
       }
     }
-  end
-
-  def master_geometries
-    self.class.geometries
   end
 
   def master
