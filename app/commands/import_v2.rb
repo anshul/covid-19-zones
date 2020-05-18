@@ -13,9 +13,9 @@ class ImportV2 < BaseCommand
 
   def upsert_india
     india = ::India.new
-    upsert(arr: india.countries.values, category: "country", topojson_file: "india-districts-727.json", topojson_key: nil) &&
-      upsert(arr: india.states.values, category: "state", topojson_file: "india-districts-727.json", topojson_key: "st_nm") &&
-      upsert(arr: india.districts.values, category: "district", topojson_file: "india-districts-727.json", topojson_key: "district")
+    upsert(arr: india.countries.values, category: "country", topojson_file: "india.json", topojson_key: nil) &&
+      upsert(arr: india.states.values, category: "state", topojson_file: "india.json", topojson_key: "st_nm") &&
+      upsert(arr: india.districts.values, category: "district", topojson_file: "india.json", topojson_key: "district")
   end
 
   def upsert(arr:, **common_attrs)

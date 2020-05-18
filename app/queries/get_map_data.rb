@@ -11,17 +11,18 @@ class GetMapData < BaseQuery
     }
   end
 
+  MAP_FILE = "india.json"
   def run
     valid? &&
       show
   end
 
   def self.master
-    @master ||= JSON.parse(File.read(Rails.root.join("topojson/india-districts-727.json")))
+    @master ||= JSON.parse(File.read(Rails.root.join("topojson/#{MAP_FILE}")))
   end
 
   def self.geometries
-    @geometries ||= master["objects"]["india-districts-727"]["geometries"]
+    @geometries ||= master["objects"]["india-districts-2019-734"]["geometries"]
   end
 
   private
@@ -39,13 +40,28 @@ class GetMapData < BaseQuery
   def enhance_geometry(geometry)
     district_name = geometry.dig("properties", "district")
     unit = units_index[district_name]
+    return geometry.merge(default_properties(geometry)) if unit.blank?
+
     zone_cache = zones_caches_index[unit.code]
+    return geometry.merge(default_properties(geometry, zone_code: unit.code)) if zone_cache.blank?
 
     geometry.merge("properties" => {
+                     **geometry["properties"],
                      "zone" => zone_cache.code,
                      "ipm"  => per_million(:infections)[zone_cache.code],
                      "fpm"  => per_million(:fatalities)[zone_cache.code]
                    })
+  end
+
+  def default_properties(geometry, zone_code: nil)
+    {
+      "properties" => {
+        **geometry["properties"],
+        "zone" => zone_code || "",
+        "ipm"  => 0,
+        "fpm"  => 0
+      }
+    }
   end
 
   def master_geometries
@@ -62,7 +78,7 @@ class GetMapData < BaseQuery
   end
 
   def units_index
-    @units_index ||= ::V2::Unit.all.index_by(&:topojson_value)
+    @units_index ||= ::V2::Unit.where(topojson_file: MAP_FILE).index_by(&:topojson_value)
   end
 
   def zones_caches_index

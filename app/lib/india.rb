@@ -3,7 +3,7 @@
 class India
   attr_reader :wiki, :cio, :census2011, :raw2019
   def initialize
-    @raw2019 = JSON.parse(File.read(Rails.root.join("topojson/india-districts-727.json")))
+    @raw2019 = JSON.parse(File.read(Rails.root.join("topojson/india.json")))
     @wiki = File.read(Rails.root.join("data/india-districts.wiki"))
     @cio =  JSON.parse(File.read(Rails.root.join("data/state_district_wise.json")))
     @census2011 = CSV.read(Rails.root.join("data/pca-full.csv"), headers: true).map(&:to_h).map(&:symbolize_keys)
@@ -39,13 +39,21 @@ class India
     end
   end
 
+  STATE_CODE_MAP = {
+    "andaman-and-nicobar-islands" => "an"
+  }.freeze
+  DISTRICT_STATE_MAP = {
+    "dadra-and-nagar-haveli" => "dn",
+    "daman"                  => "dd",
+    "diu"                    => "dd"
+  }.freeze
   def districts
     return @districts if @districts
 
     @districts = {}
     geometries.each do |dist|
       h = dist["properties"].symbolize_keys
-      state_code = wiki_states_lookup[h[:st_nm].parameterize]
+      state_code = wiki_states_lookup[h[:st_nm].parameterize] || STATE_CODE_MAP[h[:st_nm].parameterize] || DISTRICT_STATE_MAP[h[:district].parameterize]
       @districts[h[:dt_code].to_i] = {
         dist_2011:       h[:dt_code].to_i,
         st_2011:         h[:st_code].to_i,
@@ -63,6 +71,8 @@ class India
     census2011.each do |c|
       next unless c[:TRU] == "Total"
 
+      next unless @districts.keys.include?(c[:District].to_i)
+
       h = @districts[c[:District].to_i]
       h[:population] = c[:TOT_P].to_i
       h[:population_year] = "2011"
@@ -73,7 +83,7 @@ class India
   end
 
   def geometries
-    @geometries ||= raw2019["objects"]["india-districts-727"]["geometries"]
+    @geometries ||= raw2019["objects"]["india-districts-2019-734"]["geometries"]
   end
 
   def cio_districts
