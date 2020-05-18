@@ -21,6 +21,7 @@ module V2
     delegate :population, :population_year, :area_sq_km, :as_of, :formatted_as_of, :start, :stop, :attribution_md, :cached_at, to: :cache
     delegate :current_actives, :cumulative_infections, :cumulative_fatalities, :cumulative_recoveries, :cumulative_tests, to: :cache
     delegate :per_million_actives, :per_million_fatalities, :per_million_infections, :per_million_recoveries, :per_million_tests, to: :cache
+    delegate :chart, to: :cache
 
     def related
       return @related_zones if @related_zones
