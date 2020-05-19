@@ -7,7 +7,8 @@ module V2
       zone_published:            %i[published_by],
       zone_unpublished:          %i[unpublished_by],
       override_created:          (::V2::Override.attribute_names.map(&:to_s) - %w[id created_at updated_at]).map(&:to_sym).freeze,
-      override_details_uploaded: %i[override_details]
+      override_details_uploaded: %i[override_details],
+      zone_patched:              ::V2::Zone.rw_attribute_names.map(&:to_sym) + %i[unit_code_changes]
     }.freeze
     SIGNATURE_KEYS = {}.freeze
 
@@ -63,7 +64,7 @@ module V2
     end
 
     def previous_fact_signature
-      @previous_fact_signature ||= ::V2::Fact.where(entity_slug: fact.entity_slug, entity_type: fact.entity_type, fact_type: fact.fact_type).order(sequence: :desc).limit(1).pluck(:signature)
+      @previous_fact_signature ||= ::V2::Fact.where(entity_slug: fact.entity_slug, entity_type: fact.entity_type, fact_type: fact.fact_type).order(sequence: :desc).first&.signature
     end
   end
 end

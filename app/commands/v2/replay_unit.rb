@@ -39,7 +39,7 @@ module V2
         join_code = "#{unit_code}|#{zone.code}"
         @posts[join_code] = is_added ? ::V2::Post.new(code: join_code, unit_code: unit_code, zone_code: zone.code) : nil
       end
-      check_validity(zone, fact) && check_validity(unit, fact)
+      check_validity(zone, fact)
     end
 
     def replay_override_created(details:, fact:, **_)

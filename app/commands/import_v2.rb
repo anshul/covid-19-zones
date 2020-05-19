@@ -15,7 +15,22 @@ class ImportV2 < BaseCommand
     india = ::India.new
     upsert(arr: india.countries.values, category: "country", topojson_file: "india.json", topojson_key: nil) &&
       upsert(arr: india.states.values, category: "state", topojson_file: "india.json", topojson_key: "st_nm") &&
-      upsert(arr: india.districts.values, category: "district", topojson_file: "india.json", topojson_key: "district")
+      upsert(arr: india.districts.values, category: "district", topojson_file: "india.json", topojson_key: "district") &&
+      upsert_greater_mumbai_zone
+  end
+
+  MUMBAI_CODES = %w[in/mh/mumbai in/mh/mumbai-suburban].freeze
+  def upsert_greater_mumbai_zone
+    code = "in/mh/greater-mumbai"
+    zone_attrs = {
+      name:              "Mumbai",
+      category:          "district",
+      parent_code:       code.split("/")[0..-2].join("/"),
+      maintainer:        "bot@covid19zones.com",
+      unit_code_changes: MUMBAI_CODES.index_with { |_d| true }
+    }
+    cmd = ::V2::RecordFact.new(details: zone_attrs, entity_type: "unit", entity_slug: code, fact_type: "zone_patched")
+    cmd.call || add_error(cmd.error_message)
   end
 
   def upsert(arr:, **common_attrs)
