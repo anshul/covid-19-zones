@@ -41,16 +41,16 @@ class GetMapData < BaseQuery
   end
 
   def district_geometries
-    @district_geometries ||= self.class.district_geometries.map { |h| enhance_geometry(h) }
+    @district_geometries ||= self.class.district_geometries.map { |h| enhance_geometry(h, "district") }
   end
 
   def state_geometries
-    @state_geometries ||= self.class.state_geometries.map { |h| enhance_geometry(h) }
+    @state_geometries ||= self.class.state_geometries.map { |h| enhance_geometry(h, "state") }
   end
 
-  def enhance_geometry(geometry)
-    district_name = geometry.dig("properties", "district")
-    unit = units_index[district_name]
+  def enhance_geometry(geometry, region)
+    region_name = geometry.dig("properties", region)
+    unit = units_index[region_name]
     return geometry.merge(default_properties(geometry)) if unit.blank?
 
     zone_cache = zones_caches_index[unit.code]
@@ -59,6 +59,7 @@ class GetMapData < BaseQuery
     geometry.merge("properties" => {
                      **geometry["properties"],
                      "zone" => zone_cache.code,
+                     "slug" => region == "district" ? geometry["properties"]["district"].parameterize : geometry["properties"]["st_nm"].parameterize,
                      "ipm"  => per_million(:infections)[zone_cache.code],
                      "fpm"  => per_million(:fatalities)[zone_cache.code]
                    })
