@@ -2,6 +2,9 @@
 
 module V2
   class ZoneCache < ApplicationRecord
+    include ActionView::Helpers::NumberHelper
+    include ActionView::Helpers::TextHelper
+
     validates :code, :current_actives, :cumulative_infections, :cumulative_recoveries,
               :cumulative_fatalities, :cumulative_tests, :as_of, :start, :stop,
               :population, :area_sq_km, presence: true
@@ -9,8 +12,30 @@ module V2
 
     TS_CATEGORIES = %w[infections recoveries fatalities].freeze
 
-    def formatted_as_of
+    def f_as_of
       as_of&.strftime("%d %B, %l %P")
+    end
+
+    def f_population
+      return "" unless population.positive?
+      return number_with_delimiter(population) if population < 100_000
+
+      pop = population.to_f / 100_000
+      return pluralize(pop.to_i, "Lakh") if pop < 100
+
+      pluralize((pop / 100).round(2), "Crore")
+    end
+
+    def f_area
+      "#{number_with_delimiter(area_sq_km)} ㎞²"
+    end
+
+    def f_population_year
+      population_year.to_s
+    end
+
+    def population_year
+      2011
     end
 
     def self.index(from:, to:)

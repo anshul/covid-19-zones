@@ -37,7 +37,7 @@ module Types
     def zones_list(search_query:)
       return [] if search_query.blank?
 
-      ::V2::Zone.joins(:cache).includes(:cache).order(cumulative_infections: :desc).where("search_key LIKE ? OR search_key LIKE ?", "#{search_query.parameterize}%", "%-#{search_query.parameterize}%").limit(20)
+      ::V2::Zone.joins(:cache).includes(:cache).order(cumulative_infections: :desc).where("search_key LIKE ? OR search_key LIKE ?", "#{search_query.parameterize}%", "%-#{search_query.parameterize}%").where.not(published_at: nil).limit(20)
     end
 
     def home

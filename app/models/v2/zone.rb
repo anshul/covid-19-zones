@@ -18,10 +18,10 @@ module V2
     has_many :units, through: :posts
     has_one :cache, class_name: "::V2::ZoneCache", foreign_key: :code, primary_key: :code, inverse_of: :zone, dependent: :delete
 
-    delegate :population, :population_year, :area_sq_km, :as_of, :formatted_as_of, :start, :stop, :attribution_md, :cached_at, to: :cache
+    delegate :population, :population_year, :area_sq_km, :f_population, :f_population_year, :f_area, :as_of, :f_as_of, :start, :stop, :attribution_md, :cached_at, to: :cache
     delegate :current_actives, :cumulative_infections, :cumulative_fatalities, :cumulative_recoveries, :cumulative_tests, to: :cache
     delegate :per_million_actives, :per_million_fatalities, :per_million_infections, :per_million_recoveries, :per_million_tests, to: :cache
-    delegate :chart, to: :cache
+    delegate :chart, :unit_codes, to: :cache
 
     def related
       return @related_zones if @related_zones

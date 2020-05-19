@@ -12,6 +12,7 @@ module Types
     class V2Zone < Types::BaseObject
       field :code, String, null: false
       field :name, String, null: false
+      field :unit_codes, [String], null: false
       field :parent, ::Types::Zones::V2Zone, null: true
       field :children, [::Types::Zones::V2Zone], null: true
       field :related, [::Types::Zones::V2Zone], null: false
@@ -30,10 +31,10 @@ module Types
       field :per_million_fatalities, Float, null: false
       field :per_million_tests, Float, null: false
 
-      field :formatted_as_of, String, null: false
-      field :population, Int, null: false
-      field :population_year, Int, null: false
-      field :area_sq_km, Int, null: false
+      field :f_as_of, String, null: false
+      field :f_population, String, null: false
+      field :f_population_year, String, null: false
+      field :f_area, String, null: false
       field :attribution_md, String, null: true
     end
   end
