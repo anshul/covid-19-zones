@@ -2,10 +2,42 @@
 
 module V2
   class ZoneCache < ApplicationRecord
+    include ActionView::Helpers::NumberHelper
+    include ActionView::Helpers::TextHelper
+
     validates :code, :current_actives, :cumulative_infections, :cumulative_recoveries,
               :cumulative_fatalities, :cumulative_tests, :as_of, :start, :stop,
               :population, :area_sq_km, presence: true
     belongs_to :zone, class_name: "::V2::Zone", foreign_key: :code, primary_key: :code, inverse_of: :cache
+
+    TS_CATEGORIES = %w[infections recoveries fatalities].freeze
+    delegate :name, :parent_code, to: :zone
+
+    def f_as_of
+      as_of&.strftime("%d %B, %l %P")
+    end
+
+    def f_population
+      return "" unless population.positive?
+      return number_with_delimiter(population) if population < 100_000
+
+      pop = population.to_f / 100_000
+      return pluralize(pop.to_i, "Lakh") if pop < 100
+
+      pluralize((pop / 100).round(2), "Crore")
+    end
+
+    def f_area
+      "#{number_with_delimiter(area_sq_km)} ㎞²"
+    end
+
+    def f_population_year
+      population_year.to_s
+    end
+
+    def population_year
+      2011
+    end
 
     def self.index(from:, to:)
       from = to.to_date - 1.day if from.to_date >= to.to_date
@@ -24,7 +56,23 @@ module V2
       vector
     end
 
-    delegate :name, to: :zone
+    def chart
+      return @chart if @chart
+
+      index = chart_index
+      v_daily = daily_infections(idx: index)
+      v_daily_sma5 = v_daily.rolling_mean(5)
+      v_total = total_infections(idx: index)
+
+      @chart = index.entries.map(&:to_date).map do |date|
+        {
+          "dt"           => date.to_s(:db),
+          "new_inf"      => v_daily[date.to_s].to_i,
+          "new_inf_sma5" => v_daily_sma5[date.to_s].to_i,
+          "tot_inf"      => v_total[date.to_s].to_i
+        }
+      end
+    end
 
     def chart_index
       index(from: [start, 8.days.ago].min, to: [stop - 1.day, 1.day.ago].min)
@@ -68,6 +116,32 @@ module V2
 
     def total_tests(from: nil, to: nil, idx: nil)
       daily_tests(from: from, to: to, idx: idx).cumsum
+    end
+
+    def per_million_actives
+      per_million(:current_actives)
+    end
+
+    def per_million_infections
+      per_million(:cumulative_infections)
+    end
+
+    def per_million_fatalities
+      per_million(:cumulative_fatalities)
+    end
+
+    def per_million_recoveries
+      per_million(:cumulative_recoveries)
+    end
+
+    def per_million_tests
+      per_million(:cumulative_tests)
+    end
+
+    def per_million(field)
+      return -1 if population <= 100
+
+      public_send(field) * 1_000_000 / population
     end
 
     private

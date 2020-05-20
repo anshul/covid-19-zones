@@ -48,6 +48,13 @@ module V2
       end
     end
 
+    def check_validity(model, fact)
+      Rails.logger.info "Invalid #{fact.fact_type} fact: #{fact.as_json} (#{model.class}##{model.code})" unless model.valid?
+      return add_error("Invalid #{model.class}: #{model.error_message}") unless model.valid?
+
+      true
+    end
+
     def units(key)
       _model_value(@units, ::V2::Unit, key)
     end

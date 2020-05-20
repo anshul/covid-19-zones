@@ -20,12 +20,24 @@ module Types
       argument :codes, [String], required: true
     end
 
+    field :v2_stats, ::Types::Zones::V2Stats, null: false do
+      argument :codes, [String], required: true
+    end
+
+    def v2_stats(codes:)
+      {
+        zones: ::V2::Zone.includes(:cache).where(code: codes).limit(50).sort_by(&:cumulative_infections).reverse
+      }
+    end
+
     def zone(slug:)
       ::Zone.find_by(slug: slug)
     end
 
     def zones_list(search_query:)
-      ::V2::Zone.joins(:cache).includes(:cache).order(cumulative_infections: :desc).where("search_key LIKE ? OR search_key LIKE ?", "#{search_query.parameterize}%", "%-#{search_query.parameterize}%").limit(20)
+      return [] if search_query.blank?
+
+      ::V2::Zone.joins(:cache).includes(:cache).order(cumulative_infections: :desc).where("search_key LIKE ? OR search_key LIKE ?", "#{search_query.parameterize}%", "%-#{search_query.parameterize}%").where.not(published_at: nil).limit(20)
     end
 
     def home
@@ -68,7 +80,7 @@ module Types
       {
         zone:        zone,
         total_cases: cache.cumulative_infections,
-        as_of:       cache.as_of.strftime("%d %B, %I %P"),
+        as_of:       cache.as_of.strftime("%d %B, %l %P"),
         new_cases:   {
           x_axis_key: "date",
           line_keys:  [daily_key, daily_sma_key],
@@ -117,7 +129,7 @@ module Types
 
       {
         zones:       zones,
-        total_cases: zones.map { |zone| { zone_name: zone.name, count: zone.cache.cumulative_infections, as_of: zone.cache.as_of.strftime("%d %B, %I %P") } },
+        total_cases: zones.map { |zone| { zone_name: zone.name, count: zone.cache.cumulative_infections, as_of: zone.cache.as_of.strftime("%d %B, %l %P") } },
         cum_cases:   {
           x_axis_key: "date",
           line_keys:  zones.map(&:name),

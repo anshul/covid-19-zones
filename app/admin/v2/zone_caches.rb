@@ -114,8 +114,7 @@ ActiveAdmin.register ::V2::ZoneCache, as: "ZoneComputation" do
     end
   end
 
-  TS_CATEGORIES = %w[infections recoveries fatalities].freeze
-  TS_CATEGORIES.each do |category|
+  ::V2::ZoneCache::TS_CATEGORIES.each do |category|
     action_item :"download_daily_#{category}", only: :index do
       link_to "Daily #{category.humanize} CSV", v2_zone_computations_path({ format: :csv, csv_type: :daily, csv_ts_category: category })
     end

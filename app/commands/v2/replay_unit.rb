@@ -15,43 +15,45 @@ module V2
     end
 
     def replay_unit_patched(details:, fact:, **_)
-      unit = units(details[:code]).tap { |m| m.assign_attributes(**details.slice(*V2::Unit.rw_attribute_names)) }
-      zone = zones(details[:code]).tap { |m| m.assign_attributes(**details.slice(*V2::Zone.rw_attribute_names), published_at: fact.happened_at) }
+      unit = units(fact.entity_slug).tap { |m| m.assign_attributes(**details.slice(*V2::Unit.rw_attribute_names), code: fact.entity_slug) }
+      zone = zones(fact.entity_slug).tap { |m| m.assign_attributes(**details.slice(*V2::Zone.rw_attribute_names), code: fact.entity_slug, published_at: fact.happened_at) }
       join_code = "#{unit.code}|#{zone.code}"
       @posts[join_code] = ::V2::Post.new(code: join_code, unit_code: unit.code, zone_code: zone.code)
       Rails.logger.info "Invalid fact: #{fact.as_json}" unless unit.valid? && zone.valid?
-      return add_error("Invalid unit: #{unit.error_message}") unless unit.valid?
-      return add_error("Invalid zone: #{zone.error_message}") unless zone.valid?
-
-      true
+      check_validity(zone, fact) && check_validity(unit, fact)
     end
 
     def replay_zone_published(fact:, **_)
-      zone = zones(fact.entity_slug)
-      zone.published_at = fact.happened_at
-
-      true
+      zone = zones(fact.entity_slug).tap { |m| m.assign_attributes(published_at: fact.happened_at) }
+      check_validity zone, fact
     end
 
     def replay_zone_unpublished(fact:, **_)
-      zone = zones(fact.entity_slug)
-      zone.published_at = nil
+      zone = zones(fact.entity_slug).tap { |m| m.assign_attributes(published_at: nil) }
+      check_validity zone, fact
+    end
 
-      true
+    def replay_zone_patched(details:, fact:, **_)
+      zone = zones(fact.entity_slug).tap { |m| m.assign_attributes(**details.slice(*V2::Zone.rw_attribute_names), code: fact.entity_slug) }
+      (details[:unit_code_changes] || {}).each do |unit_code, is_added|
+        join_code = "#{unit_code}|#{zone.code}"
+        @posts[join_code] = is_added ? ::V2::Post.new(code: join_code, unit_code: unit_code, zone_code: zone.code) : nil
+      end
+      check_validity(zone, fact)
     end
 
     def replay_override_created(details:, fact:, **_)
-      override = overrides(fact.entity_slug)
-      override.assign_attributes(**details.slice(*::V2::Override.rw_attribute_names), code: fact.entity_slug)
+      replay_override_patched(details: details, fact: fact)
+    end
 
-      true
+    def replay_override_patched(details:, fact:, **_)
+      override = overrides(fact.entity_slug).tap { |m| m.assign_attributes(**details.slice(*V2::Override.rw_attribute_names), code: fact.entity_slug) }
+      check_validity(override, fact)
     end
 
     def replay_override_details_uploaded(details:, fact:, **_)
-      override = overrides(fact.entity_slug)
-      override.assign_attributes(override_details: details[:override_details])
-
-      true
+      override = overrides(fact.entity_slug).tap { |m| m.assign_attributes(override_details: details[:override_details], code: fact.entity_slug) }
+      check_validity override, fact
     end
   end
 end
