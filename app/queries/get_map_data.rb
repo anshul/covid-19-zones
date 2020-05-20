@@ -56,22 +56,29 @@ class GetMapData < BaseQuery
     zone_cache = zones_caches_index[unit.code]
     return geometry.merge(default_properties(geometry, zone_code: unit.code)) if zone_cache.blank?
 
-    geometry.merge("properties" => {
-                     **geometry["properties"],
-                     "zone" => zone_cache.code,
-                     "slug" => region == "district" ? geometry["properties"]["district"].parameterize : geometry["properties"]["st_nm"].parameterize,
-                     "ipm"  => per_million(:infections)[zone_cache.code],
-                     "fpm"  => per_million(:fatalities)[zone_cache.code]
-                   })
+    properties = geometry["properties"]
+    geometry.merge(
+      "properties" => {
+        "d"   => properties["district"],
+        "s"   => properties["st_nm"],
+        "z"   => zone_cache.code,
+        "u"   => unit.code,
+        "ipm" => zone_cache.per_million_infections,
+        "fpm" => zone_cache.per_million_fatalities
+      }
+    )
   end
 
   def default_properties(geometry, zone_code: nil)
+    properties = geometry["properties"]
     {
       "properties" => {
-        **geometry["properties"],
-        "zone" => zone_code || "",
-        "ipm"  => 0,
-        "fpm"  => 0
+        "d"   => properties["district"],
+        "s"   => properties["st_nm"],
+        "z"   => zone_code || "",
+        "u"   => zone_code || "",
+        "ipm" => -1,
+        "fpm" => -1
       }
     }
   end
@@ -80,20 +87,11 @@ class GetMapData < BaseQuery
     self.class.master
   end
 
-  def per_million(attr)
-    @per_million ||= {}
-    @per_million[attr.to_sym] ||= zones_caches_index.transform_values { |cache| cache.send("per_million_#{attr}") }
-  end
-
   def units_index
     @units_index ||= ::V2::Unit.where(topojson_file: MAP_FILE).index_by(&:topojson_value)
   end
 
   def zones_caches_index
-    @zones_caches_index ||= ::V2::ZoneCache.all.index_by(&:code)
-  end
-
-  def zones
-    @zones ||= ::V2::Zone.where(code: codes)
+    @zones_caches_index ||= ::V2::ZoneCache.joins(:zone).where.not("v2_zones.published_at" => nil).flat_map { |z| z.unit_codes.map { |code| [code, z] } }.to_h
   end
 end
