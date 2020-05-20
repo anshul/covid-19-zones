@@ -42,12 +42,20 @@ class GetMapData < BaseQuery
     @result[:max_fpm] = district_geometries.map { |geom| geom.dig("properties", "fpm") }.compact.max
   end
 
+  def cache_key
+    @cache_key ||= "v1/#{::V2::ZoneCache.maximum(:cached_at)}"
+  end
+
   def district_geometries
-    @district_geometries ||= self.class.district_geometries.map { |h| enhance_geometry(h, "district") }
+    @district_geometries ||= Rails.cache.fetch("district_geometries/#{cache_key}", expires_in: 1.hour) do
+      self.class.district_geometries.map { |h| enhance_geometry(h, "district") }
+    end
   end
 
   def state_geometries
-    @state_geometries ||= self.class.state_geometries.map { |h| enhance_geometry(h, "st_nm") }
+    @state_geometries ||= Rails.cache.fetch("state_geometries/#{cache_key}", expires_in: 1.hour) do
+      self.class.state_geometries.map { |h| enhance_geometry(h, "st_nm") }
+    end
   end
 
   def enhance_geometry(geometry, region)

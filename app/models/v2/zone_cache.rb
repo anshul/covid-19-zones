@@ -36,6 +36,8 @@ module V2
     end
 
     def population_year
+      return nil unless population.positive?
+
       2011
     end
 
