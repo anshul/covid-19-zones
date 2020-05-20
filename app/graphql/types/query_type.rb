@@ -26,7 +26,7 @@ module Types
 
     def v2_stats(codes:)
       {
-        zones: ::V2::Zone.includes(:cache).where(code: codes).limit(50).sort_by(&:cumulative_infections).reverse
+        zones: ::V2::Zone.includes(:cache).where(code: codes).limit(50).sort_by { |z| codes.find_index(z.code) }
       }
     end
 
