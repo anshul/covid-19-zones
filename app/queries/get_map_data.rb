@@ -45,7 +45,7 @@ class GetMapData < BaseQuery
   end
 
   def state_geometries
-    @state_geometries ||= self.class.state_geometries.map { |h| enhance_geometry(h, "state") }
+    @state_geometries ||= self.class.state_geometries.map { |h| enhance_geometry(h, "st_nm") }
   end
 
   def enhance_geometry(geometry, region)
