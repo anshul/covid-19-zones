@@ -11,6 +11,7 @@ module V2
     belongs_to :zone, class_name: "::V2::Zone", foreign_key: :code, primary_key: :code, inverse_of: :cache
 
     TS_CATEGORIES = %w[infections recoveries fatalities].freeze
+    delegate :name, :parent_code, to: :zone
 
     def f_as_of
       as_of&.strftime("%d %B, %l %P")
@@ -54,8 +55,6 @@ module V2
       end
       vector
     end
-
-    delegate :name, to: :zone
 
     def chart
       return @chart if @chart

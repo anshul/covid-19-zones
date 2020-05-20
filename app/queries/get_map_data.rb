@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class GetMapData < BaseQuery
+  include ActionView::Helpers::NumberHelper
+  include ActionView::Helpers::TextHelper
   attr_reader :codes, :log
   def initialize(codes:, log: nil)
     @codes = codes
@@ -51,20 +53,23 @@ class GetMapData < BaseQuery
   def enhance_geometry(geometry, region)
     region_name = geometry.dig("properties", region)
     unit = units_index[region_name]
-    return geometry.merge(default_properties(geometry)) if unit.blank?
+    return geometry.merge(default_properties(geometry, zone_code: "in/unknown/")) if unit.blank?
 
     zone_cache = zones_caches_index[unit.code]
-    return geometry.merge(default_properties(geometry, zone_code: unit.code)) if zone_cache.blank?
+    return geometry.merge(default_properties(geometry, zone_code: unit.code + "/")) if zone_cache.blank?
 
-    properties = geometry["properties"]
     geometry.merge(
       "properties" => {
-        "d"   => properties["district"],
-        "s"   => properties["st_nm"],
-        "z"   => zone_cache.code,
-        "u"   => unit.code,
-        "ipm" => zone_cache.per_million_infections,
-        "fpm" => zone_cache.per_million_fatalities
+        "name" => zone_cache.name,
+        "pz"   => zone_cache.parent_code + "/",
+        "z"    => zone_cache.code + "/",
+        "u"    => unit.code + "/",
+        "ipm"  => zone_cache.per_million_infections,
+        "fpm"  => zone_cache.per_million_fatalities,
+        "i"    => zone_cache.cumulative_infections,
+        "f"    => zone_cache.cumulative_fatalities,
+        "pop"  => number_with_delimiter(zone_cache.population),
+        "yr"   => zone_cache.population_year
       }
     )
   end
@@ -73,12 +78,16 @@ class GetMapData < BaseQuery
     properties = geometry["properties"]
     {
       "properties" => {
-        "d"   => properties["district"],
-        "s"   => properties["st_nm"],
-        "z"   => zone_code || "",
-        "u"   => zone_code || "",
-        "ipm" => -1,
-        "fpm" => -1
+        "name" => properties["district"],
+        "pz"   => zone_code.to_s.split("/")[0..-2].join("/"),
+        "z"    => zone_code || "",
+        "u"    => zone_code || "",
+        "ipm"  => -1,
+        "fpm"  => -1,
+        "f"    => -1,
+        "i"    => -1,
+        "pop"  => nil,
+        "yr"   => nil
       }
     }
   end
@@ -92,6 +101,6 @@ class GetMapData < BaseQuery
   end
 
   def zones_caches_index
-    @zones_caches_index ||= ::V2::ZoneCache.joins(:zone).where.not("v2_zones.published_at" => nil).flat_map { |z| z.unit_codes.map { |code| [code, z] } }.to_h
+    @zones_caches_index ||= ::V2::ZoneCache.joins(:zone).includes(:zone).where.not("v2_zones.published_at" => nil).flat_map { |z| z.unit_codes.map { |code| [code, z] } }.to_h
   end
 end
