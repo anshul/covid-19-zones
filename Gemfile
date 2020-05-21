@@ -73,3 +73,5 @@ group :test do
 end
 
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
+
+gem "dalli", "~> 2.7"
