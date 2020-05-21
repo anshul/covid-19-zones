@@ -48,19 +48,21 @@ class GetMapData < BaseQuery
 
   def district_geometries
     @district_geometries ||= Rails.cache.fetch("district_geometries/#{cache_key}", expires_in: 1.hour) do
-      self.class.district_geometries.map { |h| enhance_geometry(h, "district") }
+      self.class.district_geometries.map { |h| enhance_geometry(h, "district", "st_nm") }
     end
   end
 
   def state_geometries
     @state_geometries ||= Rails.cache.fetch("state_geometries/#{cache_key}", expires_in: 1.hour) do
-      self.class.state_geometries.map { |h| enhance_geometry(h, "st_nm") }
+      self.class.state_geometries.map { |h| enhance_geometry(h, "st_nm", nil) }
     end
   end
 
-  def enhance_geometry(geometry, region)
-    region_name = geometry.dig("properties", region)
-    unit = units_index[region_name]
+  def enhance_geometry(geometry, region_key, parent_region_key)
+    region_name = geometry.dig("properties", region_key)
+    parent_region_name = parent_region_key.present? ? geometry.dig("properties", parent_region_key) : nil
+
+    unit = units_topo_index.dig(parent_region_name, region_name)
     return geometry.merge(default_properties(geometry, zone_code: "in/unknown/")) if unit.blank?
 
     zone_cache = zones_caches_index[unit.code]
@@ -104,8 +106,14 @@ class GetMapData < BaseQuery
     self.class.master
   end
 
-  def units_index
-    @units_index ||= ::V2::Unit.where(topojson_file: MAP_FILE).index_by(&:topojson_value)
+  def units_topo_index
+    @units_topo_index ||= ::V2::Unit.where(topojson_file: MAP_FILE)
+                                    .group_by { |unit| units_code_index[unit.parent_code]&.topojson_value }
+                                    .transform_values { |units| units.index_by { |unit| units_code_index[unit.code].topojson_value } }
+  end
+
+  def units_code_index
+    @units_code_index ||= ::V2::Unit.where(topojson_file: MAP_FILE).index_by(&:code)
   end
 
   def zones_caches_index
