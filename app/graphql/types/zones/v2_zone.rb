@@ -16,6 +16,8 @@ module Types
       field :parent, ::Types::Zones::V2Zone, null: true
       field :children, [::Types::Zones::V2Zone], null: true
       field :related, [::Types::Zones::V2Zone], null: false
+      field :category, String, null: false
+      field :p_category, String, null: false
 
       field :chart, [::Types::Zones::TsPoint], null: false
 

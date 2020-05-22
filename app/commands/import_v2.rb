@@ -6,13 +6,22 @@ class ImportV2 < BaseCommand
   end
 
   COMBO_ZONES = {
-    "in/mh/greater-mumbai": {
+    "in/mh/greater-mumbai":    {
       name:              "Mumbai",
       category:          "district",
       maintainer:        "bot@covid19zones.com",
       unit_code_changes: %w[in/mh/mumbai in/mh/mumbai-suburban].index_with { |_d| true }
+    },
+    "in/ka/greater-bengaluru": {
+      name:              "Bengaluru",
+      category:          "district",
+      maintainer:        "bot@covid19zones.com",
+      unit_code_changes: %w[in/ka/bengaluru-urban in/ka/bengaluru-rural].index_with { |_d| true },
+      aliases:           %w[Bangalore]
     }
   }.freeze
+
+  OLD_UNITS = %w[in/ka/bengaluru].freeze
 
   def run
     upsert_india &&
@@ -26,7 +35,8 @@ class ImportV2 < BaseCommand
       upsert(arr: india.states.values, category: "state", topojson_file: "india.json", topojson_key: "st_nm") &&
       upsert(arr: india.districts.values, category: "district", topojson_file: "india.json", topojson_key: "district") &&
       upsert_combo_zones &&
-      unpublish_subcombo_zones
+      unpublish_subcombo_zones &&
+      unpublish_old_units
   end
 
   def upsert_combo_zones
@@ -40,6 +50,13 @@ class ImportV2 < BaseCommand
   def unpublish_subcombo_zones
     units = COMBO_ZONES.values.map { |zone_attrs| zone_attrs[:unit_code_changes].keys }.flatten.sort.uniq
     units.all? do |code|
+      cmd = ::V2::RecordFact.new(details: { unpublished_by: "bot@covid19zones.com" }, entity_type: "unit", entity_slug: code, fact_type: :zone_unpublished)
+      cmd.call || add_error(cmd.error_message)
+    end
+  end
+
+  def unpublish_old_units
+    OLD_UNITS.all? do |code|
       cmd = ::V2::RecordFact.new(details: { unpublished_by: "bot@covid19zones.com" }, entity_type: "unit", entity_slug: code, fact_type: :zone_unpublished)
       cmd.call || add_error(cmd.error_message)
     end
