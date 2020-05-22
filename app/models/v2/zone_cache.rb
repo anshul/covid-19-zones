@@ -18,17 +18,7 @@ module V2
     end
 
     def f_population
-      return "" unless population.positive?
-      return number_with_delimiter(population) if population < 100_000
-
-      pop = population.to_f / 100_000
-      return pluralize(pop.to_i, "Lakh") if pop < 100
-
-      pluralize((pop / 100).round(2), "Crore")
-    end
-
-    def f_area
-      "#{number_with_delimiter(area_sq_km)} ㎞²"
+      f_as_human(population)
     end
 
     def f_population_year
@@ -39,6 +29,46 @@ module V2
       return nil unless population.positive?
 
       2011
+    end
+
+    def f_est_population
+      f_as_human(est_population)
+    end
+
+    def f_est_population_year
+      est_population_year ? "#{est_population_year} est" : f_population_year
+    end
+
+    POP_EST = {
+      in: { factor: 1_352_642_280.to_f / 1_209_757_771, year: 2018 }.freeze
+    }.freeze
+
+    def est_population
+      k = POP_EST.keys.select { |key| code.starts_with?(key.to_s) }.last
+      return population unless k
+
+      population.positive? ? (POP_EST[k][:factor] * population).round : population
+    end
+
+    def est_population_year
+      k = POP_EST.keys.select { |key| code.starts_with?(key.to_s) }.last
+      return nil unless k
+
+      POP_EST[k][:year]
+    end
+
+    def f_area
+      "#{number_with_delimiter(area_sq_km)} ㎞²"
+    end
+
+    def f_as_human(number)
+      return "" unless number.positive?
+      return number_with_delimiter(number) if number < 100_000
+
+      num = number.to_f / 100_000
+      return pluralize(num.to_i, "Lakh") if num < 100
+
+      pluralize((num / 100).round(2), "Crore")
     end
 
     def self.index(from:, to:)
@@ -141,9 +171,9 @@ module V2
     end
 
     def per_million(field)
-      return -1 if population <= 100
+      return -1 if est_population <= 100
 
-      public_send(field) * 1_000_000 / population
+      public_send(field) * 1_000_000 / est_population
     end
 
     private

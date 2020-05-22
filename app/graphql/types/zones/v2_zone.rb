@@ -34,8 +34,8 @@ module Types
       field :per_million_tests, Float, null: false
 
       field :f_as_of, String, null: false
-      field :f_population, String, null: false
-      field :f_population_year, String, null: false
+      field :f_est_population, String, null: false
+      field :f_est_population_year, String, null: false
       field :f_area, String, null: false
       field :attribution_md, String, null: true
     end
