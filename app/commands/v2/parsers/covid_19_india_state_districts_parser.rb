@@ -31,8 +31,13 @@ module V2
         row["districtData"].map { |district_row| process_district(date: date, state_code: unit_code, row: district_row) }
       end
 
+      DISTRICT_CODE_MAP = {
+        "in/gj" => {
+          "ahmadabad" => "in/gj/ahmedabad"
+        }
+      }.freeze
       def process_district(date:, state_code:, row:)
-        unit_code = districts_grouped_by_parent_code[state_code][row["district"].parameterize]&.code
+        unit_code = DISTRICT_CODE_MAP.dig(state_code, row["district"].parameterize) || districts_grouped_by_parent_code[state_code][row["district"].parameterize]&.code
 
         add_to_cumulative_stream(date: date, state_code: state_code, district_code: unit_code, row: row)
       end
