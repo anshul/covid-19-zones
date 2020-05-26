@@ -95,13 +95,15 @@ module V2
       v_daily = daily_infections(idx: index)
       v_daily_sma5 = v_daily.rolling_mean(5)
       v_total = total_infections(idx: index)
+      v_total_sma5 = v_total.rolling_mean(5)
 
       @chart = index.entries.map(&:to_date).map do |date|
         {
           "dt"           => date.to_s(:db),
           "new_inf"      => v_daily[date.to_s].to_i,
-          "new_inf_sma5" => v_daily_sma5[date.to_s].to_i,
-          "tot_inf"      => v_total[date.to_s].to_i
+          "new_inf_sma5" => v_daily_sma5[date.to_s].to_f.round(1),
+          "tot_inf"      => v_total[date.to_s].to_i,
+          "tot_inf_sma5" => v_total_sma5[date.to_s].to_f.round(1)
         }
       end
     end
