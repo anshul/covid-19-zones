@@ -7,6 +7,7 @@ module Types
       field :new_inf, Float, null: false
       field :new_inf_sma5, Float, null: false
       field :tot_inf, Float, null: false
+      field :tot_inf_sma5, Float, null: false
     end
 
     class V2Zone < Types::BaseObject
