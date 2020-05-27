@@ -45,7 +45,6 @@ ActiveAdmin.register ::V2::Zone do
     redirect_to collection_path, **flash
   end
 
-
   actions :index, :show, :new, :create
   index do
     selectable_column
