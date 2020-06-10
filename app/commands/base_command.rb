@@ -13,9 +13,11 @@ class BaseCommand
   end
 
   def call(**kwargs)
-    @errors = kwargs[:errors] if kwargs[:errors].present?
+    Marginalia.with_annotation("#{self.class}#call") do
+      @errors = kwargs[:errors] if kwargs[:errors].present?
 
-    return errors.empty? if run
+      return errors.empty? if run
+    end
 
     errors.add(:base, "Something went wrong") if errors.empty?
     false
