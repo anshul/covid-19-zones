@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   root to: "single_page_app#index"
+  authenticate :user do
+    mount PgHero::Engine, at: "pghero"
+  end
 
   scope "api/", format: :json do
     get "/maps", to: "maps#show", as: :maps_show

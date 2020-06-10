@@ -142,7 +142,7 @@ module V2
     end
 
     def zone
-      @zone ||= ::V2::Zone.includes(units: { streams: :snapshot }).readonly.find_by(code: zone_code)
+      @zone ||= ::V2::Zone.includes(units: :streams).readonly.find_by(code: zone_code)
     end
   end
 end

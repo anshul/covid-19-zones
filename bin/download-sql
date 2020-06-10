@@ -14,6 +14,7 @@ chmod 600 config/*.pem
 
 echo "Dumping to ./$db_file.sql.gz"
 DATABASE_URL=$(heroku config:get DATABASE_URL --app covid-19-zones)
+echo 'pg_dump "'$DATABASE_URL'" --verbose -x -Z 6 -O > ./'$db_file'.sql.gz'
 pg_dump "$DATABASE_URL" --verbose -x -Z 6 -O > ./$db_file.sql.gz
 
 echo "Downloaded ./$db_file.sql.gz from production live db."
