@@ -10,7 +10,7 @@ gem "puma", "~> 4.1"
 gem "rails", "~> 6.0", ">= 6.0.3.1"
 
 gem "bcrypt", "~> 3.1.7"
-gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.12"
 gem "jbuilder", "~> 2.7"
 gem "redis", "~> 4.0"
 gem "sass-rails", ">= 6"
