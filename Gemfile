@@ -39,7 +39,7 @@ gem "rollbar", "~> 2.25"
 
 gem "activerecord-import", "~> 1.0"
 gem "cancancan", "~> 3.1"
-gem "dalli", "~> 2.7", ">= 2.7.10"
+gem "dalli", "~> 3.2"
 gem "daru", "~> 0.2.2"
 gem "devise", "~> 4.7", ">= 4.7.1"
 gem "devise-jwt", "~> 0.6.0"
