@@ -22,7 +22,7 @@ gem "bootsnap", ">= 1.4.2", require: false
 gem "aws-sdk-cloudwatch", "~> 1.38"
 gem "marginalia", "~> 1.8"
 gem "pg_query", "~> 1.2"
-gem "pghero", "~> 2.5"
+gem "pghero", "~> 3.1"
 
 gem "awesome_print", "~> 1.8"
 gem "deepsort", "~> 0.4.5"
